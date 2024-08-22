@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+
+
+.menu-header {
+  display: flex;
+  /*Jogar os itens para o canto da página*/
+  justify-content: space-around;
+  align-items:center;
+
+  background-color: var(--second-color);
+  font-family: 'Poppins', sans-serif;
+  /* margin-left: auto;*/
+  width: 100%; 
+  }
+
+  .icones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .icon-menu {
+    width: 20px;
+  }
+
+  .bandeira {
+    width: 20%;
+  }
+
+  .logo {
+    /*Mudando a cor da fonte do nome*/
+    color: white;
+    /*Deixando o texto formatado*/
+    text-transform: uppercase;
+    /*Mudando o espaçamento das letras*/
+    letter-spacing: 5px;
+    /*Tamaho da letra*/
+    font-size: 20px;
+
+  }
+
+  .nav-links {
+    /*Ajustando o tamanho e posição dos itens*/
+    display: flex;
+    justify-content: center;
+    width: 50%;
+
+  }
+
+  .nav-links li {
+    /*Sumindo com os pontos que ficavam nos itens*/
+    list-style: none;
+    margin: 0 10px; 
+
+
+  }
+
+  .nav-links a {
+    /*Mudando a cor dos itens*/
+    color: white;
+    /*Mudando o espaçamento das letras dos itens*/
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .burger {
+    /*Não deixando o menu hambuguer visivel */
+    display: none;
+    /*aparecendo a maozinha quando clica no menu hambuguer*/
+    cursor: pointer;
+  }
+
+  .burger div {
+    /*Ajeitando o menu Hambuguer*/
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+footer{
+    /* display: none; */
+background-color: var(--primary-color);
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: medium;
+padding-top: 10px;
+color: #ffffff;
+padding-top: 20px;  /* nao esquecer  de modificar o padding para 10px, pois sera feito um teste no celular */
+}
+
+.sociais {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+.img-link {
+      display: flex;
+      justify-content: center;
+    }
+    
+.social-logo {
+      width: 40%;
+    }
+
+.senac-cop {
+      display: flex;
+      justify-content: center;
+      gap: 70px;
+      margin-bottom: 30px;
+    }
+
+.logo-cop-senac {
+      width: 70%;
+    }
+
+.senac {
+      width: 100%;
+      margin-left: 30px;
+    }
+.direitos{
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+.site-senac{
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+.link-senac {
+      margin-left: 3px;
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  
+
+  /*Ajustando a altura*/
+  @media screen and (max-width:1024px) {
+    .nav-links {
+      width: 60%;
+    }
+  }
+
+  /*Ajustando a altura minima*/
+  @media screen and (max-width:768px) {
+    body {
+      overflow-x: hidden;
+    }
+
+    /*ajustando os itens para se adequar a altura min.*/
+    .nav-links {
+      position: fixed;
+      right: 0px;
+      height: 92vh;
+      top: 5vh;
+      /*Arrumando o menu*/
+      background-color: var(--second-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+      /*Ajeitando a transição parar abrir o menu*/
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+    }
+
+    .nav-links li {
+      opacity: 0;
+      margin: 20px 0; 
+      justify-content: space-between;
+    }
+
+    .burger {
+      /*para aparecer o menu quando a tela tiver pequena*/
+      display: block;
+    }
+  }
+
+  /*Quando se clica no menu , consegue abrir os itens*/
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  /*Animações quando se clica no menu*/
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  /*Transformando o menu em X*/
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .toggle .line2 {
+    opacity: 0;
+
+  }
+
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .nav-links.nav-active li {
+      opacity: 1;
+    }
+  }
+
+  /* edicoes anteriores da responsividade do home */
+
+
+:root {
+    --primary-color: #21a3a3;
+    --second-color: #13c8b5;
+    --threeth-color: #6cf3d5;
+    --fourth-color: #7375a5;
+    --fifth-color: #2b364a;
+    --sixth-color: #deecdd;
+    /* #21a3a3 */
+}
+
+body {
+    font-family: "Roboto";
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/forte_do_presepio.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+header {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    /* border-bottom: 1px solid black; */
+    align-items: baseline;
+    
+}
+
+.cabecalho-mb {
+    display: none;
+}
+
+header .menu {
+    display: flex;
+    list-style: none;
+
+}
+
+.menu .item-menu {
+    margin: 5px;
+}
+
+.item-menu a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 30px;
+    transition: 0.2s;
+}
+
+.item-menu a:hover {
+    background-color: rgb(97, 192, 255, 0.4);
+    color: white;
+}
+
+.main-mb {
+    display: none;
+    padding-top: 60px;
+} 
+
+main {
+    width: 80%;
+    margin: auto;
+}
+
+main h1 {
+    background-color: rgb(97, 192, 255, 0.7);
+    text-align: center;
+    border-radius: 30px;
+    font-size: 50px;
+}
+
+main .botoes {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+}
+
+.botoes .botao {
+    padding: 10px;
+    background-color: rgb(97, 192, 255, 0.7);
+    border-radius: 50px;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.botoes .btn {
+    border-radius: 50px;
+    width: 27px;
+    text-align: center;
+    cursor: pointer;
+}
+
+  /* responsividade do arquivo home */
+
+  @media screen and (max-width: 600px) { /*Aqui começa a versão mobile 600px */
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: none;
+        background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+      }
+
+    header {
+      position: fixed;
+    }
+
+    .menu-header {
+      height: 55px;
+    }
+
+    .cabecalho-dk {
+        display: none;
+    }
+
+    .cabecalho-mb {
+        display: flex;
+        justify-content: space-between;
+        color: black;
+        width: 90%;
+    }
+
+    .logo-menu {
+        width: 20px;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+
+    .icones {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        padding-left: 5px;
+    }
+
+    .idioma {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
+    .bandeira {
+      border-radius: 50%;
+      width: 17%;
+      
+    }
+
+    .rede-social {
+      padding-top: 230px;
+      padding-right: 10px;
+      padding-left: 23px;
+    }
+
+    .redes{
+      width: 100%;
+      padding: 15px;
+    }
+
+    .icon-menu {
+        width: 20px;
+        margin-right: 10px;
+    }
+
+    .main-dk {
+        display: none;
+    }
+
+    .main-mb {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-mb .forte{
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      text-align: start;
+      margin-bottom: 2rem;
+      gap: 10px;
+    }
+
+    .forte {
+      border: 1px solid #ffffff;
+      padding: 5px;
+      border-radius: 10px;
+    }
+
+    .forte .title-forte {
+        margin-top: 1rem;
+    }
+
+    .forte img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .categoria {
+      font-size: x-small;
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+      border-radius: 3px;
+      width: 20%;
+      text-align: center;
+    }
+
+    .forte .btn-mb {
+        color: white;
+        background-color: var(--second-color);
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 30%;
+    }
+
+    footer{
+        display: none;
+      background-color: var(--primary-color);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: medium;
+      padding-top: 50px;
+      color: #ffffff;
+      padding-top: 40px;  /* nao esquecer  de modificar o padding para 10px, pois sera feito um teste no celular */
+    }
+    
+    .sociais {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+    
+    .img-link {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .social-logo {
+      width: 40%;
+    }
+
+    .senac-cop {
+      display: flex;
+      justify-content: center;
+      gap: 70px;
+      margin-bottom: 30px;
+    }
+
+    .logo-cop-senac {
+      width: 70%;
+    }
+
+    .senac {
+      width: 100%;
+      margin-left: 30px;
+    }
+    .direitos{
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+    .site-senac{
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .link-senac {
+      margin-left: 3px;
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  }
+
+ /* Aqui começa vesão web */
+  @media screen and (min-width: 1025px) {
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      position: relative;
+    }
+
+    .menu-header {
+      width: 100%;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    /* Aqui começa a editar a logo e icones no header */
+    .logo-senac-header {
+      display: none;
+    }
+
+    .logo {
+      margin-left: 20px;
+    }
+
+    .nav-links {
+      margin: 0 10px;
+      width: 70%;
+    }
+
+    .icones .item-link {
+      font-size:small;
+    }
+
+    .icones .icon-menu {
+      width: 30px;
+    }
+
+    .idioma {
+      display: flex;
+      flex-direction: row;
+      padding: 5px;
+    }
+  
+    .idioma .bandeira{ 
+      width: 35px;
+      padding: 5px;
+    }
+    /* Aqui termina o header e começa o main */
+    .main-dk { /* Coloque aqui dentro o CSS do seu main para web */
+      display: block;
+    }
+
+    footer {
+      background-color: var(--primary-color);
+    }
+    
+  }

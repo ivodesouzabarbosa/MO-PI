@@ -1,0 +1,271 @@
+body{
+  background-color: var(--threeth-color);
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --primary-color: #21a3a3;
+    --second-color: #13c8b5;
+    --threeth-color: #6cf3d5;
+    --fourth-color: #7375a5;
+    --fifth-color: #2b364a;
+}
+
+  nav {
+    display: flex;
+    /*Jogar os itens para o canto da página*/
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #21a3a3;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .logo {
+    /*Mudando a cor da fonte do nome*/
+    color: white;
+    /*Deixando o texto formatado*/
+    text-transform: uppercase;
+    /*Mudando o espaçamento das letras*/
+    letter-spacing: 5px;
+    /*Tamaho da letra*/
+    font-size: 20px;
+
+  }
+
+  .nav-links {
+    /*Ajustando o tamanho e posição dos itens*/
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+
+  }
+
+  .nav-links li {
+    /*Sumindo com os pontos que ficavam nos itens*/
+    list-style: none;
+    margin: 0 10px; 
+
+
+  }
+
+  .nav-links a {
+  /* Mudando a cor dos itens */
+  color: white;
+  /* Mudando o espaçamento das letras dos itens */
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+  /* Centralizando ícone e texto verticalmente */
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a i {
+  margin-right: 8px;
+}
+
+  .burger {
+    /*Não deixando o menu hambuguer visivel */
+    display: none;
+    /*aparecendo a maozinha quando clica no menu hambuguer*/
+    cursor: pointer;
+  }
+
+  .burger div {
+    /*Ajeitando o menu Hambuguer*/
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+
+  /*Ajustando a altura*/
+  @media screen and (max-width:1024px) {
+    .nav-links {
+      width: 60%;
+    }
+  }
+
+  /*Ajustando a altura minima*/
+  @media screen and (max-width:768px) {
+    body {
+      overflow-x: hidden;
+    }
+
+    /*ajustando os itens para se adequar a altura min.*/
+    .nav-links {
+      position: absolute;
+      right: 0px;
+      height: 92vh;
+      top: 8vh;
+      /*Arrumando o menu*/
+      background-color: rgb(40, 113, 122);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      /*Ajeitando a transição parar abrir o menu*/
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+    }
+
+    .nav-links li {
+      opacity: 0;
+      margin: 20px 0; 
+      justify-content: space-between;
+    }
+
+    .burger {
+      /*para aparecer o menu quando a tela tiver pequena*/
+      display: block;
+    }
+  }
+
+  /*Quando se clica no menu , consegue abrir os itens*/
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  /*Animações quando se clica no menu*/
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  /*Transformando o menu em X*/
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .toggle .line2 {
+    opacity: 0;
+
+  }
+
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .nav-links.nav-active li {
+      opacity: 1;
+    }
+  }
+
+  /* Ajustes para mobile */
+@media screen and (max-width: 768px) {
+  .nav-links a {
+    justify-content: center; /* Centraliza ícone e texto no mobile */
+    font-size: 18px; /* Aumenta o tamanho da fonte para melhor visualização */
+  }
+  
+  .nav-links a i {
+    margin-right: 10px; /* Ajusta o espaçamento no mobile */
+    font-size: 20px; /* Aumenta o tamanho do ícone no mobile */
+  }
+}
+
+/* o que fazer------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.main_title {
+  /* background-color: rgb(228, 193, 120); */
+  margin-bottom: 30px;
+  margin-top: 50px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  text-align: center; /* colocar o texto no meio da pg*/
+}
+
+/* Estilos comuns para os cards ------------------------------------------------------------------------------------------------------------------------------------------- */
+.secao {
+  margin: 0;
+  align-items: center;
+  font-family: Helvetica, sans-serif;
+  flex: 1;
+}
+
+.secao-div {
+  background-image: url(img/paisagem\ urbana.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+  margin-top: 0px;  /* margin top abaixou os cards */
+}
+/*cards----------------------------------------------------------------------------*/
+
+.card {
+	background-color: #ffffff;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	margin: 20px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+  
+}
+
+.card-title h1 {
+  font-family: helvetica;
+	font-size: 24px;
+	margin-bottom: 10px;
+  
+}
+
+
+.card-text p {
+  font-family: helvetica;
+	font-size: 20px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+  
+}
+
+.card img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+
+.btn-link {
+  background-color: transparent;
+  border: none;
+  color: black;  
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.btn-link:hover {
+  color:var(--primary-color);
+  text-decoration: underline;
+
+}
