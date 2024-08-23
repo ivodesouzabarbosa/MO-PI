@@ -607,13 +607,13 @@ main .botoes {
       width: 100px;
     }
 
-    .card{
+    .card-home{
       display: flex;
       justify-self: center;
       align-items: center;
       flex-direction: row;
     }
-    .card img{
+    .card-home img{
       width: 300px;
     }
     
