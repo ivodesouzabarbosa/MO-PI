@@ -606,5 +606,15 @@ main .botoes {
     .cop {
       width: 100px;
     }
+
+    .card{
+      display: flex;
+      justify-self: center;
+      align-items: center;
+      flex-direction: row;
+    }
+    .card img{
+      width: 300px;
+    }
     
   }
