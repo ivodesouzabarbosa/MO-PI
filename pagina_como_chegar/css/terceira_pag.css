@@ -1,0 +1,144 @@
+:root {
+    --primary-color: #21a3a3;
+    --second-color: #13c8b5;
+    --threeth-color: #6cf3d5;
+    --fourth-color: #7375a5;
+    --fifth-color: #2b364a;
+}
+
+body {
+    margin: 0;
+    overflow: hidden; /* Evita barras de rolagem desnecessárias */
+}
+
+.carrossel {
+    position: relative;
+    width: 100vw; /* Ocupa toda a largura da tela */
+    height: 70vh; /* Ocupa 70% da altura da tela */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa o carrossel */
+    /* opacity: 0.8; */
+}
+
+.carrossel h1 {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--threeth-color);
+    font-size: 2rem;
+    z-index: 1; /* Garante que o título fique sobre as imagens */
+    text-align: center;
+    padding: 0 10px;
+    border: 1px solid;
+    box-shadow: #2b364a;
+    border-radius: 5px;
+}
+
+.carrossel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%; /* Garante que o wrapper ocupe toda a altura do carrossel */
+}
+
+.carrossel-slide {
+    min-width: 100%;
+    height: 100%; /* Garante que cada slide ocupe toda a altura do carrossel */
+}
+
+.carrossel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para preencher o slide sem distorcer */
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 2; /* Garante que os botões fiquem sobre as imagens e o título */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 600px) {
+    .carrossel {
+        height: 55vh; /* Ajusta a altura do carrossel em telas menores */
+    }
+
+    .carrossel h1 {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte para telas menores */
+        padding: 0 5px;
+    }
+
+    button {
+        font-size: 16px; /* Reduz o tamanho da fonte dos botões para telas menores */
+        padding: 8px;
+    }
+}
+
+
+.barra {
+    width: 110%;
+    padding: 15px;
+}
+
+.main_about {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    /* background-color: #134647; */
+    padding: 1rem;
+}
+
+.about-me {
+    display: flex;
+    align-items: center;
+}
+
+.letter-main {
+    background-color: #34baab;
+    padding: 2rem;
+    width: auto;
+    margin: 1rem;
+    text-align: center;
+}
+
+.image img{
+    border-radius: 10px;
+}
+
+.about-me2 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.letter-main2 {
+    background-color: #34baab;
+    padding: 2rem;
+    width: auto;
+    margin: 1rem;
+    text-align: center;
+}
+
+.image2 img {
+    height: 420px;
+    width: 650px;
+    margin: 16px;
+    border-radius: 5px;
+}

@@ -14,6 +14,15 @@ html {
   font: 400 62.5% "Inter", sans-serif;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Um valor alto para garantir que fique acima de outros elementos */
+}
+
 /* CODIGO DO BODY */
 body {
   background-color: var(--fifth-color);
