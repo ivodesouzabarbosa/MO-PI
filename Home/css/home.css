@@ -476,7 +476,6 @@ main .botoes {
       width: 100%;
       display: flex;
       justify-content: center;
-      margin-bottom: 60px;
     }
     
     .img-link {
@@ -578,6 +577,38 @@ main .botoes {
 
     footer {
       background-color: var(--primary-color);
+    }
+
+    .rodape {
+      display: flex;
+      justify-content: center;
+    }
+
+    .sociais {
+      width: 300px;
+      justify-content: space-around;
+    }
+
+    .img-link {
+      width: 100px;
+      align-items: center;
+    }
+
+    .social-logo {
+      width: 50px;
+      height: 50px;
+    }
+
+    .senac {
+      width: 100px;
+    }
+
+    .cop {
+      width: 100px;
+    }
+
+    .texto-footer {
+
     }
     
   }
