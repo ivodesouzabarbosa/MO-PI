@@ -187,7 +187,7 @@ body{
 .main_title {
   /* background-color: rgb(228, 193, 120); */
   margin-bottom: 30px;
-  margin-top: 50px;
+  padding-top: 100px;
   text-transform: uppercase;
   color: rgb(0, 0, 0);
   text-align: center; /* colocar o texto no meio da pg*/
