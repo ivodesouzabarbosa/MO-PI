@@ -301,12 +301,12 @@ main {
     margin: auto;
 }
 
-main h1 {
+/* main h1 {
     background-color: rgb(97, 192, 255, 0.7);
     text-align: center;
     border-radius: 30px;
     font-size: 50px;
-}
+} */
 
 main .botoes {
     display: flex;
