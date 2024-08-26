@@ -8,12 +8,13 @@
 
 body {
     margin: 0;
-    overflow: hidden; 
+    padding: 0;
+    /* overflow: hidden;  */
 }
 
 .carrossel {
     position: relative;
-    width: 100vw; /* Ocupa toda a largura da tela */
+    width: 100%; /* Ocupa toda a largura da tela */
     height: 70vh; /* Ocupa 70% da altura da tela */
     overflow: hidden; /* Esconde o conteúdo que ultrapassa o carrossel */
     /* opacity: 0.8; */
@@ -152,7 +153,7 @@ button {
 }
 
 .letter-main {
-    background-color: #34baab;
+    /* background-color: #34baab; */
     width: 100%;
     padding: 1rem;
 }
@@ -180,12 +181,13 @@ button {
     text-decoration: none;
     font-weight: bold;
     background-color: #6cf3d5;
-    color: #000000;
+    color: #4b4b4b;
     transition: background-color 0.3s ease;
 }
 
 .letter-main a:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color :var(--fourth-color);
+    color: #fff;
 }
 
 .content-container {
