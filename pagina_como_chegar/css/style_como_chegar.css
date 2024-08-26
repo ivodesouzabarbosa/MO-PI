@@ -34,24 +34,21 @@ body {
     align-items: center; */
 }
 
-.main-container {
-    margin-top: 80px;
+.ch-main-container {
+    margin-top: 7rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.titulo {
-    text-align: center;
-    color: white;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px; /* Espaçamento entre o ícone e o texto */
-}
 
+.ch-titulo {
+    font-size: 3.6rem;
+    color: white;
+    text-transform: uppercase;
+    
+}
 
 
 .container {
@@ -69,7 +66,7 @@ body {
     border-radius: 2rem;
     overflow: hidden;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
-    
+    /* z-index: 1; */
     position: relative;
 }
 
@@ -98,9 +95,22 @@ body {
 
 .card-content a {
     text-decoration: none;
-    color: white;
+    color: var(--fifth-color);
     font-size: 1.2rem;
     padding: 1rem 2rem;
     border-radius: 2rem;
-    background-color: var(--primary-color);
+    background-color: var(--threeth-color);
+}
+
+.btn-vmais {
+    margin-top: 3rem;
+}
+
+.btn-vmais a {
+    text-decoration: none;
+    color: var(--fifth-color);
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    background-color: var(--threeth-color);
 }
