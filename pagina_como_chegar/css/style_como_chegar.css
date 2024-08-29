@@ -1,10 +1,18 @@
 /* styles.css */
-:root {
+/* :root {
     --primary-color: #21a3a3;
     --second-color: #13c8b5;
     --threeth-color: #6cf3d5;
     --fourth-color: #7375a5;
     --fifth-color: #2b364a;
+} */
+
+:root {
+    --primary-color: #279ca9;
+    --second-color: #1d8b98 ;
+    --threeth-color: #147a87 ;
+    --fourth-color: #0a6875 ;
+    --fifth-color: #005764 ;
 }
 
 * {
@@ -25,7 +33,7 @@ header {
 }
 
 body {
-    background-color: var(--primary-color);
+    background-color: var(--fifth-color);
     margin: 0;
     padding: 0;
     /* display: flex;
@@ -35,7 +43,7 @@ body {
 }
 
 .ch-main-container {
-    margin-top: 7rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,11 +103,11 @@ body {
 
 .card-content a {
     text-decoration: none;
-    color: var(--fifth-color);
+    color: white;
     font-size: 1.2rem;
     padding: 1rem 2rem;
     border-radius: 2rem;
-    background-color: var(--threeth-color);
+    background-color: var(--primary-color);
 }
 
 .btn-vmais {
@@ -113,4 +121,11 @@ body {
     padding: 1rem 2rem;
     border-radius: 2rem;
     background-color: var(--threeth-color);
+}
+
+
+@media screen and (max-width: 800px) {
+    .ch-main-container {
+        margin-top: 7rem;
+    }
 }

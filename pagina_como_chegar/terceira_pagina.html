@@ -1,209 +1,281 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <link rel="stylesheet" href="css/tela_2.css" />
+    <link rel="stylesheet" href="css/terceira_pag.css" />
+    <link rel="stylesheet" href="../Home/css/home.css" />
+    <link rel="stylesheet" href="../Home/css/header_footer.css" />
+    <title>Detalhes</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="shortcut icon" href="" type="image/x-icon" />
-  <link rel="stylesheet" href="css/tela_2.css" />
-  <link rel="stylesheet" href="css/terceira_pag.css" />
-  <link rel="stylesheet" href="../Home/css/home.css" />
-  <link rel="stylesheet" href="../Home/css/header_footer.css">
-  <title>Detalhes</title>
-</head>
+  <body>
+    <header>
+      <nav class="menu-header">
+        <div class="logo-senac-header">
+          <img src="../Home/img/senac_logo_branco_r.png" alt="logo_senac" />
+        </div>
+        <div class="logo">
+          <a href="../index.html">
+            <h4 class="img-logo">Logo</h4>
+          </a>
+        </div>
 
-<body>
-  <header>
-    <nav class="menu-header">
-      <div class="logo-senac-header">
-        <img src="../Home/img/senac_logo_branco_r.png" alt="logo_senac" />
+        <ul class="nav-links">
+          <li class="icones">
+            <img class="icon-menu" src="../Home/icons/o_que_fazer.png" alt="" />
+            <a class="item-link" href="#">O que fazer</a>
+          </li>
+          <li class="icones">
+            <img class="icon-menu" src="../Home/icons/eventos.png" alt="" />
+            <a class="item-link" href="../Eventos/evento_tela_inicial.html"
+              >Eventos</a
+            >
+          </li>
+          <li class="icones">
+            <img
+              class="icon-menu"
+              src="../Home/icons/como_chegar.png"
+              alt=""
+            /><a class="item-link" href="../pagina_como_chegar/como_chegar.html"
+              >Como chegar</a
+            >
+          </li>
+          <li class="icones">
+            <img class="icon-menu" src="../Home/icons/sobre_belem.png" alt="" />
+            <a class="item-link" href="#">Sobre Belém</a>
+          </li>
+          <li class="icones">
+            <img
+              class="icon-menu"
+              src="../Home/icons/fale_concosco.png"
+              alt=""
+            />
+            <a class="item-link" href="#">Fale Conosco</a>
+          </li>
+          <li class="icones">
+            <img
+              class="icon-menu"
+              src="../Home/icons/configuracoes.png"
+              alt=""
+            />
+            <a class="item-link" href="#">Configurações</a>
+          </li>
+          <li class="icones idioma">
+            <img
+              class="bandeira"
+              onclick=""
+              src="../Home/icons/usa3.ico"
+              alt=""
+            />
+            <img
+              class="bandeira"
+              onclick=""
+              src="../Home/icons/brazil2.ico"
+              alt=""
+            />
+            <img
+              class="bandeira"
+              onclick=""
+              src="../Home/icons/spain4.ico"
+              alt=""
+            />
+            <img
+              class="bandeira"
+              onclick=""
+              src="../Home/icons/france1.ico"
+              alt=""
+            />
+          </li>
+
+          <li class="icones rede-social logo-senac-header">
+            <img
+              class="redes facebook"
+              src="../Home/icons/facebook.png"
+              alt="facebook"
+            />
+            <img
+              class="redes flirckr"
+              src="../Home/icons/flickr.png"
+              alt="flickr"
+            />
+            <img
+              class="redes instagram"
+              src="../Home/icons/instagram.png"
+              alt="instagram"
+            />
+          </li>
+        </ul>
+        <!--Menu hambuguer-->
+        <div class="burger">
+          <div class="line1"></div>
+          btn-carrossel
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Carrossel -->
+    <div class="carrossel">
+      <h1>Bosque Rodrigues Alves</h1>
+      <div class="carrossel-wrapper">
+        <div class="carrossel-slide">
+          <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/GSMa0953.jpg" alt="Imagem 1" />
+        </div>
+        <div class="carrossel-slide">
+          <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/60998_179004.jpg" alt="Imagem 2" />
+        </div>
+        <div class="carrossel-slide">
+          <img
+            src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/76437_233920.jpg" alt="Imagem 3"
+          />
+        </div>
       </div>
-      <div class="logo">
-        <a href="../index.html">
-          <h4 class="img-logo">Logo</h4>
-        </a>
+      <button class="btn-carrossel prev" onclick="moveSlide(-1)">
+        &#10094;
+      </button>
+      <button class="btn-carrossel next" onclick="moveSlide(1)">
+        &#10095;
+      </button>
+    </div>
+
+    <div class="barra">
+      <hr />
+    </div>
+
+    <div id="container">
+      <div class="tab-buttons">
+        <button class="tab-btn active" content-id="Descrição"><img src="./assets/icons/description.svg" alt="icon"> Descrição</button>
+        <button class="tab-btn" content-id="Endereço"><img src="./assets/icons/localizaca.svg" alt="icon"> Endereço</button>
+        <button class="tab-btn" content-id="Dias e horários"><img src="./assets/icons/calendar.svg" alt="icon"> Dias e horários</button>
+        <button class="tab-btn" content-id="Valores e visitas"><img src="./assets/icons/payment.svg" alt="icon">Valores e visitas</button>
       </div>
 
-      <ul class="nav-links">
-        <li class="icones">
-          <img class="icon-menu" src="../Home/icons/o_que_fazer.png" alt="" />
-          <a class="item-link" href="#">O que fazer</a>
-        </li>
-        <li class="icones">
-          <img class="icon-menu" src="../Home/icons/eventos.png" alt="" />
-          <a class="item-link" href="../Eventos/evento_tela_inicial.html">Eventos</a>
-        </li>
-        <li class="icones">
-          <img class="icon-menu" src="../Home/icons/como_chegar.png" alt="" /><a class="item-link"
-            href="../pagina_como_chegar/como_chegar.html">Como chegar</a>
-        </li>
-        <li class="icones">
-          <img class="icon-menu" src="../Home/icons/sobre_belem.png" alt="" />
-          <a class="item-link" href="#">Sobre Belém</a>
-        </li>
-        <li class="icones">
-          <img class="icon-menu" src="../Home/icons/fale_concosco.png" alt="" />
-          <a class="item-link" href="#">Fale Conosco</a>
-        </li>
-        <li class="icones">
-          <img class="icon-menu" src="../Home/icons/configuracoes.png" alt="" />
-          <a class="item-link" href="#">Configurações</a>
-        </li>
-        <li class="icones idioma">
-          <img class="bandeira" onclick="" src="../Home/icons/usa3.ico" alt="" />
-          <img class="bandeira" onclick="" src="../Home/icons/brazil2.ico" alt="" />
-          <img class="bandeira" onclick="" src="../Home/icons/spain4.ico" alt="" />
-          <img class="bandeira" onclick="" src="../Home/icons/france1.ico" alt="" />
-        </li>
+      <div class="tab-contents">
+        <div class="content" id="Descrição">
+          <div class="infos">
+            <h1 class="content-title">Descrição</h1>
+            <p class="content-description">
+              Situado na Avenida Almirante Barroso, o Bosque é um dos principais
+              cartõespostais da Cidade das Mangueiras. Com uma área total de 150
+              mil metros quadrados, é um pedaço da floresta amazônica
+              literalmente ‘preservado’ no coração da cidade. O espaço
+              centenário recebe, em média, 20 mil visitantes por mês. A maioria,
+              crianças e estudantes. O Bosque Rodrigues Alves abriga mais de 80
+              mil espécies de flora e fauna, distribuídas na área de preservação
+              ambiental. Dos 15 hectares, mais de 80% são compostos por áreas
+              verdes, e apenas 20% em caminhos para circulação de visitantes. O
+              espaço reserva também uma fauna livre, onde os visitantes podem
+              apreciar de perto os animais.
+            </p>
+          </div>
+        </div>
 
-        <li class="icones rede-social logo-senac-header">
-          <img class="redes facebook" src="../Home/icons/facebook.png" alt="facebook" />
-          <img class="redes flirckr" src="../Home/icons/flickr.png" alt="flickr" />
-          <img class="redes instagram" src="../Home/icons/instagram.png" alt="instagram" />
-        </li>
-      </ul>
-      <!--Menu hambuguer-->
-      <div class="burger">
-        <div class="line1"></div>btn-carrossel 
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
-    </nav>
-  </header>
+        <div class="content" id="Endereço">
+          <div class="infos">
+            <h1 class="content-title">Endereço</h1>
+            <p class="content-description">
+              Av. Almirante Barroso, 2305 – Marco.
+            </p>
+          </div>
+        </div>
 
-  <!-- Carrossel -->
-  <div class="carrossel">
-    <h1>Descrição do Carrossel</h1>
-    <div class="carrossel-wrapper">
-      <div class="carrossel-slide">
-        <img src="../Home/img/forte_do_presepio.png" alt="Imagem 1" />
-      </div>
-      <div class="carrossel-slide">
-        <img src="./assets/img/bar-do-parque-em-belém.jpg" alt="Imagem 2" />
-      </div>
-      <div class="carrossel-slide">
-        <img src="./assets/img/ilha-do-combu-belem-para-15.webp" alt="Imagem 3" />
+        <div class="content" id="Dias e horários">
+          <div class="infos">
+            <h1 class="content-title">Dias e horários</h1>
+            <p class="content-description">
+              TER-DOM 8h – 17h / SEG Fechado.
+            </p>
+          </div>
+        </div>
+
+        <div class="content" id="Valores e visitas">
+          <div class="infos">
+            <h1 class="content-title">Valores e visitas</h1>
+            <p class="content-description">
+              Paga R$ 7,00 inteira e R$ 3,50 meia entrada/ sem monitoria / 3h.
+
+            </p>
+          </div>
+        </div>
+        <a href="https://maps.app.goo.gl/Yk1gAo728HMtbD6E6" target="_blank" class="btn-rota"><img src="https://cdn-icons-png.flaticon.com/256/854/854948.png"alt=""></a>
       </div>
     </div>
-    <button class="btn-carrossel prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="btn-carrossel next" onclick="moveSlide(1)">&#10095;</button>
-  </div>
 
-  <div class="barra">
-    <hr>
-  </div>
+    <footer class="rodape">
+      <div class="rodape">
+        <div class="sociais">
+          <a
+            class="img-link"
+            href="https://www.facebook.com/senacpara/"
+            target="_blank"
+            ><img class="social-logo" src="../Home/img/facebook.png" alt=""
+          /></a>
+          <a
+            class="img-link"
+            href="https://www.instagram.com/senac_pa/"
+            target="_blank"
+            ><img class="social-logo" src="../Home/img/instagram.png" alt=""
+          /></a>
+          <a
+            class="img-link"
+            href="https://www.flickr.com/photos/145995513@N07/albums/"
+            target="_blank"
+            ><img class="social-logo" src="../Home/img/flickr.png" alt=""
+          /></a>
+        </div>
 
-  <div id="container">
-    <div class="tab-buttons">
-      <button class="tab-btn active" content-id="home">
-        Home
-      </button>
-      <button class="tab-btn" content-id="services">
-        Services
-      </button>
-      <button class="tab-btn" content-id="contacts">
-        Contacts
-      </button>
-      <button class="tab-btn" content-id="location">
-        Location
-      </button>
-    </div>
+        <div class="senac-cop">
+          <!-- adicionar as duas logos cop e SENAC -->
+          <a class="img-link" href="https://www.pa.senac.br/" target="_blank">
+            <img
+              class="logo-cop-senac senac"
+              src="../Home/img/senac_logo_r.png"
+              alt="Senac Pará"
+            />
+          </a>
+          <!-- adicionar as duas logos cop e SENAC -->
+          <a
+            class="img-link"
+            href="https://www.gov.br/planalto/pt-br/agenda-internacional/missoes-internacionais/cop28/cop-30-no-brasil"
+            target="_blank"
+          >
+            <img
+              class="logo-cop-senac cop"
+              src="../Home/img/logo-cop30-r.png"
+              alt="COP30"
+            />
+          </a>
+        </div>
 
-    <div class="tab-contents">
-      <div class="content" id="home">
-        <div class="infos">
-          <h1 class="content-title">
-            Home
-          </h1>
-          <p class="content-description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, repellat! Id ab similique velit,
-            molestiae, aliquam illum officiis sit totam rem voluptas magnam, atque dicta magni perferendis recusandae
-            reiciendis necessitatibus!
-          </p>
+        <div class="texto-footer">
+          <span class="site-senac"
+            >Conheça o
+            <a
+              class="link-senac"
+              href="https://www.pa.senac.br/"
+              target="_blank"
+              >SENAC</a
+            ></span
+          >
+          <span class="direitos">Belém, Pará, COP30 &copy;2025</span>
         </div>
       </div>
 
-      <div class="content" id="services">
-        <div class="infos">
-          <h1 class="content-title">
-            Services
-          </h1>
-          <p class="content-description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, repellat! Id ab similique velit,
-            molestiae, aliquam illum officiis sit totam rem voluptas magnam, atque dicta magni perferendis recusandae
-            reiciendis necessitatibus!
-          </p>
-        </div>
-      </div>
+      <h1 class="teste"></h1>
+    </footer>
 
-      <div class="content" id="contacts">
-        <div class="infos">
-          <h1 class="content-title">
-            Contacts
-          </h1>
-          <p class="content-description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, repellat! Id ab similique velit,
-            molestiae, aliquam illum officiis sit totam rem voluptas magnam, atque dicta magni perferendis recusandae
-            reiciendis necessitatibus!
-          </p>
-        </div>
-      </div>
-
-      <div class="content" id="location">
-        <div class="infos">
-          <h1 class="content-title">
-            Location
-          </h1>
-          <p class="content-description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, repellat! Id ab similique velit,
-            molestiae, aliquam illum officiis sit totam rem voluptas magnam, atque dicta magni perferendis recusandae
-            reiciendis necessitatibus!
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer class="rodape">
-    <div class="rodape">
-      <div class="sociais">
-        <a class="img-link" href="https://www.facebook.com/senacpara/" target="_blank"><img class="social-logo"
-            src="../Home/img/facebook.png" alt=""></a>
-        <a class="img-link" href="https://www.instagram.com/senac_pa/" target="_blank"><img class="social-logo"
-            src="../Home/img/instagram.png" alt=""></a>
-        <a class="img-link" href="https://www.flickr.com/photos/145995513@N07/albums/" target="_blank"><img
-            class="social-logo" src="../Home/img/flickr.png" alt=""></a>
-      </div>
-
-      <div class="senac-cop">
-        <!-- adicionar as duas logos cop e SENAC -->
-        <a class="img-link" href="https://www.pa.senac.br/" target="_blank">
-          <img class="logo-cop-senac senac" src="../Home/img/senac_logo_r.png" alt="Senac Pará">
-        </a>
-        <!-- adicionar as duas logos cop e SENAC -->
-        <a class="img-link"
-          href="https://www.gov.br/planalto/pt-br/agenda-internacional/missoes-internacionais/cop28/cop-30-no-brasil"
-          target="_blank">
-          <img class="logo-cop-senac cop" src="../Home/img/logo-cop30-r.png" alt="COP30">
-        </a>
-      </div>
-
-      <div class="texto-footer">
-        <span class="site-senac">Conheça o <a class="link-senac" href="https://www.pa.senac.br/"
-            target="_blank">SENAC</a></span>
-        <span class="direitos">Belém, Pará, COP30 &copy;2025</span>
-      </div>
-    </div>
-
-    <h1 class="teste"></h1>
-
-  </footer>
-
-  <script src="../Home/js/home.js"></script>
-  <script src="./js/carrossel.js"></script>
-  <script src="js/alterna-conteudo.js"></script>
-</body>
-
+    <script src="../Home/js/home.js"></script>
+    <script src="./js/carrossel.js"></script>
+    <script src="js/alterna-conteudo.js"></script>
+  </body>
 </html>

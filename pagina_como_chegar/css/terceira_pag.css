@@ -1,15 +1,20 @@
 :root {
-    --primary-color: #21a3a3;
-    --second-color: #13c8b5;
-    --threeth-color: #6cf3d5;
-    --fourth-color: #7375a5;
-    --fifth-color: #2b364a;
+    --primary-color: #279ca9;
+    --second-color: #1d8b98 ;
+    --threeth-color: #147a87 ;
+    --fourth-color: #0a6875 ;
+    --fifth-color: #005764 ;
 }
 
 body {
     margin: 0;
     padding: 0;
     /* overflow: hidden;  */
+    background-color: var(--fifth-color);
+}
+
+a {
+    text-decoration: none;
 }
 
 .carrossel {
@@ -25,14 +30,21 @@ body {
     top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--threeth-color);
-    font-size: 2rem;
+    color: #ffffff;
+    background-color: #495455;
+    font-size: 4rem;
     z-index: 1; /* Garante que o título fique sobre as imagens */
     text-align: center;
     padding: 0 10px;
     border: 1px solid;
     box-shadow: #2b364a;
     border-radius: 5px;
+    animation: Fade-In 1s ease-in-out;
+}
+
+@keyframes Fade-In {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 .carrossel-wrapper {
@@ -98,9 +110,10 @@ body {
 
 
 #container {
-    background-color: aliceblue;
-    width: 600px;
+    background-color: var(--threeth-color);
+    width: 70%;
     padding: 20px;
+    margin-bottom: 3rem;
     border-radius: 8px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
@@ -111,10 +124,13 @@ body {
 }
 
 .tab-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     border: none;
-    color: black;
-    background-color: #f0f8ff;
+    color: #2b364a;
+    background-color: #fff;
     border-radius: 8px 8px 0 0;
     font-weight: 500;
     padding: 8px;
@@ -122,8 +138,13 @@ body {
     transition: background-color .3s ease;
 }
 
+.tab-btn:hover {
+    color: var(--second-color);
+}
+
 .tab-btn.active {
-    background-color: #c7d2f2;
+    background-color: var(--fourth-color);
+    color: #fff;
 }
 
 /* .tab-btn:hover {
@@ -136,15 +157,38 @@ body {
 
 .content.show {
     display: flex;
+    justify-content: center;
     gap: 14px;
-    background-color: #c7d2f2;
+    color: #fff;
+    background-color: var(--fourth-color);
     border-radius: 0 0 8px 8px;
     padding: 16px;
 }
 
-.content-img {
-    width: 50%;
-    height: 250px;
+.content-title {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.content-description {
+    text-align: center;
+    font-size: 15px;
+    line-height: 3rem;
+}
+
+.btn-rota{
+    height: 10rem;
+    padding: 2rem;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.btn-rota a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Ajustes gerais para dispositivos móveis */
@@ -171,9 +215,8 @@ body {
         padding: 12px;
     }
 
-    .content-img {
-        width: 100%;
-        height: auto;
+    .content-description {
+        line-height: 16px;
     }
 
     .infos {

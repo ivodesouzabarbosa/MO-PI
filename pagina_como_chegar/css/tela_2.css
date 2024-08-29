@@ -1,9 +1,17 @@
-:root {
+/* :root {
   --primary-color: #21a3a3;
   --second-color: #13c8b5;
   --threeth-color: #6cf3d5;
   --fourth-color: #7375a5;
   --fifth-color: #2b364a;
+} */
+
+:root {
+  --primary-color: #279ca9;
+  --second-color: #1d8b98 ;
+  --threeth-color: #147a87 ;
+  --fourth-color: #0a6875 ;
+  --fifth-color: #005764 ;
 }
 
 * {
@@ -33,15 +41,22 @@ body {
   padding: 0;
 }
 
-.title {
-  margin: 2rem 0;
-  color: #333;
+.title-details {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.title-details h1 {
+  margin: 0;
+  font-size: 3.6rem;
+  color: white;
 }
 
 .container {
   width: 80%;
-  padding: 2rem;
-  background-color: cornflowerblue;
+  /* padding: 2rem; */
+  /* background-color: cornflowerblue; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -104,8 +119,9 @@ body {
   max-height: 0;
   opacity: 0;
   color: #fff;
-  text-transform: lowercase;
-  text-align: center;
+  /* text-transform: lowercase; */
+  font-size: 1.2rem;
+  text-align: justify;
   transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
   overflow: hidden;
   padding: 0 1.5rem;
@@ -149,4 +165,28 @@ body {
 .card-btn a:hover {
   background-color: #5ae0c2;
   transition: background-color 0.3s ease;
+}
+
+
+.btn-vmais {
+  padding: 4rem;
+}
+
+.btn-vmais a {
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  font-size: 1.8rem;
+  background-color: #6cf3d5;
+  text-transform: uppercase;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+
+
+@media screen and (max-width: 800px) {
+  .title-details {
+      margin-top: 6rem;
+  }
 }
