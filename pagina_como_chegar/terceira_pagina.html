@@ -8,8 +8,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link rel="shortcut icon" href="" type="image/x-icon" />
   <link rel="stylesheet" href="css/tela_2.css" />
-  <link rel="stylesheet" href="../Home/css/home.css" />
   <link rel="stylesheet" href="css/terceira_pag.css" />
+  <link rel="stylesheet" href="../Home/css/home.css" />
+  <link rel="stylesheet" href="../Home/css/header_footer.css">
   <title>Detalhes</title>
 </head>
 
@@ -65,7 +66,7 @@
       </ul>
       <!--Menu hambuguer-->
       <div class="burger">
-        <div class="line1"></div>
+        <div class="line1"></div>btn-carrossel 
         <div class="line2"></div>
         <div class="line3"></div>
       </div>
@@ -86,44 +87,84 @@
         <img src="./assets/img/ilha-do-combu-belem-para-15.webp" alt="Imagem 3" />
       </div>
     </div>
-    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    <button class="btn-carrossel prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="btn-carrossel next" onclick="moveSlide(1)">&#10095;</button>
   </div>
 
   <div class="barra">
     <hr>
   </div>
 
-  <section class="box-details">
-    <article class="main_about">
-      <nav class="letter-main">
-        <ul>
-          <li><a href="#" data-target="btn1">Descrição</a></li>
-          <li><a href="#" data-target="btn2">Endereço</a></li>
-          <li><a href="#" data-target="btn3">Dias e Horários</a></li>
-          <li><a href="#" data-target="btn4">Valores e Visitas</a></li>
-        </ul>
-      </nav>
-      <div class="content-container">
-        <article data-content="btn1" class="active">
-          <h2>Descrição</h2>
-          <p>btn1 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic officia modi architecto ratione voluptatem tenetur ipsam dolorum in ullam quia a veritatis, nihil nobis exercitationem aspernatur eius, repudiandae deleniti labore. ...</p>
-        </article>
-        <article data-content="btn2">
-          <h2>Endereço</h2>
-          <p>btn2 Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
-        </article>
-        <article data-content="btn3">
-          <h2>Dias e Horários</h2>
-          <p>btn3 Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
-        </article>
-        <article data-content="btn4">
-          <h2>Valores e Visitas</h2>
-          <p>btn4 Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
-        </article>
+  <div id="container">
+    <div class="tab-buttons">
+      <button class="tab-btn active" content-id="home">
+        Home
+      </button>
+      <button class="tab-btn" content-id="services">
+        Services
+      </button>
+      <button class="tab-btn" content-id="contacts">
+        Contacts
+      </button>
+      <button class="tab-btn" content-id="location">
+        Location
+      </button>
+    </div>
+
+    <div class="tab-contents">
+      <div class="content" id="home">
+        <div class="infos">
+          <h1 class="content-title">
+            Home
+          </h1>
+          <p class="content-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, repellat! Id ab similique velit,
+            molestiae, aliquam illum officiis sit totam rem voluptas magnam, atque dicta magni perferendis recusandae
+            reiciendis necessitatibus!
+          </p>
+        </div>
       </div>
-    </article>
-  </section>
+
+      <div class="content" id="services">
+        <div class="infos">
+          <h1 class="content-title">
+            Services
+          </h1>
+          <p class="content-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, repellat! Id ab similique velit,
+            molestiae, aliquam illum officiis sit totam rem voluptas magnam, atque dicta magni perferendis recusandae
+            reiciendis necessitatibus!
+          </p>
+        </div>
+      </div>
+
+      <div class="content" id="contacts">
+        <div class="infos">
+          <h1 class="content-title">
+            Contacts
+          </h1>
+          <p class="content-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, repellat! Id ab similique velit,
+            molestiae, aliquam illum officiis sit totam rem voluptas magnam, atque dicta magni perferendis recusandae
+            reiciendis necessitatibus!
+          </p>
+        </div>
+      </div>
+
+      <div class="content" id="location">
+        <div class="infos">
+          <h1 class="content-title">
+            Location
+          </h1>
+          <p class="content-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, repellat! Id ab similique velit,
+            molestiae, aliquam illum officiis sit totam rem voluptas magnam, atque dicta magni perferendis recusandae
+            reiciendis necessitatibus!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="rodape">
     <div class="rodape">
