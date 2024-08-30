@@ -308,6 +308,32 @@ header {
 
   /* Aqui começa vesão web */
   @media screen and (min-width: 1025px) {
+
+    html {
+      font: 400 62.5% 'Inter', sans-serif;
+  }
+  .rodape-ft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.sociais-ft {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.senac-cop-ft {
+    display: flex;
+    gap: 1.6rem;
+}
+
+.texto-footer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
     .body-home {
       margin: 0;
       padding: 0;
