@@ -1,11 +1,10 @@
 /* Base do menu e rodapé */
 :root {
-  --primary-color: #21a3a3;
-  --second-color: #13c8b5;
-  --threeth-color: #6cf3d5;
-  --fourth-color: #7375a5;
-  --fifth-color: #2b364a;
-  --sixth-color: #deecdd;
+  --primary-color: #279ca9;
+    --second-color: #1d8b98;
+    --threeth-color: #147a87;
+    --fourth-color: #0a6875;
+    --fifth-color: #005764;
 }
 
 body {
