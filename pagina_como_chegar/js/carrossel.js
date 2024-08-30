@@ -1,5 +1,5 @@
 let currentIndex = 0;
-const intervalTime = 4000; // Intervalo de 3 segundos
+const intervalTime = 4000; // Intervalo de 4 segundos
 
 function moveSlide(step) {
     const slides = document.querySelectorAll('.carrossel-slide');

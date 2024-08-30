@@ -36,6 +36,7 @@ body {
     background-color: var(--fifth-color);
     margin: 0;
     padding: 0;
+    height: 100vh;
     /* display: flex;
     flex-direction: column;
     justify-content: center;
@@ -182,3 +183,5 @@ body {
     justify-content: center;
     padding: 1rem;
 }
+
+
