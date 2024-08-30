@@ -9,10 +9,10 @@
 
 :root {
     --primary-color: #279ca9;
-    --second-color: #1d8b98 ;
-    --threeth-color: #147a87 ;
-    --fourth-color: #0a6875 ;
-    --fifth-color: #005764 ;
+    --second-color: #1d8b98;
+    --threeth-color: #147a87;
+    --fourth-color: #0a6875;
+    --fifth-color: #005764;
 }
 
 * {
@@ -51,17 +51,23 @@ body {
 }
 
 
-.ch-titulo {
+.ch-header {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.ch-header h1 {
     font-size: 3.6rem;
     color: white;
     text-transform: uppercase;
-    
+    margin: 0;
 }
 
 
 .container {
     width: 80%;
-    padding: 2rem 0;
+    /* padding: 2rem 0; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -71,10 +77,9 @@ body {
 .card {
     width: 30rem;
     height: 20rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
-    /* z-index: 1; */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
     position: relative;
 }
 
@@ -91,7 +96,9 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
+    /* background-color: #279ca985; */
+    background-color: #2b364a71;
 }
 
 
@@ -110,22 +117,25 @@ body {
     background-color: var(--primary-color);
 }
 
-.btn-vmais {
-    margin-top: 3rem;
+.ch-btn-vmais {
+    padding: 4rem;
 }
 
-.btn-vmais a {
+.ch-btn-vmais a {
+    font-weight: bold;
     text-decoration: none;
-    color: var(--fifth-color);
-    font-size: 1.2rem;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
-    background-color: var(--threeth-color);
+    color: white;
+    font-size: 1.8rem;
+    background-color: #6cf3d5;
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 1rem;
+    text-shadow: 0.4rem 0.4rem 1rem #005764;
 }
 
 
 @media screen and (max-width: 800px) {
     .ch-main-container {
-        margin-top: 7rem;
+        margin-top: 6rem;
     }
 }
