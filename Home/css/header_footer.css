@@ -37,7 +37,6 @@ header {
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding-top: 10px;
     }
   
     .icon-menu {
@@ -57,7 +56,6 @@ header {
       letter-spacing: 5px;
       /*Tamaho da letra*/
       font-size: 20px;
-  
     }
   
     .nav-links-hdr {
@@ -65,15 +63,12 @@ header {
       display: flex;
       justify-content: center;
       width: 50%;
-  
     }
   
     .nav-links-hdr li {
       /*Sumindo com os pontos que ficavam nos itens*/
       list-style: none;
       margin: 0 10px; 
-  
-  
     }
   
     .nav-links-hdr a {
@@ -174,7 +169,7 @@ header {
       position: fixed;
       right: 0px;
       height: 92vh;
-      top: 5vh;
+      top: 4.1vh;
       /*Arrumando o menu*/
       background-color: var(--second-color);
       display: flex;
@@ -265,20 +260,21 @@ header {
       align-items: start;
       justify-content: center;
       padding-top: 50px;
-      padding-bottom: 30px;
+      padding-bottom: 20px;
     }
 
     .icones-hdr {
       display: flex;
       flex-direction: row;
       justify-content: start;
-      padding-left: 5px;
     }
 
     .idioma {
       display: flex;
+      justify-content: center;
+      align-items: center;
       flex-direction: row;
-      width: 100%;
+      width: 85%;
       padding-right: 10px;
       padding-left: 10px;
     }
@@ -361,7 +357,6 @@ header {
     }
 
     .img-link-ft {
-      width: 100px;
       align-items: center;
     }
 
