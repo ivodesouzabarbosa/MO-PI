@@ -161,9 +161,19 @@ main .botoes {
 
   }
 
-  /*.sessao_COP-30 {
-    background-color: #338433;
-    color: black;
+  .sessao_COP-30 {
+    color: var(--primary-color);
     text-align: center;
+  }
 
+  .Titulo_COP30 {
+    text-transform: uppercase;
+    font-size: 30px;
+  }
+
+  .texto_COP30 {
+    width: 100%;
+    margin: auto;
+    text-align: justify;
+    padding: 10px;
   }
