@@ -64,9 +64,8 @@ body {
     margin: 0;
 }
 
-
 .container {
-    width: 80%;
+    width: 60%;
     /* padding: 2rem 0; */
     display: flex;
     flex-wrap: wrap;
@@ -138,4 +137,48 @@ body {
     .ch-main-container {
         margin-top: 6rem;
     }
+}
+
+
+
+/* / Mobile / */
+@media(max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+}
+
+
+
+/* / Small tablets / */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        width: 90%;
+        
+    }
+}
+
+
+
+.rodape-ft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.sociais-ft {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.senac-cop-ft {
+    display: flex;
+    gap: 1.6rem;
+}
+
+.texto-footer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
 }

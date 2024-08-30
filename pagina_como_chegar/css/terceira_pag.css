@@ -19,10 +19,9 @@ a {
 
 .carrossel {
     position: relative;
-    width: 100%; /* Ocupa toda a largura da tela */
-    height: 70vh; /* Ocupa 70% da altura da tela */
-    overflow: hidden; /* Esconde o conteúdo que ultrapassa o carrossel */
-    /* opacity: 0.8; */
+    width: 100%; 
+    height: 70vh; 
+    overflow: hidden; 
 }
 
 .carrossel h1 {
@@ -33,7 +32,7 @@ a {
     color: #ffffff;
     background-color: #495455;
     font-size: 4rem;
-    z-index: 1; /* Garante que o título fique sobre as imagens */
+    z-index: 1;
     text-align: center;
     padding: 0 10px;
     border: 1px solid;
@@ -50,54 +49,33 @@ a {
 .carrossel-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    height: 100%; /* Garante que o wrapper ocupe toda a altura do carrossel */
+    height: 100%; 
 }
 
 .carrossel-slide {
     min-width: 100%;
-    height: 100%; /* Garante que cada slide ocupe toda a altura do carrossel */
+    height: 100%;
 }
 
 .carrossel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta a imagem para preencher o slide sem distorcer */
-}
-
-.btn-carrossel {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    z-index: 2; /* Garante que os botões fiquem sobre as imagens e o título */
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
+    object-fit: cover;
 }
 
 /* Responsividade para dispositivos móveis */
 @media screen and (max-width: 600px) {
     .carrossel {
-        height: 55vh; /* Ajusta a altura do carrossel em telas menores */
+        height: 55vh; 
     }
 
     .carrossel h1 {
-        font-size: 1.5rem; /* Reduz o tamanho da fonte para telas menores */
+        font-size: 1.5rem; 
         padding: 0 5px;
     }
 
     .btn-carrossel {
-        font-size: 16px; /* Reduz o tamanho da fonte dos botões para telas menores */
+        font-size: 16px; 
         padding: 8px;
     }
 }
@@ -112,6 +90,7 @@ a {
 #container {
     background-color: var(--threeth-color);
     width: 70%;
+    margin: auto;
     padding: 20px;
     margin-bottom: 3rem;
     border-radius: 8px;
@@ -174,6 +153,12 @@ a {
     text-align: center;
     font-size: 15px;
     line-height: 3rem;
+    animation: show-me 1s ease-in-out;
+}
+
+@keyframes show-me {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 .btn-rota{
@@ -236,30 +221,3 @@ a {
         font-size: 14px;
     }
 }
-
-
-
-/* .image img{
-    border-radius: 10px;
-}
-
-.about-me2 {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-}
-
-.letter-main2 {
-    background-color: #34baab;
-    padding: 2rem;
-    width: auto;
-    margin: 1rem;
-    text-align: center;
-}
-
-.image2 img {
-    height: 420px;
-    width: 650px;
-    margin: 16px;
-    border-radius: 5px;
-} */
