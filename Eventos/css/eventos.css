@@ -2,6 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 
+:root {
+  --primary-color: #279ca9;
+  --second-color: #1d8b98;
+  --threeth-color: #147a87;
+  --fourth-color: #0a6875;
+  --fifth-color: #005764;
+}
+
+
 /* coisas adicionadas hj 29.08 */
 .content-title{
     text-align: center;
@@ -51,12 +60,13 @@
     justify-content: center;
     gap: 50px;
     padding-left: 150px;
+    color: white; 
     
     
 }
 /* coisa do botão */
 .buttons {
-    background-color: #0c9ee2; /* Roxo */
+    background-color: var(--fourth-color); /* Roxo */
     border: none;
     color: white;
     padding: 12px 20px;
@@ -78,7 +88,7 @@
   /* coisas adicionadas hj 29.08 */
 
 body {
-    background-color: #22add8;
+    background-color: var(--fifth-color);
     display: block;
     align-items: center;
     justify-content: center;
@@ -115,11 +125,11 @@ box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0,1);
 }
 
 .tab-btn.active {
-    background-color: #92d5fc;
+    background-color:var(--primary-color);
 } 
 
 .tab-btn:hover {
-    background-color: #ceecfd;
+    background-color:var(--second-color);
 }
 
 .content {
@@ -130,7 +140,7 @@ box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0,1);
 .content.show {
     display: flex;
     gap: 14px;
-    background-color: #92d5fc;
+    background-color: var(--primary-color);
     border-radius: 0px 0px 8px 8px;
     padding: 16px ;
     padding-bottom: 16px;
@@ -173,6 +183,7 @@ img{
         text-align: center;
         padding: 12px;
         box-sizing: content-box;
+        
     }
 
     .infos {
@@ -202,13 +213,6 @@ img{
     box-sizing: border-box;
   }
 
-  :root {
-    --primary-color: #21a3a3;
-    --second-color: #13c8b5;
-    --threeth-color: #6cf3d5;
-    --fourth-color: #7375a5;
-    --fifth-color: #2b364a;
-}
 
   nav {
     display: flex;
