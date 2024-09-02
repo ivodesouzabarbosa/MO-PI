@@ -7,6 +7,10 @@
     --fifth-color: #005764;
 }
 
+html {
+  font: 400 62.5% 'inter', sans-serif;
+}
+
 body {
   margin: 0px;
   padding: 0px;
