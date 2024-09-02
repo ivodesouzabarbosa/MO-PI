@@ -155,6 +155,7 @@ main .botoes {
     }
 
     .card-home{
+      font-size: 1.5rem;
       display: flex;
       justify-self: center;
       align-items: center;
@@ -180,6 +181,7 @@ main .botoes {
   }
 
   .texto_COP30 {
+    font-size: 1.5rem;
     width: 100%;
     margin: auto;
     text-align: justify;
