@@ -44,7 +44,7 @@ body {
 }
 
 .ch-main-container {
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,7 +66,7 @@ body {
 }
 
 .container {
-    width: 60%;
+    width: 70%;
     /* padding: 2rem 0; */
     display: flex;
     flex-wrap: wrap;
