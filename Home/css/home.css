@@ -10,12 +10,11 @@ html {
   width: 100%; /* Ocupa toda a largura da tela */
   height: 70vh; /* Ocupa 70% da altura da tela */
   overflow: hidden; /* Esconde o conteúdo que ultrapassa o carrossel */
-  /* opacity: 0.8; */
 }
 
 .carrossel h1 {
   position: absolute;
-  top: 90%;
+  top: 85%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #ffffff;

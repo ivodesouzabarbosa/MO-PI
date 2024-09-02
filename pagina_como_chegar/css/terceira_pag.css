@@ -184,7 +184,7 @@ a {
     }
 
     .tab-buttons {
-        flex-direction: column;
+        flex-direction: row;
         gap: 4px;
     }
 
