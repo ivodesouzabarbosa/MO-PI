@@ -5,10 +5,15 @@
 /* coisas adicionadas hj 29.08 */
 .content-title{
     text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+
 }
 
 .content-description {
     text-align: center;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 * {
