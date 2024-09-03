@@ -134,7 +134,7 @@ box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0,1);
 
 .content {
     display: none;
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .content.show {
@@ -157,15 +157,23 @@ box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0,1);
     
 }
 
-img{
-  width: 100%;
-}
 /* ajustes gerais para dispositivos mÃ³veis */
 @media (max-width: 600px) {
     #container {
         width: 100%;
         padding: 10px;
     }
+
+.content.show{
+  
+
+    }
+
+
+.content-img{
+  width: 420px;
+}
+
 
     .tab-buttons {
         flex-direction: column;
@@ -202,6 +210,9 @@ img{
         font-size: 14px;
     }
 }
+
+
+
 
 /*+++++++++++++cabeçalho css++++++++++++++++++++++++++++++*/
 
