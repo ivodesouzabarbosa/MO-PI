@@ -169,7 +169,7 @@ box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0,1);
     .content-img{
       width: 400px;
       height: 300px;
-      margin-left: 10px;
+      margin: 0 auto;
     }
 
 
