@@ -172,7 +172,7 @@ header {
     .nav-links-hdr {
       position: fixed;
       right: 0px;
-      height: 92vh;
+      /* height: 92vh; */
       top: 4.1vh;
       /*Arrumando o menu*/
       background-color: var(--second-color);
@@ -180,7 +180,7 @@ header {
       flex-direction: column;
       align-items: center;
       width: 50%;
-      height: 100%;
+      /* height: 100%; */
       /*Ajeitando a transição parar abrir o menu*/
       transform: translateX(100%);
       transition: transform 0.3s ease-in;
