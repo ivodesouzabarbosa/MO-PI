@@ -91,11 +91,11 @@
 
 body {
     background-color: var(--fifth-color);
-    display: block;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin-right: 1px;
+    margin: 0 auto;
+    
 }
 
 #container {
@@ -106,7 +106,6 @@ margin: 0 auto;
 padding: 20px;
 border-radius: 8px;
 box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0,1);
-
 }
 
 .tab-buttons {
@@ -168,9 +167,9 @@ box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0,1);
     }
 
     .content-img{
-      width: 300px;
+      width: 400px;
       height: 300px;
-      margin-left: 60px;
+      margin-left: 10px;
     }
 
 
