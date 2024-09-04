@@ -109,7 +109,7 @@ a {
     width: 100%;
     border: none;
     color: #2b364a;
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 8px 8px 0 0;
     font-weight: 500;
     padding: 8px;
@@ -124,6 +124,13 @@ a {
 .tab-btn.active {
     background-color: var(--fourth-color);
     color: #fff;
+}
+
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-color); /* Cor do ícone */
 }
 
 /* .tab-btn:hover {
@@ -191,7 +198,7 @@ a {
     .tab-btn {
         font-size: 14px;
         padding: 10px;
-        border-radius: 4px;
+        /* border-radius: 4px; */
     }
 
     .content {
