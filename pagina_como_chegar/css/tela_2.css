@@ -143,9 +143,90 @@ body {
   padding: 1.5rem;
 }
 
-.card-content p {
+/* .card-content p {
   margin: 0;
   line-height: 1.6;
+} */
+
+#container {
+  background-color: var(--threeth-color);
+  /* width: 70%; */
+  margin: auto;
+  padding: 20px;
+  margin-bottom: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.tab-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: none;
+  color: #2b364a;
+  /* background-color: #fff; */
+  border-radius: 8px 8px 0 0;
+  font-weight: 500;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.tab-btn:hover {
+  color: var(--second-color);
+}
+
+.tab-btn.active {
+  background-color: var(--fourth-color);
+  color: #fff;
+}
+
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--primary-color); /* Cor do ícone */
+}
+
+/* .tab-btn:hover {
+  background-color: #a5b4fc;
+} */
+
+.content {
+  display: none;
+}
+
+.content.show {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  color: #fff;
+  background-color: var(--fourth-color);
+  border-radius: 0 0 8px 8px;
+  padding: 16px;
+}
+
+.content-title {
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.content-description {
+  text-align: center;
+  font-size: 15px;
+  line-height: 3rem;
+  animation: show-me 1s ease-in-out;
+}
+
+@keyframes show-me {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 .card-btn {
