@@ -10,7 +10,9 @@ body{
     margin: 0;
     padding: 0;
     background-color: var(--second-color);
+    height: 100vh;
 }
+
 .cbh{
     background-color: var(--fourth-color);
     display: flex;
@@ -18,4 +20,31 @@ body{
     align-items: center;
     margin: auto;
     padding: 15px;
+}
+
+.prh{
+    display: flex;
+    justify-content: center;
+}
+
+.mph #categ-home{
+    width: 70%;  
+    margin: 10px; 
+}
+.mph .mapa-home{
+    margin-top: 15px;
+    width: 80%;
+    border: none;
+    border-radius: 8px;
+}
+/* versão mobile */
+@media screen and (max-width:480px) {
+    .cbh{
+        background-color: var(--fourth-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto; 
+    }
+    
 }
