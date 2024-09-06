@@ -6,9 +6,12 @@
       --fifth-color: #005764;
   }
 
-body{
+  * {
     margin: 0;
     padding: 0;
+  }
+
+body{
     background-color: var(--second-color);
     height: 100vh;
 }
@@ -28,23 +31,101 @@ body{
 }
 
 .mph #categ-home{
-    width: 70%;  
-    margin: 10px; 
+    width: 50%;  
+    margin: 10px auto; 
 }
-.mph .mapa-home{
+/* .mph .mapa-home{
     margin-top: 15px;
     width: 80%;
     border: none;
     border-radius: 8px;
-}
+} */
 /* versão mobile */
 @media screen and (max-width:480px) {
-    .cbh{
-        background-color: var(--fourth-color);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: auto; 
+    * {
+        margin: 0;
+        padding: 0;
     }
-    
+
+    body{
+        background-color: var(--second-color);
+        height: 100vh;
+        width: 100%;
+    }
+    /* cebeçalho */
+    .cabecalho-home{
+        background-color: var(--fourth-color);
+        position: fixed;
+        width: 94%;
+    }
+
+    /* main home */
+    .principal-home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 46.5vh;
+    }
+
+    .carrossel-home {
+        width: 100%;
+        margin-top: 12vh;
+    }
+
+    .container-carrossel {
+        text-align: center;
+    }
+
+    .img-carrossel {
+        width: 90%;
+        border-radius: 10px;
+    }
+
+    .mapa-home {
+        text-align: center;
+        width: 100%;
+    }
+    .mapa-home #categ-home{
+        border: none;
+        border-radius: 5px;
+    }
+
+    .mapa-iframe{
+        margin-top: 15px;
+        width: 90%;
+        border: none;
+        border-radius: 5px;
+    }
+
+    /* footer */
+    .footer-menu-home {
+        width: 100%;
+        position: fixed;
+        margin-top: 42.5vh;
+    }
+
+    .nav-footer-home {
+        background-color: #ffffff;
+        padding: 1em;
+    }
+
+    .lista-item-home {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .list-footer {
+        list-style: none;
+    }
+
+    .link-footer {
+        text-decoration: none;
+        display: flex;
+    }
+
+    .item-link-footer {
+        font-size: 1.5em;
+    }
+
 }

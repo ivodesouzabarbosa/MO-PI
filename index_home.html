@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página inicial</title>
     <link rel="stylesheet" href="/Home/css/nova_home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header class="cabecalho-home cbh">
@@ -20,7 +27,13 @@
       </section>
 
       <section class="carrossel-home csh">
-        
+        <div class="container-carrossel">
+          <img
+            class="img-carrossel"
+            src="Home/img/forte_do_presepio_mobile.png"
+            alt=""
+          />
+        </div>
       </section>
 
       <section class="mapa-home mph">
@@ -35,23 +48,50 @@
           <option value="igreja">Igrejas</option>
         </select>
 
-        <iframe class="mapa-home"
+        <iframe
+          class="mapa-iframe"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.2718003171299!2d-48.49304892142321!3d-1.4483715450008512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48e96cf971539%3A0x54f61c447ef977a2!2sR.%20Aristides%20Lobo%2C%201045%20-%20Campina%2C%20Bel%C3%A9m%20-%20PA%2C%2066053-020!5e0!3m2!1spt-BR!2sbr!4v1725643359973!5m2!1spt-BR!2sbr"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-
       </section>
-      
     </main>
 
     <footer class="footer-menu-home fmh">
       <nav class="nav-footer-home nfh">
         <ul class="lista-item-home lih">
-          <li>Home</li>
-          <li>Eventos</li>
-          <li>Como chegar</li>
-          <li>Configurações</li>
+          <li class="list-footer">
+            <a class="link-footer" href=""
+              ><i
+                class="item-link-footer fa-solid fa-house"
+                style="color: #0a6875"
+              ></i
+            ></a>
+          </li>
+          <li class="list-footer">
+            <a class="link-footer" href=""
+              ><i
+                class="item-link-footer fa-regular fa-calendar-days"
+                style="color: #0a6875"
+              ></i
+            ></a>
+          </li>
+          <li class="list-footer">
+            <a class="link-footer" href=""
+              ><i
+                class="item-link-footer fa-solid fa-location-dot"
+                style="color: #0a6875"
+              ></i
+            ></a>
+          </li>
+          <li class="list-footer">
+            <a class="link-footer" href=""
+              ><i
+                class="item-link-footer fa-solid fa-gear"
+                style="color: #0a6875"
+              ></i
+            ></a>
+          </li>
         </ul>
       </nav>
     </footer>
