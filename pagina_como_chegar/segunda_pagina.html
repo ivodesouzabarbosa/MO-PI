@@ -2,15 +2,15 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="shortcut icon" href="" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="../Home/css/home.css"> -->
-    <link rel="stylesheet" href="css/tela_2.css">
-    <link rel="stylesheet" href="../Home/css/header_footer.css">
-    <title>Detalhes</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <!-- <link rel="stylesheet" href="../Home/css/home.css"> -->
+  <link rel="stylesheet" href="css/tela_2.css">
+  <link rel="stylesheet" href="../Home/css/header_footer.css">
+  <title>Detalhes</title>
 </head>
 
 <body>
@@ -20,22 +20,30 @@
         <img src="../Home/img/senac_logo_branco_r.png" alt="logo_senac">
       </div>
       <div class="logo">
-        <a href="../index.html"><h4 class="img-logo">Logo</h4></a>
+        <a href="../index.html">
+          <h4 class="img-logo">Logo</h4>
+        </a>
       </div>
 
       <ul class="nav-links-hdr">
-        <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/o_que_fazer.png" alt=""> <a class="item-link" href="#">O que fazer</a></li>
-        <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/eventos.png" alt=""> <a class="item-link" href="../Eventos/evento_tela_inicial.html">Eventos</a></li>
-        <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/como_chegar.png" alt=""><a class="item-link" href="como_chegar.html">Como chegar</a></li>
-        <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/sobre_belem.png" alt=""> <a class="item-link" href="#">Sobre Belém</a></li>
-        <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/fale_concosco.png" alt=""> <a class="item-link" href="#">Fale Conosco</a></li>
-        <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/configuracoes.png" alt=""> <a class="item-link" href="#">Configurações</a></li>
+        <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/o_que_fazer.png" alt=""> <a class="item-link"
+            href="#">O que fazer</a></li>
+        <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/eventos.png" alt=""> <a class="item-link"
+            href="../Eventos/evento_tela_inicial.html">Eventos</a></li>
+        <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/como_chegar.png" alt=""><a class="item-link"
+            href="como_chegar.html">Como chegar</a></li>
+        <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/sobre_belem.png" alt=""> <a class="item-link"
+            href="#">Sobre Belém</a></li>
+        <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/fale_concosco.png" alt=""> <a class="item-link"
+            href="#">Fale Conosco</a></li>
+        <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/configuracoes.png" alt=""> <a class="item-link"
+            href="#">Configurações</a></li>
         <li class="icones-hdr idioma">
           <img class="bandeira-hdr" onclick="" src="../Home/icons/brazil2.ico" alt="">
           <img class="bandeira-hdr" onclick="" src="../Home/icons/usa3.ico" alt="">
           <img class="bandeira-hdr" onclick="" src="../Home/icons/france1.ico" alt="">
         </li>
-        
+
         <li class="icones-hdr rede-social-hdr logo-senac-header">
           <img class="redes-hdr facebook" src="../Home/icons/facebook.png" alt="facebook">
           <img class="redes-hdr flirckr" src="../Home/icons/flickr.png" alt="flickr">
@@ -53,192 +61,203 @@
 
   <main class="ch-main-container">
     <div class="title-details">
-        <h1>Parques</h1>
+      <h1>Parques</h1>
     </div>
 
     <section class="container">
-        <div class="column">
-            <article class="card">
-                <div class="image-container">
-                    <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/GSMa0953.jpg" alt="Imagem">
-                    <div class="card-title">
-                    <span>Bosque Rodrigues Alves</span>
-                    <i class="material-icons expand-icon">expand_more</i>
-                    </div>
-                </div>
-                <div class="card-content">
-                  <div id="container">
-                    <div class="tab-buttons">
-                      <button class="tab-btn active" content-id="Descrição">
-                        <svg class="icon">
-                          <use xlink:href="./assets/icons/sprite.svg#icon-description"></use>
-                        </svg>
-                      </button>
-                      <button class="tab-btn" content-id="Endereço">
-                        <svg class="icon">
-                          <use xlink:href="./assets/icons/sprite.svg#icon-localizaca"></use>
-                        </svg>
-                      </button>
-                      <button class="tab-btn" content-id="horários">
-                        <svg class="icon">
-                          <use xlink:href="./assets/icons/sprite.svg#icon-calendar"></use>
-                        </svg>
-                      </button>
-                      <button class="tab-btn" content-id="Valores">
-                        <svg class="icon">
-                          <use xlink:href="./assets/icons/sprite.svg#icon-payment"></use>
-                        </svg>
-                      </button>
-                    </div>
-              
-                    <div class="tab-contents">
-                      <div class="content" id="Descrição">
-                        <div class="infos">
-                          <h1 class="content-title">Descrição</h1>
-                          <p class="content-description">
-                            Situado na Avenida Almirante Barroso, o Bosque é um dos principais
-                            cartõespostais da Cidade das Mangueiras. Com uma área total de 150
-                            mil metros quadrados, é um pedaço da floresta amazônica
-                            literalmente ‘preservado’ no coração da cidade.
-                          </p>
-                          <div class="card-btn">
-                            <a href="./terceira_pagina.html">Mais detalhes</a>
-                        </div>
-                        </div>
-                      </div>
-              
-                      <div class="content" id="Endereço">
-                        <div class="infos">
-                          <h1 class="content-title">Endereço</h1>
-                          <p class="content-description">
-                            Av. Almirante Barroso, 2305 – Marco.
-                          </p>
-                        </div>
-                      </div>
-              
-                      <div class="content" id="horários">
-                        <div class="infos">
-                          <h1 class="content-title">Horários</h1>
-                          <p class="content-description">
-                            TER-DOM 8h – 17h / SEG Fechado.
-                          </p>
-                        </div>
-                      </div>
-              
-                      <div class="content" id="Valores">
-                        <div class="infos">
-                          <h1 class="content-title">Valores</h1>
-                          <p class="content-description">
-                            Paga R$ 7,00 inteira e R$ 3,50 meia entrada/ sem monitoria / 3h.
-              
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+      <div class="column">
+        <article class="card">
+          <div class="image-container">
+            <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/GSMa0953.jpg" alt="Imagem">
+            <div class="card-title">
+              <span>Bosque Rodrigues Alves</span>
+              <i class="material-icons expand-icon">expand_more</i>
+            </div>
+          </div>
+          <div class="card-content">
+            <!-- <div id="container"> -->
+            <div class="tab-buttons">
+              <button class="tab-btn active" content-id="Descrição">
+                <svg class="icon">
+                  <use xlink:href="./assets/icons/sprite.svg#icon-description"></use>
+                </svg>
+              </button>
+              <button class="tab-btn" content-id="Endereço">
+                <svg class="icon">
+                  <use xlink:href="./assets/icons/sprite.svg#icon-localizaca"></use>
+                </svg>
+              </button>
+              <button class="tab-btn" content-id="horários">
+                <svg class="icon">
+                  <use xlink:href="./assets/icons/sprite.svg#icon-calendar"></use>
+                </svg>
+              </button>
+              <button class="tab-btn" content-id="Valores">
+                <svg class="icon">
+                  <use xlink:href="./assets/icons/sprite.svg#icon-payment"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="tab-contents">
+              <div class="content" id="Descrição">
+                <div class="infos">
+                  <h1 class="content-title">Descrição</h1>
+                  <p class="content-description">
+                    Situado na Avenida Almirante Barroso, o Bosque é um dos principais
+                    cartõespostais da Cidade das Mangueiras. Com uma área total de 150
+                    mil metros quadrados, é um pedaço da floresta amazônica
+                    literalmente ‘preservado’ no coração da cidade.
+                  </p>
+                  <div class="card-btn">
+                    <a href="./terceira_pagina.html">Mais detalhes</a>
                   </div>
                 </div>
-                <div class="card-btn">
-                    <a href="./terceira_pagina.html">Mais detalhes</a>
+              </div>
+
+              <div class="content" id="Endereço">
+                <div class="infos">
+                  <h1 class="content-title">Endereço</h1>
+                  <p class="content-description">
+                    Av. Almirante Barroso, 2305 – Marco.
+                  </p>
                 </div>
-            </article>
- 
-           <article class="card">
-               <div class="image-container">
-                   <img src="https://www.oliberal.com/image/contentid/policy:1.715685:1695149189/museu.png?f=2x1&$p$f=ccdd27c&w=1500&$w=f075b93" alt="Imagem">
-                   <div class="card-title">
-                    <span>Parque Zoobotânico Emílio Goeldi</span>
-                    <i class="material-icons expand-icon">expand_more</i>
-                    </div>
-               </div>
-               <div class="card-content">
-                   <p>É o
-                    Primeiro parque zoobotânico do Brasil, a mais antiga instituição científica da Amazônia e, o segundo museu
-                    de história natural brasileiro. Possui acervos de conhecimentos nas áreas de ciências naturais e humanas
-                    relacionados à Amazônia.</p>
-               </div>
-               <div class="card-btn">
-                <a href="#">Mais detalhes</a>
               </div>
-           </article>
-        </div>
+
+              <div class="content" id="horários">
+                <div class="infos">
+                  <h1 class="content-title">Horários</h1>
+                  <p class="content-description">
+                    TER-DOM 8h – 17h / SEG Fechado.
+                  </p>
+                </div>
+              </div>
+
+              <div class="content" id="Valores">
+                <div class="infos">
+                  <h1 class="content-title">Valores</h1>
+                  <p class="content-description">
+                    Paga R$ 7,00 inteira e R$ 3,50 meia entrada/ sem monitoria / 3h.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+          <div class="card-btn">
+            <a href="./terceira_pagina.html">Como chegar</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="image-container">
+            <img
+              src="https://www.oliberal.com/image/contentid/policy:1.715685:1695149189/museu.png?f=2x1&$p$f=ccdd27c&w=1500&$w=f075b93"
+              alt="Imagem">
+            <div class="card-title">
+              <span>Parque Zoobotânico Emílio Goeldi</span>
+              <i class="material-icons expand-icon">expand_more</i>
+            </div>
+          </div>
+          <div class="card-content">
+            <p>É o
+              Primeiro parque zoobotânico do Brasil, a mais antiga instituição científica da Amazônia e, o segundo museu
+              de história natural brasileiro. Possui acervos de conhecimentos nas áreas de ciências naturais e humanas
+              relacionados à Amazônia.</p>
+          </div>
+          <div class="card-btn">
+            <a href="#">Mais detalhes</a>
+          </div>
+        </article>
+      </div>
 
 
-        <div class="column">
-          <article class="card">
-              <div class="image-container">
-                    <img src="https://lh5.googleusercontent.com/p/AF1QipNBFdc6VYli3dxYnEIvCTQv2iwCrjnEIBAS7vYz=w540-h312-n-k-no" alt="Imagem">
-                    <div class="card-title">
-                    <span>Cemitério de Nossa Senhora da Soledade</span>
-                    <i class="material-icons expand-icon">expand_more</i>
-                    </div>
-              </div>
-              <div class="card-content">
-                  <p>Espaço público cultural (cemitério já desativado), servindo à
-                    contemplação do patrimônio arquitetônico e de resgate histórico como museu a céu aberto.</p>
-              </div>
-              <div class="card-btn">
-                <a href="#">Mais detalhes</a>
-              </div>
-          </article>
+      <div class="column">
+        <article class="card">
+          <div class="image-container">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipNBFdc6VYli3dxYnEIvCTQv2iwCrjnEIBAS7vYz=w540-h312-n-k-no"
+              alt="Imagem">
+            <div class="card-title">
+              <span>Cemitério de Nossa Senhora da Soledade</span>
+              <i class="material-icons expand-icon">expand_more</i>
+            </div>
+          </div>
+          <div class="card-content">
+            <p>Espaço público cultural (cemitério já desativado), servindo à
+              contemplação do patrimônio arquitetônico e de resgate histórico como museu a céu aberto.</p>
+          </div>
+          <div class="card-btn">
+            <a href="#">Mais detalhes</a>
+          </div>
+        </article>
 
-          <article class="card">
-              <div class="image-container">
-                    <img src="https://www.agenciapara.com.br/midias/2020/grandes/up_ag_20996_e88c9883-699f-6cab-e1c2-679dcfbdb9e0.jpg" alt="Imagem">
-                    <div class="card-title">
-                    <span>Parque da Residência</span>
-                    <i class="material-icons expand-icon">expand_more</i>
-                    </div>
-              </div>
-              <div class="card-content">
-                  <p>Antiga residência oficial dos governadores do Pará, abriga um complexo cultural,
-                    turístico e de lazer que inclui um restaurante envidraçado, pavilhão, orquidário, anfiteatro externo, vagão
-                    (da antiga estrada de ferro Belém – Bragança) e a Estação Gasômetro (antiga estrutura de ferro da
-                    Companhia de Gás do Pará).</p>
-              </div>
-              <div class="card-btn">
-                <a href="#">Mais detalhes</a>
-              </div>
-          </article>
-        </div>
+        <article class="card">
+          <div class="image-container">
+            <img
+              src="https://www.agenciapara.com.br/midias/2020/grandes/up_ag_20996_e88c9883-699f-6cab-e1c2-679dcfbdb9e0.jpg"
+              alt="Imagem">
+            <div class="card-title">
+              <span>Parque da Residência</span>
+              <i class="material-icons expand-icon">expand_more</i>
+            </div>
+          </div>
+          <div class="card-content">
+            <p>Antiga residência oficial dos governadores do Pará, abriga um complexo cultural,
+              turístico e de lazer que inclui um restaurante envidraçado, pavilhão, orquidário, anfiteatro externo,
+              vagão
+              (da antiga estrada de ferro Belém – Bragança) e a Estação Gasômetro (antiga estrutura de ferro da
+              Companhia de Gás do Pará).</p>
+          </div>
+          <div class="card-btn">
+            <a href="#">Mais detalhes</a>
+          </div>
+        </article>
+      </div>
 
-        
-        <div class="column">
-          <article class="card">
-              <div class="image-container">
-                    <img src="https://www.agenciapara.com.br/midias/2021/grandes/8826_b6865e4b-3c36-8c1f-d598-0410fcb99559.jpg" alt="Imagem">
-                    <div class="card-title">
-                    <span>Mangal das Garças</span>
-                    <i class="material-icons expand-icon">expand_more</i>
-                    </div>
-              </div>
-              <div class="card-content">
-                  <p>O Mangal das Garças, inaugurado em 12 de janeiro de 2005, está localizado às
-                    margens do rio Guamá, em pleno centro histórico de Belém do Pará, no entorno do Arsenal da Marinha.</p>
-              </div>
-              <div class="card-btn">
-                <a href="#">Mais detalhes</a>
-              </div>
-          </article>
 
-          <article class="card">
-              <div class="image-container">
-                    <img src="https://agenciapara.com.br/midias/2021/grandes/8643_1c84de7a-4c78-ef8e-1167-aafc770a3d3d.jpg" alt="Imagem">
-                    <div class="card-title">
-                    <span>Parque Estadual do Utinga</span>
-                    <i class="material-icons expand-icon">expand_more</i>
-                    </div>
-              </div>
-              <div class="card-content">
-                  <p>O Parque é uma Unidade de Conservação Estadual criada
-                    com o objetivo de preservar ecossistemas naturais de grande relevância ecológica e beleza cênica, estimular
-                    a realização de pesquisas científicas e, além disso, incentivar o desenvolvimento de atividades de educação
-                    ambiental, incluindo o turismo ecológico. Trilhas, lago, esportes aquáticos, mirante e Centro de Visitantes.</p>
-              </div>
-              <div class="card-btn">
-                <a href="#">Mais detalhes</a>
-              </div>
-          </article>
-        </div>
+      <div class="column">
+        <article class="card">
+          <div class="image-container">
+            <img src="https://www.agenciapara.com.br/midias/2021/grandes/8826_b6865e4b-3c36-8c1f-d598-0410fcb99559.jpg"
+              alt="Imagem">
+            <div class="card-title">
+              <span>Mangal das Garças</span>
+              <i class="material-icons expand-icon">expand_more</i>
+            </div>
+          </div>
+          <div class="card-content">
+            <p>O Mangal das Garças, inaugurado em 12 de janeiro de 2005, está localizado às
+              margens do rio Guamá, em pleno centro histórico de Belém do Pará, no entorno do Arsenal da Marinha.</p>
+          </div>
+          <div class="card-btn">
+            <a href="#">Mais detalhes</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="image-container">
+            <img src="https://agenciapara.com.br/midias/2021/grandes/8643_1c84de7a-4c78-ef8e-1167-aafc770a3d3d.jpg"
+              alt="Imagem">
+            <div class="card-title">
+              <span>Parque Estadual do Utinga</span>
+              <i class="material-icons expand-icon">expand_more</i>
+            </div>
+          </div>
+          <div class="card-content">
+            <p>O Parque é uma Unidade de Conservação Estadual criada
+              com o objetivo de preservar ecossistemas naturais de grande relevância ecológica e beleza cênica,
+              estimular
+              a realização de pesquisas científicas e, além disso, incentivar o desenvolvimento de atividades de
+              educação
+              ambiental, incluindo o turismo ecológico. Trilhas, lago, esportes aquáticos, mirante e Centro de
+              Visitantes.</p>
+          </div>
+          <div class="card-btn">
+            <a href="#">Mais detalhes</a>
+          </div>
+        </article>
+      </div>
     </section>
 
     <div class="btn-vmais">
@@ -247,41 +266,42 @@
   </main>
 
 
-    <footer>
-      <div class="rodape-ft">
-        <div class="sociais-ft">
-          <a class="img-link-ft" href="https://www.facebook.com/senacpara/" target="_blank"><img class="social-logo-ft"
-              src="../Home/img/facebook.png" alt=""></a>
-          <a class="img-link-ft" href="https://www.instagram.com/senac_pa/" target="_blank"><img class="social-logo-ft"
-              src="../Home/img/instagram.png" alt=""></a>
-          <a class="img-link-ft" href="https://www.flickr.com/photos/145995513@N07/albums/" target="_blank"><img
-              class="social-logo-ft" src="../Home/img/flickr.png" alt=""></a>
-        </div>
-        
-        <div class="senac-cop-ft"> 
-          <!-- adicionar as duas logos cop e SENAC -->
-          <a class="img-link-ft" href="https://www.pa.senac.br/" target="_blank">
-            <img class="logo-cop-senac-ft senac-ft" src="../Home/img/senac_logo_r.png" alt="Senac Pará">
-          </a>
-          <!-- adicionar as duas logos cop e SENAC -->
-          <a class="img-link-ft"
-            href="https://www.gov.br/planalto/pt-br/agenda-internacional/missoes-internacionais/cop28/cop-30-no-brasil"
-            target="_blank">
-            <img class="logo-cop-senac-ft cop-ft" src="../Home/img/logo-cop30-r.png" alt="COP30">
-          </a>
-        </div>
+  <footer>
+    <div class="rodape-ft">
+      <div class="sociais-ft">
+        <a class="img-link-ft" href="https://www.facebook.com/senacpara/" target="_blank"><img class="social-logo-ft"
+            src="../Home/img/facebook.png" alt=""></a>
+        <a class="img-link-ft" href="https://www.instagram.com/senac_pa/" target="_blank"><img class="social-logo-ft"
+            src="../Home/img/instagram.png" alt=""></a>
+        <a class="img-link-ft" href="https://www.flickr.com/photos/145995513@N07/albums/" target="_blank"><img
+            class="social-logo-ft" src="../Home/img/flickr.png" alt=""></a>
       </div>
-    
-      <div class="texto-footer">
-        <span class="site-senac-ft">Conheça o <a class="link-senac-ft" href="https://www.pa.senac.br/" target="_blank">SENAC</a></span>
-        <span class="direitos-ft">Belém, Pará, COP30 &copy;2025</span>
-      </div>
-    
-    </footer>
 
-    <script src="./js/sanfona.js"></script>
-    <script src="../Home/js/home.js"></script>
-    <script src="./js/alterna-conteudo.js"></script>
+      <div class="senac-cop-ft">
+        <!-- adicionar as duas logos cop e SENAC -->
+        <a class="img-link-ft" href="https://www.pa.senac.br/" target="_blank">
+          <img class="logo-cop-senac-ft senac-ft" src="../Home/img/senac_logo_r.png" alt="Senac Pará">
+        </a>
+        <!-- adicionar as duas logos cop e SENAC -->
+        <a class="img-link-ft"
+          href="https://www.gov.br/planalto/pt-br/agenda-internacional/missoes-internacionais/cop28/cop-30-no-brasil"
+          target="_blank">
+          <img class="logo-cop-senac-ft cop-ft" src="../Home/img/logo-cop30-r.png" alt="COP30">
+        </a>
+      </div>
+    </div>
+
+    <div class="texto-footer">
+      <span class="site-senac-ft">Conheça o <a class="link-senac-ft" href="https://www.pa.senac.br/"
+          target="_blank">SENAC</a></span>
+      <span class="direitos-ft">Belém, Pará, COP30 &copy;2025</span>
+    </div>
+
+  </footer>
+
+  <script src="./js/sanfona.js"></script>
+  <script src="../Home/js/home.js"></script>
+  <script src="./js/alterna-conteudo.js"></script>
 </body>
 
 </html>
