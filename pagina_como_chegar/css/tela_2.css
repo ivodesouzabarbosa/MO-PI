@@ -137,9 +137,10 @@ body {
 }
 
 .card.expanded .card-content {
+  background-color: var(--threeth-color);
   max-height: 1000px;
   opacity: 1;
-  /* padding: 1.5rem; */
+  padding: 1rem;
 }
 
 /* .card-content p {
@@ -235,7 +236,7 @@ body {
 }
 
 .card-btn {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -243,7 +244,7 @@ body {
 }
 
 .btn-rota {
-  margin-bottom: 1rem;
+  margin: 1rem;
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease;
