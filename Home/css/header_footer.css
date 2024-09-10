@@ -1,4 +1,3 @@
-/* Base do menu e rodapé */
 :root {
   --primary-color: #279ca9;
     --second-color: #1d8b98;
@@ -7,399 +6,126 @@
     --fifth-color: #005764;
 }
 
-html {
-  font: 400 62.5% 'inter', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: "Roboto";
-}
 
 header {
-  width: 100%;
-  margin: auto;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  background-color: #0a6875;
+  padding: 15px;
 }
 
-.menu-header {
-    display: flex;
-    /*Jogar os itens para o canto da página*/
-    justify-content: space-around;
-    align-items:center;
-    background-color: var(--second-color);
-    font-family: sans-serif;
-    width: 100%; 
-    }
-  
-    .icones-hdr {
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  color: white;
+}
+
+footer nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+footer nav ul li a:hover {
+  /* background-color: #006666; */
+  border-radius: 5px;
+}
+
+/* Media Queries */
+@media (min-width: 992px) and (max-width: 1199px) {
+ 
+}
+/* Tablets pequenos */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  /* footer */
+  .footer-menu-home {
+      width: 100%;
+      position: fixed;
+      margin-top: 47.4vh;
+      background-color: azure;
+  }
+
+  .nav-footer-home {
+      background-color: #ffffff;
+      padding: 1em;
+  }
+
+  .lista-item-home {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .icon-menu {
-      width: 20px;
-    }
-  
-    .bandeira-hdr {
-      width: 20%;
-    }
-  
-    .logo {
-      /*Mudando a cor da fonte do nome*/
-      color: white;
-      /*Deixando o texto formatado*/
-      text-transform: uppercase;
-      /*Mudando o espaçamento das letras*/
-      letter-spacing: 5px;
-      /*Tamaho da letra*/
-      font-size: 20px;
-    }
-  
-    .nav-links-hdr {
-      /*Ajustando o tamanho e posição dos itens*/
-      display: flex;
-      justify-content: center;
-      width: 50%;
-    }
-  
-    .nav-links-hdr li {
-      /*Sumindo com os pontos que ficavam nos itens*/
+      justify-content: space-around;
+  }
+
+  .list-footer {
       list-style: none;
-      margin: 0 10px; 
-    }
-  
-    .nav-links-hdr a {
-      /*Mudando a cor dos itens*/
-      color: white;
-      /*Mudando o espaçamento das letras dos itens*/
+  }
+
+  .link-footer {
       text-decoration: none;
-      letter-spacing: 3px;
-      font-weight: bold;
-      font-size: 14px;
-    }
-  
-    .burger {
-      /*Não deixando o menu hambuguer visivel */
-      display: none;
-      /*aparecendo a maozinha quando clica no menu hambuguer*/
-      cursor: pointer;
-    }
-  
-   .burger .linhas-menu {
-      /*Ajeitando o menu Hambuguer*/
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 5px;
-      transition: all 0.3s ease;
-    }
-  footer{
-  /* display: none; */
-  background-color: var(--primary-color);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: medium;
-  padding-top: 10px;
-  color: #ffffff;
-  padding-top: 20px;  /* nao esquecer  de modificar o padding para 10px, pois sera feito um teste no celular */
-  }
-  
-  .sociais {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-      }
-      
-  .img-link {
-        display: flex;
-        justify-content: center;
-      }
-      
-  .social-logo {
-        width: 40%;
-      }
-  
-  .senac-cop {
-        display: flex;
-        justify-content: center;
-        gap: 70px;
-        margin-bottom: 30px;
-      }
-  
-  .logo-cop-senac {
-        width: 70%;
-      }
-  
-  .senac {
-        width: 100%;
-        margin-left: 30px;
-      }
-
-  .direitos{
-        justify-content: center;
-        align-items: center;
-        display: flex;
-      }
-
-  .site-senac{
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        margin-bottom: 20px;
-      }
-  
-  .link-senac {
-        margin-left: 3px;
-        color: #ffffff;
-        text-decoration: underline;
-      }  
-/* Responsividade para mobile do footer e header */
-
- /*Ajustando a altura minima*/
- @media screen and (max-width:768px) {
-    .body-home {
-      overflow-x: hidden;
-    }
-
-    /*ajustando os itens para se adequar a altura min.*/
-    .nav-links-hdr {
-      position: fixed;
-      right: 0px;
-      /* height: 92vh; */
-      top: 4.1vh;
-      /*Arrumando o menu*/
-      background-color: var(--second-color);
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 50%;
-      /* height: 100%; */
-      /*Ajeitando a transição parar abrir o menu*/
-      transform: translateX(100%);
-      transition: transform 0.3s ease-in;
-    }
-
-    .nav-links-hdr li {
-      opacity: 0;
-      margin: 30px 0; 
-      justify-content: space-between;
-    }
-
-    .burger {
-      /*para aparecer o menu quando a tela tiver pequena*/
-      display: block;
-    }
   }
 
-  /*Quando se clica no menu , consegue abrir os itens*/
-  .nav-active {
-    transform: translateX(0%);
+  .item-link-footer {
+      font-size: 1.5em;
   }
 
-  /*Animações quando se clica no menu*/
-  @keyframes navLinkFade {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
+}
 
-    to {
-      opacity: 1;
-      transform: translateX(0px);
-    }
+@media (min-width: 481px) and (max-width: 767px) {
+
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+/* header */
+  header {
+    width: 100%;
   }
 
-  /*Transformando o menu em X*/
-  .toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .toggle .line2 {
-    opacity: 0;
-
-  }
-
-  .toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .nav-links-hdr.nav-active li {
-      opacity: 1;
-    }
-  }
-
-  /*Ajustando a altura*/
-  @media screen and (max-width:1024px) {
-    .nav-links-hdr {
-      width: 50%;
-    }
-  }
-
-  @media screen and (max-width: 600px) { /*Aqui começa a versão mobile 600px */
-    .body-home {
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      position: fixed;
-    }
-
-    .menu-header {
-      height: 55px;
-    }
-
-    .nav-links-hdr {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      justify-content: center;
-      padding-top: 50px;
-      padding-bottom: 20px;
-    }
-
-    .icones-hdr {
-      display: flex;
-      flex-direction: row;
-      justify-content: start;
-    }
-
-    .idioma {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row;
-      width: 85%;
-      padding-right: 10px;
-      padding-left: 10px;
-    }
-
-    .bandeira-hdr {
-      border-radius: 50%;
-      width: 17%;
-    }
-
-    .rede-social-hdr {
-      padding-top: 230px;
-      padding-right: 10px;
-      padding-left: 23px;
-    }
-
-    .redes-hdr{
+  /* footer */
+  .footer-menu-home {
       width: 100%;
-      padding: 15px;
-    }
-
-    .icon-menu {
-      width: 20px;
-      margin-right: 10px;
-    }
-
-    footer {
-      display: none;
-      background-color: var(--primary-color);
-    }
+      position: fixed;
+      margin-top: 47.4vh;
+      background-color: azure;
   }
 
-  /* Aqui começa vesão web */
-  @media screen and (min-width: 1025px) {
-
-    html {
-      font: 400 62.5% 'Inter', sans-serif;
+  .nav-footer-home {
+      background-color: #ffffff;
+      padding: 1em;
   }
-  .rodape-ft {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.6rem;
-}
 
-.sociais-ft {
-    display: flex;
-    gap: 1.2rem;
-}
-
-.senac-cop-ft {
-    display: flex;
-    gap: 1.6rem;
-}
-
-.texto-footer {
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-}
-    .body-home {
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      position: relative;
-    }
-
-    .menu-header {
-      width: 100%;
-      justify-content: space-between;
-      padding: 10px;
-    }
-
-    /* Aqui começa a editar a logo e icones no header */
-    .logo-senac-header {
-      display: none;
-    }
-
-    .logo {
-      margin-left: 20px;
-    }
-
-    .nav-links-hdr {
-      margin: 0 10px;
-      width: 70%;
-    }
-
-    .icones-hdr .item-link {
-      font-size:small;
-    }
-
-    .icones-hdr .icon-menu {
-      width: 30px;
-    }
-
-    .idioma {
+  .lista-item-home {
       display: flex;
-      flex-direction: row;
-      padding: 5px;
-    }
-
-    .idioma .bandeira-hdr{ 
-      width: 35px;
-      padding: 5px;
-    }
-
-    .img-link-ft {
-      align-items: center;
-    }
-
-    .social-logo-ft {
-      width: 50px;
-      height: 50px;
-    }
-
-    .senac-ft {
-      width: 100px;
-    }
-
-    .cop-ft {
-      width: 100px;
-    }
+      justify-content: space-around;
   }
+
+  .list-footer {
+      list-style: none;
+  }
+
+  .link-footer {
+      text-decoration: none;
+      display: flex;
+  }
+
+  .item-link-footer {
+      font-size: 1.5em;
+  }
+
+}
