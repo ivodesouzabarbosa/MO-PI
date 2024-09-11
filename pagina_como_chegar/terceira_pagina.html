@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/tela_2.css" />
     <link rel="stylesheet" href="css/terceira_pag.css" />
     <!-- <link rel="stylesheet" href="../Home/css/home.css" /> -->
@@ -18,42 +18,12 @@
   </head>
 
   <body>
-    <header>
-      <nav class="menu-header">
-        <div class="logo-senac-header">
-          <img src="../Home/img/senac_logo_branco_r.png" alt="logo_senac">
-        </div>
-        <div class="logo">
-          <a href="../index.html"><h4 class="img-logo">Logo</h4></a>
-        </div>
-  
-        <ul class="nav-links-hdr">
-          <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/o_que_fazer.png" alt=""> <a class="item-link" href="#">O que fazer</a></li>
-          <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/eventos.png" alt=""> <a class="item-link" href="../Eventos/evento_tela_inicial.html">Eventos</a></li>
-          <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/como_chegar.png" alt=""><a class="item-link" href="../pagina_como_chegar/como_chegar.html">Como chegar</a></li>
-          <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/sobre_belem.png" alt=""> <a class="item-link" href="#">Sobre Belém</a></li>
-          <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/fale_concosco.png" alt=""> <a class="item-link" href="#">Fale Conosco</a></li>
-          <li class="icones-hdr"><img class="icon-menu" src="../Home/icons/configuracoes.png" alt=""> <a class="item-link" href="#">Configurações</a></li>
-          <li class="icones-hdr idioma">
-            <img class="bandeira-hdr" onclick="" src="../Home/icons/brazil2.ico" alt="">
-            <img class="bandeira-hdr" onclick="" src="../Home/icons/usa3.ico" alt="">
-            <img class="bandeira-hdr" onclick="" src="../Home/icons/france1.ico" alt="">
-          </li>
-          
-          <li class="icones-hdr rede-social-hdr logo-senac-header">
-            <img class="redes-hdr facebook" src="../Home/icons/facebook.png" alt="facebook">
-            <img class="redes-hdr flirckr" src="../Home/icons/flickr.png" alt="flickr">
-            <img class="redes-hdr instagram" src="../Home/icons/instagram.png" alt="instagram">
-          </li>
-        </ul>
-        <!--Menu hambuguer-->
-        <div class="burger">
-          <div class="line1 linhas-menu"></div>
-          <div class="line2 linhas-menu"></div>
-          <div class="line3 linhas-menu"></div>
-        </div>
-      </nav>
+    <header class="cabecalho-home cbh">
+      <div class="logo-senac-home lgh">1</div>
+      <div class="logo-app-home lgh">2</div>
+      <div class="logo-cop-home lgh">3</div>
     </header>
+
     <!-- Carrossel -->
     <div class="carrossel">
       <h1>Bosque Rodrigues Alves</h1>
@@ -149,40 +119,29 @@
       </div>
     </div>
 
-    <footer>
-      <div class="rodape-ft">
-        <div class="sociais-ft">
-          <a class="img-link-ft" href="https://www.facebook.com/senacpara/" target="_blank"><img class="social-logo-ft"
-              src="../Home/img/facebook.png" alt=""></a>
-          <a class="img-link-ft" href="https://www.instagram.com/senac_pa/" target="_blank"><img class="social-logo-ft"
-              src="../Home/img/instagram.png" alt=""></a>
-          <a class="img-link-ft" href="https://www.flickr.com/photos/145995513@N07/albums/" target="_blank"><img
-              class="social-logo-ft" src="../Home/img/flickr.png" alt=""></a>
-        </div>
-    
-        <div class="senac-cop-ft"> 
-          <!-- adicionar as duas logos cop e SENAC -->
-          <a class="img-link-ft" href="https://www.pa.senac.br/" target="_blank">
-            <img class="logo-cop-senac-ft senac-ft" src="../Home/img/senac_logo_r.png" alt="Senac Pará">
-          </a>
-          <!-- adicionar as duas logos cop e SENAC -->
-          <a class="img-link-ft"
-            href="https://www.gov.br/planalto/pt-br/agenda-internacional/missoes-internacionais/cop28/cop-30-no-brasil"
-            target="_blank">
-            <img class="logo-cop-senac-ft cop-ft" src="../Home/img/logo-cop30-r.png" alt="COP30">
-          </a>
-        </div>
-      </div>
-    
-      <div class="texto-footer">
-        <span class="site-senac-ft">Conheça o <a class="link-senac-ft" href="https://www.pa.senac.br/" target="_blank">SENAC</a></span>
-        <span class="direitos-ft">Belém, Pará, COP30 &copy;2025</span>
-      </div>
-    
-    </footer>../
+    <footer class="footer-menu-home fmh">
+      <nav class="nav-footer-home nfh">
+        <ul class="lista-item-home lih">
+          <li class="list-footer">
+            <a class="link-footer" href=""><i class="item-link-footer fa-solid fa-house" style="color: #0a6875"></i></a>
+          </li>
+          <li class="list-footer">
+            <a class="link-footer" href=""><i class="item-link-footer fa-regular fa-calendar-days"
+                style="color: #0a6875"></i></a>
+          </li>
+          <li class="list-footer">
+            <a class="link-footer" href=""><i class="item-link-footer fa-solid fa-location-dot"
+                style="color: #0a6875"></i></a>
+          </li>
+          <li class="list-footer">
+            <a class="link-footer" href=""><i class="item-link-footer fa-solid fa-gear" style="color: #0a6875"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
 
     <script src="../Home/js/home.js"></script>
     <script src="./js/carrossel.js"></script>
-    <script src="js/alterna-conteudo.js"></script>
+    <script src="./js/alterna-conteudo-3.js"></script>
   </body>
 </html>
