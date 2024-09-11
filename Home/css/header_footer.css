@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font: 400 62.5% 'Inter', sans-serif;
+}
+
 
 header {
   display: flex;
@@ -107,7 +111,7 @@ footer nav ul li a:hover {
 
   .nav-footer-home {
       background-color: #ffffff;
-      padding: 1em;
+      padding: 1rem;
   }
 
   .lista-item-home {
@@ -125,7 +129,7 @@ footer nav ul li a:hover {
   }
 
   .item-link-footer {
-      font-size: 1.5em;
+      font-size: 2rem;
   }
 
 }

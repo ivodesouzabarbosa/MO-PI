@@ -12,6 +12,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font: 400 62.5% 'Inter', sans-serif;
+  }
+
 .cbh {
     display: flex;
     align-items: center;
