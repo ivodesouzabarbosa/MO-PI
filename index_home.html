@@ -15,9 +15,9 @@
 
 <body>
   <header class="cabecalho-home cbh">
-    <div class="logo-senac-home lgh">1</div>
-    <div class="logo-app-home lgh">2</div>
-    <div class="logo-cop-home lgh">3</div>
+    <div class="logo-senac-home lgh"><img src="./Home/img/senac_logo_branco_r.png" alt=""></div>
+    <div class="logo-app-home lgh"><img src="./Home/img/logo_turismo_1.png" alt=""></div>
+    <div class="logo-cop-home lgh"><img src="./Home/img/logo-cop30-r.png" alt=""></div>
   </header>
 
   <!-- Marketing ------------------------------------------------------------ -->
@@ -73,11 +73,11 @@
 </div>
 
   <!-- Mapa -------------------------------------------------------------- -->
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.543365487925!2d-48.494444989964514!3d-1.448505135817767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48e89ea441419%3A0xd1336322bd8b44f0!2sSenac%20Aristides%20Lobo%20-%20CEP%20Papal%C3%A9o!5e0!3m2!1spt-BR!2sbr!4v1725994331449!5m2!1spt-BR!2sbr"
-    width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+  
+  <div class="teste">
+    <div id="map"></div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?AIzaSyBfLW4X31fejTXVD1jg7P0G35m9cDWyE6gY&callback=initMap"></script>
+  </div>
 
   <!-- Categorias --------------------------------------------------------------- -->
     <div class="main-carrosel">
@@ -175,6 +175,8 @@
     </div>
   </section> -->
 
+  
+
   <!-- Menu footer ------------------------------------------------------------- -->
   <footer class="footer-menu-home fmh">
     <nav class="nav-footer-home nfh">
@@ -198,6 +200,7 @@
   </footer>
 
   <script src="Home/js/home.js"></script>
+  <script src="./Home/js/api.js"></script>
 </body>
 
 </html>

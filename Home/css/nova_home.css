@@ -12,6 +12,21 @@
     box-sizing: border-box;
 }
 
+.cbh {
+    display: flex;
+    align-items: center;
+}
+
+.map-teste {
+    text-align: center;
+    margin: 20px;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}
+
 .carousel {
     /* width: 100%; */
     overflow: hidden;
@@ -80,9 +95,14 @@
     color: cornflowerblue;
 }
 
+.lugar-home {
+    width: 400px;
+}
+
 .conteudo-hm img {
     background-image: url(/Home/img/forte_do_presepio_mobile.png);
     background-size: cover;
+    width: 100%;
 }
 
 /*  início de categorias ------------------------------------------------------------ */
