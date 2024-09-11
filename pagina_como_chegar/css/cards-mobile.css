@@ -1,0 +1,123 @@
+:root {
+    --primary-color: #279ca9;
+    --second-color: #1d8b98;
+    --threeth-color: #147a87;
+    --fourth-color: #0a6875;
+    --fifth-color: #005764;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0 auto;
+    /* background-color: var(--fifth-color); */
+    height: 131vh;
+}
+
+html {
+    font: 400 62.5% 'Inter', sans-serif;
+}
+
+
+.container-cards {
+    border: solid 1px black;
+    display: flex;
+    justify-content: center;
+
+}
+
+.main-card {
+    width: 95%;
+    border: solid 1px blue;
+    display: flex;
+    justify-content: space-around;
+    /* gap: 10px; */
+
+}
+
+.card {
+    background-color: var(--primary-color);
+    width: 150px;
+    height: 160px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+}
+
+
+/* <div class="content-img">
+    <img src="assets/img/bosque.jpg" alt="Parques">
+</div> */
+.content-img {
+    height: 120px;
+}
+
+.content-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.conteudo i {
+    font-size: 50px;
+}
+
+.conteudo h5 {
+    font-size: 19px;
+    margin: 0;
+}
+
+
+
+
+
+
+
+/* Mobile */
+@media(max-width: 480px) {
+    .main-card {
+        flex-wrap: wrap;
+    }
+
+}
+
+/* Extra small devices */
+@media (min-width: 481px) and (max-width: 767px) {
+
+}
+
+/* Small tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Large tablets/laptops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Desktops */
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+}
+
+/* Extra large screens */
+@media (min-width: 1920) {
+
+}
