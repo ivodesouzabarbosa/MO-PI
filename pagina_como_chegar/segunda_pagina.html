@@ -6,7 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="shortcut icon" href="" type="image/x-icon">
   <!-- <link rel="stylesheet" href="../Home/css/home.css"> -->
   <link rel="stylesheet" href="css/tela_2.css">
@@ -155,10 +157,12 @@
                 <div class="infos">
                   <h1 class="content-title">Descrição</h1>
                   <p class="content-description">
-                    É o Primeiro parque zoobotânico do Brasil, a mais antiga instituição científica da Amazônia e, o segundo museu de história natural brasileiro. Possui acervos de conhecimentos nas áreas de ciências naturais e humanas relacionados à Amazônia.
+                    É o Primeiro parque zoobotânico do Brasil, a mais antiga instituição científica da Amazônia e, o
+                    segundo museu de história natural brasileiro. Possui acervos de conhecimentos nas áreas de ciências
+                    naturais e humanas relacionados à Amazônia.
                   </p>
                   <div class="card-btn">
-                    <a href="./terceira_pagina.html">Mais detalhes</a>
+                    <a href="./emilio_goeldi.html">Mais detalhes</a>
                   </div>
                 </div>
               </div>
@@ -212,11 +216,77 @@
             </div>
           </div>
           <div class="card-content">
-            <p>Espaço público cultural (cemitério já desativado), servindo à
-              contemplação do patrimônio arquitetônico e de resgate histórico como museu a céu aberto.</p>
+
+            <div class="tab-buttons">
+              <button class="tab-btn active" content-id="descricao">
+                <svg class="icon">
+                  <use xlink:href="./assets/icons/sprite.svg#icon-description"></use>
+                </svg>
+              </button>
+              <button class="tab-btn" content-id="endereco">
+                <svg class="icon">
+                  <use xlink:href="./assets/icons/sprite.svg#icon-localizaca"></use>
+                </svg>
+              </button>
+              <button class="tab-btn" content-id="horarios">
+                <svg class="icon">
+                  <use xlink:href="./assets/icons/sprite.svg#icon-calendar"></use>
+                </svg>
+              </button>
+              <button class="tab-btn" content-id="valores">
+                <svg class="icon">
+                  <use xlink:href="./assets/icons/sprite.svg#icon-payment"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="tab-contents">
+              <div class="content" id="descricao">
+                <div class="infos">
+                  <h1 class="content-title">Descrição</h1>
+                  <p class="content-description">
+                    Espaço público cultural (cemitério já desativado), servindo à
+                    contemplação do patrimônio arquitetônico e de resgate histórico como museu a céu aberto.
+                  </p>
+                  <div class="card-btn">
+                    <a href="./cemiterio.html">Mais detalhes</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content" id="endereco">
+                <div class="infos">
+                  <h1 class="content-title">Endereço</h1>
+                  <p class="content-description">
+                    Av. Serzedelo Corrêa, 514 - Batista Campos.
+                  </p>
+                </div>
+              </div>
+
+              <div class="content" id="horarios">
+                <div class="infos">
+                  <h1 class="content-title">Horários</h1>
+                  <p class="content-description">
+                    SEG-QUI 8h – 17h / SEX-DOM Fechado.
+                  </p>
+                </div>
+              </div>
+
+              <div class="content" id="valores">
+                <div class="infos">
+                  <h1 class="content-title">Valores</h1>
+                  <p class="content-description">
+                    Gratuita/ sem monitoria / 2h.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="card-btn">
-            <a href="#">Mais detalhes</a>
+          <div class="btn-rota">
+            <a href="#">
+              <i class="fa-solid fa-location-dot"></i>
+              Rota
+            </a>
           </div>
         </article>
 
@@ -298,7 +368,8 @@
     <nav class="nav-footer-home nfh">
       <ul class="lista-item-home lih">
         <li class="list-footer">
-          <a class="link-footer" href="/index_home.html"><i class="item-link-footer fa-solid fa-house" style="color: #0a6875"></i></a>
+          <a class="link-footer" href="/index_home.html"><i class="item-link-footer fa-solid fa-house"
+              style="color: #0a6875"></i></a>
         </li>
         <li class="list-footer"> <!--Eventos-->
           <a class="link-footer" href="../Eventos/eventos.html"><i class="item-link-footer fa-regular fa-calendar-days"

@@ -10,7 +10,7 @@ body {
     margin: 0;
     padding: 0;
     /* overflow: hidden;  */
-    background-color: var(--fifth-color);
+    background-color: #ffffff;
 }
 
 a {

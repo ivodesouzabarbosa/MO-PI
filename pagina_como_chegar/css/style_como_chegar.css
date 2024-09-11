@@ -25,7 +25,7 @@ html {
 
 
 body {
-    background-color: var(--fifth-color);
+    background-color: #fff;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -52,7 +52,7 @@ body {
 
 .ch-header h1 {
     font-size: 3.6rem;
-    color: white;
+    color: var(--primary-color);
     text-transform: uppercase;
     margin: 0;
 }

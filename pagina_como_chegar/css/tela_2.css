@@ -25,7 +25,7 @@ html {
 
 /* CODIGO DO BODY */
 body {
-  background-color: var(--fifth-color);
+  background-color: #fff;
   /* display: flex;
   flex-direction: column;
   align-items: center; */
@@ -51,7 +51,7 @@ body {
 .title-details h1 {
   margin: 0;
   font-size: 3.6rem;
-  color: white;
+  color: var(--second-color);
   text-transform: uppercase;
 }
 
