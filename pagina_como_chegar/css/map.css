@@ -1,0 +1,47 @@
+.map_title {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--primary-color);
+}
+
+/* Container para o mapa */
+#map {
+    height: var(--map-height);
+    width: 100%;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+        margin: 15px 0;
+    }
+
+    #map {
+        height: 100vh; /* Reduz a altura do mapa em dispositivos móveis */
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    h1 {
+        font-size: 1.75rem;
+        margin: 20px 0;
+    }
+
+    #map {
+        height: 400px; /* Ajusta a altura do mapa para tablets */
+    }
+}
+
+/* Estilos para desktop */
+@media (min-width: 1025px) {
+    h1 {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+
+    #map {
+        height: 100vh; /* Altura padrão do mapa para desktops */
+    }
+}
