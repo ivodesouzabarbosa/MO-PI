@@ -1,8 +1,7 @@
 from django.contrib import admin
-from django.urls import path
-from verotur_App import views
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.teste, name='teste')
+    path('', include('verotur_App.urls'))
 ]
