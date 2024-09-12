@@ -253,13 +253,15 @@ body {
 }
 
 .card-btn a {
-  font-size: 1rem;
+  color: var(--fourth-color);
+  font-size: 1.2rem;
   font-weight: bold;
   padding: 1rem 1rem;
   text-decoration: none;
   text-transform: uppercase;
   background-color: #6cf3d5;
   border-radius: 1rem;
+  border: solid 2px white;
   display: inline-block;
 }
 
@@ -269,6 +271,7 @@ body {
 }
 
 .btn-rota a {
+  color: var(--fourth-color);
   font-size: 1rem;
   font-weight: bold;
   padding: 0.8rem 1rem;
@@ -276,6 +279,7 @@ body {
   text-transform: uppercase;
   background-color: #6cf3d5;
   border-radius: 1rem;
+  border: solid 2px white;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -303,10 +307,10 @@ body {
 }
 
 
-@media screen and (max-width: 800px) {
-  .ch-main-container {
-      margin-top: 6rem;
-  }
+@media screen and (max-width: 480px) {
+  /* .ch-main-container {
+
+  } */
 }
 
 /* / Mobile / */
