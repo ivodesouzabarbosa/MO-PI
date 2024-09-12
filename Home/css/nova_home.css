@@ -27,23 +27,6 @@
     width: 100%;
 }
 
-.carousel {
-    /* width: 100%; */
-    overflow: hidden;
-    position: relative;
-    margin: 20px 0;
-}
-
-.carousel-images {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel img {
-    width: 100%;
-    height: auto;
-}
-
 .cards-home {
     padding: 10px;
 }
@@ -108,14 +91,12 @@
 .main-carrosel {
     width: 100%;
     height: 15rem;
-    border: solid 2px;
     display: flex;
     flex-direction: column;
 }
 
 .main-carrosel span {
     margin: 15px 0 0 15px;
-    /* text-transform: uppercase; */
     font-weight: bold;
 }
 
@@ -266,13 +247,12 @@
     }
 
     .caixa {
-        /* height: 14rem; */
         gap: 0.5rem;
     }
 
     .card {
-        /* min-width: 10rem; */
         max-width: 12rem;
+        text-decoration: none;
     }
 
     .conteudo i {
