@@ -2,242 +2,212 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie-edge">
-  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">    
-  <link rel="stylesheet" href="Home/css/home.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página inicial</title>
+  <link rel="stylesheet" href="/Home/css/nova_home.css" />
   <link rel="stylesheet" href="Home/css/header_footer.css">
-  <link rel="shortcut icon" href="" type="image/x-icon">
-  <title>Projeto PI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-
-<!--Menu responsivo-->
-
-<body class="body-home">
-  <header>
-    <nav class="menu-header">
-      <div class="logo-senac-header">
-        <img src="../MO-PI/Home/img/senac_logo_branco_r.png" alt="logo_senac">
-      </div>
-      <div class="logo">
-        <a href="./index.html"><h4 class="img-logo">Logo</h4></a>
-      </div>
-
-      <ul class="nav-links-hdr">
-        <li class="icones-hdr"><img class="icon-menu" src="Home/icons/o_que_fazer.png" alt=""><a class="item-link" href="#">O que fazer</a></li>
-        <li class="icones-hdr"><img class="icon-menu" src="Home/icons/eventos.png" alt=""><a class="item-link" href="../MO-PI/Eventos/eventos.html">Eventos</a></li>
-        <li class="icones-hdr"><img class="icon-menu" src="Home/icons/como_chegar.png" alt=""><a class="item-link" href="../MO-PI/pagina_como_chegar/como_chegar.html">Como chegar</a></li>
-        <li class="icones-hdr"><img class="icon-menu" src="Home/icons/sobre_belem.png" alt=""><a class="item-link" href="#">Sobre Belém</a></li>
-        <li class="icones-hdr"><img class="icon-menu" src="Home/icons/fale_concosco.png" alt=""><a class="item-link" href="#">Fale Conosco</a></li>
-        <li class="icones-hdr"><img class="icon-menu" src="Home/icons/configuracoes.png" alt=""><a class="item-link" href="#">Configurações</a></li>
-        <li class="icones-hdr idioma">
-          <img class="bandeira-hdr" onclick="" src="../MO-PI/Home/icons/brazil2.ico" alt="">
-          <img class="bandeira-hdr" onclick="" src="../MO-PI/Home/icons/usa3.ico" alt="">
-          <img class="bandeira-hdr" onclick="" src="../MO-PI/Home/icons/france1.ico" alt="">
-        </li>
-        
-        <li class="icones-hdr rede-social-hdr logo-senac-header">
-          <img class="redes-hdr facebook" src="../Home/icons/facebook.png" alt="facebook">
-          <img class="redes-hdr flirckr" src="../Home/icons/flickr.png" alt="flickr">
-          <img class="redes-hdr instagram" src="../Home/icons/instagram.png" alt="instagram">
-        </li>
-      </ul>
-      <!--Menu hambuguer-->
-      <div class="burger">
-        <div class="line1 linhas-menu"></div>
-        <div class="line2 linhas-menu"></div>
-        <div class="line3 linhas-menu"></div>
-      </div>
-    </nav>
+<body>
+  <header class="cabecalho-home cbh">
+    <div class="logo-senac-home lgh"><img src="./Home/img/senac_logo_branco_r.png" alt=""></div>
+    <div class="logo-app-home lgh"><img src="./Home/img/logo_turismo_1.png" alt=""></div>
+    <div class="logo-cop-home lgh"><img src="./Home/img/logo-cop30-r.png" alt=""></div>
   </header>
 
-    <!-- CARROSSEL DESKTOP ----------------------------------------------------------- -->
-  <!-- <div class="carrossel">
-    <h1>Bosque Rodrigues Alves</h1>
-    <div class="carrossel-wrapper">
-      <div class="carrossel-slide">
-        <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/GSMa0953.jpg" alt="Imagem 1" />
-      </div>
-      <div class="carrossel-slide">
-        <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/60998_179004.jpg" alt="Imagem 2" />
-      </div>
-      <div class="carrossel-slide">
-        <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/76437_233920.jpg" alt="Imagem 3" />
-      </div>
-    </div>
-  </div>  -->
-
-  <!-- main versão desktop web -->
-  <main class="main-dk">
-
-    <section class="sessao lugares">
-      <article class="cards">
-
-        <!-- Card 1 -->
-        <div class="card-home">
-          <div class="img-card">
-            <img src="./Home/img/forte_do_presepio_desktop.png" alt="">
-          </div>
-          <div class="texto-card">
-            <h3 class="title-card">Forte do Presepio</h3>
-            <span class="categoria">Museus</span>
-            <span>Um breve resumo sobre o forte do presepio em Belém</span>
-          </div>
-          <a href="#">Saiba mais</a>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="card-home">
-          <div class="img-card">
-            <img src="./Home/img/estacao_doca_desktop_trem.png" alt="">
-          </div>
-          <div class="texto-card">
-            <h3 class="title-card">Estação das Docas</h3>
-            <span class="categoria">Atrações</span>
-            <span>Um breve resumo sobre a estação das docas</span>
-          </div>
-          <a href="#">Saiba mais</a>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card-home">
-          <div class="img-card">
-            <img src="./Home/img/estacao_doca_desktop.png" alt="">
-          </div>
-          <div class="texto-card">
-            <h3 class="title-card">Estação das Docas</h3>
-            <span class="categoria">Atrações</span>
-            <span>Uma continuação da estção das docas</span>
-          </div>
-          <a href="#">Saiba mais</a>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="card-home">
-          <div class="img-card">
-            <img src="./Home/img/forte_do_presepio_desktop.png" alt="">
-          </div>
-          <div class="texto-card">
-            <h3 class="title-card">Forte do presepio</h3>
-            <span class="categoria">Histórico</span>
-            <span>Um breve resumo do forte do présepio</span>
-          </div>
-          <a href="#">Saiba mais</a>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="card-home">
-          <div class="img-card">
-            <img src="./Home/img/estacao_doca_desktop.png" alt="">
-          </div>
-          <div class="texto-card">
-            <h3 class="title-card">Estação das Docas</h3>
-            <span class="categoria">Atrações</span>
-            <span>Uma continuação da estção das docas</span>
-          </div>
-          <a href="#">Saiba mais</a>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="card-home">
-          <div class="img-card">
-            <img src="./Home/img/forte_do_presepio_desktop.png" alt="">
-          </div>
-          <div class="texto-card">
-            <h3 class="title-card">Forte do présepio</h3>
-            <span class="categoria">Histórico</span>
-            <span>Continuação do forte do présepio</span>
-          </div>
-          <a href="#">Saiba mais</a>
-        </div>
-
-      </article>
-    </section>
-
-    <!-- Parte COP-30 -->
-    <section class="sessao_COP-30">
-      <article>
-        <div class="boxer_Sobre a Cop">
-          <h1 class="Titulo_COP30"> Um pouco sobre a COP</h1>
-          <p class="texto_COP30"> A COP ( Conferência das partes ) é o maior evento mundial de debate sobre meio ambiente e mudanças climáticas, ocorre anualmente e reúne os líderes e representantes de todos os países signatários da Convenção Quadro das Nações Unidas ( UNFCCC) sendo 193 países e 5 territórios. Um dos seus principais objetivos é debater, planejar,  negociar e encontrar alternativas para a diminuição de gases do efeito estufa.
-            Sua origem se deu na Eco-92, aonde um acordo foi firmado para a criação da UNFCCC; sua primeira edição ocorreu na cidade de Berlim em 1995,  em 2023 ocorreu em Dubai, em 2024 ocorrerá em Baku, no azerbaijão e em 2025 na sua 30° edição acontecerá não só pela primeira vez no Brasil, mas também aqui em Belém uma capital importante no seio da floresta  amazônica, o que torna essa COP muito simbólica.
-            A Amazônia é a maior floresta tropical do mundo, com rica biodiversidade, e detentora da maior bacia hidrográfica, sua preservação é imprescindível para a contenção dos efeitos das mudanças climáticas, que já se mostram agravantes, o ano de 2023 foi considerado o mais quente da história por exemplo; por essa razão os “olhos  mundiais” se voltam para ela.
-          </p>
-        </div>
-      </article>
-    </section>
-  </main>
-
-  <!-- Versão mobile -->
-  <main class="main-mb">
+  <!-- Marketing ------------------------------------------------------------ -->
+  <section class="marketing">
     
-    <article class="forte">
-      <img src="./Home/img/forte_do_presepio_mobile.png" alt="Forte de Presépio">
-      <h2 class="title-forte">Forte do Presépio</h2>
-      <hr>
-      <span class="categoria">Histórico</span>
-      <span>texto sobre o forte do presepio falando sobre sua historia</span>
-      <a href="" class="btn-mb">Saiba mais</a>
-    </article>
+  </section>
 
-    <article class="forte">
-      <img src="./Home/img/estacao_doca.png" alt="Forte de Presépio">
-      <h2 class="title-forte">Estação das Docas</h2>
-      <hr>
-      <span class="categoria">Histórico</span>
-      <span>texto sobre a Estação das Docas falando sobre sua historia</span>
-      <a href="" class="btn-mb">Saiba mais</a>
-    </article>
 
-    <article class="forte">
-      <img src="./Home/img/forte_do_presepio_mobile.png" alt="Forte de Presépio">
-      <h2 class="title-forte">Forte do Presépio</h2>
-      <hr>
-      <span class="categoria">Histórico</span>
-      <span>texto sobre o forte do presepio falando sobre sua historia</span>
-      <a href="" class="btn-mb">Saiba mais</a>
-    </article>
-  </main>
+  <!-- Categorias --------------------------------------------------------------- -->
+  <div class="main-carrosel">
+    <span>Categorias</span>
+    <div class="container">
+        <button class="nav-button left">&#8249;</button>
+        <div class="caixa" id="carrossel">
+            <div class="card">
+                <div class="conteudo">
+                    <i class="fa-solid fa-utensils" style="color: #0a6875;"></i>
+                    <h5>Restaurantes</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="conteudo">
+                    <i class="fa-brands fa-shopify" style="color: #0a6875;"></i>
+                    <h5>Shopping</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="conteudo">
+                    <i class="fa-solid fa-champagne-glasses" style="color: #0a6875;"></i>
+                    <h5>Atrações</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="conteudo">
+                  <i class="fa-solid fa-landmark-dome" style="color: #0a6875;"></i>
+                    <h5>Parques</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="conteudo">
+                    <i class="fa-solid fa-building" style="color: #0a6875;"></i>
+                    <h5>Prédios </h5>
+                </div>
+            </div>
+            <div class="card">
+              <a href="/pagina_como_chegar/segunda_pagina.html" class="link-home card">
+                <div class="conteudo">
+                    <i class="fa-solid fa-tree" style="color: #0a6875;"></i>
+                    <h5>Praças</h5>
+                </div>
+              </a>
+            </div>
+            <div class="card">
+                <div class="conteudo">
+                    <i class="fa-solid fa-umbrella-beach" style="color: #0a6875;"></i>
+                    <h5>Ilhas</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="conteudo">
+                    <i class="fa-solid fa-landmark" style="color: #0a6875;"></i>
+                    <h5>Museus</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="conteudo">
+                    <i class="fa-solid fa-church" style="color: #0a6875;"></i>
+                    <h5>Igrejas</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="conteudo">
+                    <i class="fa-solid fa-bus" style="color: #0a6875;"></i>
+                    <h5>Terminais</h5>
+                </div>
+            </div>
+        </div>
+        <button class="nav-button right">&#8250;</button>
+    </div>
+</div>
 
-  <footer>
-    <div class="rodape-ft">
-      <div class="sociais-ft">
-        <a class="img-link-ft" href="https://www.facebook.com/senacpara/" target="_blank">
-          <img class="social-logo-ft"src="./Home/img/facebook.png" alt="">
-          </a>
-        <a class="img-link-ft" href="https://www.instagram.com/senac_pa/" target="_blank">
-          <img class="social-logo-ft" src="./Home/img/instagram.png" alt="">
-          </a>
-        <a class="img-link-ft" href="https://www.flickr.com/photos/145995513@N07/albums/" target="_blank">
-          <img class="social-logo-ft" src="./Home/img/flickr.png" alt="">
-          </a>
-      </div>
-      
-      <div class="senac-cop-ft"> 
-        <!-- adicionar as duas logos cop e SENAC -->
-        <a class="img-link-ft" href="https://www.pa.senac.br/" target="_blank">
-          <img class="logo-cop-senac-ft senac-ft" src="./Home/img/senac_logo_r.png" alt="Senac Pará">
-        </a>
-        <!-- adicionar as duas logos cop e SENAC -->
-        <a class="img-link-ft"
-          href="https://www.gov.br/planalto/pt-br/agenda-internacional/missoes-internacionais/cop28/cop-30-no-brasil"
-          target="_blank">
-          <img class="logo-cop-senac-ft cop-ft" src="./Home/img/logo-cop30-r.png" alt="COP30">
-        </a>
+  <section class="cards-home">
+    <h2>Destaques</h2>
+    <div class="card-home">
+      <img src="./Home/img/forte_do_presepio_mobile.png" alt="Praia">
+      <div class="card-home-content">
+        <h3>Forte do Presépio</h3>
+        <p>Descubra praias paradisíacas e relaxe ao som do mar.</p>
       </div>
     </div>
-
-    <div class="texto-footer">
-      <span class="site-senac-ft">Conheça o <a class="link-senac-ft" href="https://www.pa.senac.br/" target="_blank">SENAC</a></span>
-      <span class="direitos-ft">Belém, Pará, COP30 &copy;2025</span>
+    <div class="card-home">
+      <img src="./Home/img/estacao_doca_desktop_trem_mobile.png" alt="Montanha">
+      <div class="card-home-content">
+        <h3>Estação das Docas</h3>
+        <p>Desafie-se em trilhas e montanhas de tirar o fôlego.</p>
+      </div>
     </div>
+    <div class="card-home">
+      <img src="./Home/img/ver_o_peso_mobile.png" alt="Cidade">
+      <div class="card-home-content">
+        <h3>Ver-O-Peso</h3>
+        <p>Explore grandes cidades e sua cultura vibrante.</p>
+      </div>
+    </div>
+  </section>
 
-  </footer> 
+  <!-- Carrossel de sugestões--------------------------------------------- -->
+  <!-- <div class="main-carrosel">
+    <span>Sugestões</span>
+    <div class="container">
+        <button class="nav-button left">&#8249;</button>
+        <div class="caixa" id="carrossel">
+            <div class="card lugar-home">
+                <div class="conteudo conteudo-hm">
+                  <img src="" alt="">  
+                  <h5>Restaurantes</h5>
+                </div>
+            </div>
+            <div class="card lugar-home">
+                <div class="conteudo conteudo-hm">
+                  <img src="" alt="">  
+                    <h5>Shopping</h5>
+                </div>
+            </div>
+            <div class="card lugar-home">
+                <div class="conteudo conteudo-hm">
+                  <img src="" alt="">  
+                    <h5>Atrações</h5>
+                </div>
+            </div>
+            <div class="card lugar-home">
+                <div class="conteudo conteudo-hm">
+                  <img src="" alt="">  
+                  <h5>Parques</h5>
+                </div>
+            </div>
+            <div class="card lugar-home">
+                <div class="conteudo conteudo-hm">
+                  <img src="" alt="">
+                    <h5>Prédios </h5>
+                </div>
+            </div>
+            <div class="card lugar-home">
+                <div class="conteudo conteudo-hm">
+                  <img src="" alt="">
+                    <h5>Praças</h5>
+                </div>
+            </div>
+        </div>
+        <button class="nav-button right">&#8250;</button>
+    </div>
+</div> -->
 
+  <!-- Mapa -------------------------------------------------------------- -->
+  
+  <div class="teste">
+    <div id="map"></div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?AIzaSyBfLW4X31fejTXVD1jg7P0G35m9cDWyE6gY&callback=initMap"></script>
+  </div>
+
+  
+
+  
+
+  
+
+  <!-- Menu footer ------------------------------------------------------------- -->
+  <footer class="footer-menu-home fmh">
+    <nav class="nav-footer-home nfh">
+      <ul class="lista-item-home lih">
+        <li class="list-footer">
+          <a class="link-footer" href="/index_home.html"><i class="item-link-footer fa-solid fa-house" style="color: #0a6875"></i></a>
+        </li>
+        <li class="list-footer"> <!--Eventos-->
+          <a class="link-footer" href="./Eventos/eventos.html"><i class="item-link-footer fa-regular fa-calendar-days"
+              style="color: #0a6875"></i></a>
+        </li>
+        <li class="list-footer"> <!--como chegar-->
+          <a class="link-footer" href="./pagina_como_chegar/como_chegar.html"><i class="item-link-footer fa-solid fa-location-dot"
+              style="color: #0a6875"></i></a>
+        </li>
+        <li class="list-footer">
+          <a class="link-footer" href=""><i class="item-link-footer fa-solid fa-gear" style="color: #0a6875"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="Home/js/home.js"></script>
+  <script src="./Home/js/api.js"></script>
 </body>
-
-<script src="Home/js/home.js"></script>
 
 </html>
