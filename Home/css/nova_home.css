@@ -35,7 +35,12 @@
 
 .cards-home h2 {
     font-size: 1.4rem;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
+}
+
+.linha {
+    margin-bottom: 1rem;
+    border: 1px solid #147a87;
 }
 
 .card-home {
