@@ -72,12 +72,7 @@ function initMap() {
 
                 // Centraliza o mapa na localização atual
                 map.setCenter({ lat: userLat, lng: userLng });
-
-            }, () => {
-                alert('Não foi possível obter a sua localização.');
             });
-        } else {
-            alert('Geolocalização não é suportada neste navegador.');
         }
     }
 
@@ -126,8 +121,6 @@ function initMap() {
                                     if (status === 'OK') {
                                         directionsRenderer.setDirections(result);
                                         map.setCenter(result.routes[0].legs[0].end_location);
-                                    } else {
-                                        alert('Não foi possível traçar a rota.');
                                     }
                                 });
                             });
