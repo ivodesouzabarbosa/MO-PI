@@ -6,6 +6,10 @@
     --fifth-color: #005764 ;
 }
 
+html {
+    height: 100vh;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -64,9 +68,9 @@ a {
 }
 
 /* Responsividade para dispositivos móveis */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
     .carrossel {
-        height: 55vh; 
+        height: 40vh; 
     }
 
     .carrossel h1 {
@@ -92,7 +96,7 @@ a {
     width: 70%;
     margin: auto;
     padding: 20px;
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
     border-radius: 8px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
@@ -114,7 +118,7 @@ a {
     font-weight: 500;
     padding: 8px;
     cursor: pointer;
-    transition: background-color .3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .tab-btn:hover {
@@ -184,7 +188,7 @@ a {
 }
 
 /* Ajustes gerais para dispositivos móveis */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     #container {
         width: 100%;
         padding: 10px;

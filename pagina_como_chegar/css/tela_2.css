@@ -83,7 +83,7 @@ body {
   cursor: pointer;
   position: relative;
   width: 100%;
-  height: 20rem;
+  /* height: 20rem; */
   overflow: hidden;
 }
 
@@ -108,6 +108,23 @@ body {
   font-weight: bold;
 }
 
+.btn-smais {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.btn-smais span {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: #5ae0c2;
+  border-radius: 1rem;
+  border: solid 2px white;
+  text-transform: uppercase;
+}
+
 .expand-icon {
   font-size: 2.4rem;
   transition: transform 0.3s ease;
@@ -115,6 +132,11 @@ body {
 
 .card.expanded .expand-icon {
   transform: rotate(180deg);
+}
+
+.card.expanded .btn-smais {
+  opacity: 0;
+  display: none;
 }
 
 .card .card-content {

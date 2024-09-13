@@ -27,7 +27,6 @@ html {
     border: solid 1px black;
     display: flex;
     justify-content: center;
-    
 
 }
 
@@ -42,8 +41,8 @@ html {
 
 .card {
     background-color: var(--primary-color);
-    width: 130px;
-    height: 120px;
+    width: 150px;
+    height: 160px;
     margin: 5px;
     display: flex;
     justify-content: center;
@@ -80,11 +79,11 @@ html {
 }
 
 .conteudo i {
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .conteudo h5 {
-    font-size: 16px;
+    font-size: 19px;
     margin: 0;
 }
 
@@ -100,7 +99,7 @@ html {
 
 /* Extra small devices */
 @media (min-width: 481px) and (max-width: 767px) {
-    
+
 }
 
 /* Small tablets */
@@ -117,9 +116,3 @@ html {
 @media (min-width: 1200px) and (max-width: 1919px) {
 
 }
-
-
-
-
-
-

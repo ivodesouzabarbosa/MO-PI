@@ -10,7 +10,7 @@
     />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/tela_2.css" />
+    <!-- <link rel="stylesheet" href="css/tela_2.css" /> -->
     <link rel="stylesheet" href="css/terceira_pag.css" />
     <!-- <link rel="stylesheet" href="../Home/css/home.css" /> -->
     <link rel="stylesheet" href="../Home/css/header_footer.css" />
@@ -24,100 +24,103 @@
       <div class="logo-cop-home lgh">3</div>
     </header>
 
-    <!-- Carrossel -->
-    <div class="carrossel">
-      <h1>Bosque Rodrigues Alves</h1>
-      <div class="carrossel-wrapper">
-        <div class="carrossel-slide">
-          <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/GSMa0953.jpg" alt="Imagem 1" />
+    <main class="main-container-c">
+
+      <!-- Carrossel -->
+      <div class="carrossel">
+        <h1>Bosque Rodrigues Alves</h1>
+        <div class="carrossel-wrapper">
+          <div class="carrossel-slide">
+            <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/GSMa0953.jpg" alt="Imagem 1" />
+          </div>
+          <div class="carrossel-slide">
+            <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/60998_179004.jpg" alt="Imagem 2" />
+          </div>
+          <div class="carrossel-slide">
+            <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/76437_233920.jpg" alt="Imagem 3" />
+          </div>
         </div>
-        <div class="carrossel-slide">
-          <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/60998_179004.jpg" alt="Imagem 2" />
+      </div>    
+  
+      <div class="barra">
+        <hr />
+      </div>
+  
+      <div id="container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" content-id="Descrição">
+            <svg class="icon">
+              <use xlink:href="./assets/icons/sprite.svg#icon-description"></use>
+            </svg>
+          </button>
+          <button class="tab-btn" content-id="Endereço">
+            <svg class="icon">
+              <use xlink:href="./assets/icons/sprite.svg#icon-localizaca"></use>
+            </svg>
+          </button>
+          <button class="tab-btn" content-id="horários">
+            <svg class="icon">
+              <use xlink:href="./assets/icons/sprite.svg#icon-calendar"></use>
+            </svg>
+          </button>
+          <button class="tab-btn" content-id="Valores">
+            <svg class="icon">
+              <use xlink:href="./assets/icons/sprite.svg#icon-payment"></use>
+            </svg>
+          </button>
         </div>
-        <div class="carrossel-slide">
-          <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/76437_233920.jpg" alt="Imagem 3" />
+  
+        <div class="tab-contents">
+          <div class="content" id="Descrição">
+            <div class="infos">
+              <h1 class="content-title">Descrição</h1>
+              <p class="content-description">
+                Situado na Avenida Almirante Barroso, o Bosque é um dos principais
+                cartõespostais da Cidade das Mangueiras. Com uma área total de 150
+                mil metros quadrados, é um pedaço da floresta amazônica
+                literalmente ‘preservado’ no coração da cidade. O espaço
+                centenário recebe, em média, 20 mil visitantes por mês. A maioria,
+                crianças e estudantes. O Bosque Rodrigues Alves abriga mais de 80
+                mil espécies de flora e fauna, distribuídas na área de preservação
+                ambiental. Dos 15 hectares, mais de 80% são compostos por áreas
+                verdes, e apenas 20% em caminhos para circulação de visitantes. O
+                espaço reserva também uma fauna livre, onde os visitantes podem
+                apreciar de perto os animais.
+              </p>
+            </div>
+          </div>
+  
+          <div class="content" id="Endereço">
+            <div class="infos">
+              <h1 class="content-title">Endereço</h1>
+              <p class="content-description">
+                Av. Almirante Barroso, 2305 – Marco.
+              </p>
+            </div>
+          </div>
+  
+          <div class="content" id="horários">
+            <div class="infos">
+              <h1 class="content-title">Horários</h1>
+              <p class="content-description">
+                TER-DOM 8h – 17h / SEG Fechado.
+              </p>
+            </div>
+          </div>
+  
+          <div class="content" id="Valores">
+            <div class="infos">
+              <h1 class="content-title">Valores</h1>
+              <p class="content-description">
+                Paga R$ 7,00 inteira e R$ 3,50 meia entrada/ sem monitoria / 3h.
+  
+              </p>
+            </div>
+          </div>
+          <a href="https://maps.app.goo.gl/Yk1gAo728HMtbD6E6" target="_blank" class="btn-rota3"><img src="https://cdn-icons-png.flaticon.com/256/854/854948.png"alt=""></a>
         </div>
       </div>
-    </div>    
-
-    <div class="barra">
-      <hr />
-    </div>
-
-    <div id="container">
-      <div class="tab-buttons">
-        <button class="tab-btn active" content-id="Descrição">
-          <svg class="icon">
-            <use xlink:href="./assets/icons/sprite.svg#icon-description"></use>
-          </svg>
-        </button>
-        <button class="tab-btn" content-id="Endereço">
-          <svg class="icon">
-            <use xlink:href="./assets/icons/sprite.svg#icon-localizaca"></use>
-          </svg>
-        </button>
-        <button class="tab-btn" content-id="horários">
-          <svg class="icon">
-            <use xlink:href="./assets/icons/sprite.svg#icon-calendar"></use>
-          </svg>
-        </button>
-        <button class="tab-btn" content-id="Valores">
-          <svg class="icon">
-            <use xlink:href="./assets/icons/sprite.svg#icon-payment"></use>
-          </svg>
-        </button>
-      </div>
-
-      <div class="tab-contents">
-        <div class="content" id="Descrição">
-          <div class="infos">
-            <h1 class="content-title">Descrição</h1>
-            <p class="content-description">
-              Situado na Avenida Almirante Barroso, o Bosque é um dos principais
-              cartõespostais da Cidade das Mangueiras. Com uma área total de 150
-              mil metros quadrados, é um pedaço da floresta amazônica
-              literalmente ‘preservado’ no coração da cidade. O espaço
-              centenário recebe, em média, 20 mil visitantes por mês. A maioria,
-              crianças e estudantes. O Bosque Rodrigues Alves abriga mais de 80
-              mil espécies de flora e fauna, distribuídas na área de preservação
-              ambiental. Dos 15 hectares, mais de 80% são compostos por áreas
-              verdes, e apenas 20% em caminhos para circulação de visitantes. O
-              espaço reserva também uma fauna livre, onde os visitantes podem
-              apreciar de perto os animais.
-            </p>
-          </div>
-        </div>
-
-        <div class="content" id="Endereço">
-          <div class="infos">
-            <h1 class="content-title">Endereço</h1>
-            <p class="content-description">
-              Av. Almirante Barroso, 2305 – Marco.
-            </p>
-          </div>
-        </div>
-
-        <div class="content" id="horários">
-          <div class="infos">
-            <h1 class="content-title">Horários</h1>
-            <p class="content-description">
-              TER-DOM 8h – 17h / SEG Fechado.
-            </p>
-          </div>
-        </div>
-
-        <div class="content" id="Valores">
-          <div class="infos">
-            <h1 class="content-title">Valores</h1>
-            <p class="content-description">
-              Paga R$ 7,00 inteira e R$ 3,50 meia entrada/ sem monitoria / 3h.
-
-            </p>
-          </div>
-        </div>
-        <a href="https://maps.app.goo.gl/Yk1gAo728HMtbD6E6" target="_blank" class="btn-rota3"><img src="https://cdn-icons-png.flaticon.com/256/854/854948.png"alt=""></a>
-      </div>
-    </div>
+    </main>
 
     <footer class="footer-menu-home fmh">
       <nav class="nav-footer-home nfh">
