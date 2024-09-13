@@ -96,7 +96,7 @@ function initMap() {
                 const contentString = `
                     <div class="info-window">
                         <h3 class="info-title">${ponto.nome}</h3>
-                        <img src="${ponto.imagem}" alt="${ponto.nome}" class="info-image" />
+                        <img src="${ponto.imagem ? ponto.imagem : '/caminho/para/imagem-padrao.png'}" alt="${ponto.nome}" class="info-image" />
                         <p>${ponto.descricao || 'Sem descrição'}</p>
                         <p><strong>Endereço:</strong> ${ponto.endereco || 'Não disponível'}</p>
                         <p><strong>Horários de Funcionamento:</strong> ${ponto.horarios_funcionamento || 'Não disponível'}</p>
