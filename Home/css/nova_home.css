@@ -23,8 +23,10 @@
 }
 
 #map {
-    height: 500px;
-    width: 100%;
+    height: 200px;
+    width: 90%;
+    margin: auto;
+    margin-top: 0.9rem;
 }
 
 .cards-home {
@@ -96,7 +98,7 @@
 }
 
 .main-carrosel span {
-    margin: 15px 0 0 15px;
+    /* margin: 15px 0 0 15px; */
     font-weight: bold;
 }
 
@@ -109,12 +111,8 @@
     width: 100%;
     height: 12rem;
     display: flex;
-    gap: 1rem;
-    padding: 0.3rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    position: relative;
+    margin: 0.5rem;
+    
 }
 
 .caixa::-webkit-scrollbar {
@@ -122,11 +120,12 @@
 }
 
 .card {
-    min-width: 11rem;
-    max-height: 12rem;
+    min-width: 7rem;
+    max-height: 7rem;
+    min-height: 2rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
@@ -247,7 +246,7 @@
     }
 
     .caixa {
-        gap: 0.5rem;
+        gap: 0rem;
     }
 
     .card {

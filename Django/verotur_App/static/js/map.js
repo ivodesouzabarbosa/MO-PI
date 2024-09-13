@@ -32,12 +32,12 @@ function initMap() {
             {
                 featureType: 'poi',
                 elementType: 'geometry',
-                stylers: [{ color: '#f5f5f5' }]
+                stylers: [{ color: '#07da63' }]
             },
             {
                 featureType: 'road',
                 elementType: 'geometry',
-                stylers: [{ color: '#ffffff' }]
+                stylers: [{ color: '#949192' }]
             },
             {
                 featureType: 'water',

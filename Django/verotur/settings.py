@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'verotur_App',
-    'storages'
 ]
 
 MIDDLEWARE = [
