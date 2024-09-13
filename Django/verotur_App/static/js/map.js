@@ -93,17 +93,18 @@ function initMap() {
                 });
 
                 marker.addListener('click', () => {
-                    const contentString = `
-                        <div style="font-family: Arial, sans-serif; color: #333; background-color: #ffffff; padding: 5px; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                            <h3 style="margin: 0; font-size: 1em; color: #005764;">${ponto.nome}</h3>
-                            <p style="margin: 0;">${ponto.descricao || 'Sem descrição'}</p>
-                            <p style="margin: 0;"><strong>Endereço:</strong> ${ponto.endereco || 'Não disponível'}</p>
-                            <p style="margin: 0;"><strong>Horários de Funcionamento:</strong> ${ponto.horarios_funcionamento || 'Não disponível'}</p>
-                            <p style="margin: 0;"><strong>Locais Pagos:</strong> ${ponto.lugares_pagos || 'Não disponível'}</p>
-                            <p style="margin: 0;"><strong>Monitoria:</strong> ${ponto.monitoria ? 'Sim' : 'Não'}</p>
-                            <button id="start-route" style="margin-top: 10px; padding: 5px 10px; background-color: #005764; color: #ffffff; border: none; border-radius: 4px; cursor: pointer;">Iniciar Rota</button>
-                        </div>
-                    `;
+                const contentString = `
+                    <div class="info-window">
+                        <h3 class="info-title">${ponto.nome}</h3>
+                        <img src="${ponto.imagem}" alt="${ponto.nome}" class="info-image" />
+                        <p>${ponto.descricao || 'Sem descrição'}</p>
+                        <p><strong>Endereço:</strong> ${ponto.endereco || 'Não disponível'}</p>
+                        <p><strong>Horários de Funcionamento:</strong> ${ponto.horarios_funcionamento || 'Não disponível'}</p>
+                        <p><strong>Locais Pagos:</strong> ${ponto.lugares_pagos || 'Não disponível'}</p>
+                        <p><strong>Monitoria:</strong> ${ponto.monitoria ? 'Sim' : 'Não'}</p>
+                        <button id="start-route" class="btn-route">Iniciar Rota</button>
+                    </div>
+                `;
 
                     infoWindow.setContent(contentString);
                     infoWindow.open(map, marker);
@@ -132,5 +133,5 @@ function initMap() {
         .catch(error => console.error('Erro ao carregar os pontos turísticos:', error));
 
     // Obtenha e mostre a localização atual do usuário ao iniciar o mapa
-    getCurrentLocation(() => {});
+    getCurrentLocation(() => { });
 }
