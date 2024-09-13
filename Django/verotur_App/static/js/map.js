@@ -49,7 +49,9 @@ function initMap() {
 
     const infoWindow = new google.maps.InfoWindow();
     const directionsService = new google.maps.DirectionsService();
-    const directionsRenderer = new google.maps.DirectionsRenderer();
+    const directionsRenderer = new google.maps.DirectionsRenderer({
+        suppressMarkers: true // Remove os marcadores de ponto A e B
+    });
     directionsRenderer.setMap(map);
 
     // Função para obter a localização atual do usuário e adicionar um marcador
