@@ -108,10 +108,12 @@
 }
 
 .caixa {
-    width: 100%;
+    width: 90%;
     height: 12rem;
     display: flex;
-    margin: 0.5rem;
+    justify-content: center;
+    margin-left: 2rem;
+    margin-top: 0.8rem;
     
 }
 
