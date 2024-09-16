@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cards = document.querySelectorAll('.card');
     
     cards.forEach(card => {
-        const imageContainer = card.querySelector('.image-container');
+        const imageContainer = card.querySelector('.image-btn');
         imageContainer.addEventListener('click', function(event) {
             event.stopPropagation();
             

@@ -9,22 +9,28 @@
 
 * {
     box-sizing: border-box;
-}
-
-body {
     padding: 0;
     margin: 0;
-    /* background-color: var(--fifth-color); */
-    /* height: 131vh; */
 }
 
-html {
+body, html {
     font: 400 62.5% 'Inter', sans-serif;
+    height: 100%;
 }
+
+
+body {
+    /* background-color: var(--fifth-color); */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 
 
 .container-cards {
-    border: solid 1px black;
+    /* border: solid 1px black; */
+    flex: 1;
     display: flex;
     justify-content: center;
     
@@ -37,13 +43,14 @@ html {
     display: flex;
     justify-content: space-evenly;
     /* gap: 10px; */
+    align-items: center;
 
 }
 
 .card {
     background-color: var(--primary-color);
-    width: 130px;
-    height: 120px;
+    width: 140px;
+    height: 130px;
     margin: 5px;
     display: flex;
     justify-content: center;
@@ -117,6 +124,17 @@ html {
 @media (min-width: 1200px) and (max-width: 1919px) {
 
 }
+
+
+
+/* Mobile Altura */
+
+@media (max-height: 740px) {
+    .card {
+        height: 110px;
+    }
+}
+
 
 
 

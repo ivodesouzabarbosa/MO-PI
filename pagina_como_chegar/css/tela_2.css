@@ -1,17 +1,10 @@
-/* :root {
-  --primary-color: #21a3a3;
-  --second-color: #13c8b5;
-  --threeth-color: #6cf3d5;
-  --fourth-color: #7375a5;
-  --fifth-color: #2b364a;
-} */
-
 :root {
   --primary-color: #279ca9;
   --second-color: #1d8b98 ;
   --threeth-color: #147a87 ;
   --fourth-color: #0a6875 ;
   --fifth-color: #005764 ;
+  --sixth-color: #0a697575;
 }
 
 * {
@@ -79,11 +72,15 @@ body {
   overflow: hidden;
 }
 
-.image-container {
+.image-btn {
   cursor: pointer;
+}
+
+.image-container {
+  /* cursor: pointer; */
   position: relative;
   width: 100%;
-  /* height: 20rem; */
+  height: 20rem;
   overflow: hidden;
 }
 
@@ -97,9 +94,10 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: white;
-  background-color: #2b364a71;
+  /* background-color: #2b364a71; */
+  background-color: #0a697575;
   width: 100%;
   padding: 1rem;
   display: flex;
@@ -108,10 +106,20 @@ body {
   font-weight: bold;
 }
 
-.btn-smais {
+/* .btn-smais {
   display: flex;
   justify-content: center;
   margin: 0.5rem 0;
+} */
+
+.btn-smais {
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  max-height: 100px;
+  overflow: hidden;
+  transition: opacity 0.5s ease, visibility 0s 0.1s ease, max-height 0.5s ease;
 }
 
 .btn-smais span {
@@ -119,6 +127,7 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
   background-color: #5ae0c2;
   border-radius: 1rem;
   border: solid 2px white;
@@ -130,31 +139,36 @@ body {
   transition: transform 0.3s ease;
 }
 
-.card.expanded .expand-icon {
+/* .card.expanded .expand-icon {
   transform: rotate(180deg);
-}
+} */
 
 .card.expanded .btn-smais {
   opacity: 0;
-  display: none;
+  visibility: hidden;
+  max-height: 0; /* Recolhe o espaço do botão */
+  transition: opacity 0.5s ease, visibility 0s 0.5s ease, max-height 0.5s ease;
 }
 
-.card .card-content {
+.card-content {
   max-height: 0;
   opacity: 0;
+  visibility: hidden;
   color: #fff;
   font-size: 1.2rem;
+  padding: 0 0.8rem;
   text-align: justify;
-  transition: max-height 0.3s ease, opacity 0.3s ease-in-out;
+  transition: opacity 0.5s ease, visibility 0s 0.5s ease, max-height 0.5s ease;
   overflow: hidden;
-  /* padding: 0 1.5rem; */
 }
 
 .card.expanded .card-content {
   background-color: var(--threeth-color);
   max-height: 1000px;
   opacity: 1;
-  padding: 1rem;
+  visibility: visible;
+  padding: 0.8rem;
+  transition: opacity 0.5s ease, visibility 0s 0.1s ease, max-height 0.5s ease;
 }
 
 /* .card-content p {
@@ -162,15 +176,15 @@ body {
   line-height: 1.6;
 } */
 
-#container {
+/* #container {
   background-color: var(--threeth-color);
-  /* width: 70%; */
+  
   margin: auto;
   padding: 0.5rem;
   margin-bottom: 3rem;
   border-radius: 8px;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-}
+} */
 
 .tab-buttons {
   display: flex;
@@ -249,30 +263,34 @@ body {
   to {opacity: 1;}
 }
 
-.card-btn {
-  /* margin-bottom: 1rem; */
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+.card-btn, .btn-rota {
   text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0; /* Recolhe o espaço do botão */
+  margin: 0;
+  transition: opacity 0.3s ease, visibility 0s 0.5s ease, max-height 0.4s ease, margin 0.5s ease;
 }
 
-.btn-rota {
-  margin: 1rem;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  text-align: center;
-}
 
 .card.expanded .card-btn {
-  display: block;
   opacity: 1;
+  visibility: visible;
+  max-height: 100px;
+  overflow: hidden;
+  transition: opacity 0.4s ease, visibility 0s 0.2s ease, max-height 0.4s ease;
 }
+
+
 .card.expanded .btn-rota {
-  display: block;
   opacity: 1;
+  visibility: visible;
+  max-height: 100px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+  transition: opacity 0.4s ease, visibility 0s 0.2s ease, max-height 0.4s ease;
 }
+
 
 .card-btn a {
   color: var(--fourth-color);
