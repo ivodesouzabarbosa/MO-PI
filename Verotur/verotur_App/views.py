@@ -11,6 +11,7 @@ def pontos_turisticos_view(request):
         'latitude', 
         'longitude', 
         'nome', 
+        'imagem',
         'descricao', 
         'endereco', 
         'horarios_funcionamento', 

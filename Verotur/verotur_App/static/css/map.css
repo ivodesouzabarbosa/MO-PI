@@ -5,12 +5,12 @@
 }
 
 .info-image {
-    width: 100%; 
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    max-width: 100%; /* A largura máxima da imagem será 100% do contêiner */
+    height: auto;    /* A altura será ajustada automaticamente para manter a proporção */
+    display: block;  /* Para evitar espaço abaixo da imagem */
+    margin: 0 auto; /* Centraliza a imagem */
 }
+
 
 .info-window {
     font-family: Arial, sans-serif;
