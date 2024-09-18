@@ -16,6 +16,7 @@ def pontos_turisticos_view(request):
         'endereco', 
         'horarios_funcionamento', 
         'lugares_pagos', 
-        'monitoria'
+        'monitoria',
+        'place_id'
     ))
     return JsonResponse(pontos_list, safe=False)

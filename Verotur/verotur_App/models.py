@@ -18,6 +18,7 @@ class PontoTuristico(models.Model):
     monitoria = models.BooleanField(default=False)  
     latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
     longitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
+    place_id = models.CharField(max_length=225, null=True, blank=True)
 
     def __str__(self):
         return self.nome
