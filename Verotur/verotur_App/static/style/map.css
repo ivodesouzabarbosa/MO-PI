@@ -5,10 +5,11 @@
 }
 
 .info-image {
-    max-width: 100%; /* A largura máxima da imagem será 100% do contêiner */
-    height: auto;    /* A altura será ajustada automaticamente para manter a proporção */
-    display: block;  /* Para evitar espaço abaixo da imagem */
-    margin: 0 auto; /* Centraliza a imagem */
+    max-width: 100%;
+    height: auto;
+    width: 27rem;
+    display: block;
+    margin: 0 auto;
 }
 
 
