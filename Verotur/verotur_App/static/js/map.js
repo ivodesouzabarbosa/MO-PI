@@ -103,7 +103,6 @@ function initMap() {
                 position: { lat: latitude, lng: longitude },
                 map: map,
                 title: ponto.nome,
-                icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png', // Ícone do marcador
                 animation: google.maps.Animation.DROP
             });
 
