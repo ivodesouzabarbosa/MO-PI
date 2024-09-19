@@ -115,7 +115,7 @@ function initMap() {
                         <p><strong>Endereço:</strong> ${ponto.endereco || 'Não disponível'}</p>
                         <p><strong>Horários de Funcionamento:</strong> ${ponto.horarios_funcionamento || 'Não disponível'}</p>
                         <p><strong>Locais Pagos:</strong> ${ponto.lugares_pagos || 'Não disponível'}</p>
-                        <p><strong>Monitoria:</strong> ${ponto.monitoria ? 'Sim' : 'Não'}</p>
+                        <p><strong>Monitoria:</strong> ${ponto.monitoria || 'Não disponível'}</p>
                         <button id="start-route" class="btn btn-primary btn-block">Iniciar Rota</button>
                     </div>
                 `;

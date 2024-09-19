@@ -8,6 +8,6 @@ def map_view(request):
 def pontos_turisticos_view(request):
     pontos = PontoTuristico.objects.all()
     pontos_list = list(pontos.values(
-        'latitude', 'longitude', 'nome', 'imagem','descricao', 'endereco', 'horarios_funcionamento', 'lugares_pagos', 'monitoria','place_id'
+        'latitude', 'longitude', 'nome', 'imagem','descricao', 'endereco', 'horarios_funcionamento', 'lugares_pagos', 'monitoria'
     ))
     return JsonResponse(pontos_list, safe=False)

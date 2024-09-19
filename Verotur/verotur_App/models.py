@@ -7,17 +7,16 @@ class Categorias(models.Model):
         return self.nome
     
 class PontoTuristico(models.Model):
-    imagem = models.ImageField(upload_to='', blank=False, null=False)
+    imagem = models.ImageField(upload_to='media/media', blank=False, null=False)
     nome = models.CharField(max_length=150)
     descricao = models.TextField(blank=True, null=True)
     endereco = models.CharField(max_length=255)
     categoria = models.ForeignKey(Categorias, on_delete=models.CASCADE)
     horarios_funcionamento = models.CharField(max_length=50) 
     lugares_pagos = models.CharField(max_length=50)  
-    monitoria = models.BooleanField(default=False)  
+    monitoria = models.CharField(max_length=50)  
     latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
     longitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
-    place_id = models.CharField(max_length=225, null=True, blank=True)
 
     def __str__(self):
         return self.nome
