@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-v-%49h-ccf%t$-vh3tp5u3f4*&qop5x1+swzg45sm46kzc@n+7'
+SECRET_KEY = 'django-insecure-@o_0p41%&u7zl+v&fyf98bbwb+k&9h^73285zcuc9gx)qsm-yn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -18,10 +18,6 @@ ALLOWED_HOSTS = []
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# ligação com o google maps
-
-GOOGLE_MAPS_API_KEY = 'AIzaSyBfLW4X31fejTXVD1jg7P0G35m9cDWyE6g'
 
 # Application definition
 
@@ -45,12 +41,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Verotur.urls'
+ROOT_URLCONF = 'verotur.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR ,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,7 +59,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Verotur.wsgi.application'
+WSGI_APPLICATION = 'verotur.wsgi.application'
 
 
 # Database
