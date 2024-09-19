@@ -7,7 +7,7 @@ class Categorias(models.Model):
         return self.nome
     
 class PontoTuristico(models.Model):
-    imagem = models.ImageField(upload_to='media/media', blank=False, null=False)
+    imagem = models.ImageField(upload_to='', blank=False, null=False)
     nome = models.CharField(max_length=150)
     descricao = models.TextField(blank=True, null=True)
     endereco = models.CharField(max_length=255)
