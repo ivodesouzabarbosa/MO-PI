@@ -31,6 +31,10 @@
 
 .cards-home {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .cards-home h2 {
@@ -50,6 +54,10 @@
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s;
+    width: 50rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-home:hover {
@@ -215,13 +223,14 @@
     .card-content {
         padding: 20px;
     }
+
 }
 /* Tablets pequenos */
 @media (min-width: 768px) and (max-width: 991px) {
     .carousel-images {
         height: 400px;
     }
-
+    
     .card {
         margin: 20px auto;
         max-width: 700px;
@@ -259,6 +268,10 @@
     .card {
         max-width: 12rem;
         text-decoration: none;
+    }
+
+    .card-home {
+        width: 35rem;
     }
 
     .conteudo i {
