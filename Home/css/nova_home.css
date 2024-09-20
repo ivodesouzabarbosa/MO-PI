@@ -26,20 +26,23 @@
     height: 200px;
     width: 90%;
     margin: auto;
-    margin-top: 0.9rem;
+    margin-top: 2rem;
 }
 
 .cards-home {
     padding: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 15px;
     justify-content: center;
     align-items: center;
 }
 
-.cards-home h2 {
-    font-size: 1.4rem;
-    margin-bottom: 1px;
+.destaque {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 10px 0 1px 0;
+    text-align: center;
 }
 
 .linha {
