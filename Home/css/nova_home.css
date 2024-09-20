@@ -218,6 +218,10 @@
         align-items: center;
     }
 
+    .cards-home  {
+        flex-direction: column;
+    }
+
     .card img {
         width: 40%;
         height: auto;
@@ -237,6 +241,10 @@
     .card {
         margin: 20px auto;
         max-width: 700px;
+    }
+
+    .cards-home  {
+        flex-direction: column;
     }
 }
 
@@ -275,6 +283,10 @@
 
     .card-home {
         width: 35rem;
+    }
+
+    .cards-home  {
+        flex-direction: column;
     }
 
     .conteudo i {
