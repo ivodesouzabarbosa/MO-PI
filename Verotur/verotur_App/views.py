@@ -1,9 +1,13 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from .models import PontoTuristico
+from .models import PontoTuristico, Categorias
 
 def map_view(request):
     return render(request, 'teste.html')
+
+def lista_categorias_view(request):
+    categorias = Categoria.objects.all()
+    return render(request, 'cards-mobile.html', {'categorias': categorias})
 
 def pontos_turisticos_view(request):
     pontos = PontoTuristico.objects.all()
