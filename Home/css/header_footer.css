@@ -131,3 +131,14 @@ footer nav ul li a:hover {
   }
 
 }
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+  footer{
+    display: none;
+  }
+
+
+
+  
+
+}
