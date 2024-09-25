@@ -8,7 +8,9 @@ class TbCategorias(models.Model):
     class Meta:
         managed = False
         db_table = 'tb_categorias'
-
+        
+    def __str__(self):
+        return self.nome
 
 class TbPontosTuristicos(models.Model):
     idtable1 = models.AutoField(primary_key=True)
@@ -26,3 +28,7 @@ class TbPontosTuristicos(models.Model):
     class Meta:
         managed = False
         db_table = 'tb_pontos_turisticos'
+        
+    def __str__(self):
+        return self.nome
+    
