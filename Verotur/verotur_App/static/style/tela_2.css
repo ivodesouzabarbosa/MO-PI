@@ -114,11 +114,6 @@ body {
   font-weight: bold;
 }
 
-/* .btn-smais {
-  display: flex;
-  justify-content: center;
-  margin: 0.5rem 0;
-} */
 
 .btn-smais {
   display: flex;
@@ -224,10 +219,10 @@ body {
 }
 
 
-.icon {
-  width: 24px;
-  height: 24px;
-  fill: var(--primary-color); /* Cor do ícone */
+.tab-btn i {
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  color: var(--primary-color); /* Cor do ícone */
 }
 
 .content {
@@ -259,7 +254,7 @@ body {
 }
 
 .content-description {
-  text-align: justify;
+  text-align: center;
   font-size: 15px;
   line-height: 2rem;
   margin: 0;

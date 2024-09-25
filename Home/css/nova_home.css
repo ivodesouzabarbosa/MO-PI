@@ -1,10 +1,17 @@
-:root {
+/* :root {
     --primary-color: #279ca9;
       --second-color: #1d8b98;
       --threeth-color: #147a87;
       --fourth-color: #0a6875;
       --fifth-color: #005764;
-  }
+  } */
+
+:root {
+    --primary-color: #20448C;
+    --second-color: #086CB4 ;
+    --threeth-color: #008CDB ;
+    --fourth-color: #0286EA;
+}
 
   * {
     margin: 0;
@@ -23,7 +30,7 @@
 }
 
 #map {
-    height: 200px;
+    height: 400px;
     width: 90%;
     margin: auto;
     margin-top: 2rem;
@@ -164,12 +171,21 @@
 
 }
 
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 24
+}
+
 .conteudo i {
-    background-color: #7af8ff96;
+    background-color: white;
     font-size: 50px;
     border-radius: 10px;
-    border: 1px solid #0a6875;
-    color: cornflowerblue;
+    border: 1px solid #014BDB;
+    color: #014BDB;
     display: flex;
     justify-content: center;
     align-items: center;

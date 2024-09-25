@@ -1,167 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página inicial</title>
+    <link rel="stylesheet" href="./Home/css/nova_home.css" />
+    <link rel="stylesheet" href="./Home/css/header_footer.css" />
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,200" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página inicial</title>
-  <link rel="stylesheet" href="./Home/css/nova_home.css">
-  <link rel="stylesheet" href="./Home/css/header_footer.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
-</head>
+  <body>
+    <header class="cabecalho-home cbh">
+      <div class="cab-home"></div>
 
-<body>
-  <header class="cabecalho-home cbh">
-    <div class="cab-home"> </div>
+      <div class="logo-senac-home lgh">
+        <img src="./Home/img/senac_logo_branco_r.png" alt="" />
+      </div>
+      <div class="logo-app-home lgh">
+        <img src="./Home/img/logo_turismo_1.png" alt="" />
+      </div>
+      <div class="logo-cop-home lgh">
+        <img src="./Home/img/logo-cop30-r.png" alt="" />
+      </div>
+    </header>
 
+    <!-- Marketing ------------------------------------------------------------ -->
+    <section class="marketing"></section>
 
+    <!-- Mapa -------------------------------------------------------------- -->
+    <div class="teste">
+      <div id="map"></div>
+      <script
+        async
+        defer
+        src="https://maps.googleapis.com/maps/api/js?AIzaSyBfLW4X31fejTXVD1jg7P0G35m9cDWyE6gY&callback=initMap"
+      ></script>
+    </div>
 
-
-    <div class="logo-senac-home lgh"><img src="./Home/img/senac_logo_branco_r.png" alt=""></div>
-    <div class="logo-app-home lgh"><img src="./Home/img/logo_turismo_1.png" alt=""></div>
-    <div class="logo-cop-home lgh"><img src="./Home/img/logo-cop30-r.png" alt=""></div>
-  </header>
-
-  <!-- Marketing ------------------------------------------------------------ -->
-  <section class="marketing">
-    
-  </section>
-
-
-  <!-- Categorias --------------------------------------------------------------- -->
-  <div class="main-carrosel">
-        <div class="caixa" id="carrossel">
-            <div class="card">
-              <a href="" class="link-home card">
-                <div class="conteudo">
-                  <i class="fa-solid fa-utensils" style="color: #0a6875;"></i>
-                  <h5>Restaurantes</h5>
-              </div>
-              </a>
+    <!-- Categorias --------------------------------------------------------------- -->
+    <div class="main-carrosel">
+      <div class="caixa" id="carrossel">
+        <div class="card">
+          <a href="" class="link-home card">
+            <div class="conteudo">
+              <!-- <i class="fa-solid fa-utensils"></i> -->
+              <i class="material-symbols-outlined">
+                restaurant
+              </i>
+              <h5>Restaurantes</h5>
             </div>
-
-            <div class="card">
-              <a href="" class="link-home card">
-                <div class="conteudo">
-                  <i class="fa-brands fa-shopify" style="color: #0a6875;"></i>
-                  <h5>Shopping</h5>
-              </div>
-              </a>
-            </div>
-
-            <div class="card">
-              <a href="" class="link-home card">
-                <div class="conteudo">
-                  <i class="fa-solid fa-champagne-glasses" style="color: #0a6875;"></i>
-                  <h5>Atrações</h5>
-              </div>
-              </a>
-            </div>
-
-            <div class="card">
-              <a href="../MO-PI/pagina_como_chegar/segunda_pagina.html" class="link-home card">
-                <div class="conteudo">
-                  <i class="fa-solid fa-landmark-dome" style="color: #0a6875;"></i>
-                    <h5>Parques</h5>
-                </div>
-              </a>
-            </div>
-
-            <div class="card">
-              <a href="" class="link-home card">
-                <div class="conteudo">
-                  <i class="fa-solid fa-building" style="color: #0a6875;"></i>
-                  <h5>Prédios </h5>
-              </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="caixa" id="carrossel">
-            <div class="card">
-              <a href="" class="link-home card">
-                <div class="conteudo">
-                    <i class="fa-solid fa-tree" style="color: #0a6875;"></i>
-                    <h5>Praças</h5>
-                </div>
-              </a>
-            </div>
-
-            <div class="card">
-              <a href="" class="link-home card">
-                <div class="conteudo">
-                    <i class="fa-solid fa-umbrella-beach" style="color: #0a6875;"></i>
-                    <h5>Ilhas</h5>
-                </div>
-              </a>
-            </div>
-
-            <div class="card">
-              <a href="" class="link-home card">
-                <div class="conteudo">
-                    <i class="fa-solid fa-landmark" style="color: #0a6875;"></i>
-                    <h5>Museus</h5>
-                </div>
-              </a>
-            </div>
-
-            <div class="card">
-              <a href="" class="link-home card">
-                <div class="conteudo">
-                    <i class="fa-solid fa-church" style="color: #0a6875;"></i>
-                    <h5>Igrejas</h5>
-                </div>
-              </a>
-            </div>
-
-            <div class="card">
-              <a href="" class="link-home card">
-                <div class="conteudo">
-                    <i class="fa-solid fa-bus" style="color: #0a6875;"></i>
-                    <h5>Terminais</h5>
-                </div>
-              </a>
-            </div>
+          </a>
         </div>
-</div>
 
-<!-- Mapa -------------------------------------------------------------- -->
-<div class="teste">
-  <div id="map"></div>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?AIzaSyBfLW4X31fejTXVD1jg7P0G35m9cDWyE6gY&callback=initMap"></script>
-</div>
+        <div class="card">
+          <a href="" class="link-home card">
+            <div class="conteudo">
+              <!-- <i class="fa-brands fa-shopify"></i> -->
+              <i class="material-symbols-outlined">
+                local_mall
+                </i>
+              <h5>Shopping</h5>
+            </div>
+          </a>
+        </div>
 
-<h2 class="destaque">Destaques</h2>
-  <section class="cards-home">
-    <hr class="linha">
-    <div class="card-home">
-      <img src="./Home/img/forte_do_presepio_mobile.png" alt="Praia">
-      <div class="card-home-content">
-        <h3>Forte do Presépio</h3>
-        <p>Descubra praias paradisíacas e relaxe ao som do mar.</p>
+        <div class="card">
+          <a href="" class="link-home card">
+            <div class="conteudo">
+              <!-- <i class="fa-solid fa-champagne-glasses"></i> -->
+              <i class="material-symbols-outlined">
+                attractions
+                </i>
+              <h5>Atrações</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a
+            href="../MO-PI/pagina_como_chegar/segunda_pagina.html"
+            class="link-home card">
+            <div class="conteudo">
+              <i class="fa-solid fa-landmark-dome"></i>
+              <h5>Parques</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="" class="link-home card">
+            <div class="conteudo">
+              <i class="fa-solid fa-building"></i>
+              <h5>Prédios</h5>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="caixa" id="carrossel">
+        <div class="card">
+          <a href="" class="link-home card">
+            <div class="conteudo">
+              <!-- <i class="fa-solid fa-tree"></i> -->
+              <i class="material-symbols-outlined">
+                park
+                </i>
+              <h5>Praças</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="" class="link-home card">
+            <div class="conteudo">
+              <!-- <i class="fa-solid fa-umbrella-beach"></i> -->
+              <i class="material-symbols-outlined">
+                beach_access
+                </i>
+              <h5>Ilhas</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="" class="link-home card">
+            <div class="conteudo">
+              <!-- <i class="fa-solid fa-landmark"></i> -->
+              <i class="material-symbols-outlined">
+                museum
+                </i>
+              <h5>Museus</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="" class="link-home card">
+            <div class="conteudo">
+              <!-- <i class="fa-solid fa-church"></i> -->
+              <i class="material-symbols-outlined">
+                church
+                </i>
+              <h5>Igrejas</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="" class="link-home card">
+            <div class="conteudo">
+              <!-- <i class="fa-solid fa-bus"></i> -->
+              <i class="material-symbols-outlined">
+                directions_bus
+                </i>
+              <h5>Terminais</h5>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="card-home">
-      <img src="./Home/img/estacao_doca_desktop_trem_mobile.png" alt="Montanha">
-      <div class="card-home-content">
-        <h3>Estação das Docas</h3>
-        <p>Desafie-se em trilhas e montanhas de tirar o fôlego.</p>
-      </div>
-    </div>
-    <div class="card-home">
-      <img src="./Home/img/ver_o_peso_mobile.png" alt="Cidade">
-      <div class="card-home-content">
-        <h3>Ver-O-Peso</h3>
-        <p>Explore grandes cidades e sua cultura vibrante.</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Carrossel de sugestões--------------------------------------------- -->
-  <!-- <div class="main-carrosel">
+    <h2 class="destaque">Destaques</h2>
+    <section class="cards-home">
+      <hr class="linha" />
+      <div class="card-home">
+        <img src="./Home/img/forte_do_presepio_mobile.png" alt="Praia" />
+        <div class="card-home-content">
+          <h3>Forte do Presépio</h3>
+          <p>Descubra praias paradisíacas e relaxe ao som do mar.</p>
+        </div>
+      </div>
+      <div class="card-home">
+        <img
+          src="./Home/img/estacao_doca_desktop_trem_mobile.png"
+          alt="Montanha"
+        />
+        <div class="card-home-content">
+          <h3>Estação das Docas</h3>
+          <p>Desafie-se em trilhas e montanhas de tirar o fôlego.</p>
+        </div>
+      </div>
+      <div class="card-home">
+        <img src="./Home/img/ver_o_peso_mobile.png" alt="Cidade" />
+        <div class="card-home-content">
+          <h3>Ver-O-Peso</h3>
+          <p>Explore grandes cidades e sua cultura vibrante.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrossel de sugestões--------------------------------------------- -->
+    <!-- <div class="main-carrosel">
     <span>Sugestões</span>
     <div class="container">
         <button class="nav-button left">&#8249;</button>
@@ -207,32 +245,51 @@
     </div>
 </div> -->
 
+    <!-- Menu footer ------------------------------------------------------------- -->
+    <footer class="footer-menu-home fmh">
+      <nav class="nav-footer-home nfh">
+        <ul class="lista-item-home lih">
+          <li class="list-footer">
+            <a class="link-footer" href="../MO-PI/index.html"
+              ><i
+                class="item-link-footer fa-solid fa-house"
+                style="color: #0a6875"
+              ></i
+            ></a>
+          </li>
+          <li class="list-footer">
+            <!--Eventos-->
+            <a class="link-footer" href="../MO-PI/Eventos/Eventos.html"
+              ><i
+                class="item-link-footer fa-regular fa-calendar-days"
+                style="color: #0a6875"
+              ></i
+            ></a>
+          </li>
+          <li class="list-footer">
+            <!--como chegar-->
+            <a
+              class="link-footer"
+              href="../MO-PI/pagina_como_chegar/cards-mobile.html"
+              ><i
+                class="item-link-footer fa-solid fa-location-dot"
+                style="color: #0a6875"
+              ></i
+            ></a>
+          </li>
+          <li class="list-footer">
+            <a class="link-footer" href=""
+              ><i
+                class="item-link-footer fa-solid fa-gear"
+                style="color: #0a6875"
+              ></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
 
-
-  <!-- Menu footer ------------------------------------------------------------- -->
-  <footer class="footer-menu-home fmh">
-    <nav class="nav-footer-home nfh">
-      <ul class="lista-item-home lih">
-        <li class="list-footer">
-          <a class="link-footer" href="../MO-PI/index.html"><i class="item-link-footer fa-solid fa-house" style="color: #0a6875"></i></a>
-        </li>
-        <li class="list-footer"> <!--Eventos-->
-          <a class="link-footer" href="../MO-PI/Eventos/Eventos.html"><i class="item-link-footer fa-regular fa-calendar-days"
-              style="color: #0a6875"></i></a>
-        </li>
-        <li class="list-footer"> <!--como chegar-->
-          <a class="link-footer" href="../MO-PI/pagina_como_chegar/cards-mobile.html"><i class="item-link-footer fa-solid fa-location-dot"
-              style="color: #0a6875"></i></a>
-        </li>
-        <li class="list-footer">
-          <a class="link-footer" href=""><i class="item-link-footer fa-solid fa-gear" style="color: #0a6875"></i></a>
-        </li>
-      </ul>
-    </nav>
-  </footer>
-
-  <!-- <script src="Home/js/home.js"></script> -->
-  <script src="./Home/js/api.js"></script>
-</body>
-
+    <!-- <script src="Home/js/home.js"></script> -->
+    <script src="./Home/js/api.js"></script>
+  </body>
 </html>
