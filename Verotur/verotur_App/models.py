@@ -1,22 +1,28 @@
 from django.db import models
 
-class Categorias(models.Model):
-    nome = models.CharField(max_length=100)
 
-    def __str__(self):
-        return self.nome
-    
-class PontoTuristico(models.Model):
-    imagem = models.ImageField(upload_to='', blank=False, null=False)
-    nome = models.CharField(max_length=150)
-    descricao = models.TextField(blank=True, null=True)
-    endereco = models.CharField(max_length=255)
-    categoria = models.ForeignKey(Categorias, on_delete=models.CASCADE)
-    horarios_funcionamento = models.CharField(max_length=50) 
-    lugares_pagos = models.CharField(max_length=50)  
-    monitoria = models.CharField(max_length=50)  
-    latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
-    longitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
+class TbCategorias(models.Model):
+    idtb_categorias = models.AutoField(db_column='idtb_Categorias', primary_key=True)  # Field name made lowercase.
+    nome = models.CharField(max_length=45)
 
-    def __str__(self):
-        return self.nome
+    class Meta:
+        managed = False
+        db_table = 'tb_categorias'
+
+
+class TbPontosTuristicos(models.Model):
+    idtable1 = models.AutoField(primary_key=True)
+    imagem = models.ImageField(upload_to='image/' ,blank=True, null=True)
+    nome = models.CharField(max_length=45)
+    endereco = models.CharField(max_length=45)
+    horarios_fechamento = models.CharField(max_length=45)
+    lugares_pagos = models.CharField(max_length=45)
+    monitoria = models.CharField(max_length=45)
+    table1col = models.CharField(max_length=45)
+    latitude = models.CharField(max_length=45)
+    longitude = models.CharField(max_length=45)
+    id_categorias = models.ForeignKey(TbCategorias, models.DO_NOTHING, db_column='ID_categorias')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'tb_pontos_turisticos'

@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'verotur_App',
+    'adminApp'
 ]
 
 MIDDLEWARE = [
@@ -68,7 +69,7 @@ WSGI_APPLICATION = 'Verotur.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bd_verotour',
+        'NAME': 'bd_verotur',
         'USER':'root',
         'PASSWORD':'',
         'HOST':'localhost',
