@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import TbCategorias, TbPontosTuristicos
+from .models import Categoria, PontoTuristico
 
 # Register your models here.
-admin.site.register(TbCategorias)
-admin.site.register(TbPontosTuristicos)
+admin.site.register(Categoria)
+admin.site.register(PontoTuristico)

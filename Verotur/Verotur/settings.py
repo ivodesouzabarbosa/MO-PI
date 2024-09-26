@@ -17,7 +17,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/media')
 
 # Application definition
 
@@ -68,7 +68,7 @@ WSGI_APPLICATION = 'Verotur.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bd_verotur',
+        'NAME': 'db_verotour',
         'USER':'root',
         'PASSWORD':'',
         'HOST':'localhost',
