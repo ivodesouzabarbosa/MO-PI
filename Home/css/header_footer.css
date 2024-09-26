@@ -1,9 +1,16 @@
-:root {
+/* :root {
   --primary-color: #279ca9;
     --second-color: #1d8b98;
     --threeth-color: #147a87;
     --fourth-color: #0a6875;
     --fifth-color: #005764;
+} */
+
+:root {
+  --primary-color: #20448C;
+  --second-color: #086CB4 ;
+  --threeth-color: #008CDB ;
+  --fourth-color: #0286EA;
 }
 
 * {
@@ -20,7 +27,7 @@ html {
 header {
   display: flex;
   justify-content: space-between;
-  background-color: #0a6875;
+  background-color: var(--threeth-color);
   padding: 15px;
 }
 
@@ -48,6 +55,10 @@ footer nav ul li a {
 footer nav ul li a:hover {
   /* background-color: #006666; */
   border-radius: 5px;
+}
+
+.item-link-footer {
+  color: var(--threeth-color);
 }
 
 /* Media Queries */
@@ -84,8 +95,9 @@ footer nav ul li a:hover {
   }
 
   .item-link-footer {
-      font-size: 1.5em;
+      font-size: 1.5rem;
   }
+  
 
 }
 

@@ -82,6 +82,8 @@
 
 .card-home-content {
     padding: 15px;
+    color: white;
+    background-color: var(--threeth-color);
 }
 
 .card-home-content h3 {
@@ -184,8 +186,8 @@
     background-color: white;
     font-size: 50px;
     border-radius: 10px;
-    border: 1px solid #014BDB;
-    color: #014BDB;
+    border: 2px solid var(--threeth-color);
+    color: var(--threeth-color);
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,10 +1,17 @@
-:root {
+/* :root {
   --primary-color: #279ca9;
   --second-color: #1d8b98 ;
   --threeth-color: #147a87 ;
   --fourth-color: #0a6875 ;
   --fifth-color: #005764 ;
   --sixth-color: #0a697575;
+} */
+
+:root {
+  --primary-color: #20448C;
+  --second-color: #086CB4 ;
+  --threeth-color: #008CDB ;
+  --fourth-color: #0286EA;
 }
 
 * {
@@ -38,13 +45,20 @@ body {
 .title-details {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 2rem;
+  gap: 0.5rem;
+}
+
+.title-details i {
+  font-size: 1.9rem;
+  color: var(--threeth-color);
 }
 
 .title-details h1 {
   margin: 0;
-  font-size: 3.6rem;
-  color: var(--second-color);
+  font-size: 2.6rem;
+  color: var(--threeth-color);
   text-transform: uppercase;
 }
 
@@ -66,7 +80,7 @@ body {
 
 .card {
   max-width: 30rem;
-  background-color: var(--fourth-color);
+  background-color: var(--threeth-color);
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
   overflow: hidden;
@@ -97,7 +111,7 @@ body {
   font-size: 1.3rem;
   color: white;
   /* background-color: #2b364a71; */
-  background-color: #0a697575;
+  background-color: #008bdb57;
   width: 100%;
   padding: 1rem;
   display: flex;
@@ -128,7 +142,7 @@ body {
   font-weight: bold;
   padding: 0.5rem 1rem;
   margin: 0.5rem 0;
-  background-color: #5ae0c2;
+  background-color: var(--threeth-color);
   border-radius: 1rem;
   border: solid 2px white;
   text-transform: uppercase;
@@ -163,7 +177,7 @@ body {
 }
 
 .card.expanded .card-content {
-  background-color: var(--threeth-color);
+  background-color: white;
   max-height: 1000px;
   opacity: 1;
   visibility: visible;
@@ -198,7 +212,7 @@ body {
   width: 100%;
   border: none;
   color: #2b364a;
-  /* background-color: #fff; */
+  background-color: var(--threeth-color);
   border-radius: 8px 8px 0 0;
   font-weight: 500;
   padding: 0.5rem;
@@ -211,7 +225,7 @@ body {
 }
 
 .tab-btn.active {
-  background-color: var(--fourth-color);
+  background-color: var(--second-color);
   color: #fff;
 }
 
@@ -219,7 +233,7 @@ body {
 .icon {
   width: 24px;
   height: 24px;
-  fill: var(--primary-color); /* Cor do ícone */
+  fill: white; /* Cor do ícone */
 }
 
 .content {
@@ -231,7 +245,7 @@ body {
   justify-content: center;
   gap: 14px;
   color: #fff;
-  background-color: var(--fourth-color);
+  background-color: var(--second-color);
   border-radius: 0 0 8px 8px;
   padding: 1rem;
 }
@@ -251,7 +265,7 @@ body {
 }
 
 .content-description {
-  text-align: justify;
+  text-align: center;
   font-size: 15px;
   line-height: 2rem;
   margin: 0;
@@ -311,15 +325,15 @@ body {
 }
 
 .btn-rota a {
-  color: var(--fourth-color);
   font-size: 1rem;
   font-weight: bold;
   padding: 0.8rem 1rem;
   text-decoration: none;
   text-transform: uppercase;
-  background-color: #6cf3d5;
+  background-color: var(--threeth-color);
   border-radius: 1rem;
   border: solid 2px white;
+  color: #fff;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -327,7 +341,7 @@ body {
 
 .btn-rota i {
   font-size: 2rem;
-  color: var(--fourth-color);
+  color: #fff;
 }
 
 .btn-vmais {
@@ -338,12 +352,12 @@ body {
   font-weight: bold;
   text-decoration: none;
   color: white;
-  font-size: 1.8rem;
-  background-color: #6cf3d5;
+  font-size: 1.6rem;
+  background-color: var(--threeth-color);
   text-transform: uppercase;
   padding: 1rem;
   border-radius: 1rem;
-  text-shadow: 0.4rem 0.4rem 1rem #005764;
+  text-shadow: 0.4rem 0.4rem 1rem #005ca3;
 }
 
 
