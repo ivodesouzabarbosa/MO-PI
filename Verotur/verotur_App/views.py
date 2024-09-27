@@ -18,13 +18,7 @@ def pontos_turisticos_view(request):
         'latitude', 'longitude', 'nome', 'imagem', 'descricao',
         'endereco', 'horarios_funcionamento', 'lugares_pagos', 'monitoria'
     ))
-
-    # Se algum dos campos for do tipo bytes, decodifica
-    for ponto in pontos_list:
-        for key in ponto:
-            if isinstance(ponto[key], bytes):
-                ponto[key] = ponto[key].decode('utf-8')
-
+    
     return JsonResponse(pontos_list, safe=False)
 
 def pontos_por_categoria(request, categoria_id):

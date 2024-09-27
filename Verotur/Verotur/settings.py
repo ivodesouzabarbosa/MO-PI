@@ -16,8 +16,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/media')
 
 # Application definition
 
@@ -69,9 +69,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_verotour',
-        'USER':'root',
-        'PASSWORD':'',
-        'HOST':'localhost',
+        'USER':'fernando',
+        'PASSWORD':'mobile123',
+        'HOST':'192.168.60.222',
         'PORT':'3306'
     }
 }
