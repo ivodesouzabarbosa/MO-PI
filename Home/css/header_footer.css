@@ -28,16 +28,8 @@ header {
   display: flex;
   justify-content: space-between;
   background-color: var(--threeth-color);
-  padding: 15px;
+  padding: 30px;
 }
-
-
-/* @media (min-width: 1200px) and (max-width: 1919px) {
-  .header_nav{
-    display: none;
-    
-  }
-} */
 
 
 

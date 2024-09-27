@@ -22,6 +22,9 @@
 .cbh {
     display: flex;
     align-items: center;
+    padding: 30px 20px;
+    text-decoration: none;
+    color: rgb(226, 226, 226);
 }
 
 .map-teste {
@@ -333,20 +336,19 @@
     .header_nav{
         font-size: 20px;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        padding: 4rem 10px;
         align-items: center;
-        color: rgb(36, 236, 63);
-        padding: 2rem 0;
+        
 
     }
 
     .header_nav a {
-        padding: 10px 5px;
+        padding: 10px 20px;
         text-decoration: none;
-        color: white;
-       
+        color: rgb(226, 226, 226);
         
-    }
+    }  
     .header_nav a:hover{
          border-radius: 5px;
           border: solid 1px;
@@ -363,8 +365,16 @@
     .header_nav a:hover{
         background-color:var(--second-color);
     }
+    
+    .wrappercontainer-fixed{
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        align-items: center;
+    }
+    
 
-  
     
     
 
