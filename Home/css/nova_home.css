@@ -226,7 +226,7 @@
 /* Fim de categorias -------------------------- */
 
 /* Media Queries */
-@media (min-width: 992px) and (max-width: 1199px) {
+/* @media (min-width: 992px) and (max-width: 1199px) {
     h1 {
         font-size: 2rem;
     }
@@ -249,7 +249,7 @@
         padding: 20px;
     }
 
-}
+} */
 /* Tablets pequenos */
 @media (min-width: 768px) and (max-width: 991px) {
     .carousel-images {
@@ -322,7 +322,7 @@
     /* Fim de categorias ------------------------------------------------------- */
 }
 
-@media (min-width: 412px) and (max-width:1317px) {
-
-
+/* / Desktops / */
+@media (min-width: 1200px) and (max-width: 1919px) {
+    
 }
