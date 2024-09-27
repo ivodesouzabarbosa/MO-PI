@@ -31,6 +31,16 @@ header {
   padding: 15px;
 }
 
+
+/* @media (min-width: 1200px) and (max-width: 1919px) {
+  .header_nav{
+    display: none;
+    
+  }
+} */
+
+
+
 footer {
   position: sticky;
   bottom: 0;
