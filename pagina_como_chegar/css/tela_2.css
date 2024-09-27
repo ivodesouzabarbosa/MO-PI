@@ -79,7 +79,7 @@ body {
 }
 
 .card {
-  max-width: 30rem;
+  width: 30rem;
   background-color: var(--threeth-color);
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
@@ -118,6 +118,11 @@ body {
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
+
+}
+
+.card-title span {
+  text-shadow: 0.2rem 0.2rem 0.4rem black;
 }
 
 /* .btn-smais {
@@ -150,6 +155,7 @@ body {
 
 .expand-icon {
   font-size: 2.4rem;
+  text-shadow: 0 0 0.4rem black;
   transition: transform 0.3s ease;
 }
 
@@ -361,15 +367,67 @@ body {
 }
 
 
-@media screen and (max-width: 480px) {
-  /* .ch-main-container {
-
-  } */
-}
-
 /* / Mobile / */
 @media(max-width: 480px) {
   .container {
       width: 100%;
   }
 }
+
+
+/* / Desktops / */
+/* @media (min-width: 1219px) {
+  .container {
+    width: 100%;
+  }
+
+  .card {
+    width: 40rem;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+    justify-content: center;
+  }
+
+  .card-title span {
+    text-shadow: 0.2rem 0.2rem 1rem black;
+  }
+
+  .content.show {
+    height: 15rem;
+  }
+
+  .expand-icon {
+    display: none;
+  }
+
+  .infos {
+    
+    gap: 0;
+  }
+
+
+  .btn-smais {
+    display: none;
+  }
+
+  .btn-rota {
+    opacity: 1;
+    visibility: visible;
+    max-height: 100px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+    transition: opacity 0.4s ease, visibility 0s 0.2s ease, max-height 0.4s ease;
+  }
+
+  .card-content {
+    background-color: white;
+    max-height: 1000px;
+    opacity: 1;
+    visibility: visible;
+    padding: 0.8rem;
+    transition: opacity 0.5s ease, visibility 0s 0.1s ease, max-height 0.5s ease;
+  }
+
+} */
