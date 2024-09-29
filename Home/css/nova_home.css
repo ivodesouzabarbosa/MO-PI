@@ -331,8 +331,9 @@
 }
 
 /* / Desktops / */
-@media (min-width: 1200px) and (max-width: 1919px) {
-    
+@media (min-width: 1000px) and (max-width: 19190px) {
+    /* (min-width: 12000px) (max-width: 1919px)  */
+    /* (min-width: 1000px) and (max-width: 19190px) notbook */
     .header_nav{
         font-size: 20px;
         display: flex;
@@ -354,8 +355,6 @@
           border: solid 1px;
     }
 
-
-
     .header_nav ul{
         display: flex;
         gap: 1.5rem;
@@ -373,12 +372,43 @@
         left: 0;
         align-items: center;
     }
-    
 
+    .footer{
+        font-size: 1.8rem;
+        text-align: center;
+        padding: 4.5rem;
+        background-color: var(--second-color);
+    }
     
+    .footer a{
+        color: inherit;
+    }
     
+    iframe{
+        width: 100%;
+    
+    }
+
+    .wrappercontainer {
+        padding-top: 1px;
+        border-radius: 5px;
+        background-color: antiquewhite;
+    }
+
 
 
 
 
 }
+
+/* @media (min-width: 12000px) and (max-width: 19190px) {
+
+    .header_nav{
+        font-size: 20px;
+        display: flex;
+        justify-content: space-around;
+        padding: 4rem 10px;
+        align-items: center;
+    
+    }
+}  */
