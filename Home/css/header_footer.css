@@ -1,15 +1,7 @@
-/* :root {
-  --primary-color: #279ca9;
-    --second-color: #1d8b98;
-    --threeth-color: #147a87;
-    --fourth-color: #0a6875;
-    --fifth-color: #005764;
-} */
-
 :root {
   --primary-color: #20448C;
-  --second-color: #086CB4 ;
-  --threeth-color: #008CDB ;
+  --second-color: #086CB4;
+  --threeth-color: #008CDB;
   --fourth-color: #0286EA;
 }
 
@@ -24,131 +16,119 @@ html {
 }
 
 
-header {
+.header-home {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: var(--threeth-color);
-  padding: 30px;
+  padding: 2rem;
 }
 
+.wrappercontainer, .container-desk {
+  display: none;
+}
 
-
-footer {
+.footer-menu-home {
   position: sticky;
   bottom: 0;
   width: 100%;
-  background-color: #ffffff;
-  color: white;
+  background-color: var(--threeth-color);
 }
 
-footer nav ul {
-  list-style: none;
+.nav-footer-home {
+  padding: 1rem;
+}
+
+.lista-item-home {
   display: flex;
   justify-content: space-around;
+  list-style: none;
 }
 
-footer nav ul li a {
-  color: white;
-  text-decoration: none;
+
+.link-footer {
   padding: 10px;
-  display: block;
-}
-
-footer nav ul li a:hover {
-  /* background-color: #006666; */
-  border-radius: 5px;
+  display: inline-block;
 }
 
 .item-link-footer {
-  color: var(--threeth-color);
+  font-size: 2rem;
+  color: #ffffff;
 }
 
-/* Media Queries */
-@media (min-width: 992px) and (max-width: 1199px) {
- 
-}
+/* Media Queries ----------------------------------------------- */
 /* Tablets pequenos */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {}
 
-  /* footer */
-  .footer-menu-home {
-      width: 100%;
-      position: sticky;
-      background-color: azure;
+@media (min-width: 481px) and (max-width: 767px) {}
+
+
+
+/* / Desktops / */
+@media (min-width: 1024px) {
+  /* Header para desktop ----------------------------------------*/
+  .header-home {
+    height: 10rem;
   }
 
-  .nav-footer-home {
-      background-color: #ffffff;
-      padding: 1em;
+  .logo-senac-home, .logo-app-home {
+    width: 8.0rem;
+    height: 5.0rem;
   }
 
-  .lista-item-home {
-      display: flex;
-      justify-content: space-around;
-  }
-
-  .list-footer {
-      list-style: none;
-  }
-
-  .link-footer {
-      text-decoration: none;
-      display: flex;
-  }
-
-  .item-link-footer {
-      font-size: 1.5rem;
+  .logo-senac-home img, .logo-app-home img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
   }
   
-
-}
-
-@media (min-width: 481px) and (max-width: 767px) {
-
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-/* header */
-  header {
-    width: 100%;
+  .wrappercontainer {
+    display: block;
+    width: 50%;
   }
 
-  /* footer */
+  .header_nav a {
+    font-size: 2rem;
+    padding: 1rem 1rem;
+    text-decoration: none;
+    color: rgb(226, 226, 226);
+    border: solid 1px transparent;
+    transition: transform 0.3s;
+    display: inline-block;
+  }
+
+  .header_nav a:hover {
+    border-radius: 5px;
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+    background-color: var(--second-color);
+  }
+
+  .header_nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+  }
+
+  /* Footer para desktop -------------------------------------- */
   .footer-menu-home {
-      width: 100%;
-      position: sticky;
-      background-color: azure;
-  }
-
-  .nav-footer-home {
-      background-color: #ffffff;
-      padding: 1rem;
-  }
-
-  .lista-item-home {
-      display: flex;
-      justify-content: space-around;
-  }
-
-  .list-footer {
-      list-style: none;
-  }
-
-  .link-footer {
-      text-decoration: none;
-      display: flex;
-  }
-
-  .item-link-footer {
-      font-size: 2rem;
-  }
-
-}
-
-@media (min-width: 12000px) and (max-width: 1919px) {
-  footer{
     display: none;
-  }  
+  }
+
+  .container-desk {
+    display: block;
+  }
+
+  .footer-desk {
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 4.5rem;
+    background-color: var(--second-color);
+  }
+
+  .footer-desk a {
+    color: #ffffff;
+  }
+
 
 }

@@ -1,11 +1,3 @@
-/* :root {
-    --primary-color: #279ca9;
-      --second-color: #1d8b98;
-      --threeth-color: #147a87;
-      --fourth-color: #0a6875;
-      --fifth-color: #005764;
-  } */
-
 :root {
     --primary-color: #20448C;
     --second-color: #086CB4 ;
@@ -19,13 +11,6 @@
     box-sizing: border-box;
 }
 
-.cbh {
-    display: flex;
-    align-items: center;
-    padding: 30px 20px;
-    text-decoration: none;
-    color: rgb(226, 226, 226);
-}
 
 .map-teste {
     text-align: center;
@@ -181,7 +166,7 @@
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
-  'wght' 700,
+  'wght' 100,
   'GRAD' 200,
   'opsz' 24
 }
@@ -276,11 +261,6 @@
 
 /* Mobile ----------------------------------------------*/
 @media (max-width: 480px) {
-
-    .header_nav{
-        display: none;
-    }
-
     .img-carousel {
         width: 100%;
     }
@@ -329,86 +309,3 @@
     }
     /* Fim de categorias ------------------------------------------------------- */
 }
-
-/* / Desktops / */
-@media (min-width: 1000px) and (max-width: 19190px) {
-    /* (min-width: 12000px) (max-width: 1919px)  */
-    /* (min-width: 1000px) and (max-width: 19190px) notbook */
-    .header_nav{
-        font-size: 20px;
-        display: flex;
-        justify-content: space-around;
-        padding: 4rem 10px;
-        align-items: center;
-        
-
-    }
-
-    .header_nav a {
-        padding: 10px 20px;
-        text-decoration: none;
-        color: rgb(226, 226, 226);
-        
-    }  
-    .header_nav a:hover{
-         border-radius: 5px;
-          border: solid 1px;
-    }
-
-    .header_nav ul{
-        display: flex;
-        gap: 1.5rem;
-        list-style-type: none;
-    }
-
-    .header_nav a:hover{
-        background-color:var(--second-color);
-    }
-    
-    .wrappercontainer-fixed{
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-        align-items: center;
-    }
-
-    .footer{
-        font-size: 1.8rem;
-        text-align: center;
-        padding: 4.5rem;
-        background-color: var(--second-color);
-    }
-    
-    .footer a{
-        color: inherit;
-    }
-    
-    iframe{
-        width: 100%;
-    
-    }
-
-    .wrappercontainer {
-        padding-top: 1px;
-        border-radius: 5px;
-        background-color: antiquewhite;
-    }
-
-
-
-
-
-}
-
-/* @media (min-width: 12000px) and (max-width: 19190px) {
-
-    .header_nav{
-        font-size: 20px;
-        display: flex;
-        justify-content: space-around;
-        padding: 4rem 10px;
-        align-items: center;
-    
-    }
-}  */
