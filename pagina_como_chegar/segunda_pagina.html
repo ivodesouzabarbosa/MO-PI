@@ -17,10 +17,25 @@
 </head>
 
 <body>
-  <header class="cabecalho-home cbh">
-    <div class="logo-senac-home lgh"><img src="../Home/img/senac_logo_branco_r.png" alt=""></div>
-    <div class="logo-app-home lgh"><img src="../Home/img/logo_turismo_1.png" alt=""></div>
-    <div class="logo-cop-home lgh"><img src="../Home/img/logo-cop30-r.png" alt=""></div>
+  <header class="header-home">
+    <div class="logo-senac-home">
+      <img src="./Home/img/senac_logo_branco_r.png" alt="" />
+    </div>
+
+    <div class="wrappercontainer">
+      <nav class="header_nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Como Chegar</a></li>
+          <li><a href="#">Eventos</a></li>
+          <li><a href="#">Configuração</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="logo-app-home">
+      <img src="./Home/img/logo_turismo_1.png" alt="" />
+    </div>
   </header>
 
   <main class="ch-main-container">
@@ -669,45 +684,39 @@
   </main>
 
 
-<!-- Menu footer ------------------------------------------------------------- -->
-<footer class="footer-menu-home fmh">
-  <nav class="nav-footer-home nfh">
-    <ul class="lista-item-home lih">
-      <li class="list-footer">
-        <a class="link-footer" href="../MO-PI/index.html"
-          ><i
-            class="item-link-footer fa-solid fa-house"
-          ></i
-        ></a>
-      </li>
-      <li class="list-footer">
-        <!--Eventos-->
-        <a class="link-footer" href="../MO-PI/Eventos/Eventos.html"
-          ><i
-            class="item-link-footer fa-regular fa-calendar-days"
-          ></i
-        ></a>
-      </li>
-      <li class="list-footer">
-        <!--como chegar-->
-        <a
-          class="link-footer"
-          href="../MO-PI/pagina_como_chegar/cards-mobile.html"
-          ><i
-            class="item-link-footer fa-solid fa-location-dot"
-          ></i
-        ></a>
-      </li>
-      <li class="list-footer">
-        <a class="link-footer" href=""
-          ><i
-            class="item-link-footer fa-solid fa-gear"
-          ></i
-        ></a>
-      </li>
-    </ul>
-  </nav>
-</footer>
+  <!-- Menu footer ------------------------------------------------------------- -->
+  <footer class="footer-menu-home">
+    <nav class="nav-footer-home">
+      <ul class="lista-item-home">
+        <li class="list-footer">
+          <a class="link-footer" href="../MO-PI/index.html"><i class="item-link-footer fa-solid fa-house"></i></a>
+        </li>
+        <li class="list-footer">
+          <!--Eventos-->
+          <a class="link-footer" href="../MO-PI/Eventos/Eventos.html"><i
+              class="item-link-footer fa-regular fa-calendar-days"></i></a>
+        </li>
+        <li class="list-footer">
+          <!--como chegar-->
+          <a class="link-footer" href="../MO-PI/pagina_como_chegar/cards-mobile.html"><i
+              class="item-link-footer fa-solid fa-location-dot"></i></a>
+        </li>
+        <li class="list-footer">
+          <a class="link-footer" href=""><i class="item-link-footer fa-solid fa-gear"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+
+  <!-- Menu footer do deskitop -->
+  <div class="container-desk">
+    <footer class="footer-desk">Visite o<a href="#"></a> 
+    <br>
+    <a href="https://www.pa.senac.br/">
+      <img src="Home/img/senac_logo_r.png" />
+    </a>
+    </footer>
+  </div>
 
   <script src="./js/sanfona.js"></script>
   <!-- <script src="../Home/js/home.js"></script> -->
