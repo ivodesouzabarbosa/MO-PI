@@ -123,10 +123,12 @@ html {
   /* Footer para desktop -------------------------------------- */
   .footer-menu-home {
     display: none;
+    
   }
 
   .container-desk {
     display: block;
+    
   }
 
   .footer-desk {
@@ -134,10 +136,14 @@ html {
     text-align: center;
     padding: 4.5rem;
     background-color: var(--second-color);
+    
   }
 
-  .footer-desk a {
+  .footer-desk img {
     color: #ffffff;
+    width: 70px;
+    height: auto;
+    
   }
 
 
