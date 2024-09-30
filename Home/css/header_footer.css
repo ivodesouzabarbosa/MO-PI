@@ -1,3 +1,6 @@
+
+
+
 :root {
   --primary-color: #20448C;
   --second-color: #086CB4;
@@ -13,6 +16,7 @@
 
 html {
   font: 400 62.5% 'Inter', sans-serif;
+  
 }
 
 
@@ -109,6 +113,12 @@ html {
     justify-content: space-around;
     list-style-type: none;
   }
+
+  
+
+  
+  
+
 
   /* Footer para desktop -------------------------------------- */
   .footer-menu-home {
