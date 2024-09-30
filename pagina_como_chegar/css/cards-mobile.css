@@ -1,3 +1,10 @@
+:root {
+    --primary-color: #20448C;
+    --second-color: #086CB4;
+    --threeth-color: #008CDB;
+    --fourth-color: #0286EA;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -16,7 +23,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
 
 
 .container-cards {
@@ -39,16 +45,16 @@ body {
 }
 
 .card {
-    background-color: var(--primary-color);
+    background-color: #ffffff;
     width: 140px;
     height: 130px;
     margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.3);
     border-radius: 30px;
-    border: solid 1px rgb(58, 56, 53);
+    border: solid 1px var(--threeth-color);
 }
 
 /* Faz a âncora cobrir todo o card */
@@ -66,7 +72,7 @@ body {
 .card.active-card {
     border-radius: 30px;
     transform: none;
-    background-color: rgb(29, 225, 231);
+    background-color: var(--primary-color);
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -80,14 +86,15 @@ body {
     align-items: center;
     gap: 12px;
     text-transform:uppercase;
-    color: white;
 }
 
 .conteudo i {
-    font-size: 40px;
+    font-size: 60px;
+    color: var(--threeth-color);
 }
 
 .conteudo h5 {
+    color: var(--threeth-color);
     font-size: 16px;
     margin: 0; 
 }
