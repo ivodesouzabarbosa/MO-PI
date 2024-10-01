@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Updock&display=swap');
+
 :root {
     --primary-color: #20448C;
-    --second-color: #086CB4 ;
-    --threeth-color: #008CDB ;
+    --second-color: #086CB4;
+    --threeth-color: #008CDB;
     --fourth-color: #0286EA;
 }
+ .main_home{
+    display: flex;
+    flex-direction: column;
+
+
+ }
+
 
 * {
     margin: 0;
@@ -93,6 +101,7 @@
     border-radius: 10px;
     color: cornflowerblue;
 }
+
 .lugar-home {
     width: 400px;
 }
@@ -103,219 +112,374 @@
     width: 100%;
 }
 
-/*  início de categorias ------------------------------------------------------------ */
-.main-carrosel {
-    width: 100%;
-    height: 15rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.main-carrosel span {
-    /* margin: 15px 0 0 15px; */
-    font-weight: bold;
-}
-
- .container {/*---------------------- */
-    
-    position: relative;
+/* Fim de categorias -------------------------- */
+.wrappertela{
+    display: none;
     
 }
 
-.caixa {
-    width: 90%;
-    height: 12rem;
+/* joy27.09cards.css*/
+
+.container-cards {
+    flex: 1;
     display: flex;
     justify-content: center;
-    margin-left: 2rem;
-    margin-top: 0.8rem;
-    
 }
 
-.caixa::-webkit-scrollbar {
-    display: none;
+.main-card {
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .card {
-    min-width: 7rem;
-    max-height: 7rem;
-    min-height: 2rem;
+    background-color: white;
+    width: 52px;
+    height: 6rem;
+    margin: 5px;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    scroll-snap-align: center;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.conteudo {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 70%;
-
+    box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: solid 1px var(--threeth-color);
 }
 
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 100,
-  'GRAD' 200,
-  'opsz' 24
-}
-
-.conteudo i {
-    background-color: white;
-    font-size: 50px;
-    border-radius: 10px;
-    border: 2px solid var(--threeth-color);
-    color: var(--threeth-color);
+/* Faz a âncora cobrir todo o card */
+.card-link {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 7rem;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
 }
 
-.conteudo h5 {
-    margin: 0;
-    padding-top: 1rem;
-    color: black;
+/* Quando o card é clicado */
+.card.active-card {
+    border-radius: 30px;
+    transform: none;
+    background-color: rgb(29, 225, 231);
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.412);
-    border: none;
-    padding: 0.8rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    z-index: 1;
+.card:hover {
+    transform: scale(1.03);
 }
 
-.nav-button.left {
-    left: 0;
-    border-radius: 0 5px 5px 0;
+.main-card {
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.nav-button.right {
-    right: 0;
-    border-radius: 5px 0 0 5px;
+.box-card {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
 }
 
-/* Fim de categorias -------------------------- */
 
-/* Media Queries */
-/* @media (min-width: 992px) and (max-width: 1199px) {
-    h1 {
-        font-size: 2rem;
+.conteudo i {
+    color: var(--threeth-color);
+    font-size: 5rem;
+    align-items: center;
+    max-width: 50px;
+
+}
+
+.box-card h5 {
+    margin: 0 auto;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Desktops mudanças para web*/
+@media (min-width: 1170px) and (max-width: 1212px) {
+    .container-cards {
+        display: flex;
+
+    }
+
+    .main-card {
+        display: flex;
+        flex-wrap: wrap;
+
+
     }
 
     .card {
+        padding: 100px;
+    }
+
+}
+
+@media (min-width: 1212px) and (max-width: 1456px) {
+    .container-cards {
         display: flex;
+
+    }
+
+    .main-card {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+    }
+
+    .card {
+        padding: 120px;
+
+    }
+
+
+}
+
+
+/* desktop */
+@media (min-width: 1024px) {
+
+    /* teste01.10 -----------------------------------------------------------------------*/
+    /* joy efeitos do titulos */
+    .container-cards {
+        display: flex;
+        margin: 0 auto;
+
+    }
+
+    .main-card {
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        opacity: 90%;
+        padding: 10px;
+    }
+
+    .card {
+        padding: 120px;
+        border-radius: 30px;
+        background-color: var(--primary-color);
+        width: 140px;
+        height: 130px;
+        margin: 5px;
+        display: flex;
+        justify-content: center;
         align-items: center;
+        box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.8);
+        border: solid 1px rgb(58, 56, 53);
     }
 
-    .cards-home  {
-        flex-direction: column;
+    /* Faz a âncora cobrir todo o card */
+    .card-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
     }
 
-    .card img {
-        width: 40%;
-        height: auto;
+    /* Quando o card é clicado */
+    .card.active-card {
+        border-radius: 30px;
+        transform: none;
+        background-color: rgb(29, 225, 231);
+        transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
-    .card-content {
-        padding: 20px;
+    .conteudo i {
+        display: none;
     }
 
-} */
-/* Tablets pequenos */
+    .box-card {
+        position: relative;
+    }
 
+    .box-card:hover h5 {
+        transform: translateY(0);
+        opacity: .8;
+    }
+
+    .box-card h5 {
+        position: absolute;
+        background-color: rgb(0, 0, 0, 0.8);
+        color: white;
+        border-radius: 10px;
+        text-transform: uppercase;
+        padding: 1em;
+        letter-spacing: 2px;
+        font-size: 1.5em;
+        bottom: 40%;
+        width: 95%;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all .3s ease-in-out;
+    }
+
+    .card1 {
+        background-size: 100% 100%;
+        background-repeat: no-repeat no-repeat;
+        background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjk8v_ILYDbCdCt4PPrMbuWLzKRiTilr41xDd5WemxV74f3pqwG28jKS1VDGpsqfPA9NIPtkaHNms4j1S1EiIbjyJa26nYEJ652DCIDNs5_VC62QDP3v2HSuziSE0Qj_VpjRNFVTeEhCk2B/s16000/20210715_171443.jpg);
+    }
+
+    .card2 {
+        background-size: 100% 100%;
+        background-repeat: no-repeat no-repeat;
+        background-image: url(https://parawebnews.com/wp-content/uploads/2022/02/261024748_4824267277634566_6869855652376808985_n.jpg);
+    }
+
+    .card3 {
+        background-size: 100% 100%;
+        background-repeat: no-repeat no-repeat;
+        background-image: url(https://belem.com.br/images/noticias/7382/06092653_parque.jpg);
+    }
+
+    .card4 {
+        background-size: 100% 100%;
+        background-repeat: no-repeat no-repeat;
+        background-image: url(https://s1.wklcdn.com/image_149/4475835/49199493/32836738Master.jpg);
+    }
+
+    .card5 {
+        background-size: 100% 100%;
+        background-repeat: no-repeat no-repeat;
+        background-image: url(https://belem.com.br/images/noticias/11096/01063218_complexo-f.jpg);
+    }
+
+    .card6 {
+        background-size: 100% 100%;
+        background-repeat: no-repeat no-repeat;
+        background-image: url(https://revistadesign.com/wp-content/uploads/2024/02/Praca-Batista-Campos-em-Belem.webp);
+    }
+
+    .card7 {
+        background-size: 100% 100%;
+        background-repeat: no-repeat no-repeat;
+        background-image: url(https://img.jornalcruzeiro.com.br/img/2013/07/12/media/122190_CST140513T007F07.jpg);
+    }
+
+    .card8 {
+        background-size: 100% 100%;
+        background-repeat: no-repeat no-repeat;
+        background-image: url(https://educacaoeterritorio.org.br/wp-content/uploads/portal_aprendiz/2016/07/museu4.jpg);
+    }
+
+    .card9 {
+        background-size: 100% 100%;
+        background-repeat: no-repeat no-repeat;
+        background-image: url(https://comshalom.org/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-21-at-11.27.24-840x815.jpeg);
+    }
+
+    .card10 {
+        background-size: 100% 100%;
+        background-repeat: no-repeat no-repeat;
+        background-image: url(https://static.wixstatic.com/media/63326e_abc6d9521f6e4ce2a2eee6c6417432aa~mv2.jpg/v1/fill/w_740,h_417,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/63326e_abc6d9521f6e4ce2a2eee6c6417432aa~mv2.jpg);
+    }
+
+    .conteudo i {
+        display: none;
+    }
+
+}
+/* fim desktop */
+/* joy01.10cardsfinalizado.quemmudarégayyy */
+
+
+
+
+
+/* -------telão------------------------------------------ */
+@media (min-width: 1024px) {
+    .wrappertela {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 1px;
+        border-radius: 5px;
+        background-color: rgb(4, 148, 167);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        
+    }
+    
+    .containertela{
+        max-width: 200.6rem;
+        margin: 0 auto;
+        
+       
+    }
+    
+    
+    .wrappertela img{
+        width: 100%;
+        height: 100%;
+        object-fit: inherit;
+    }
+
+
+}
 
 /* lista marajoara ------------------------------ */
 
-.container{
+.container {
     max-width: 165.6rem;
     margin: 0 auto;
-    
-    }
-  
-    .section_title{
-      text-align: center;
-      margin-top: 50px;
-      font-size: 50px;
-      font-family: "Updock", cursive;
-      font-weight: 550;
-      font-style: normal;
-      
-    }
-  
-    .lista img{
-        width: 350px;
-        
-            
-    }
-  
-  
-    .lista{
-      display: flex;
-      flex-direction: column;
-      color: var(--primary-color);
-      align-items: center;
-      
-        
-    }
+
+}
+
+.section_title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 50px;
+    font-family: "Updock", cursive;
+    font-weight: 550;
+    font-style: normal;
+
+}
+
+.lista img {
+    width: 350px;
+
+
+}
+
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    color: var(--primary-color);
+    align-items: center;
+
+
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
     .carousel-images {
         height: 400px;
     }
-    
+
     .card {
         margin: 20px auto;
         max-width: 700px;
     }
 
-    .cards-home  {
+    .cards-home {
         flex-direction: column;
     }
 }
 
-@media (min-width: 481px) and (max-width: 767px) {
-
-}
-
-/* Mobile ----------------------------------------------*/
-@media (max-width: 480px) {
-    .img-carousel {
-        width: 100%;
-    }
-
-    iframe {
-        width: 100%;
-    }
-
-    /*  início de categorias ------------------------------------------------------------ */
-    .main-carrosel span {
-        font-size: 1.3rem;
-    }
-
-    .container {
-        width: 99%;
-    }
-
-    .caixa {
-        gap: 0rem;
+@media (max-width:480px) {
+    
+    .cards-home {
+        flex-direction: column;
     }
 
     .card {
@@ -326,22 +490,4 @@
     .card-home {
         width: 35rem;
     }
-
-    .cards-home  {
-        flex-direction: column;
-    }
-
-    .conteudo i {
-        font-size: 30px;
-    }
-
-    .conteudo h5 {
-        font-size: 12px;
-
-    }
-
-    .nav-button {
-        display: none;
-    }
-    /* Fim de categorias ------------------------------------------------------- */
 }

@@ -60,6 +60,25 @@ html {
   color: #ffffff;
 }
 
+.logo-senac-home {
+  width: 6.0rem;
+  height: 4.0rem;
+}
+
+.logo-app-home{
+  width: 7.0rem;
+  height: 5.0rem;
+}
+
+.logo-senac-home img, .logo-app-home img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+
+
+
+
 /* Media Queries ----------------------------------------------- */
 /* Tablets pequenos */
 @media (min-width: 768px) and (max-width: 991px) {}
@@ -95,7 +114,7 @@ html {
     font-size: 2rem;
     padding: 1rem 1rem;
     text-decoration: none;
-    color: rgb(226, 226, 226);
+    color: white;
     border: solid 1px transparent;
     transition: transform 0.3s;
     display: inline-block;
@@ -113,11 +132,6 @@ html {
     justify-content: space-around;
     list-style-type: none;
   }
-
-  
-
-  
-  
 
 
   /* Footer para desktop -------------------------------------- */
