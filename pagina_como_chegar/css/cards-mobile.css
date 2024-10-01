@@ -11,7 +11,8 @@
     margin: 0;
 }
 
-body, html {
+body,
+html {
     font: 400 62.5% 'Inter', sans-serif;
     height: 100%;
 }
@@ -30,7 +31,7 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
-    
+
 
 }
 
@@ -70,22 +71,18 @@ body {
 
 /* Quando o card é clicado */
 .card.active-card {
-    border-radius: 30px;
-    transform: none;
+    transform: scale(1.06);
     background-color: var(--primary-color);
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.card:hover{
-    transform: scale(1.03);
-}
 
 .conteudo {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    text-transform:uppercase;
+    text-transform: uppercase;
 }
 
 .conteudo i {
@@ -96,7 +93,7 @@ body {
 .conteudo h5 {
     color: var(--threeth-color);
     font-size: 16px;
-    margin: 0; 
+    margin: 0;
 }
 
 
@@ -110,28 +107,22 @@ body {
 }
 
 /* Extra small devices */
-@media (min-width: 481px) and (max-width: 767px) {
-    
-}
+@media (min-width: 481px) and (max-width: 767px) {}
 
 /* Small tablets */
-@media (min-width: 768px) and (max-width: 991px) {
-
-}
+@media (min-width: 768px) and (max-width: 991px) {}
 
 /* Large tablets/laptops */
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1199px) {}
 
-}
-
- /* Desktops mudanças para web*/
+/* Desktops mudanças para web*/
 @media (min-width: 480px) and (max-width: 1170px) {
-    .container-cards{
+    .container-cards {
         display: flex;
 
     }
 
-    .main-card{
+    .main-card {
         display: flex;
         flex-wrap: wrap;
         gap: 2px;
@@ -139,44 +130,45 @@ body {
 
     }
 
-    .card{
+    .card {
         padding: 90px;
     }
 
 }
+
 @media (min-width: 1170px) and (max-width: 1212px) {
-    .container-cards{
+    .container-cards {
         display: flex;
 
     }
 
-    .main-card{
+    .main-card {
         display: flex;
         flex-wrap: wrap;
 
 
     }
 
-    .card{
+    .card {
         padding: 100px;
     }
 
 }
 
 @media (min-width: 1212px) and (max-width: 1456px) {
-    .container-cards{
+    .container-cards {
         display: flex;
 
     }
 
-    .main-card{
+    .main-card {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
 
     }
 
-    .card{
+    .card {
         padding: 180px;
 
     }
@@ -186,35 +178,40 @@ body {
 
 @media (min-width: 1457px) and (max-width: 2000px) {
     /* joy efeitos do titulos */
+    .card:hover {
+        transform: scale(1.09);
+        transition: transform 0.3s ease-in-out;
+    }
 
-.conteudo h5{
-    background-color: rgb(0, 0, 0, .8);
-    color: white;
-    text-transform: uppercase;
-    padding: 1em;
-    letter-spacing: 2px;
-    font-size: 14px;
-    position: relative;
-    border-radius: 10px;
-    bottom: 0;
-    width: 100%;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all .3s ease-in-out;
-}
+    .conteudo h5 {
+        background-color: rgb(0, 0, 0, .8);
+        color: white;
+        text-transform: uppercase;
+        padding: 1em;
+        letter-spacing: 2px;
+        font-size: 14px;
+        position: relative;
+        border-radius: 10px;
+        bottom: 0;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 0.3s ease-in-out;
+    }
 
-.card:hover h5{
-   transform: translateY(0); 
-   opacity: .8;
-}
-/* joy 26.09*/
-    .container-cards{
+    .card:hover h5 {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* joy 26.09*/
+    .container-cards {
         display: flex;
         margin: 50px auto;
 
     }
 
-    .main-card{
+    .main-card {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
@@ -223,58 +220,66 @@ body {
         /* background-image: url(https://s2-redeglobo.glbimg.com/EZ3JPwlRm9KCx42VjkK7SVsxWwE=/0x0:1117x626/924x0/smart/filters:strip_icc/i.s3.glbimg.com/v1/AUTH_b58693ed41d04a39826739159bf600a0/internal_photos/bs/2023/R/q/IknimfQ3GPUoQG0RRY9A/whatsapp-image-2023-03-21-at-12.58.33.jpeg) */
     }
 
-    .card{
+    .card {
         padding: 150px;
         border-radius: 30px;
     }
 
-    .card1{
+    .card1 {
         background-size: 100% 100%;
         background-repeat: no-repeat no-repeat;
         background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjk8v_ILYDbCdCt4PPrMbuWLzKRiTilr41xDd5WemxV74f3pqwG28jKS1VDGpsqfPA9NIPtkaHNms4j1S1EiIbjyJa26nYEJ652DCIDNs5_VC62QDP3v2HSuziSE0Qj_VpjRNFVTeEhCk2B/s16000/20210715_171443.jpg);
     }
 
-    .card2{
+    .card2 {
         background-size: 100% 100%;
         background-repeat: no-repeat no-repeat;
         background-image: url(https://parawebnews.com/wp-content/uploads/2022/02/261024748_4824267277634566_6869855652376808985_n.jpg);
     }
-    .card3{
+
+    .card3 {
         background-size: 100% 100%;
         background-repeat: no-repeat no-repeat;
         background-image: url(../img/HeroImage.webp);
     }
-    .card4{
+
+    .card4 {
         background-size: 100% 100%;
         background-repeat: no-repeat no-repeat;
         background-image: url(https://s1.wklcdn.com/image_149/4475835/49199493/32836738Master.jpg);
     }
-    .card5{
+
+    .card5 {
         background-size: 100% 100%;
         background-repeat: no-repeat no-repeat;
         background-image: url(https://belem.com.br/images/noticias/11096/01063218_complexo-f.jpg);
     }
-    .card6{
+
+    .card6 {
         background-size: 100% 100%;
         background-repeat: no-repeat no-repeat;
         background-image: url(https://revistadesign.com/wp-content/uploads/2024/02/Praca-Batista-Campos-em-Belem.webp);
     }
-    .card7{
+
+    .card7 {
         background-size: 100% 100%;
         background-repeat: no-repeat no-repeat;
         background-image: url(https://img.jornalcruzeiro.com.br/img/2013/07/12/media/122190_CST140513T007F07.jpg);
     }
-    .card8{
+
+    .card8 {
         background-size: 100% 100%;
         background-repeat: no-repeat no-repeat;
         background-image: url(https://educacaoeterritorio.org.br/wp-content/uploads/portal_aprendiz/2016/07/museu4.jpg);
     }
-    .card9{
+
+    .card9 {
         background-size: 100% 100%;
         background-repeat: no-repeat no-repeat;
         background-image: url(https://comshalom.org/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-21-at-11.27.24-840x815.jpeg);
     }
-    .card10{
+
+    .card10 {
         background-size: 100% 100%;
         background-repeat: no-repeat no-repeat;
         background-image: url();
@@ -285,6 +290,7 @@ body {
     }
 
 }
+
 /* fim desktop */
 
 
@@ -296,10 +302,3 @@ body {
         height: 110px;
     }
 }
-
-
-
-
-
-
-
