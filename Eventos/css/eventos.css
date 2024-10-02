@@ -47,12 +47,13 @@ body {
   display: flex;
   justify-content: center;
   padding: 2rem;
+
 }
 
 .title-details h1 {
   margin: 0;
   font-size: 3.6rem;
-  color: var(--second-color);
+  color: var(--threeth-color);
   text-transform: uppercase;
 }
 
@@ -122,13 +123,14 @@ body {
 
 .btn-smais {
   display: flex;
+  color: white;
   justify-content: center;
   opacity: 1;
   visibility: visible;
   max-height: 100px;
   overflow: hidden;
   transition: opacity 0.5s ease, visibility 0s 0.1s ease, max-height 0.5s ease;
-  background-color: #086CB4;
+  background-color: var(--threeth-color);
 }
 
 .btn-smais span {
@@ -137,7 +139,6 @@ body {
   font-weight: bold;
   padding: 0.5rem 1rem;
   margin: 0.5rem 0;
-  
   border-radius: 1rem;
   border: solid 2px white;
   text-transform: uppercase;
@@ -172,7 +173,7 @@ body {
 }
 
 .card.expanded .card-content {
-  background-color: #086CB4;
+  background-color: white;
   max-height: 1000px;
   opacity: 1;
   visibility: visible;
@@ -196,8 +197,7 @@ body {
 } */
 
 .tab-buttons {
-  display: flex;
-  gap: 6px;
+  display: none;
 }
 
 .tab-btn {
@@ -240,7 +240,7 @@ body {
   justify-content: center;
   gap: 14px;
   color: #fff;
-  background-color: #086CB4;
+  background-color: var(--second-color);
   border-radius: 0 0 8px 8px;
   padding: 1rem;
 }
@@ -273,7 +273,7 @@ body {
 }
 
 .card-btn, .btn-rota {
-  background-color: #086CB4;
+  background-color: var(--second-color);
   text-align: center;
   opacity: 0;
   visibility: hidden;
@@ -303,13 +303,13 @@ body {
 
 
 .card-btn a {
-  color: var(--fourth-color);
+  color: white;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 1rem 1rem;
   text-decoration: none;
   text-transform: uppercase;
-  background-color: #6cf3d5;
+  background-color: var(--second-color);
   border-radius: 1rem;
   border: solid 2px white;
   display: inline-block;
@@ -320,21 +320,6 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.btn-rota a {
-  color: var(--fourth-color);
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0.8rem 1rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  background-color: #6cf3d5;
-  border-radius: 1rem;
-  border: solid 2px white;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 .btn-rota i {
   font-size: 2rem;
   color: var(--fourth-color);
@@ -342,6 +327,7 @@ body {
 
 .btn-vmais {
   padding: 4rem;
+  
 }
 
 .btn-vmais a {
@@ -349,13 +335,27 @@ body {
   text-decoration: none;
   color: white;
   font-size: 1.8rem;
-  background-color: #6cf3d5;
+  background-color: var(--fourth-color);
   text-transform: uppercase;
   padding: 1rem;
   border-radius: 1rem;
   text-shadow: 0.4rem 0.4rem 1rem #005764;
 }
 
+.btn-rota a {
+font-size: 1rem;
+    font-weight: bold;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--threeth-color);
+    border-radius: 1rem;
+    border: solid 2px white;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
 
 @media screen and (max-width: 480px) {
   /* .ch-main-container {
