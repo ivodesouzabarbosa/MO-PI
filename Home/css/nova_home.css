@@ -148,8 +148,10 @@
 
 .listra img {
     width: 350px;
+}
 
-
+.mapa-listra {
+    display: none;
 }
 
 /* Categorias ----------------------------------------------- */
@@ -407,6 +409,10 @@
 
 
     /* listra marajoara ------------------------------ */
+    .mapa-listra {
+        display: block;
+    }
+
     .container-listra {
         margin: 0 auto;
 
