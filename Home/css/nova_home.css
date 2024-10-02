@@ -232,6 +232,11 @@
 
 /* Desktops mudanças para web*/
 @media (min-width: 1024px) {
+    .cards-home{
+        flex-direction: row;
+    }
+
+
 
     /* teste01.10 -----------------------------------------------------------------------*/
     /* joy efeitos do titulos */
@@ -382,8 +387,9 @@
     .wrappertela {
         display: block;
         width: 80%;
+        height: 695px;
         margin: 0 auto;
-        padding-top: 1px;
+        padding-top: 1px;    
         border-radius: 5px;
         background-color: rgb(4, 148, 167);
         display: flex;
