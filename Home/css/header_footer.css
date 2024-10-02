@@ -1,6 +1,3 @@
-
-
-
 :root {
   --primary-color: #20448C;
   --second-color: #086CB4;
@@ -61,13 +58,13 @@ html {
 }
 
 .logo-senac-home {
-  width: 6.0rem;
-  height: 4.0rem;
+  width: 5rem;
+  height: 3rem;
 }
 
 .logo-app-home{
-  width: 7.0rem;
-  height: 5.0rem;
+  width: 5rem;
+  height: 4rem;
 }
 
 .logo-senac-home img, .logo-app-home img {
@@ -88,9 +85,14 @@ html {
     height: 10rem;
   }
 
-  .logo-senac-home, .logo-app-home {
-    width: 8.0rem;
-    height: 5.0rem;
+  .logo-senac-home {
+    width: 8rem;
+    height: 5rem;
+  }
+
+  .logo-app-home {
+    width: 7rem;
+    height: 5rem;
   }
 
   .logo-senac-home img, .logo-app-home img {
@@ -172,7 +174,7 @@ html {
 
   .rede_logo{
     display: flex;
-    gap: 1rem ;
+    gap: 1rem;
   }
 
   .direitos_footer{
@@ -184,13 +186,4 @@ html {
     
   }
     
-  }
-
-
-
-
-
-
-
-
 }
