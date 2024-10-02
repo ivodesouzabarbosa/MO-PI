@@ -116,67 +116,7 @@ body {
 @media (min-width: 992px) and (max-width: 1199px) {}
 
 /* Desktops mudanças para web*/
-@media (min-width: 480px) and (max-width: 1170px) {
-    .container-cards {
-        display: flex;
-
-    }
-
-    .main-card {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2px;
-
-
-    }
-
-    .card {
-        padding: 90px;
-    }
-
-}
-
-@media (min-width: 1170px) and (max-width: 1212px) {
-    .container-cards {
-        display: flex;
-
-    }
-
-    .main-card {
-        display: flex;
-        flex-wrap: wrap;
-
-
-    }
-
-    .card {
-        padding: 100px;
-    }
-
-}
-
-@media (min-width: 1212px) and (max-width: 1456px) {
-    .container-cards {
-        display: flex;
-
-    }
-
-    .main-card {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-
-    }
-
-    .card {
-        padding: 180px;
-
-    }
-
-
-}
-
-@media (min-width: 1457px) and (max-width: 2000px) {
+@media (min-width: 1024px) {
     /* joy efeitos do titulos */
     .card:hover {
         transform: scale(1.09);

@@ -80,12 +80,6 @@ html {
 
 
 /* Media Queries ----------------------------------------------- */
-/* Tablets pequenos */
-@media (min-width: 768px) and (max-width: 991px) {}
-
-@media (min-width: 481px) and (max-width: 767px) {}
-
-
 
 /* / Desktops / */
 @media (min-width: 1024px) {
