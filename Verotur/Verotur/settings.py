@@ -68,10 +68,10 @@ WSGI_APPLICATION = 'Verotur.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_verotour',
-        'USER':'fernando',
-        'PASSWORD':'mobile123',
-        'HOST':'192.168.60.222',
+        'NAME': 'ovelha14_db_verotour',
+        'USER':'ovelha14_admin',
+        'PASSWORD':'verotour!@12',
+        'HOST':'192.185.222.207',
         'PORT':'3306'
     }
 }
