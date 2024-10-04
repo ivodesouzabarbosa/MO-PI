@@ -28,3 +28,8 @@ def pontos_por_categoria(request, categoria_id):
         'categoria': categoria,
         'pontos_turisticos': pontos_turisticos
     })
+    
+# função para puxa informações das cetegorias
+def linkcateg(request):
+    categ = Categoria.objects.all()
+    return render(request, 'cards-mobile.html', {'categorias': categ})
