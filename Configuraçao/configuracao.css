@@ -1,131 +1,235 @@
-/* Estilos comuns para web e mobile */
+:root {
+    --primary-color: #20448C;
+    --second-color: #086CB4;
+    --threeth-color: #008CDB;
+    --fourth-color: #0286EA;
+}
+/* Estilos Gerais */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f5f5f5; /* Fundo leve */
 }
+.titulo h1 {
+    font-size: 1.5em;
+    color: #0262c2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.idiomas h2 {
+    
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-decoration-line: underline;
+    text-align: center;
+    
+}
+
+.idiomas ul {
+    list-style: none;
+    padding: 0;
+    justify-content:space-between;
+    gap: 30px;
+
+}
+
+
+.idiomas li {
+    color: white;
+    font-size: 18px;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(184, 23, 23, 0.1);
+
+}
+
+.idiomas li:hover {
+    transform: scale(1.05);
+}
+
+
+.version {
+    padding: 50px;
+    text-align: center;
+    
+
+}
+
+.version h1 {
+    color: black;
+    
+}
+
+
+p {
+    color: black;
+    font-size: 19px;
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
-}
-
-main {
-    max-width: 800px; /* ajustado para web */
-    margin: 2em auto;
-    padding: 1em;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    
 }
 
 section {
-    margin-bottom: 2em;
+    margin: 20px;
+    padding: 15px;
+    background-color: white; /* Fundo branco para seções */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 h1, h2 {
-    margin-top: 0;
+    font-size: 1.0em;
+    margin-bottom: 10px;
+    color: #333; /* Cor do texto */
 }
 
-select#gender option[value="Português (Brasil) "] {
-    background-image: url('brasil.png');
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    
 }
 
-select#gender option[value="Inglês (EUA) "] {
-    background-image: url('reino-unido.png');
+li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px; /* Área clicável */
+    transition: background-color 0.3s; /* Transição suave */
 }
 
-select#gender option[value="Espanhol (Espanha) "] {
-    background-image: url('espanha.png');
-    background-color: #cccccc;
+li:hover {
+    background-color: var(--threeth-color); /* Efeito hover */
 }
 
-#switch-tema {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+li img {
+    width: 30px; /* Tamanho da imagem */
+    height: auto;
+    margin-right: 10px;
 }
 
-#switch-tema input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
 
-#switch-tema span {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-}
 
-#switch-tema span:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: 0.4s;
-}
 
-#switch-tema input:checked + span {
-    background-color: #333;
-}
+@media (min-width: 1024px) {
 
-#switch-tema input:checked + span:before {
-    transform: translateX(26px);
-}
 
-#switch-tema + i {
-    position: absolute;
-    right: 1em;
-    top: 1em;
-    font-size: 1.5em;
-    color: #666;
-}
+    /* Estilo para o título principal */
+    .titulo h1 {
+        font-size: 2.5em;
+        color: #0262c2;
+        text-align: center;
+        margin-bottom: 20px;
 
-/* Estilos específicos para mobile */
-@media only screen and (max-width: 600px) {
-    main {
-        max-width: 300px; /* ajustado para mobile */
     }
-    #select-idioma {
-        font-size: 0.8em;
+
+    /* Estilo para o cabeçalho */
+    header {
+        background-color: var(--threeth-color);
+        padding: 20px;
+        border-radius: 5px;
+        width: 35%;
+        height: 400px;
+        margin-left: auto;
+        margin-right: auto;
     }
-    #switch-tema {
+
+    /* Estilo para a seção de idiomas */
+    .idiomas {
+        margin: 30px 1;
+        text-align: center;
+
+    }
+
+    /* Estilo para o subtítulo */
+    .idiomas h2 {
+        font-size: 2em;
+        color: white;
+        margin-bottom: 15px;
+        text-decoration-line: underline;
+    }
+
+    /* Estilo para a lista de idiomas */
+    .idiomas ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+    }
+
+    /* Estilo para cada item da lista */
+    .idiomas li {
+        display: flex;
+        align-items: center;
+        background-color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(184, 23, 23, 0.1);
+
+    }
+
+    .idiomas li:hover {
+        transform: scale(1.05);
+    }
+
+    /* Estilo para as imagens dos idiomas */
+    .idiomas li img {
         width: 40px;
-        height: 24px;
+        height: 30px;
+        margin-right: 10px;
     }
-    #switch-tema span {
-        font-size: 0.8em;
+
+    /* Estilo para o texto dos idiomas */
+    .idiomas li {
+        font-size: 1.2em;
+        color: black;
     }
-}
 
-/* Tema Escuro */
-body.dark {
-    background-color: #333;
-}
+    /* Versão 0.1.24 */
 
-body.dark header {
-    background-color: #444;
-}
 
-body.dark main {
-    background-color: #555;
-    color: #fff;
-}
+    .version {
+        padding: 50px;
+        text-align: center;
 
-body.dark #select-idioma {
-    background-color: #444;
-    color: #fff;
+    }
+
+    .version h1 {
+        color: white;
+    }
+
+
+
+    p {
+        color: rgb(255, 255, 255);
+        font-size: 19px;
+        text-align: center;
+        text-decoration-line: underline;
+    }
+
+
+
+
+
 }
