@@ -13,8 +13,8 @@
 
 /* CODIGO DO BODY */
 body {
-  background-color: #fff;
-  margin: 0 auto;
+  background-color: #ffffff;
+  margin: 0;
   padding: 0;
   height: 100vh;
 }
@@ -35,18 +35,17 @@ body {
 }
 
 .title-details h1 {
-  margin: 0;
   font-size: 3.6rem;
   color: var(--threeth-color);
   text-transform: uppercase;
 }
 
 /* Estilos comuns para os cards ------------------------------------------------------------------------------------------------------------------------------------------- */
-.secao {
+/* .secao {
   margin: 0;
   align-items: center;
   flex: 1;
-}
+} */
 
 .secao-div {
   background-repeat: no-repeat;
@@ -56,10 +55,9 @@ body {
   justify-content: center;
   width: 100%;
   margin: 0 auto;
-  padding: 15px;
+  /* padding: 15px; */
   text-align: center;
-
-
+  gap: 15px;
 }
 
 /*cards----------------------------------------------------------------------------*/
@@ -71,9 +69,9 @@ body {
   /* padding: 1px; */
   border: 1px solid white;
   gap: 5px;
-  margin: 10px;
-  width: 35rem;
-  height: 22rem;
+  /* margin: 10px; */
+  width: 39rem;
+  height: 19rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,22 +79,52 @@ body {
   box-sizing: border-box;
 }
 
+
+.imgs img { 
+  width: 20rem;
+  height: 12rem;
+  object-fit: cover;
+} 
+
+.card-body {
+  height: 13rem;
+}
+
+.card-body p {
+  
+}
+/* .card-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
 .card-text {
   font-size: 10px;
   text-align: justify;
 }
 
-.card-title {
-  margin: 1rem auto;
-  font-size: 18px;
+.card-title {   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+}
+
+.card-title h1 {
+  font-size: 1.8rem;
 
 }
 
-.card img {
+/* .card img {
   border-radius: 5px;
   height: 19rem;
   width: 15rem;
-}
+} */
+
+
+
 
 @media (min-width: 1024px) {
 
