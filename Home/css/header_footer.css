@@ -93,7 +93,7 @@ html {
   padding: 10px;
   border-left: 1px solid var(--threeth-color);
   border-top : 1px solid var(--threeth-color);
-  border-radius: 5px 0 0 5px;
+  border-radius: 10px 0 0 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
@@ -103,9 +103,26 @@ html {
   margin-bottom: 10px;
 }
 
-.dropdown-menu li a {
-  color: var(--threeth-color);
+.dropdown-menu li img {
+  width: 30px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.idiomas {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  color: #ffffff;
   text-decoration: none;
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+.version {
+  font-size: 1.4rem;
+  color: var(--primary-color);
 }
 
 /* Exibir o dropdown quando estiver ativo */
@@ -124,6 +141,8 @@ html {
     transform: translateY(0);
   }
 }
+
+/* Dropdown Configuração Fim*/
 
 /* Botão para abrir o dropdown */
 /* .dropdown-toggle {
