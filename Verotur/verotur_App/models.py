@@ -77,10 +77,13 @@ class AuthUserUserPermissions(models.Model):
         unique_together = (('user_id', 'permission_id'),)
 
 
+class Categorias(models.Model):
+    id_categorias = models.AutoField(db_column='ID_categorias', primary_key=True)  # Field name made lowercase.
+    nome = models.CharField(max_length=45)
 
     class Meta:
         managed = False
-        db_table = 'categoria'
+        db_table = 'categorias'
 
 
 class DjangoAdminLog(models.Model):
@@ -125,37 +128,22 @@ class DjangoSession(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'django_session'    
+        db_table = 'django_session'
 
-class Categoria(models.Model):
-    id_categoria = models.AutoField(primary_key=True)
-    nome = models.CharField(max_length=45)
-    
-    class Meta:
-        managed = False
-        db_table = 'Categoria'
-    
-    def __str__(self):
-        return self.nome
-    
 
-class PontoTuristico(models.Model):
-    id_ponto_turistico = models.AutoField(primary_key=True)
+class PontosTuristicos(models.Model):
+    id_pontos_turisticos = models.AutoField(db_column='ID_pontos_turisticos', primary_key=True)  # Field name made lowercase.
     nome = models.CharField(max_length=45)
-    descricao = models.TextField(max_length=500)
-    imagem = models.ImageField(upload_to='')
-    endereco = models.CharField(max_length=100)
+    imagem = models.CharField(max_length=45)
+    descricao = models.TextField()
+    endereco = models.CharField(max_length=45)
     horarios_funcionamento = models.CharField(max_length=45)
     lugares_pagos = models.CharField(max_length=45)
     monitoria = models.CharField(max_length=45)
     latitude = models.CharField(max_length=45)
     longitude = models.CharField(max_length=45)
-    categoria_id_categoria = models.ForeignKey(Categoria, models.DO_NOTHING, db_column='categoria_id_categoria')
+    categorias_id_categorias = models.ForeignKey(Categorias, models.DO_NOTHING, db_column='categorias_ID_categorias')  # Field name made lowercase.
 
     class Meta:
         managed = False
-        db_table = 'ponto_turistico'
-        
-    def __str__(self):
-        return self.nome
-    
+        db_table = 'pontos_turisticos'

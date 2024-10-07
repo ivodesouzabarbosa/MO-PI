@@ -12,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@o_0p41%&u7zl+v&fyf98bbwb+k&9h^73285zcuc9gx)qsm-yn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
@@ -70,7 +70,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ovelha14_db_verotour',
         'USER':'ovelha14_admin',
-        'PASSWORD':'verotour!@12',
+        'PASSWORD':'PItv[BDe?Ps-',
         'HOST':'192.185.222.207',
         'PORT':'3306'
     }
