@@ -37,6 +37,7 @@ html {
   bottom: 0;
   width: 100%;
   background-color: var(--threeth-color);
+  z-index: 10;
 }
 
 .nav-footer-home {
@@ -81,12 +82,12 @@ html {
 /* Esconder o dropdown inicialmente */
 .dropdown-menu {
   display: none;
-  position: absolute;
-  bottom: 100%;
-  /* left: 10%; */
+  position: fixed;
+  bottom: 50px;
   right: 0;
-  width: 80%;
-  max-height: calc(100vh - 50px);
+  /* width: 80%; */
+  /* max-height: calc(100vh - 50px); */
+  height: 35vh;
   background-color: #ffffff;
   color: white;
   list-style: none;
@@ -96,6 +97,7 @@ html {
   border-radius: 10px 0 0 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  z-index: 5;
 }
 
 /* Estilização dos itens do dropdown */
@@ -112,7 +114,7 @@ html {
 .idiomas {
   display: flex;
   align-items: center;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   border-radius: 5px;
   color: #ffffff;
   text-decoration: none;

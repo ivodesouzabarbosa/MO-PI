@@ -1,4 +1,4 @@
 document.querySelector('.dropdown-toggle').addEventListener('click', function() {
-    const dropdown = this.nextElementSibling;  // Seleciona o próximo elemento (o dropdown)
+    const dropdown = document.querySelector('.dropdown-menu'); // Certifique-se que o seletor está correto
     dropdown.classList.toggle('active');
 });
