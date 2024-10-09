@@ -3,6 +3,8 @@ from django.db import models
 class Categorias(models.Model):
     nome = models.CharField(max_length=45)
     
+    def __str__(self):
+        return self.nome
     
 class PontosTuristicos(models.Model):
     nome = models.CharField(max_length=45)
