@@ -105,7 +105,11 @@
 /* Estilos para Desktop */
 @media (min-width: 1024px) {
   
-  
+  body{
+    background-image: url(../../viagem\ branca.jpg);
+    background-repeat: no-repeat ;
+    background-size: cover; 
+  }
   .title-details {
     display: flex;
     justify-content: center;
