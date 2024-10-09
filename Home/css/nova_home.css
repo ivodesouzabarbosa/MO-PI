@@ -363,18 +363,18 @@
 
 
 
-
-
-
-
-
 /* Desktops mudanças para web*/
 @media (min-width: 1024px) {
-    .cards-home {
-        flex-direction: row;
+    .container-mapa{
+        margin: 0 auto;
+        width: 84%;
     }
 
-
+    .cards-home {
+        flex-direction: row;
+        margin: 0 auto;
+        width: 77%;
+    }
 
     /* teste01.10 -----------------------------------------------------------------------*/
     /* joy efeitos do titulos */
@@ -385,11 +385,11 @@
     }
 
     .main-card {
-        margin: 0;
-        width: 80%;
+        margin: 0 auto;
+        width: 77%;
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 4rem;
         opacity: 90%;
     }
 
@@ -559,6 +559,7 @@
 
     .container-listra {
         margin: 0 auto;
+        
 
     }
 
@@ -577,7 +578,7 @@
         flex-direction: row;
         /* justify-content: space-around; */
         align-items: center;
-        width: 100%;
+        width: 77%;
     }
 
     .card-web {
