@@ -66,23 +66,15 @@ WSGI_APPLICATION = 'Verotur.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'xpeokmpy4s83e78r',
+         'USER':'neoyn1uccwzwpue3',
+         'PASSWORD':'ya2yxljxbafkeqfg',
+         'HOST':'e11wl4mksauxgu1w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+         'PORT':'3306'
+     }
 }
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'ovelha14_db_verotour',
-#         'USER':'ovelha14_admin',
-#         'PASSWORD':'PItv[BDe?Ps-',
-#         'HOST':'192.185.222.207',
-#         'PORT':'3306'
-#     }
-# }
 
 
 # Password validation

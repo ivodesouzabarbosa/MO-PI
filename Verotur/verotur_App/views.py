@@ -31,5 +31,5 @@ def pontos_por_categoria(request, categoria_id):
     
 # função para puxa informações das cetegorias
 def linkcateg(request):
-    categ = Categoria.objects.all()
+    categ = Categorias.objects.all()
     return render(request, 'cards-mobile.html', {'categorias': categ})
