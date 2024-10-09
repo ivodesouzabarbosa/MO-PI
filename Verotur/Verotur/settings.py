@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-@o_0p41%&u7zl+v&fyf98bbwb+k&9h^73285zcuc9gx)qsm-yn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['verotur-c50f4a134bf6.herokuapp.com/']
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.staticfiles',
     'verotur_App',
 ]
@@ -116,6 +117,7 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
