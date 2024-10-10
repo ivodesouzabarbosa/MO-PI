@@ -12,13 +12,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yu1ab+8tm#z&ch@^v^aqy3dffn_cskno)!ac%8=23=dk$())um'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'default-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['verotur-92535ed7027b.herokuapp.com']
-
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+ALLOWED_HOSTS = ['.herokuapp.com', 'verotur-92535ed7027b.herokuapp.com']
 
 # Application definition
 
@@ -75,16 +73,8 @@ WSGI_APPLICATION = 'verotur.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 's99vbbf6gyy9zlba',
-         'USER':'tko5uxaao1mnxsuh',
-         'PASSWORD':'p855czeq3v678uar',
-         'HOST':'e11wl4mksauxgu1w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-         'PORT':'3306'
-     }
+    'default': dj_database_url.config(default=os.environ.get('JAWSDB_URL'))
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
