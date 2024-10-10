@@ -1,1 +1,1 @@
-web: gunicorn verotur.wsgi --logs-file -
+web: gunicorn verotur.wsgi
