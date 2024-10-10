@@ -1,0 +1,1 @@
+web: gunicorn verotur.wsgi --logs-file -
