@@ -1,2 +1,0 @@
-web: gunicorn verotur.wsgi --log-file -
-
