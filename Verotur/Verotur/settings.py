@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'verotur.wsgi.application'
 DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'xpeokmpy4s83e78r',
-         'USER':'neoyn1uccwzwpue3',
-         'PASSWORD':'ya2yxljxbafkeqfg',
+         'NAME': 's99vbbf6gyy9zlba',
+         'USER':'tko5uxaao1mnxsuh',
+         'PASSWORD':'p855czeq3v678uar',
          'HOST':'e11wl4mksauxgu1w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
          'PORT':'3306'
      }
