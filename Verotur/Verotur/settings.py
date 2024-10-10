@@ -48,7 +48,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'verotur.urls'
+ROOT_URLCONF = 'Verotur.urls'
 
 TEMPLATES = [
     {
@@ -66,7 +66,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'verotur.wsgi.application'
+WSGI_APPLICATION = 'Verotur.wsgi.application'
 
 
 # Database
