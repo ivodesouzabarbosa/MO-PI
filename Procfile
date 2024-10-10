@@ -1,1 +1,1 @@
-web: gunicorn verotur.wsgi
+web: gunicorn verotur.wsgi --log-level debug
