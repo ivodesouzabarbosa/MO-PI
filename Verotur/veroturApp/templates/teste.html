@@ -11,12 +11,14 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="{% static "img/cop_30_bandeira.png" %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% staticfiles "img/cop_30_bandeira.png" %}" type="image/x-icon">
     <title>Pontos Turísticos</title>
-    <link rel="stylesheet" href="{% static 'style/map.css' %}" />
+    <link rel="stylesheet" href="{% staticfiles 'style/map.css' %}" />
   </head>
   <body>
     <div id="map" style="height: 500px; width: 100%"></div>
+
+    <h1>Pegando</h1>
 
     <!-- Carregar o JavaScript do Google Maps API -->
     <script
@@ -25,7 +27,7 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfLW4X31fejTXVD1jg7P0G35m9cDWyE6g&callback=initMap"
     ></script>
 
-    <script src="{% static 'js/map.js' %}"></script>
+    <script src="{% staticfiles 'js/map.js' %}"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
