@@ -1,1 +1,1 @@
-web: gunicorn Verotur.verotur.wsgi
+web: gunicorn Verotur.Verotur.wsgi
