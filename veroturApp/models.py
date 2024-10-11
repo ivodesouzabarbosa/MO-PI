@@ -16,4 +16,7 @@ class PontosTuristicos(models.Model):
     monitoria = models.CharField(max_length=45)
     latitude = models.CharField(max_length=45)
     longitude = models.CharField(max_length=45)
-    categorias_id_categorias = models.ForeignKey(Categorias, models.DO_NOTHING, db_column='categorias_ID_categorias')  # Field name made lowercase.
+    categorias_id_categorias = models.ForeignKey(Categorias, models.DO_NOTHING, db_column='categorias_ID_categorias')
+
+    def __str__(self):
+        return self.nome
