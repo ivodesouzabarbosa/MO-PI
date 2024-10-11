@@ -64,9 +64,14 @@ WSGI_APPLICATION = 'verotur.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('JAWSDB_URL')
-    )
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 's99vbbf6gyy9zlba',
+         'USER':'tko5uxaao1mnxsuh',
+         'PASSWORD':'p855czeq3v678uar',
+         'HOST':'e11wl4mksauxgu1w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+         'PORT':'3306'
+     }
 }
 
 # Password validation
