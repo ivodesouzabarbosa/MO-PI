@@ -1,0 +1,183 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="shortcut icon" href="{% static "Home/img/veroTur_logo.webp" %}" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <!-- <link rel="stylesheet" href="../Home/css/home.css"> -->
+  <link rel="stylesheet" href="{% static "Eventos/css/eventos.css" %}">
+  <link rel="stylesheet" href="{% static "Home/css/header_footer.css" %}">
+  <title>Verotur - Eventos</title>
+</head>
+
+<body>
+  <header class="header-home">
+    <div class="logo-senac-home">
+      <img src="{% static "Home/img/senac_home.webp" %}" alt="#" />
+    </div>
+
+    <div class="wrappercontainer">
+      <nav class="header_nav">
+        <ul>
+          <li><a href="{% url "home"%}">Home</a></li>
+          <li><a href="{% url "como_chegar" %}">Como Chegar</a></li>
+          <li><a href="{% url "eventos" %}">Eventos</a></li>
+          <li><a href="../Configuraçao/configuracao.html">Configuração</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="logo-app-home">
+      <img src="{% static "Home/img/veroTur_logo.webp" %}" alt="" />
+    </div>
+  </header>
+
+  <main class="ch-main-container">
+    <div class="title-details">
+      <i class="fa-solid fa-calendar-days"></i>
+      <h1>Eventos</h1>
+    </div>
+
+    <!-- Seção com cards -->
+
+    <section class="event-section">
+      <!-- <div class="section-container"> -->
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="{% static "Eventos/img/Círio.jpeg" %}" alt="..." class="card-image">
+        <div class="card-body">
+          <h1 class="card-title">Círio de Nazaré</h1>
+          <p class="card-text">O Círio de Nazaré é uma das maiores festas religiosas do Brasil, realizada em Belém do Pará, em homenagem a Nossa Senhora de Nazaré.
+            <span>Local:</span>Centro De Belém
+            <span>Periodo:</span> Mês de Outubro
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="{% static "Eventos/img/Arraial_do_Pavulagem.webp" %}" alt="..." class="card-image">
+        <div class="card-body">
+          <h1 class="card-title">Arraial da Pavulagem</h1>
+          <p class="card-text">O Arraial da Pavulagem é uma tradicional festa junina realizada em Belém do Pará, celebrando a cultura popular com música, danças e comidas típicas.
+            <span>Local:</span>Centro De Belém
+            <span>Periodo:</span> Mês de Junho
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="{% static "Eventos/img/cop_30.jpg" %}" alt="..." class="card-image">
+        <div class="card-body">
+          <h1 class="card-title">COP 30</h1>
+          <p class="card-text">A COP 30 será um evento que reunirá líderes, ativistas e especialistas de todo o mundo, a conferência abordará questões ambientais, sustentabilidade e ações globais para enfrentar os desafios climáticos.
+            <span>Local:</span>A Definir
+            <span>Periodo:</span> Mês de Novembro
+          </p>
+        </div>
+      </div>
+     
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="{% static "Eventos/img/feira_livro.png" %}" alt="..." class="card-image">
+        <div class="card-body">
+          <h1 class="card-title">Feira Pan-Amazônica do Livro</h1>
+          <p class="card-text">A Feira Pan-Amazônica do Livro, realizada em Belém do Pará, é um vibrante festival literário que celebra a cultura e a diversidade da Amazônia. 
+            <span>Local:</span>Hangar
+            <span>Periodo:</span> Mês de Setembro
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card">
+        <img src="{% static "Eventos/img/carnaval.jpg" %}" alt="..." class="card-image">
+        <div class="card-body">
+          <h1 class="card-title">Carnaval</h1>
+          <p class="card-text">O Carnaval de Belém do Pará é uma festa vibrante que une tradições e ritmos da Amazônia. Com desfiles de blocos, máscaras coloridas e danças contagiantes, o evento atrai foliões de todas as idades.
+            <span>Local:</span>Varanda Superior do Cojan
+            <span>Periodo:</span> Mês de Fevereiro
+          </p>
+        </div>
+      </div>
+
+          
+    </section>
+  </main>
+
+  <!-- Menu footer do mobile -->
+  <footer class="footer-menu-home">
+    <nav class="nav-footer-home">
+      <ul class="lista-item-home">
+        <li class="list-footer">
+          <a class="link-footer" href="{% url "home" %}"><i class="item-link-footer fa-solid fa-house"></i></a>
+        </li>
+        <li class="list-footer">
+          <!--Eventos-->
+          <a class="link-footer" href="{% url "eventos" %}"><i
+              class="item-link-footer fa-regular fa-calendar-days"></i></a>
+        </li>
+        <li class="list-footer">
+          <!--como chegar-->
+          <a class="link-footer" href="{% url "como_chegar" %}"><i
+              class="item-link-footer fa-solid fa-location-dot"></i></a>
+        </li>
+        <li class="list-footer">
+          <a class="link-footer dropdown-toggle"><i class="item-link-footer fa-solid fa-gear"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+
+  <ul class="dropdown-menu">
+    <li class="idiomas"><img src="{% static "Home/img/brasil.png" %}" alt="Português (Brasil)">Português (Brasil)</li>
+    <li class="idiomas"><img src="{% static "Home/img/engles.png" %}" alt="Inglês (EUA)">Inglês (EUA)</li>
+    <li class="idiomas"><img src="{% static "Home/img/espanha.png" %}" alt="Espanhol (Espanha)">Espanhol (Espanha)</li>
+    <li class="version">Versão 0.1.24</li>
+  </ul>
+
+  <!-- Menu footer do deskitop -->
+
+  <div class="container-desk">
+    <footer class="footer-desk">
+      <div class="logo-senac-footer">
+        <a href="https://www.pa.senac.br/">
+          <img src="{% static "Home/img/senac_footer.png" %}" />
+        </a>
+      </div>
+
+      <div class="direitos_footer">
+        <p>© Todos os Direitos Reservados - 2024
+          
+        </p>
+      </div>
+      <div class="rede_logo">
+        <div class="logo-app-footer">
+          <a href="https://www.facebook.com/senacpara/">
+            <img src="{% static "Home/img/facebook.png" %}" />
+          </a>
+        </div>
+
+        <div class="logo-app-footer">
+          <a href="https://www.instagram.com/senac_pa/">
+            <img src="{% static "Home/img/instagram.png" %}" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="{% static "Home/js/config.js" %}"></script>
+</body>
+
+</html>

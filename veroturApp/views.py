@@ -5,10 +5,25 @@ from .models import PontosTuristicos, Categorias
 def map_view(request):
     return render(request, 'teste.html')
 
-def lista_categorias_view(request):
-    categorias = Categorias.objects.all()
-    return render(request, 'cards-mobile.html', {'categorias': categorias})
+def home(request):
+    return render(request, 'index.html')
 
+def eventos(request):
+    return render(request, 'Eventos/eventos.html')
+
+def como_chegar(request):
+    return render(request, 'como_chegar/como_chegar.html')
+
+def pontos_turisticos(request):
+    return render(request, 'como_chegar/pontos_turisticos.html')
+
+def lista_pontos_turisticos(request):
+    pontos = PontosTuristicos.objects.all()
+    return render(request, 'como_chegar/detalhes.html', {'pontos': pontos})
+
+
+
+# Arquivo json para mapa google
 def pontos_turisticos_view(request):
     # Obtém todos os pontos turísticos
     pontos = PontosTuristicos.objects.all()
@@ -20,16 +35,3 @@ def pontos_turisticos_view(request):
     ))
     
     return JsonResponse(pontos_list, safe=False)
-
-def pontos_por_categoria(request, categoria_id):
-    categoria = get_object_or_404(PontosTuristicos, id=categoria_id)
-    pontos_turisticos = PontosTuristicos.objects.filter(categoria=categoria)
-    return render(request, 'segunda_pagina.html', {
-        'categoria': categoria,
-        'pontos_turisticos': pontos_turisticos
-    })
-    
-# função para puxa informações das cetegorias
-def linkcateg(request):
-    categ = Categorias.objects.all()
-    return render(request, 'cards-mobile.html', {'categorias': categ})
