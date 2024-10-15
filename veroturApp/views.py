@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from .models import PontosTuristicos, Categorias
+from django.utils.translation import gettext
+from django.http import HttpResponse
 
 def map_view(request):
     return render(request, 'teste.html')
@@ -46,3 +48,8 @@ def pontos_turisticos_view(request):
     ))
     
     return JsonResponse(pontos_list, safe=False)
+
+# campo destinado para traduções
+def teste(request):
+    texto = gettext('categorias')
+    return render(request, 'como_chegar/pontos_turisticos.html', {{'texto': texto}})
