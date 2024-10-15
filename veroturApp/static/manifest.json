@@ -34,7 +34,7 @@
 ],
 "description": "Explore os principais pontos turísticos de Belém, uma cidade vibrante e cheia de história. Com sua localização privilegiada à beira da Baía do Guajará.",
 "categories": ["games", "adventure", "rpg"],
-"orientation":"any",
-"lang": "en",
+"orientation":"portrait",
+"lang": "pt-br",
 "dir": "ltr"
 }
