@@ -16,8 +16,6 @@
   <link rel="shortcut icon" href="{% static "Home/img/veroTur_logo.webp" %}" type="image/x-icon">
   <link rel="stylesheet" href="{% static "pagina_como_chegar/css/como_chegar.css" %}" />
   <link rel="stylesheet" href="{% static "Home/css/header_footer.css" %}" />
-  <link rel="stylesheet" href="{% static "pagina_como_chegar/css/como_chegar.css" %}" />
-  <link rel="stylesheet" href="{% static "Home/css/header_footer.css" %}" />
   <title>Verotur - Como Chegar</title>
 </head>
 
@@ -43,7 +41,7 @@
     </div>
   </header>
 
-  <section class="container-cards">
+  {% comment %} <section class="container-cards">
     <div class="main-card">
       <div class="card card1">
         <a href="" class="card-link">
@@ -136,12 +134,12 @@
         </a>
       </div>
     </div>
-  </section>
+  </section> {% endcomment %}
 
   <section class="container-cards">
     <div class="main-card">
       {% for categoria in categorias %}
-      <div class="card">
+      <div class="card card{{ forloop.counter }}">
         <!-- O card é envolvido por um link para a página da categoria -->
         <a href="{% url 'pontos_por_categoria' categoria.id %}" class="card-link">
           <div class="conteudo">
@@ -220,9 +218,7 @@
       </div>
 
       <div class="direitos_footer">
-        <p>© Todos os Direitos Reservados - 2024
-
-        </p>
+        <p>© Todos os Direitos Reservados - 2025</p>
       </div>
 
       <div class="rede_logo">

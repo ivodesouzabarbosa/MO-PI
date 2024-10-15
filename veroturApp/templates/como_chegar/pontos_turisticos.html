@@ -73,7 +73,7 @@
                 <img src="{% static "pagina_como_chegar/assets/icons/localizaca.svg" %}" alt="localização" />
               </button>
               <button class="tab-btn" content-id="horarios">
-                <img src="{% static "pagina_como_chegar/assets/icons/sprite.svg" %}" alt="horiario" />
+                <img src="{% static "pagina_como_chegar/assets/icons/calendar.svg" %}" alt="horiario" />
               </button>
               <button class="tab-btn" content-id="valores">
                 <img src="{% static "pagina_como_chegar/assets/icons/payment.svg" %}" alt="pagamento" />
@@ -617,30 +617,31 @@
     <nav class="nav-footer-home">
       <ul class="lista-item-home">
         <li class="list-footer">
-          <a class="link-footer" href="../index.html">
-            <i class="item-link-footer fa-solid fa-house"></i>
-          </a>
+          <a class="link-footer" href="{% url "home" %}"><i class="item-link-footer fa-solid fa-house"></i></a>
         </li>
         <li class="list-footer">
           <!--Eventos-->
-          <a class="link-footer" href="../Eventos/Eventos.html">
-            <i class="item-link-footer fa-regular fa-calendar-days"></i>
-          </a>
+          <a class="link-footer" href="{% url "eventos" %}"><i
+              class="item-link-footer fa-regular fa-calendar-days"></i></a>
         </li>
         <li class="list-footer">
           <!--como chegar-->
-          <a class="link-footer" href="../pagina_como_chegar/cards-mobile.html">
-            <i class="item-link-footer fa-solid fa-location-dot"></i>
-          </a>
+          <a class="link-footer" href="{% url "como_chegar" %}"><i
+              class="item-link-footer fa-solid fa-location-dot"></i></a>
         </li>
         <li class="list-footer">
-          <a class="link-footer" href="">
-            <i class="item-link-footer fa-solid fa-gear"></i>
-          </a>
+          <a class="link-footer dropdown-toggle"><i class="item-link-footer fa-solid fa-gear"></i></a>
         </li>
       </ul>
     </nav>
   </footer>
+
+  <ul class="dropdown-menu">
+    <li class="idiomas"><img src="{% static "Home/img/brasil.png" %}" alt="Português (Brasil)">Português (Brasil)</li>
+    <li class="idiomas"><img src="{% static "Home/img/engles.png" %}" alt="Inglês (EUA)">Inglês (EUA)</li>
+    <li class="idiomas"><img src="{% static "Home/img/espanha.png" %}" alt="Espanhol (Espanha)">Espanhol (Espanha)</li>
+    <li class="version">Versão 0.1.24</li>
+  </ul>
 
 
  <!-- Menu footer do deskitop -->
@@ -649,27 +650,23 @@
   <footer class="footer-desk">
     <div class="logo-senac-footer">
       <a href="https://www.pa.senac.br/">
-        <img src="../Home/img/senac_footer.png" />
+        <img src="{% static "Home/img/senac_footer.png" %}" />
       </a>
     </div>
 
     <div class="direitos_footer">
-      <p>© Todos os Direitos Reservados - 2024
-        <br>
-        Serviço Nacional de Aprendizagem Comercial - PA
-        <br>
-        CNPJ: 03.646.961/0001-66</p>
+      <p>© Todos os Direitos Reservados - 2025</p>
     </div>
     <div class="rede_logo">
       <div class="logo-app-footer">
         <a href="https://www.facebook.com/senacpara/">
-          <img src="../Home/img/facebook.png" />
+          <img src="{% static "Home/img/facebook.png" %}" />
         </a>
       </div>
 
       <div class="logo-app-footer">
         <a href="https://www.instagram.com/senac_pa/">
-          <img src="../Home/img/instagram.png" />
+          <img src="{% static "Home/img/instagram.png" %}" />
         </a>
       </div>
     </div>
@@ -677,8 +674,8 @@
   </footer>
 </div>
 
+  <script src="{% static "Home/js/config.js" %}"></script>
   <script src="{% static "pagina_como_chegar/js/sanfona_ponto.js" %} "></script>
   <script src="{% static "pagina_como_chegar/js/ponto_conteudo.js" %} "></script>
 </body>
-
 </html>

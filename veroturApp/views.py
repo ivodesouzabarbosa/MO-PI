@@ -13,8 +13,6 @@ def home(request):
 def eventos(request):
     return render(request, 'Eventos/eventos.html')
 
-def como_chegar(request):
-    return render(request, 'como_chegar/como_chegar.html')
 
 def pontos_turisticos(request):
     return render(request, 'como_chegar/pontos_turisticos.html')
@@ -24,7 +22,7 @@ def lista_pontos_turisticos(request):
     return render(request, 'como_chegar/detalhes.html', {'pontos': pontos})
 
 # Teste -------------
-def lista_categorias(request):
+def como_chegar(request):
     categorias = Categorias.objects.all()
     return render(request, 'como_chegar/como_chegar.html', {'categorias': categorias})
 
