@@ -13,32 +13,31 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,200" />
-  <link rel="stylesheet" href="./css/como_chegar.css" />
-  <link rel="stylesheet" href="../Home/css/header_footer.css" />
-  <link rel="stylesheet" href="{% static " pagina_como_chegar/css/como_chegar.css" %}" />
-  <link rel="stylesheet" href="{% static " Home/css/header_footer.css" %}" />
+  <link rel="shortcut icon" href="{% static "Home/img/veroTur_logo.webp" %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static "pagina_como_chegar/css/como_chegar.css" %}" />
+  <link rel="stylesheet" href="{% static "Home/css/header_footer.css" %}" />
   <title>Verotur - Como Chegar</title>
 </head>
 
 <body>
   <header class="header-home">
     <div class="logo-senac-home">
-      <img src="{% static " Home/img/senac_home.webp" %}" alt="logo senac" />
+      <img src="{% static "Home/img/senac_home.webp" %}" alt="logo senac" />
     </div>
 
     <div class="wrappercontainer">
       <nav class="header_nav">
         <ul>
-          <li><a href="{% url " home"%}">Home</a></li>
-          <li><a href="{% url " como_chegar" %}">Como Chegar</a></li>
-          <li><a href="{% url " eventos" %}">Eventos</a></li>
+          <li><a href="{% url "home" %}">Home</a></li>
+          <li><a href="{% url "como_chegar" %}">Como Chegar</a></li>
+          <li><a href="{% url "eventos" %}">Eventos</a></li>
           <li><a href="#">Configuração</a></li>
         </ul>
       </nav>
     </div>
 
     <div class="logo-app-home">
-      <img src="{% static " Home/img/veroTur_logo.webp" %}" alt="logo verotur" />
+      <img src="{% static "Home/img/veroTur_logo.webp" %}" alt="logo verotur" />
     </div>
   </header>
 
@@ -72,7 +71,7 @@
         </a>
       </div>
       <div class="card card4">
-        <a href="{% url " pontos_turisticos" %}" class="card-link">
+        <a href="{% url "pontos_turisticos" %}" class="card-link">
           <div class="conteudo">
             <!-- <i class="fa-solid fa-location-dot"></i> -->
             <i class="material-symbols-outlined">nature_people</i>
@@ -183,16 +182,16 @@
     <nav class="nav-footer-home">
       <ul class="lista-item-home">
         <li class="list-footer">
-          <a class="link-footer" href="{% url " home" %}"><i class="item-link-footer fa-solid fa-house"></i></a>
+          <a class="link-footer" href="{% url "home" %}"><i class="item-link-footer fa-solid fa-house"></i></a>
         </li>
         <li class="list-footer">
           <!--Eventos-->
-          <a class="link-footer" href="{% url " eventos" %}"><i
+          <a class="link-footer" href="{% url "eventos" %}"><i
               class="item-link-footer fa-regular fa-calendar-days"></i></a>
         </li>
         <li class="list-footer">
           <!--como chegar-->
-          <a class="link-footer" href="{% url " como_chegar" %}"><i
+          <a class="link-footer" href="{% url "como_chegar" %}"><i
               class="item-link-footer fa-solid fa-location-dot"></i></a>
         </li>
         <li class="list-footer">
@@ -203,9 +202,9 @@
   </footer>
 
   <ul class="dropdown-menu">
-    <li class="idiomas"><img src="{% static " Home/img/brasil.png" %}" alt="Português (Brasil)">Português (Brasil)</li>
-    <li class="idiomas"><img src="{% static " Home/img/engles.png" %}" alt="Inglês (EUA)">Inglês (EUA)</li>
-    <li class="idiomas"><img src="{% static " Home/img/espanha.png" %}" alt="Espanhol (Espanha)">Espanhol (Espanha)</li>
+    <li class="idiomas"><img src="{% static "Home/img/brasil.png" %}" alt="Português (Brasil)">Português (Brasil)</li>
+    <li class="idiomas"><img src="{% static "Home/img/engles.png" %}" alt="Inglês (EUA)">Inglês (EUA)</li>
+    <li class="idiomas"><img src="{% static "Home/img/espanha.png" %}" alt="Espanhol (Espanha)">Espanhol (Espanha)</li>
     <li class="version">Versão 0.1.24</li>
   </ul>
 
@@ -214,7 +213,7 @@
     <footer class="footer-desk">
       <div class="logo-senac-footer">
         <a href="https://www.pa.senac.br/">
-          <img src="{% static " Home/img/senac_footer.png" %}" />
+          <img src="{% static "Home/img/senac_footer.png" %}" />
         </a>
       </div>
 
@@ -227,20 +226,20 @@
       <div class="rede_logo">
         <div class="logo-app-footer">
           <a href="https://www.facebook.com/senacpara/">
-            <img src="{% static " Home/img/facebook.png" %}" />
+            <img src="{% static "Home/img/facebook.png" %}" />
           </a>
         </div>
 
         <div class="logo-app-footer">
           <a href="https://www.instagram.com/senac_pa/">
-            <img src="{% static " Home/img/instagram.png" %}" />
+            <img src="{% static "Home/img/instagram.png" %}" />
           </a>
         </div>
       </div>
     </footer>
   </div>
 
-  <script src="{% static " Home/js/config.js" %}"></script>
-  <script src="{% static " pagina_como_chegar/js/como_chegar.js" %} "></script>
+  <script src="{% static "Home/js/config.js" %}"></script>
+  <script src="{% static "pagina_como_chegar/js/como_chegar.js" %} "></script>
   </body>
 </html>
