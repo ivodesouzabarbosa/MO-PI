@@ -21,7 +21,18 @@ def lista_pontos_turisticos(request):
     pontos = PontosTuristicos.objects.all()
     return render(request, 'como_chegar/detalhes.html', {'pontos': pontos})
 
+# Teste -------------
+def lista_categorias(request):
+    categorias = Categorias.objects.all()
+    return render(request, 'como_chegar/como_chegar.html', {'categorias': categorias})
 
+def pontos_por_categoria(request, categoria_id):
+    categoria = get_object_or_404(Categorias, id=categoria_id)
+    pontos_turisticos = PontosTuristicos.objects.filter(categoria=categoria)
+    return render(request, 'pontos_categoria.html', {
+        'categoria': categoria,
+        'pontos_turisticos': pontos_turisticos
+    })
 
 # Arquivo json para mapa google
 def pontos_turisticos_view(request):
