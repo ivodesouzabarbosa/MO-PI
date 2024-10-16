@@ -34,9 +34,6 @@ def pontos_por_categoria(request, categoria_id):
         'pontos_turisticos': pontos_turisticos
     })
 
-from django.http import JsonResponse
-from .models import PontosTuristicos
-
 def pontos_turisticos_json(request):
     # Obtenha os parâmetros de limite do mapa
     ne_lat = request.GET.get('ne_lat')
