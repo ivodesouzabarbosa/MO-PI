@@ -78,3 +78,27 @@ def index(request):
 def teste(request):
     texto = gettext('parques')
     return render(request, 'como_chegar/pontos_turisticos.html', {{'texto': texto}})
+
+def teste(request):
+    texto = gettext('')
+    return render(request, 'como_chegar/pontos_turisticos.html', {{'texto': texto}})
+
+def teste(request):
+    texto = gettext('')
+    return render(request, 'como_chegar/pontos_turisticos.html', {{'texto': texto}})
+
+def teste(request):
+    texto = gettext('')
+    return render(request, 'como_chegar/pontos_turisticos.html', {{'texto': texto}})
+
+def teste(request):
+    texto = gettext('')
+    return render(request, 'como_chegar/pontos_turisticos.html', {{'texto': texto}})
+
+def teste(request):
+    texto = gettext('')
+    return render(request, 'como_chegar/pontos_turisticos.html', {{'texto': texto}})
+
+def teste(request):
+    texto = gettext('')
+    return render(request, 'como_chegar/pontos_turisticos.html', {{'texto': texto}})
