@@ -66,94 +66,261 @@
       {% endif %}
       <h1>{{ categoria.nome }}</h1>
     </div>
+    
   
     <section class="container">
+      <!-- Primeira coluna -->
       <div class="column">
-        {% for ponto in pontos_turisticos %}
-        <article class="card">
-          <div class="image-btn">
-            <div class="image-container">
-              <img src="{{ ponto.imagem.url }}" alt="{{ ponto.nome }}">
-              <div class="card-title">
-                <span>{{ ponto.nome }}</span>
-                <div>
-                  <i class="material-icons expand-icon">expand_more</i>
+        {% for ponto in pontos_turisticos|slice:":3" %}
+          <article class="card">
+            <div class="image-btn">
+              <div class="image-container">
+                <img src="{{ ponto.imagem.url }}" alt="{{ ponto.nome }}">
+                <div class="card-title">
+                  <span>{{ ponto.nome }}</span>
+                  <div>
+                    <i class="material-icons expand-icon">expand_more</i>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-smais">
+                <span>Saiba mais</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="tab-buttons">
+                <button class="tab-btn active" content-id="descricao-{{ ponto.id }}">
+                  <i class="material-icons-outlined">description</i>
+                </button>
+                <button class="tab-btn" content-id="endereco-{{ ponto.id }}">
+                    <i class="material-icons-outlined">pin_drop</i>
+                </button>
+                <button class="tab-btn" content-id="horarios-{{ ponto.id }}">
+                  <i class="material-icons-outlined">schedule</i>
+                </button>
+                <button class="tab-btn" content-id="valores-{{ ponto.id }}">
+                  <i class="material-icons-outlined">paid</i>
+                </button>
+              </div>
+  
+              <div class="tab-contents">
+                <div class="content" id="descricao-{{ ponto.id }}">
+                  <div class="infos">
+                    <h1 class="content-title">Descrição</h1>
+                    <p class="content-description">
+                      {{ ponto.descricao }}
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="content" id="endereco-{{ ponto.id }}">
+                  <div class="infos">
+                    <h1 class="content-title">Endereço</h1>
+                    <p class="content-description">
+                      {{ ponto.endereco }}
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="content" id="horarios-{{ ponto.id }}">
+                  <div class="infos">
+                    <h1 class="content-title">Horários</h1>
+                    <p class="content-description">
+                      {{ ponto.horarios_funcionamento }}
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="content" id="valores-{{ ponto.id }}">
+                  <div class="infos">
+                    <h1 class="content-title">Valores</h1>
+                    <p class="content-description">
+                      {{ ponto.lugares_pagos }}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="btn-smais">
-              <span>Saiba mais</span>
+            <div class="btn-rota">
+              <a href="https://maps.google.com/?q={{ ponto.latitude }},{{ ponto.longitude }}" target="_blank">
+                <i class="material-icons-outlined">mode_of_travel</i>
+                Rota
+              </a>
             </div>
-          </div>
-          <div class="card-content">
-            <div class="tab-buttons">
-              <button class="tab-btn active" content-id="descricao-{{ ponto.id }}">
-                <i class="material-icons-outlined">description</i>
-              </button>
-              <button class="tab-btn" content-id="endereco-{{ ponto.id }}">
-                  <i class="material-icons-outlined">pin_drop</i>
-              </button>
-              <button class="tab-btn" content-id="horarios-{{ ponto.id }}">
-                <i class="material-icons-outlined">schedule</i>
-              </button>
-              <button class="tab-btn" content-id="valores-{{ ponto.id }}">
-                <i class="material-icons-outlined">paid</i>
-              </button>
-            </div>
-
-            <div class="tab-contents">
-              <div class="content" id="descricao-{{ ponto.id }}">
-                <div class="infos">
-                  <h1 class="content-title">Descrição</h1>
-                  <p class="content-description">
-                    {{ ponto.descricao }}
-                  </p>
+          </article>
+        {% endfor %}
+      </div>
+  
+      <!-- Segunda coluna -->
+      <div class="column">
+        {% for ponto in pontos_turisticos|slice:"3:6" %}
+          <article class="card">
+            <!-- Conteúdo do ponto turístico -->
+            <div class="image-btn">
+              <div class="image-container">
+                <img src="{{ ponto.imagem.url }}" alt="{{ ponto.nome }}">
+                <div class="card-title">
+                  <span>{{ ponto.nome }}</span>
+                  <div>
+                    <i class="material-icons expand-icon">expand_more</i>
+                  </div>
                 </div>
               </div>
-
-              <div class="content" id="endereco-{{ ponto.id }}">
-                <div class="infos">
-                  <h1 class="content-title">Endereço</h1>
-                  <p class="content-description">
-                    {{ ponto.endereco }}
-                  </p>
-                </div>
-              </div>
-
-              <div class="content" id="horarios-{{ ponto.id }}">
-                <div class="infos">
-                  <h1 class="content-title">Horários</h1>
-                  <p class="content-description">
-                    {{ ponto.horarios_funcionamento }}
-                  </p>
-                </div>
-              </div>
-
-              <div class="content" id="valores-{{ ponto.id }}">
-                <div class="infos">
-                  <h1 class="content-title">Valores</h1>
-                  <p class="content-description">
-                    {{ ponto.lugares_pagos }}
-                  </p>
-                </div>
+              <div class="btn-smais">
+                <span>Saiba mais</span>
               </div>
             </div>
-          </div>
-          <div class="btn-rota">
-            <a href="https://maps.google.com/?q={{ ponto.latitude }},{{ ponto.longitude }}" target="_blank">
-              <i class="material-icons-outlined">mode_of_travel</i>
-              Rota
-            </a>
-          </div>
-        </article>
+            <div class="card-content">
+              <div class="tab-buttons">
+                <button class="tab-btn active" content-id="descricao-{{ ponto.id }}">
+                  <i class="material-icons-outlined">description</i>
+                </button>
+                <button class="tab-btn" content-id="endereco-{{ ponto.id }}">
+                    <i class="material-icons-outlined">pin_drop</i>
+                </button>
+                <button class="tab-btn" content-id="horarios-{{ ponto.id }}">
+                  <i class="material-icons-outlined">schedule</i>
+                </button>
+                <button class="tab-btn" content-id="valores-{{ ponto.id }}">
+                  <i class="material-icons-outlined">paid</i>
+                </button>
+              </div>
+  
+              <div class="tab-contents">
+                <div class="content" id="descricao-{{ ponto.id }}">
+                  <div class="infos">
+                    <h1 class="content-title">Descrição</h1>
+                    <p class="content-description">
+                      {{ ponto.descricao }}
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="content" id="endereco-{{ ponto.id }}">
+                  <div class="infos">
+                    <h1 class="content-title">Endereço</h1>
+                    <p class="content-description">
+                      {{ ponto.endereco }}
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="content" id="horarios-{{ ponto.id }}">
+                  <div class="infos">
+                    <h1 class="content-title">Horários</h1>
+                    <p class="content-description">
+                      {{ ponto.horarios_funcionamento }}
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="content" id="valores-{{ ponto.id }}">
+                  <div class="infos">
+                    <h1 class="content-title">Valores</h1>
+                    <p class="content-description">
+                      {{ ponto.lugares_pagos }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btn-rota">
+              <a href="https://maps.google.com/?q={{ ponto.latitude }},{{ ponto.longitude }}" target="_blank">
+                <i class="material-icons-outlined">mode_of_travel</i>
+                Rota
+              </a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+  
+      <!-- Terceira coluna -->
+      <div class="column">
+        {% for ponto in pontos_turisticos|slice:"6:9" %}
+          <article class="card">
+            <!-- Conteúdo do ponto turístico -->
+            <div class="image-btn">
+              <div class="image-container">
+                <img src="{{ ponto.imagem.url }}" alt="{{ ponto.nome }}">
+                <div class="card-title">
+                  <span>{{ ponto.nome }}</span>
+                  <div>
+                    <i class="material-icons expand-icon">expand_more</i>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-smais">
+                <span>Saiba mais</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="tab-buttons">
+                <button class="tab-btn active" content-id="descricao-{{ ponto.id }}">
+                  <i class="material-icons-outlined">description</i>
+                </button>
+                <button class="tab-btn" content-id="endereco-{{ ponto.id }}">
+                    <i class="material-icons-outlined">pin_drop</i>
+                </button>
+                <button class="tab-btn" content-id="horarios-{{ ponto.id }}">
+                  <i class="material-icons-outlined">schedule</i>
+                </button>
+                <button class="tab-btn" content-id="valores-{{ ponto.id }}">
+                  <i class="material-icons-outlined">paid</i>
+                </button>
+              </div>
+  
+              <div class="tab-contents">
+                <div class="content" id="descricao-{{ ponto.id }}">
+                  <div class="infos">
+                    <h1 class="content-title">Descrição</h1>
+                    <p class="content-description">
+                      {{ ponto.descricao }}
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="content" id="endereco-{{ ponto.id }}">
+                  <div class="infos">
+                    <h1 class="content-title">Endereço</h1>
+                    <p class="content-description">
+                      {{ ponto.endereco }}
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="content" id="horarios-{{ ponto.id }}">
+                  <div class="infos">
+                    <h1 class="content-title">Horários</h1>
+                    <p class="content-description">
+                      {{ ponto.horarios_funcionamento }}
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="content" id="valores-{{ ponto.id }}">
+                  <div class="infos">
+                    <h1 class="content-title">Valores</h1>
+                    <p class="content-description">
+                      {{ ponto.lugares_pagos }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btn-rota">
+              <a href="https://maps.google.com/?q={{ ponto.latitude }},{{ ponto.longitude }}" target="_blank">
+                <i class="material-icons-outlined">mode_of_travel</i>
+                Rota
+              </a>
+            </div>
+          </article>
         {% endfor %}
       </div>
     </section>
   </main>
 
 
-
-  <!-- Menu footer ------------------------------------------------------------- -->
+  <!-- Menu footer -->
   <footer class="footer-menu-home">
     <nav class="nav-footer-home">
       <ul class="lista-item-home">
