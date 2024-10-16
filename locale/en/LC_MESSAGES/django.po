@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-15 16:45-0300\n"
+"POT-Creation-Date: 2024-10-16 16:07-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1242,6 +1242,22 @@ msgstr ""
 msgid "Connect, get help, or contribute"
 msgstr ""
 
-#: .\veroturApp\views.py:54
-msgid "categorias"
-msgstr ""
+#: .\veroturApp\templates\index.html:41
+msgid "Inicio"
+msgstr "Start"
+
+#: .\veroturApp\templates\index.html:44
+msgid "Como Chegar"
+msgstr "How to Get There"
+
+#: .\veroturApp\templates\index.html:47
+msgid "Eventos"
+msgstr "Events"
+
+#: .\veroturApp\templates\index.html:50
+msgid "Configuração"
+msgstr "Settings"
+
+#: .\veroturApp\views.py:75 .\veroturApp\views.py:79
+msgid "parques"
+msgstr "parks"
