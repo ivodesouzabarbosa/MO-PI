@@ -7,6 +7,7 @@ function initMap() {
         mapTypeControl: false,
         streetViewControl: false,
         fullscreenControl: false,
+        gestureHandling: "greedy",
         styles: [
             { elementType: 'geometry', stylers: [{ color: '#f5f5f5' }] },
             { elementType: 'labels.icon', stylers: [{ visibility: 'off' }] },
