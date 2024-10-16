@@ -13,7 +13,7 @@
   <link rel="shortcut icon" href="" type="image/x-icon">
   <link rel="stylesheet" href="{% static "pagina_como_chegar/css/parques.css" %}">
   <link rel="stylesheet" href="{% static "Home/css/header_footer.css" %}" />
-  <title>Parques</title>
+  <title>{% trans "Parques" %}</title>
   
 </head>
 
@@ -26,10 +26,18 @@
       <div class="wrappercontainer">
         <nav class="header_nav">
           <ul>
-            <li><a href="{% url "home"%}">Home</a></li>
-            <li><a href="{% url "como_chegar" %}">Como Chegar</a></li>
-            <li><a href="{% url "eventos" %}">Eventos</a></li>
-            <li><a href="#">Configuração</a></li>
+            <li>
+              <a href="{% url 'home' %}">{% trans 'Inicio' %}</a>
+            </li>
+            <li>
+              <a href="{% url 'como_chegar' %}">{% trans 'Como Chegar' %}</a>
+            </li>
+            <li>
+              <a href="{% url 'eventos' %}">{% trans 'Eventos' %}</a>
+            </li>
+            <li>
+              <a href="#">{% trans 'Configuração' %}</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -345,10 +353,10 @@
   </footer>
 
   <ul class="dropdown-menu">
-    <li class="idiomas"><img src="{% static "Home/img/brasil.png" %}" alt="Português (Brasil)">Português (Brasil)</li>
-    <li class="idiomas"><img src="{% static "Home/img/engles.png" %}" alt="Inglês (EUA)">Inglês (EUA)</li>
-    <li class="idiomas"><img src="{% static "Home/img/espanha.png" %}" alt="Espanhol (Espanha)">Espanhol (Espanha)</li>
-    <li class="version">Versão 0.1.24</li>
+    <li class="idiomas"><img src="{% static "Home/img/brasil.png" %}" alt="Português (Brasil)">{% trans 'Português (Brasil)' %}</li>
+    <li class="idiomas"><img src="{% static "Home/img/engles.png" %}" alt="Inglês (EUA)">{% trans 'Inglês (EUA)' %}</li>
+    <li class="idiomas"><img src="{% static "Home/img/espanha.png" %}" alt="Espanhol (Espanha)">{% trans 'Espanhol (Espanha)' %}</li>
+    <li class="version">{% trans 'Versão 0.1.24' %}</li>
   </ul>
 
 
@@ -363,7 +371,7 @@
     </div>
 
     <div class="direitos_footer">
-      <p>© Todos os Direitos Reservados - 2025</p>
+      <p>{% trans '© Todos os Direitos Reservados - 2025' %}</p>
     </div>
     <div class="rede_logo">
       <div class="logo-app-footer">

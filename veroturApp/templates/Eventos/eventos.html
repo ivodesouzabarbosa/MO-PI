@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -16,7 +17,7 @@
   <!-- <link rel="stylesheet" href="../Home/css/home.css"> -->
   <link rel="stylesheet" href="{% static "Eventos/css/eventos.css" %}">
   <link rel="stylesheet" href="{% static "Home/css/header_footer.css" %}">
-  <title>Verotur - Eventos</title>
+  <title>{% trans 'Verotur - Eventos' %}</title>
 </head>
 
 <body>
@@ -27,14 +28,24 @@
 
     <div class="wrappercontainer">
       <nav class="header_nav">
-        <ul>
-          <li><a href="{% url "home"%}">Home</a></li>
-          <li><a href="{% url "como_chegar" %}">Como Chegar</a></li>
-          <li><a href="{% url "eventos" %}">Eventos</a></li>
-          <li><a href="../Configuraçao/configuracao.html">Configuração</a></li>
-        </ul>
-      </nav>
-    </div>
+        <div class="wrappercontainer">
+          <nav class="header_nav">
+            <ul>
+              <li>
+                <a href="{% url 'home' %}">{% trans 'Inicio' %}</a>
+              </li>
+              <li>
+                <a href="{% url 'como_chegar' %}">{% trans 'Como Chegar' %}</a>
+              </li>
+              <li>
+                <a href="{% url 'eventos' %}">{% trans 'Eventos' %}</a>
+              </li>
+              <li>
+                <a href="#">{% trans 'Configuração' %}</a> 
+              </li>
+            </ul>
+          </nav>
+        </div>
 
     <div class="logo-app-home">
       <img src="{% static "Home/img/veroTur_logo.webp" %}" alt="" />
@@ -44,7 +55,7 @@
   <main class="ch-main-container">
     <div class="title-details">
       <i class="fa-solid fa-calendar-days"></i>
-      <h1>Eventos</h1>
+      <h1>{% trans "Eventos" %}</h1>
     </div>
 
     <!-- Seção com cards -->
@@ -55,10 +66,10 @@
       <div class="card">
         <img src="{% static "Eventos/img/Círio.jpeg" %}" alt="..." class="card-image">
         <div class="card-body">
-          <h1 class="card-title">Círio de Nazaré</h1>
-          <p class="card-text">O Círio de Nazaré é uma das maiores festas religiosas do Brasil, realizada em Belém do Pará, em homenagem a Nossa Senhora de Nazaré.
-            <span>Local:</span>Centro De Belém
-            <span>Periodo:</span> Mês de Outubro
+          <h1 class="card-title">{% trans "Círio de Nazaré" %}</h1>
+          <p class="card-text">{% trans "O Círio de Nazaré é uma das maiores festas religiosas do Brasil, realizada em Belém do Pará, em homenagem a Nossa Senhora de Nazaré." %}
+            <span>{% trans "Local:" %}</span> {% trans "Centro De Belém." %}
+            <span>{% trans "Periodo:" %}</span> {% trans "Mês de Outubro." %}
           </p>
         </div>
       </div>
@@ -67,10 +78,10 @@
       <div class="card">
         <img src="{% static "Eventos/img/Arraial_do_Pavulagem.webp" %}" alt="..." class="card-image">
         <div class="card-body">
-          <h1 class="card-title">Arraial da Pavulagem</h1>
-          <p class="card-text">O Arraial da Pavulagem é uma tradicional festa junina realizada em Belém do Pará, celebrando a cultura popular com música, danças e comidas típicas.
-            <span>Local:</span>Centro De Belém
-            <span>Periodo:</span> Mês de Junho
+          <h1 class="card-title">{% trans "Arraial da Pavulagem" %}</h1>
+          <p class="card-text">{% trans "O Arraial da Pavulagem é uma tradicional festa junina realizada em Belém do Pará, celebrando a cultura popular com música, danças e comidas típicas." %}
+            <span>{% trans "Local:" %}</span> {% trans "Centro De Belém." %}
+            <span>{% trans "Periodo:" %}</span> {% trans "Mês de Junho." %}
           </p>
         </div>
       </div>
@@ -79,22 +90,22 @@
       <div class="card">
         <img src="{% static "Eventos/img/cop_30.jpg" %}" alt="..." class="card-image">
         <div class="card-body">
-          <h1 class="card-title">COP 30</h1>
-          <p class="card-text">A COP 30 será um evento que reunirá líderes, ativistas e especialistas de todo o mundo, a conferência abordará questões ambientais, sustentabilidade e ações globais para enfrentar os desafios climáticos.
-            <span>Local:</span>A Definir
-            <span>Periodo:</span> Mês de Novembro
+          <h1 class="card-title">{% trans "COP 30" %}</h1>
+          <p class="card-text">{% trans "A COP 30 será um evento que reunirá líderes, ativistas e especialistas de todo o mundo, a conferência abordará questões ambientais, sustentabilidade e ações globais para enfrentar os desafios climáticos." %}
+            <span>{% trans "Local:" %}</span>{% trans "A Definir" %}
+            <span>{% trans "Periodo:" %}</span> {% trans "Mês de Novembro" %}
           </p>
         </div>
       </div>
-     
+      {% trans "" %}
       <!-- Card 4 -->
       <div class="card">
         <img src="{% static "Eventos/img/feira_livro.png" %}" alt="..." class="card-image">
         <div class="card-body">
-          <h1 class="card-title">Feira Pan-Amazônica do Livro</h1>
-          <p class="card-text">A Feira Pan-Amazônica do Livro, realizada em Belém do Pará, é um vibrante festival literário que celebra a cultura e a diversidade da Amazônia. 
-            <span>Local:</span>Hangar
-            <span>Periodo:</span> Mês de Setembro
+          <h1 class="card-title">{% trans "Feira Pan-Amazônica do Livro" %}</h1>
+          <p class="card-text">{% trans "A Feira Pan-Amazônica do Livro, realizada em Belém do Pará, é um vibrante festival literário que celebra a cultura e a diversidade da Amazônia." %} 
+            <span>{% trans "Local:" %}</span>{% trans "Hangar" %}
+            <span>{% trans "Periodo:" %}</span> {% trans "Mês de Setembro" %}
           </p>
         </div>
       </div>
@@ -103,10 +114,10 @@
       <div class="card">
         <img src="{% static "Eventos/img/carnaval.jpg" %}" alt="..." class="card-image">
         <div class="card-body">
-          <h1 class="card-title">Carnaval</h1>
-          <p class="card-text">O Carnaval de Belém do Pará é uma festa vibrante que une tradições e ritmos da Amazônia. Com desfiles de blocos, máscaras coloridas e danças contagiantes, o evento atrai foliões de todas as idades.
-            <span>Local:</span>Varanda Superior do Cojan
-            <span>Periodo:</span> Mês de Fevereiro
+          <h1 class="card-title">{% trans "Carnaval" %}</h1>
+          <p class="card-text">{% trans "O Carnaval de Belém do Pará é uma festa vibrante que une tradições e ritmos da Amazônia. Com desfiles de blocos, máscaras coloridas e danças contagiantes, o evento atrai foliões de todas as idades." %}
+            <span>{% trans "Local:" %}</span>{% trans "Varanda Superior do Cojan" %}
+            <span>{% trans "Periodo:" %}</span> {% trans "Mês de Fevereiro" %}
           </p>
         </div>
       </div>
@@ -140,10 +151,10 @@
   </footer>
 
   <ul class="dropdown-menu">
-    <li class="idiomas"><img src="{% static "Home/img/brasil.png" %}" alt="Português (Brasil)">Português (Brasil)</li>
-    <li class="idiomas"><img src="{% static "Home/img/engles.png" %}" alt="Inglês (EUA)">Inglês (EUA)</li>
-    <li class="idiomas"><img src="{% static "Home/img/espanha.png" %}" alt="Espanhol (Espanha)">Espanhol (Espanha)</li>
-    <li class="version">Versão 0.1.24</li>
+    <li class="idiomas"><img src="{% static "Home/img/brasil.png" %}" alt="Português (Brasil)">{% trans "Português (Brasil)" %}</li>
+    <li class="idiomas"><img src="{% static "Home/img/engles.png" %}" alt="Inglês (EUA)">{% trans "Inglês (EUA)" %}</li>
+    <li class="idiomas"><img src="{% static "Home/img/espanha.png" %}" alt="Espanhol (Espanha)">{% trans "Espanhol (Espanha)" %}</li>
+    <li class="version">{% trans "Versão  0.1.24" %}</li>
   </ul>
 
   <!-- Menu footer do deskitop -->
@@ -157,7 +168,7 @@
       </div>
 
       <div class="direitos_footer">
-        <p>© Todos os Direitos Reservados - 2024
+        <p>{% trans "© Todos os Direitos Reservados - 2025" %}
           
         </p>
       </div>

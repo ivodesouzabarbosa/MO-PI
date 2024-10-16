@@ -1243,21 +1243,21 @@ msgstr ""
 msgid "Connect, get help, or contribute"
 msgstr ""
 
-#: .\veroturApp\templates\index.html:41
-msgid "Home"
-msgstr ""
+#: .\veroturApp\templates\index.html:42
+msgid "Início"
+msgstr "Comenzar"
 
-#: .\veroturApp\templates\index.html:44
+#: .\veroturApp\templates\index.html:45
 msgid "Como Chegar"
-msgstr ""
+msgstr "Cómo llegar allí"
 
-#: .\veroturApp\templates\index.html:47
+#: .\veroturApp\templates\index.html:48
 msgid "Eventos"
-msgstr ""
+msgstr "Eventos"
 
-#: .\veroturApp\templates\index.html:50
+#: .\veroturApp\templates\index.html:51
 msgid "Configuração"
-msgstr ""
+msgstr "Ajustes"
 
 #: .\veroturApp\views.py:75 .\veroturApp\views.py:79
 msgid "parques"
