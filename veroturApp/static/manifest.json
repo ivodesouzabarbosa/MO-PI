@@ -26,14 +26,14 @@
     "form_factor": "wide"
   },
   {
-      "src": "/static/img/img/undertale_320.png",
-      "sizes": "320x320",
+      "src": "/static/Home/img/veroTur_logo-pwa-192x192.jpg",
+      "sizes": "192x192",
       "type": "image/png",
       "form_factor": "narrow"
     }
 ],
 "description": "Explore os principais pontos turísticos de Belém, uma cidade vibrante e cheia de história. Com sua localização privilegiada à beira da Baía do Guajará.",
-"categories": ["games", "adventure", "rpg"],
+"categories": ["viagem", "turismo", "regional"],
 "orientation":"portrait",
 "lang": "pt-br",
 "dir": "ltr"
