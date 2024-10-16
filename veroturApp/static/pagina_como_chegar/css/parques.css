@@ -212,7 +212,7 @@ body {
   align-items: center;
   width: 100%;
   border: none;
-  color: #2b364a;
+  color: var(--primary-color);
   background-color: var(--threeth-color);
   border-radius: 8px 8px 0 0;
   font-weight: 500;
@@ -221,9 +221,9 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.tab-btn:hover {
+/* .tab-btn:hover {
   color: var(--second-color);
-}
+} */
 
 .tab-btn.active {
   background-color: var(--second-color);

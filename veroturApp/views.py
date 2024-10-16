@@ -14,8 +14,8 @@ def eventos(request):
     return render(request, 'Eventos/eventos.html')
 
 
-def pontos_turisticos(request):
-    return render(request, 'como_chegar/pontos_turisticos.html')
+# def pontos_turisticos(request):
+#     return render(request, 'como_chegar/pontos_turisticos.html')
 
 def lista_pontos_turisticos(request):
     pontos = PontosTuristicos.objects.all()
@@ -27,9 +27,14 @@ def como_chegar(request):
     return render(request, 'como_chegar/como_chegar.html', {'categorias': categorias})
 
 def pontos_por_categoria(request, categoria_id):
+    # Obtém a categoria específica com base no ID passado na URL
     categoria = get_object_or_404(Categorias, id=categoria_id)
-    pontos_turisticos = PontosTuristicos.objects.filter(categoria=categoria)
-    return render(request, 'pontos_categoria.html', {
+
+    # Busca os pontos turísticos que pertencem à categoria
+    pontos_turisticos = PontosTuristicos.objects.filter(categorias_id_categorias=categoria)
+
+    # Renderiza os pontos turísticos para o template
+    return render(request, 'como_chegar/pontos_turisticos.html', {
         'categoria': categoria,
         'pontos_turisticos': pontos_turisticos
     })

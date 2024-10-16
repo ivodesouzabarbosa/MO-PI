@@ -8,11 +8,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <link rel="shortcut icon" href="" type="image/x-icon">
-  <!-- <link rel="stylesheet" href="../Home/css/home.css"> -->
   <link rel="stylesheet" href="{% static "pagina_como_chegar/css/parques.css" %}">
   <link rel="stylesheet" href="{% static "Home/css/header_footer.css" %}" />
   <title>Parques</title>
@@ -42,18 +39,41 @@
 
   <main class="ch-main-container">
     <div class="title-details">
-      <i class="fa-solid fa-landmark-dome"></i>
-      <h1>Parques</h1>
+      {% if categoria.nome == "Restaurantes" %}
+          <i class="material-icons-outlined">restaurant</i>
+      {% elif categoria.nome == "Shoppings" %}
+          <i class="material-icons-outlined">local_mall</i>
+      {% elif categoria.nome == "Atrações" %}
+          <i class="material-icons-outlined">attractions</i>
+      {% elif categoria.nome == "Parques" %}
+          <i class="material-icons-outlined">nature_people</i>
+      {% elif categoria.nome == "Prédios" %}
+          <i class="material-icons-outlined">location_city</i>
+      {% elif categoria.nome == "Praças" %}
+          <i class="material-icons-outlined">park</i>
+      {% elif categoria.nome == "Ilhas" %}
+          <i class="material-icons-outlined">beach_access</i>
+      {% elif categoria.nome == "Museus" %}
+          <i class="material-icons-outlined">museum</i>
+      {% elif categoria.nome == "Igrejas" %}
+          <i class="material-icons-outlined">church</i>
+      {% elif categoria.nome == "Terminais" %}
+          <i class="material-icons-outlined">directions_bus</i>
+      {% else %}
+          <i class="material-icons-outlined">question_mark</i>
+      {% endif %}
+      <h1>{{ categoria.nome }}</h1>
     </div>
-
+  
     <section class="container">
       <div class="column">
+        {% for ponto in pontos_turisticos %}
         <article class="card">
           <div class="image-btn">
             <div class="image-container">
-              <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/GSMa0953.jpg" alt="Imagem">
+              <img src="{{ ponto.imagem.url }}" alt="{{ ponto.nome }}">
               <div class="card-title">
-                <span>Bosque Rodrigues Alves</span>
+                <span>{{ ponto.nome }}</span>
                 <div>
                   <i class="material-icons expand-icon">expand_more</i>
                 </div>
@@ -64,552 +84,71 @@
             </div>
           </div>
           <div class="card-content">
-            <!-- <div id="container"> -->
             <div class="tab-buttons">
-              <button class="tab-btn active" content-id="descricao">
-                <img src="{% static "pagina_como_chegar/assets/icons/description.svg" %}" alt="description" />
+              <button class="tab-btn active" content-id="descricao-{{ ponto.id }}">
+                <i class="material-icons-outlined">description</i>
               </button>
-              <button class="tab-btn" content-id="endereco">
-                <img src="{% static "pagina_como_chegar/assets/icons/localizaca.svg" %}" alt="localização" />
+              <button class="tab-btn" content-id="endereco-{{ ponto.id }}">
+                  <i class="material-icons-outlined">pin_drop</i>
               </button>
-              <button class="tab-btn" content-id="horarios">
-                <img src="{% static "pagina_como_chegar/assets/icons/calendar.svg" %}" alt="horiario" />
+              <button class="tab-btn" content-id="horarios-{{ ponto.id }}">
+                <i class="material-icons-outlined">schedule</i>
               </button>
-              <button class="tab-btn" content-id="valores">
-                <img src="{% static "pagina_como_chegar/assets/icons/payment.svg" %}" alt="pagamento" />
+              <button class="tab-btn" content-id="valores-{{ ponto.id }}">
+                <i class="material-icons-outlined">paid</i>
               </button>
             </div>
 
             <div class="tab-contents">
-              <div class="content" id="descricao">
+              <div class="content" id="descricao-{{ ponto.id }}">
                 <div class="infos">
                   <h1 class="content-title">Descrição</h1>
                   <p class="content-description">
-                    Situado na Avenida Almirante Barroso, o Bosque é um dos principais
-                    cartõespostais da Cidade das Mangueiras. Com uma área total de 150
-                    mil metros quadrados, é um pedaço da floresta amazônica
-                    literalmente ‘preservado’ no coração da cidade.
+                    {{ ponto.descricao }}
                   </p>
-                  <!-- <div class="card-btn">
-                    <a href="./pag_Rod-Alves.html"><i class="fa-solid fa-plus"></i> detalhes</a>
-                  </div> -->
                 </div>
               </div>
 
-              <div class="content" id="endereco">
+              <div class="content" id="endereco-{{ ponto.id }}">
                 <div class="infos">
                   <h1 class="content-title">Endereço</h1>
                   <p class="content-description">
-                    Av. Almirante Barroso, 2305 – Marco.
+                    {{ ponto.endereco }}
                   </p>
                 </div>
               </div>
 
-              <div class="content" id="horarios">
+              <div class="content" id="horarios-{{ ponto.id }}">
                 <div class="infos">
                   <h1 class="content-title">Horários</h1>
                   <p class="content-description">
-                    TER-DOM 8h – 17h / SEG Fechado.
+                    {{ ponto.horarios_funcionamento }}
                   </p>
                 </div>
               </div>
 
-              <div class="content" id="valores">
+              <div class="content" id="valores-{{ ponto.id }}">
                 <div class="infos">
                   <h1 class="content-title">Valores</h1>
                   <p class="content-description">
-                    Paga R$ 7,00 inteira e R$ 3,50 meia entrada/ sem monitoria / 3h.
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- </div> -->
-          <div class="btn-rota">
-            <a href="https://maps.app.goo.gl/Yk1gAo728HMtbD6E6" target="_blank">
-              <i class="fa-solid fa-location-dot"></i>
-              Rota
-            </a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="image-btn">
-            <div class="image-container">
-              <img
-                src="https://www.oliberal.com/image/contentid/policy:1.715685:1695149189/museu.png?f=2x1&$p$f=ccdd27c&w=1500&$w=f075b93"
-                alt="Imagem">
-              <div class="card-title">
-                <span>Parque Zoobotânico Emílio Goeldi</span>
-                <i class="material-icons expand-icon">expand_more</i>
-              </div>
-            </div>
-            <div class="btn-smais">
-            <span>Saiba mais</span>
-            </div>
-          </div>
-          <div class="card-content">
-
-            <div class="tab-buttons">
-              <button class="tab-btn active" content-id="descricao">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-description"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="endereco">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-localizaca"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="horarios">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-calendar"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="valores">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-payment"></use>
-                </svg>
-              </button>
-            </div>
-
-            <div class="tab-contents">
-              <div class="content" id="descricao">
-                <div class="infos">
-                  <h1 class="content-title">Descrição</h1>
-                  <p class="content-description">
-                    É o Primeiro parque zoobotânico do Brasil, a mais antiga instituição científica da Amazônia e, o
-                    segundo museu de história natural brasileiro. Possui acervos de conhecimentos nas áreas de ciências
-                    naturais e humanas relacionados à Amazônia.
-                  </p>
-                  <!-- <div class="card-btn">
-                    <a href="./emilio_goeldi.html"><i class="fa-solid fa-plus"></i> detalhes</a>
-                  </div> -->
-                </div>
-              </div>
-
-              <div class="content" id="endereco">
-                <div class="infos">
-                  <h1 class="content-title">Endereço</h1>
-                  <p class="content-description">
-                    Av. Magalhães Barata, 376. São Brás.
-                  </p>
-                </div>
-              </div>
-
-              <div class="content" id="horarios">
-                <div class="infos">
-                  <h1 class="content-title">Horários</h1>
-                  <p class="content-description">
-                    QUA a DOM 9h – 17h / SEG-TER Fechado.
-                  </p>
-                </div>
-              </div>
-
-              <div class="content" id="valores">
-                <div class="infos">
-                  <h1 class="content-title">Valores</h1>
-                  <p class="content-description">
-                    Paga R$ 15,00 inteira e R$ 7,50 meia-entrada / sem monitoria / 3h.
+                    {{ ponto.lugares_pagos }}
                   </p>
                 </div>
               </div>
             </div>
           </div>
           <div class="btn-rota">
-            <a href="#">
-              <i class="fa-solid fa-location-dot"></i>
+            <a href="https://maps.google.com/?q={{ ponto.latitude }},{{ ponto.longitude }}" target="_blank">
+              <i class="material-icons-outlined">mode_of_travel</i>
               Rota
             </a>
           </div>
         </article>
-      </div>
-
-
-      <div class="column">
-        <article class="card">
-          <div class="image-btn">
-            <div class="image-container">
-              <img src="https://lh5.googleusercontent.com/p/AF1QipNBFdc6VYli3dxYnEIvCTQv2iwCrjnEIBAS7vYz=w540-h312-n-k-no"
-                alt="Imagem">
-              <div class="card-title">
-                <span>Nossa Senhora da Soledade</span>
-                <i class="material-icons expand-icon">expand_more</i>
-              </div>
-            </div>
-            <div class="btn-smais">
-              <span>Saiba mais</span>
-            </div>
-          </div>
-          <div class="card-content">
-
-            <div class="tab-buttons">
-              <button class="tab-btn active" content-id="descricao">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-description"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="endereco">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-localizaca"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="horarios">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-calendar"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="valores">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-payment"></use>
-                </svg>
-              </button>
-            </div>
-
-            <div class="tab-contents">
-              <div class="content" id="descricao">
-                <div class="infos">
-                  <h1 class="content-title">Descrição</h1>
-                  <p class="content-description">
-                    Espaço público cultural (cemitério já desativado), servindo à
-                    contemplação do patrimônio arquitetônico e de resgate histórico como museu a céu aberto.
-                  </p>
-                  <!-- <div class="card-btn">
-                    <a href="./cemiterio.html"><i class="fa-solid fa-plus"></i> detalhes</a>
-                  </div> -->
-                </div>
-              </div>
-
-              <div class="content" id="endereco">
-                <div class="infos">
-                  <h1 class="content-title">Endereço</h1>
-                  <p class="content-description">
-                    Av. Serzedelo Corrêa, 514 - Batista Campos.
-                  </p>
-                </div>
-              </div>
-
-              <div class="content" id="horarios">
-                <div class="infos">
-                  <h1 class="content-title">Horários</h1>
-                  <p class="content-description">
-                    SEG-QUI 8h – 17h / SEX-DOM Fechado.
-                  </p>
-                </div>
-              </div>
-
-              <div class="content" id="valores">
-                <div class="infos">
-                  <h1 class="content-title">Valores</h1>
-                  <p class="content-description">
-                    Gratuita/ sem monitoria / 2h.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-rota">
-            <a href="#">
-              <i class="fa-solid fa-location-dot"></i>
-              Rota
-            </a>
-          </div>
-        </article>
-
-
-        <article class="card">
-          <div class="image-btn">
-            <div class="image-container">
-              <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/GSMa0953.jpg" alt="Imagem">
-              <div class="card-title">
-                <span>Parque da Residência</span>
-                <div>
-                  <i class="material-icons expand-icon">expand_more</i>
-                </div>
-              </div>
-            </div>
-            <div class="btn-smais">
-              <span>Saiba mais</span>
-            </div>
-          </div>
-          <div class="card-content">
-            <!-- <div id="container"> -->
-            <div class="tab-buttons">
-              <button class="tab-btn active" content-id="descricao">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-description"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="endereco">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-localizaca"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="horarios">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-calendar"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="valores">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-payment"></use>
-                </svg>
-              </button>
-            </div>
-
-            <div class="tab-contents">
-              <div class="content" id="descricao">
-                <div class="infos">
-                  <h1 class="content-title">Descrição</h1>
-                  <p class="content-description">
-                    Situado na Avenida Almirante Barroso, o Bosque é um dos principais
-                    cartõespostais da Cidade das Mangueiras. Com uma área total de 150
-                    mil metros quadrados, é um pedaço da floresta amazônica
-                    literalmente ‘preservado’ no coração da cidade.
-                  </p>
-                  <!-- <div class="card-btn">
-                    <a href="./pag_Rod-Alves.html"><i class="fa-solid fa-plus"></i> detalhes</a>
-                  </div> -->
-                </div>
-              </div>
-
-              <div class="content" id="endereco">
-                <div class="infos">
-                  <h1 class="content-title">Endereço</h1>
-                  <p class="content-description">
-                    Av. Almirante Barroso, 2305 – Marco.
-                  </p>
-                </div>
-              </div>
-
-              <div class="content" id="horarios">
-                <div class="infos">
-                  <h1 class="content-title">Horários</h1>
-                  <p class="content-description">
-                    TER-DOM 8h – 17h / SEG Fechado.
-                  </p>
-                </div>
-              </div>
-
-              <div class="content" id="valores">
-                <div class="infos">
-                  <h1 class="content-title">Valores</h1>
-                  <p class="content-description">
-                    Paga R$ 7,00 inteira e R$ 3,50 meia entrada/ sem monitoria / 3h.
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- </div> -->
-          <div class="btn-rota">
-            <a href="https://maps.app.goo.gl/Yk1gAo728HMtbD6E6" target="_blank">
-              <i class="fa-solid fa-location-dot"></i>
-              Rota
-            </a>
-          </div>
-        </article>
-      </div>
-
-
-      <div class="column">
-        <article class="card">
-          <div class="image-btn">
-            <div class="image-container">
-              <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/GSMa0953.jpg" alt="Imagem">
-              <div class="card-title">
-                <span>Parque da Residência</span>
-                <div>
-                  <i class="material-icons expand-icon">expand_more</i>
-                </div>
-              </div>
-            </div>
-            <div class="btn-smais">
-              <span>Saiba mais</span>
-            </div>
-          </div>
-          <div class="card-content">
-            <!-- <div id="container"> -->
-            <div class="tab-buttons">
-              <button class="tab-btn active" content-id="descricao">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-description"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="endereco">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-localizaca"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="horarios">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-calendar"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="valores">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-payment"></use>
-                </svg>
-              </button>
-            </div>
-
-            <div class="tab-contents">
-              <div class="content" id="descricao">
-                <div class="infos">
-                  <h1 class="content-title">Descrição</h1>
-                  <p class="content-description">
-                    Situado na Avenida Almirante Barroso, o Bosque é um dos principais
-                    cartõespostais da Cidade das Mangueiras. Com uma área total de 150
-                    mil metros quadrados, é um pedaço da floresta amazônica
-                    literalmente ‘preservado’ no coração da cidade.
-                  </p>
-                  <!-- <div class="card-btn">
-                    <a href="./pag_Rod-Alves.html"><i class="fa-solid fa-plus"></i> detalhes</a>
-                  </div> -->
-                </div>
-              </div>
-
-              <div class="content" id="endereco">
-                <div class="infos">
-                  <h1 class="content-title">Endereço</h1>
-                  <p class="content-description">
-                    Av. Almirante Barroso, 2305 – Marco.
-                  </p>
-                </div>
-              </div>
-
-              <div class="content" id="horarios">
-                <div class="infos">
-                  <h1 class="content-title">Horários</h1>
-                  <p class="content-description">
-                    TER-DOM 8h – 17h / SEG Fechado.
-                  </p>
-                </div>
-              </div>
-
-              <div class="content" id="valores">
-                <div class="infos">
-                  <h1 class="content-title">Valores</h1>
-                  <p class="content-description">
-                    Paga R$ 7,00 inteira e R$ 3,50 meia entrada/ sem monitoria / 3h.
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- </div> -->
-          <div class="btn-rota">
-            <a href="https://maps.app.goo.gl/Yk1gAo728HMtbD6E6" target="_blank">
-              <i class="fa-solid fa-location-dot"></i>
-              Rota
-            </a>
-          </div>
-        </article>
-
-
-        <article class="card">
-          <div class="image-btn">
-            <div class="image-container">
-              <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2021/07/GSMa0953.jpg" alt="Imagem">
-              <div class="card-title">
-                <span>Parque da Residência</span>
-                <div>
-                  <i class="material-icons expand-icon">expand_more</i>
-                </div>
-              </div>
-            </div>
-            <div class="btn-smais">
-              <span>Saiba mais</span>
-            </div>
-          </div>
-          <div class="card-content">
-            <!-- <div id="container"> -->
-            <div class="tab-buttons">
-              <button class="tab-btn active" content-id="descricao">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-description"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="endereco">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-localizaca"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="horarios">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-calendar"></use>
-                </svg>
-              </button>
-              <button class="tab-btn" content-id="valores">
-                <svg class="icon">
-                  <use xlink:href="./assets/icons/sprite.svg#icon-payment"></use>
-                </svg>
-              </button>
-            </div>
-
-            <div class="tab-contents">
-              <div class="content" id="descricao">
-                <div class="infos">
-                  <h1 class="content-title">Descrição</h1>
-                  <p class="content-description">
-                    Situado na Avenida Almirante Barroso, o Bosque é um dos principais
-                    cartõespostais da Cidade das Mangueiras. Com uma área total de 150
-                    mil metros quadrados, é um pedaço da floresta amazônica
-                    literalmente ‘preservado’ no coração da cidade.
-                  </p>
-                  <!-- <div class="card-btn">
-                    <a href="./pag_Rod-Alves.html"><i class="fa-solid fa-plus"></i> detalhes</a>
-                  </div> -->
-                </div>
-              </div>
-
-              <div class="content" id="endereco">
-                <div class="infos">
-                  <h1 class="content-title">Endereço</h1>
-                  <p class="content-description">
-                    Av. Almirante Barroso, 2305 – Marco.
-                  </p>
-                </div>
-              </div>
-
-              <div class="content" id="horarios">
-                <div class="infos">
-                  <h1 class="content-title">Horários</h1>
-                  <p class="content-description">
-                    TER-DOM 8h – 17h / SEG Fechado.
-                  </p>
-                </div>
-              </div>
-
-              <div class="content" id="valores">
-                <div class="infos">
-                  <h1 class="content-title">Valores</h1>
-                  <p class="content-description">
-                    Paga R$ 7,00 inteira e R$ 3,50 meia entrada/ sem monitoria / 3h.
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- </div> -->
-          <div class="btn-rota">
-            <a href="https://maps.app.goo.gl/Yk1gAo728HMtbD6E6" target="_blank">
-              <i class="fa-solid fa-location-dot"></i>
-              Rota
-            </a>
-          </div>
-        </article>
+        {% endfor %}
       </div>
     </section>
-
-    <div class="btn-vmais">
-      <a href="#">Ver mais</a>
-    </div>
   </main>
+
 
 
   <!-- Menu footer ------------------------------------------------------------- -->
