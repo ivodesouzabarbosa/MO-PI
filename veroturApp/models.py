@@ -10,7 +10,7 @@ class PontosTuristicos(models.Model):
     nome = models.CharField(max_length=45)
     imagem = models.ImageField(upload_to='pontos_turisticos/')
     descricao = models.TextField(max_length=2500)
-    endereco = models.CharField(max_length=45)
+    endereco = models.CharField(max_length=75)
     horarios_funcionamento = models.CharField(max_length=45)
     lugares_pagos = models.CharField(max_length=45)
     monitoria = models.CharField(max_length=45)

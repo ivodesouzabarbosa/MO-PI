@@ -1,12 +1,14 @@
 from django.shortcuts import render, get_object_or_404
+from django.views.decorators.cache import cache_page
 from django.http import JsonResponse
 from .models import PontosTuristicos, Categorias
 from django.utils.translation import gettext
 from django.http import HttpResponse
 
-def map_view(request):
-    return render(request, 'teste.html')
+# def map_view(request):
+#     return render(request, 'teste.html')
 
+@cache_page(30)
 def home(request):
     return render(request, 'index.html')
 
@@ -69,6 +71,15 @@ def pontos_turisticos_json(request):
 
 
 # campo destinado para traduções
+def index(request):
+    texto = gettext('parques')  # Traduzindo a palavra 'parques'
+    return render(request, 'index.html', {'texto': texto})  # Corrigido: não usar chaves extras
+
 def teste(request):
-    texto = gettext('categorias')
+    texto = gettext('parques')
     return render(request, 'como_chegar/pontos_turisticos.html', {{'texto': texto}})
+
+def teste(request):
+    texto = gettext('parques')
+    return render(request, 'Eventos/eventos.html', {{'texto': texto}})
+

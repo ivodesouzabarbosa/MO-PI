@@ -1,4 +1,6 @@
 {% load static %}
+{% load cache %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -7,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="{% static 'Home/img/veroTur_logo.webp' %}" type="image/x-icon" />
-    <title>Verotur</title>
+    <title>{% trans 'Verotur' %}</title>
     <link rel="stylesheet" href="{% static 'Home/css/nova_home.css' %}" />
     <link rel="stylesheet" href="{% static 'Home/css/header_footer.css' %}" />
     <link rel="manifest" href="{% static 'manifest.json' %}">
@@ -24,7 +26,7 @@
   <body>
     <div id="splash-screen">
       <img class="splash-img" src="{% static "Home/img/veroTur_logo-pwa.jpg" %}" alt="logo carregamento">
-      <p class="splash-p">Carregando...</p>
+      <p class="splash-p">{% trans 'Carregando...' %}</p>
     </div>
 
     <div id="pwa" style="display: none;">
@@ -32,21 +34,21 @@
         <div class="logo-senac-home">
           <img src="{% static 'Home/img/senac_home.webp' %}" alt="#" />
         </div>
-
+        <p></p>
         <div class="wrappercontainer">
           <nav class="header_nav">
             <ul>
               <li>
-                <a href="">Home</a>
+                <a href="{% url 'home' %}">{% trans 'Inicio' %}</a>
               </li>
               <li>
-                <a href="{% url 'como_chegar' %}">Como Chegar</a>
+                <a href="{% url 'como_chegar' %}">{% trans 'Como Chegar' %}</a>
               </li>
               <li>
-                <a href="{% url 'eventos' %}">Eventos</a>
+                <a href="{% url 'eventos' %}">{% trans 'Eventos' %}</a>
               </li>
               <li>
-                <a href="#">Configuração</a>
+                <a href="#">{% trans 'Configuração' %}</a> 
               </li>
             </ul>
           </nav>
@@ -59,12 +61,14 @@
 
 
       <!-- Mapa -->
-      <div id="map" style="height: 500px; width: 80%"></div>
-      <!-- Carregar o JavaScript do Google Maps API -->
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfLW4X31fejTXVD1jg7P0G35m9cDWyE6g&callback=initMap"></script>
+      {% cache 900 google_maps_script %}
+        <div id="map" style="height: 500px; width: 80%"></div>
+          <!-- Carregar o JavaScript do Google Maps API -->
+          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfLW4X31fejTXVD1jg7P0G35m9cDWyE6g&callback=initMap"></script>
 
-      <script src="{% static 'scripts/map.js' %}"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+          <script src="{% static 'scripts/map.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      {% endcache %}
 
 
 
@@ -75,7 +79,7 @@
 
       <section class="container-listra">
         <div class="listra">
-          <h2 class="section_title">Categorias</h2>
+          <h2 class="section_title">{% trans 'Categorias' %}</h2>
           <img src="{% static 'Home/img/lista.webp' %}" alt="listar" />
         </div>
       </section>
@@ -88,10 +92,10 @@
             <a href="#" class="card-link">
               <div class="card card1">
                 <div class="conteudo">
-                  <i class="material-symbols-outlined">restaurant</i>
+                  <i class="material-symbols-outlined">Restaurant</i>
                 </div>
               </div>
-              <h5>Restaurantes</h5>
+              <h5>{% trans 'Restaurantes' %}</h5>
             </a>
           </div>
 
@@ -102,7 +106,7 @@
                   <i class="material-symbols-outlined">local_mall</i>
                 </div>
               </div>
-              <h5>Shoppings</h5>
+              <h5>{% trans 'Shoppings' %}</h5>
             </a>
           </div>
 
@@ -113,7 +117,7 @@
                   <i class="material-symbols-outlined">attractions</i>
                 </div>
               </div>
-              <h5>Atrações</h5>
+              <h5>{% trans 'Atrações' %}</h5>
             </a>
           </div>
 
@@ -124,7 +128,7 @@
                   <i class="material-symbols-outlined">nature_people</i>
                 </div>
               </div>
-              <h5>Parques</h5>
+              <h5>{% trans 'Parques' %}</h5>
             </a>
           </div>
 
@@ -135,7 +139,7 @@
                   <i class="material-symbols-outlined">location_city</i>
                 </div>
               </div>
-              <h5>Prédios</h5>
+              <h5>{% trans 'Prédios' %}</h5>
             </a>
           </div>
 
@@ -146,7 +150,7 @@
                   <i class="material-symbols-outlined">park</i>
                 </div>
               </div>
-              <h5>Praças</h5>
+              <h5>{% trans 'Praças' %}</h5>
             </a>
           </div>
 
@@ -154,10 +158,10 @@
             <a href="#" class="card-link">
               <div class="card card7">
                 <div class="conteudo">
-                  <i class="material-symbols-outlined">beach_access</i>
+                  <i class="material-symbols-outlined">beach_acess</i>
                 </div>
               </div>
-              <h5>Ilhas</h5>
+              <h5>{% trans 'Ilhas' %}</h5>
             </a>
           </div>
 
@@ -168,7 +172,7 @@
                   <i class="material-symbols-outlined">museum</i>
                 </div>
               </div>
-              <h5>Museus</h5>
+              <h5>{% trans 'Museus' %}</h5>
             </a>
           </div>
 
@@ -179,7 +183,7 @@
                   <i class="material-symbols-outlined">church</i>
                 </div>
               </div>
-              <h5>Igrejas</h5>
+              <h5>{% trans 'Igrejas' %}</h5>
             </a>
           </div>
 
@@ -190,7 +194,7 @@
                   <i class="material-symbols-outlined">directions_bus</i>
                 </div>
               </div>
-              <h5>Terminais</h5>
+              <h5>{% trans 'Terminais' %}</h5>
             </a>
           </div>
         </div>
@@ -200,7 +204,7 @@
 
       <section class="container-listra">
         <div class="listra">
-          <h2 class="section_title">Sugestões</h2>
+          <h2 class="section_title">{% trans 'Sugestões' %}</h2>
           <img src="{% static 'Home/img/lista.webp' %}" alt="listar" />
         </div>
       </section>
@@ -209,10 +213,10 @@
         <div class="card-home">
           <img src="{% static 'Home/img/forte_do_presepio_mobile.png' %}" alt="Praia" />
           <div class="card-home-content">
-            <h3>Forte do Presépio</h3>
+            <h3>{% trans 'Forte do Presépio' %}</h3>
             <div class="card-home-btns">
               <a href="https://www.google.com/maps/place/Forte+do+Pres%C3%A9pio/@-1.4543647,-48.5052375,17z/data=!3m1!4b1!4m6!3m5!1s0x92a48ef1a132f8d5:0xff1a071f7388a0ed!8m2!3d-1.4543647!4d-48.5052375!16s%2Fg%2F122zd8n3?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"><span class="material-symbols-outlined">moved_location</span>Rota</a>
-              <a href="#"><span class="material-symbols-outlined">tab_new_right</span>Detalhes</a>
+              <a href="#"><span class="material-symbols-outlined">tab_new_right</span>{% trans 'Detalhes' %}</a>
             </div>
             <!-- <p>Descubra praias paradisíacas e relaxe ao som do mar.</p> -->
           </div>
@@ -220,10 +224,10 @@
         <div class="card-home">
           <img src="{% static 'Home/img/estacao_doca_desktop_trem_mobile.png' %}" alt="Montanha" />
           <div class="card-home-content">
-            <h3>Estação das Docas</h3>
+            <h3>{% trans 'Estação das Docas' %}</h3>
             <div class="card-home-btns">
               <a href="https://www.google.com/maps/place/Esta%C3%A7%C3%A3o+das+Docas/@-1.4501764,-48.5016305,17.25z/data=!4m14!1m7!3m6!1s0x92a48ef1a132f8d5:0xff1a071f7388a0ed!2sForte+do+Pres%C3%A9pio!8m2!3d-1.4543647!4d-48.5052375!16s%2Fg%2F122zd8n3!3m5!1s0x92a48f8e824de2d5:0xc3ab0136dae42ab4!8m2!3d-1.4490679!4d-48.5001115!16s%2Fg%2F120nqhk3?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"><span class="material-symbols-outlined">moved_location</span>Rota</a>
-              <a href="#"><span class="material-symbols-outlined">tab_new_right</span>Detalhes</a>
+              <a href="#"><span class="material-symbols-outlined">tab_new_right</span>{% trans 'Detalhes' %}</a>
             </div>
             <!-- <p>Desafie-se em trilhas e montanhas de tirar o fôlego.</p> -->
           </div>
@@ -231,7 +235,7 @@
         <div class="card-home">
           <img src="{% static 'Home/img/ver_o_peso_mobile.png' %}" alt="Cidade" />
           <div class="card-home-content">
-            <h3>Ver-O-Peso</h3>
+            <h3>{% trans 'Ver-O-Peso' %}</h3>
             <div class="card-home-btns">
               <a href="https://www.google.com/maps/place/Mercado+Ver-o-Peso/@-1.4501764,-48.5016305,17.25z/data=!4m14!1m7!3m6!1s0x92a48ef1a132f8d5:0xff1a071f7388a0ed!2sForte+do+Pres%C3%A9pio!8m2!3d-1.4543647!4d-48.5052375!16s%2Fg%2F122zd8n3!3m5!1s0x92a48eedffb60aaf:0xdd2ca66005639d12!8m2!3d-1.4523651!4d-48.5037509!16s%2Fm%2F03wd6nt?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"><span class="material-symbols-outlined">moved_location</span>Rota</a>
               <a href="#"><span class="material-symbols-outlined">tab_new_right</span>Detalhes</a>
@@ -245,7 +249,7 @@
 
       <section class="container-listra">
         <div class="listra">
-          <h2 class="section_title">Principais Eventos</h2>
+          <h2 class="section_title">{% trans "Principais Eventos" %}</h2>
           <img src="{% static 'Home/img/lista.webp' %}" alt="listar" />
         </div>
       </section>
@@ -257,11 +261,11 @@
           <div class="card-web">
             <img src="{% static 'Eventos/img/Círio.jpeg' %}" alt="..." class="card-image-web" />
             <div class="card-body-web">
-              <h1 class="card-title-web">Círio de Nazaré</h1>
+              <h1 class="card-title-web">{% trans "Círio de Nazaré" %}</h1>
               <p class="card-text-web">
-                O Círio de Nazaré é uma das maiores festas religiosas do Brasil, realizada em Belém do Pará, em homenagem a Nossa Senhora de Nazaré.
-                <span>Local:</span>Centro De Belém
-                <span>Periodo:</span> Mês de Outubro
+                {% trans "O Círio de Nazaré é uma das maiores festas religiosas do Brasil, realizada em Belém do Pará, em homenagem a Nossa Senhora de Nazaré." %} 
+                <span>{% trans "Local:" %}</span>{% trans "Centro De Belém" %}
+                <span>{% trans "Periodo:" %}</span>{% trans "Mês de Outubro" %}
               </p>
             </div>
           </div>
@@ -270,11 +274,11 @@
           <div class="card-web">
             <img src="{% static 'Eventos/img/Arraial_do_Pavulagem.webp' %}" alt="..." class="card-image-web" />
             <div class="card-body-web">
-              <h1 class="card-title-web">Arraial da Pavulagem</h1>
+              <h1 class="card-title-web">{% trans "Arraial da Pavulagem" %}</h1>
               <p class="card-text-web">
-                O Arraial da Pavulagem é uma tradicional festa junina realizada em Belém do Pará, celebrando a cultura popular com música, danças e comidas típicas.
-                <span>Local:</span>Varanda Superior do Cojan
-                <span>Periodo:</span> Mês de Junho
+                {% trans "O Arraial da Pavulagem é uma tradicional festa junina realizada em Belém do Pará, celebrando a cultura popular com música, danças e comidas típicas." %}
+                <span>{% trans "Local" %}:</span>{% trans "Varanda Superior do Cojan" %}
+                <span>{% trans "Periodo" %}:</span> {% trans "Mês de Junho" %}
               </p>
             </div>
           </div>
@@ -283,11 +287,11 @@
           <div class="card-web">
             <img src="{% static 'Eventos/img/feira_livro.png' %}" alt="..." class="card-image-web" />
             <div class="card-body-web">
-              <h1 class="card-title-web">Feira do Livro</h1>
+              <h1 class="card-title-web">{% trans "Feira do Livro" %}</h1>
               <p class="card-text-web">
-                A programação conta com diversas ações e atividades de cultura, entre elas, rodas de conversas, saraus, encontros literários, peças teatrais infantis e contação de histórias.
-                <span>Local:</span>Hangar Convenções Feiras da Amazônia
-                <span>Periodo:</span> De 17 a 25 de agosto de 2024
+                {% trans "A programação conta com diversas ações e atividades de cultura, entre elas, rodas de conversas, saraus, encontros literários, peças teatrais infantis e contação de histórias." %}
+                <span>{% trans "Local" %}:</span>{% trans "Hangar Convenções Feiras da Amazônia" %}
+                <span>{% trans "Periodo" %}:</span> {% trans "De 17 a 25 de agosto de 2024" %}
               </p>
             </div>
           </div>
@@ -318,15 +322,15 @@
 
       <ul class="dropdown-menu">
         <li class="idiomas">
-          <img src="{% static 'Home/img/brasil.png' %}" alt="Português (Brasil)" />Português (Brasil)
+          <img src="{% static 'Home/img/brasil.png' %}" alt="Português (Brasil)" />
         </li>
         <li class="idiomas">
-          <img src="{% static 'Home/img/engles.png' %}" alt="Inglês (EUA)" />Inglês (EUA)
+          <img src="{% static 'Home/img/engles.png' %}" alt="Inglês (EUA)" />{% trans "Inglês (EUA)" %}
         </li>
         <li class="idiomas">
-          <img src="{% static 'Home/img/espanha.png' %}" alt="Espanhol (Espanha)" />Espanhol (Espanha)
+          <img src="{% static 'Home/img/espanha.png' %}" alt="Espanhol (Espanha)" />{% trans "Espanhol (Espanha)" %}
         </li>
-        <li class="version">Versão 0.1.24</li>
+        <li class="version">{% trans "Versão 0.1.24" %} </li>
       </ul>
 
       <!-- Menu footer do deskitop -->
@@ -338,7 +342,7 @@
           </div>
 
           <div class="direitos_footer">
-            <p>© Todos os Direitos Reservados - 2024</p>
+            <p>© {% trans "Todos os Direitos Reservados - 2025 "%}</p>
           </div>
           <div class="rede_logo">
             <div class="logo-app-footer">

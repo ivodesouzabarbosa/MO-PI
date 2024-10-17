@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -16,7 +17,7 @@
   <link rel="shortcut icon" href="{% static "Home/img/veroTur_logo.webp" %}" type="image/x-icon">
   <link rel="stylesheet" href="{% static "pagina_como_chegar/css/como_chegar.css" %}" />
   <link rel="stylesheet" href="{% static "Home/css/header_footer.css" %}" />
-  <title>Verotur - Como Chegar</title>
+  <title>{% trans 'Verotur - Como Chegar' %}</title>
 </head>
 
 <body>
@@ -28,10 +29,18 @@
     <div class="wrappercontainer">
       <nav class="header_nav">
         <ul>
-          <li><a href="{% url "home" %}">Home</a></li>
-          <li><a href="{% url "como_chegar" %}">Como Chegar</a></li>
-          <li><a href="{% url "eventos" %}">Eventos</a></li>
-          <li><a href="#">Configuração</a></li>
+          <li>
+            <a href="{% url 'home' %}">{% trans 'Inicio' %}</a>
+          </li>
+          <li>
+            <a href="{% url 'como_chegar' %}">{% trans 'Como Chegar' %}</a>
+          </li>
+          <li>
+            <a href="{% url 'eventos' %}">{% trans 'Eventos' %}</a>
+          </li>
+          <li>
+            <a href="#">{% trans 'Configuração' %}</a> 
+          </li>
         </ul>
       </nav>
     </div>
@@ -40,101 +49,6 @@
       <img src="{% static "Home/img/veroTur_logo.webp" %}" alt="logo verotur" />
     </div>
   </header>
-
-  {% comment %} <section class="container-cards">
-    <div class="main-card">
-      <div class="card card1">
-        <a href="" class="card-link">
-          <div class="conteudo">
-            <!-- <i class="fa-solid fa-utensils"></i> -->
-            <i class="material-symbols-outlined">restaurant</i>
-            <h5>Restaurantes</h5>
-          </div>
-        </a>
-      </div>
-      <div class="card card2">
-        <a href="" class="card-link">
-          <div class="conteudo">
-            <!-- <i class="fa-brands fa-shopify"></i> -->
-            <i class="material-symbols-outlined">local_mall</i>
-            <h5>Shopping</h5>
-          </div>
-        </a>
-      </div>
-      <div class="card card3">
-        <a href="" class="card-link">
-          <div class="conteudo">
-            <!-- <i class="fa-solid fa-champagne-glasses"></i> -->
-            <i class="material-symbols-outlined">attractions</i>
-            <h5>Atrações</h5>
-          </div>
-        </a>
-      </div>
-      <div class="card card4">
-        <a href="{% url "pontos_turisticos" %}" class="card-link">
-          <div class="conteudo">
-            <!-- <i class="fa-solid fa-location-dot"></i> -->
-            <i class="material-symbols-outlined">nature_people</i>
-            <h5>Parques</h5>
-          </div>
-        </a>
-      </div>
-      <div class="card card5">
-        <a href="" class="card-link">
-          <div class="conteudo">
-            <!-- <i class="fa-solid fa-building"></i> -->
-            <i class="material-symbols-outlined">location_city</i>
-            <h5>Prédios</h5>
-          </div>
-        </a>
-      </div>
-      <div class="card card6">
-        <a href="" class="card-link">
-          <div class="conteudo">
-            <!-- <i class="fa-solid fa-tree"></i> -->
-            <i class="material-symbols-outlined">park</i>
-            <h5>Praças</h5>
-          </div>
-        </a>
-      </div>
-      <div class="card card7">
-        <a href="" class="card-link">
-          <div class="conteudo">
-            <!-- <i class="fa-solid fa-umbrella-beach"></i> -->
-            <i class="material-symbols-outlined">beach_access</i>
-            <h5>Ilhas</h5>
-          </div>
-        </a>
-      </div>
-      <div class="card card8">
-        <a href="" class="card-link">
-          <div class="conteudo">
-            <!-- <i class="fa-solid fa-landmark"></i> -->
-            <i class="material-symbols-outlined">museum</i>
-            <h5>Museus</h5>
-          </div>
-        </a>
-      </div>
-      <div class="card card9">
-        <a href="" class="card-link">
-          <div class="conteudo">
-            <!-- <i class="fa-solid fa-church"></i> -->
-            <i class="material-symbols-outlined">church</i>
-            <h5>Igrejas</h5>
-          </div>
-        </a>
-      </div>
-      <div class="card card10">
-        <a href="" class="card-link">
-          <div class="conteudo">
-            <!-- <i class="fa-solid fa-bus"></i> -->
-            <i class="material-symbols-outlined">directions_bus</i>
-            <h5>Terminais</h5>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section> {% endcomment %}
 
   <section class="container-cards">
     <div class="main-card">
@@ -202,10 +116,10 @@
   </footer>
 
   <ul class="dropdown-menu">
-    <li class="idiomas"><img src="{% static "Home/img/brasil.png" %}" alt="Português (Brasil)">Português (Brasil)</li>
-    <li class="idiomas"><img src="{% static "Home/img/engles.png" %}" alt="Inglês (EUA)">Inglês (EUA)</li>
-    <li class="idiomas"><img src="{% static "Home/img/espanha.png" %}" alt="Espanhol (Espanha)">Espanhol (Espanha)</li>
-    <li class="version">Versão 0.1.24</li>
+    <li class="idiomas"><img src="{% static "Home/img/brasil.png" %}" alt="Português (Brasil)">{% trans 'Português (Brasil)' %}</li>
+    <li class="idiomas"><img src="{% static "Home/img/engles.png" %}" alt="Inglês (EUA)">{% trans 'Inglês (EUA)' %}</li>
+    <li class="idiomas"><img src="{% static "Home/img/espanha.png" %}" alt="Espanhol (Espanha)">{% trans 'Espanhol (Espanha)' %}</li>
+    <li class="version">{% trans 'Inicio' %}</li>
   </ul>
 
   <!-- Menu footer do deskitop -->
@@ -218,7 +132,7 @@
       </div>
 
       <div class="direitos_footer">
-        <p>© Todos os Direitos Reservados - 2025</p>
+        <p>{% trans '© Todos os Direitos Reservados - 2025' %}</p>
       </div>
 
       <div class="rede_logo">

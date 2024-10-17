@@ -38,7 +38,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.locale.LocaleMiddleware', # internacionalização
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -82,6 +82,17 @@ DATABASES = {
      }
 }
 
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django_redis.cache.RedisCache',
+#         'LOCATION': os.environ.get('REDIS_URL', 'redis://127.0.0.1:8000/1'),
+#         'OPTIONS': {
+#             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#         },
+#         'KEY_PREFIX': 'verotur',
+#     }
+# }
+
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -105,20 +116,21 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-# LANGUAGES = (
-#     ('en', u'Inglês'),
-#     ('es', u'Espanho')
-# ) 
+LANGUAGES = [
+    ('pt-br', 'Português'),
+    ('en', u'English'),
+    ('es', u'Espanõl')
+]
 
-# LOCALE_PATHS = (
-#     os.path.join(BASE_DIR, 'locale/'),
-# )
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
-
-USE_TZ = True
+USE_I18N = True # Ativa a internacionalização
+USE_L10N = True # Ativa a formatação local (como datas e números)
+USE_TZ = True   # Ativa a utilização de timezones
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
