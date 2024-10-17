@@ -356,11 +356,37 @@
     /* Aplica a quebra de linha de acordo com o conteudo Html */
 }
 
-.card-text-web span {
-    font-weight: bold;
+/* barra de pesquisa */
+
+.search-form {
+    display: flex;
+    margin: 20px auto; 
+    max-width: 400px;
+    width: 100%;
+    gap: 5px;
 }
 
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
+.search-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--fourth-color);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: var(--second-color);
+}
+
+/* barra de pesquisa fim */
 
 
 /* Desktops mudanças para web*/
