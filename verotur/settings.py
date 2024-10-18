@@ -23,6 +23,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/pontos_turisticos')
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -31,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'veroturApp',
     'corsheaders',
+    'pwa',
 ]
 
 MIDDLEWARE = [
@@ -118,8 +120,8 @@ LANGUAGE_CODE = 'pt-br'
 
 LANGUAGES = [
     ('pt-br', 'Português'),
-    ('en', 'English'),
-    ('es', 'Espanõl')
+    ('en', u'English'),
+    ('es', u'Espanõl')
 ]
 
 USE_I18N = True # Ativa a internacionalização

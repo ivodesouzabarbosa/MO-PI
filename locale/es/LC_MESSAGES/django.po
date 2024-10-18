@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: .\veroturApp\templates\Eventos\eventos.html:100
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-16 16:06-0300\n"
+"POT-Creation-Date: 2024-10-18 16:00-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1243,22 +1244,343 @@ msgstr ""
 msgid "Connect, get help, or contribute"
 msgstr ""
 
+#: .\venv\Lib\site-packages\modeltranslation\widgets.py:32
+msgid "None"
+msgstr ""
+
+#: .\veroturApp\models.py:5 .\veroturApp\models.py:11
+msgid "Nome"
+msgstr "Nombre"
+
+#: .\veroturApp\models.py:12
+msgid "Imagem"
+msgstr "Imagen"
+
+#: .\veroturApp\models.py:13
+msgid "Descrição"
+msgstr "Descripción"
+
+#: .\veroturApp\models.py:14
+msgid "Endereço"
+msgstr "Dirección"
+
+#: .\veroturApp\models.py:15
+msgid "Horários de Funcionamento"
+msgstr "Horario de apertura"
+
+#: .\veroturApp\models.py:16
+msgid "Lugares Pagos"
+msgstr "Asientos pagados"
+
+#: .\veroturApp\models.py:17
+msgid "Monitoria"
+msgstr "Escucha"
+
+#: .\veroturApp\models.py:18
+msgid "Latitude"
+msgstr ""
+
+#: .\veroturApp\models.py:19
+msgid "Longitude"
+msgstr ""
+
+#: .\veroturApp\models.py:20
+msgid "Categoria"
+msgstr "Categoría"
+
+#: .\veroturApp\templates\Eventos\eventos.html:20
+msgid "Verotur - Eventos"
+msgstr "Verotur - Eventos"
+
+#: .\veroturApp\templates\Eventos\eventos.html:35
+#: .\veroturApp\templates\como_chegar\como_chegar.html:33
+#: .\veroturApp\templates\como_chegar\como_chegar.html:122
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:33
 #: .\veroturApp\templates\index.html:42
-msgid "Início"
+msgid "Inicio"
 msgstr "Comenzar"
 
+#: .\veroturApp\templates\Eventos\eventos.html:38
+#: .\veroturApp\templates\como_chegar\como_chegar.html:36
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:36
 #: .\veroturApp\templates\index.html:45
 msgid "Como Chegar"
 msgstr "Cómo llegar allí"
 
+#: .\veroturApp\templates\Eventos\eventos.html:41
+#: .\veroturApp\templates\Eventos\eventos.html:58
+#: .\veroturApp\templates\como_chegar\como_chegar.html:39
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:39
 #: .\veroturApp\templates\index.html:48
 msgid "Eventos"
 msgstr "Eventos"
 
+#: .\veroturApp\templates\Eventos\eventos.html:44
+#: .\veroturApp\templates\como_chegar\como_chegar.html:42
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:42
 #: .\veroturApp\templates\index.html:51
 msgid "Configuração"
 msgstr "Ajustes"
 
-#: .\veroturApp\views.py:75 .\veroturApp\views.py:79
+#: .\veroturApp\templates\Eventos\eventos.html:69
+#: .\veroturApp\templates\index.html:189
+msgid "Círio de Nazaré"
+msgstr "Círio de Nazaré"
+
+#: .\veroturApp\templates\Eventos\eventos.html:70
+#: .\veroturApp\templates\index.html:191
+msgid ""
+"O Círio de Nazaré é uma das maiores festas religiosas do Brasil, realizada "
+"em Belém do Pará, em homenagem a Nossa Senhora de Nazaré."
+msgstr ""
+"El Círio de Nazaré es una de las fiestas religiosas más grandes de Brasil, "
+"celebrada en Belém do Pará, en honor a Nuestra Señora de Nazaré."
+
+#: .\veroturApp\templates\Eventos\eventos.html:71
+#: .\veroturApp\templates\Eventos\eventos.html:83
+#: .\veroturApp\templates\Eventos\eventos.html:95
+#: .\veroturApp\templates\Eventos\eventos.html:107
+#: .\veroturApp\templates\Eventos\eventos.html:119
+#: .\veroturApp\templates\index.html:192
+msgid "Local:"
+msgstr "Ubicación:"
+
+#: .\veroturApp\templates\Eventos\eventos.html:71
+#: .\veroturApp\templates\Eventos\eventos.html:83
+msgid "Centro De Belém."
+msgstr "Centro De Belém."
+
+#: .\veroturApp\templates\Eventos\eventos.html:72
+#: .\veroturApp\templates\Eventos\eventos.html:84
+#: .\veroturApp\templates\Eventos\eventos.html:96
+#: .\veroturApp\templates\Eventos\eventos.html:108
+#: .\veroturApp\templates\Eventos\eventos.html:120
+#: .\veroturApp\templates\index.html:193
+msgid "Periodo:"
+msgstr "Período:"
+
+#: .\veroturApp\templates\Eventos\eventos.html:72
+msgid "Mês de Outubro."
+msgstr "Mes de octubre."
+
+#: .\veroturApp\templates\Eventos\eventos.html:81
+#: .\veroturApp\templates\index.html:202
+msgid "Arraial da Pavulagem"
+msgstr "Arraial da Pavulagem"
+
+#: .\veroturApp\templates\Eventos\eventos.html:82
+#: .\veroturApp\templates\index.html:204
+msgid ""
+"O Arraial da Pavulagem é uma tradicional festa junina realizada em Belém do "
+"Pará, celebrando a cultura popular com música, danças e comidas típicas."
+msgstr ""
+"Arraial da Pavulagem es una fiesta tradicional de junio que se celebra en "
+"Belém do Pará y celebra la cultura popular con música, bailes y comida "
+"típica."
+
+#: .\veroturApp\templates\Eventos\eventos.html:84
+msgid "Mês de Junho."
+msgstr "Mes de junio."
+
+#: .\veroturApp\templates\Eventos\eventos.html:93
+msgid "COP 30"
+msgstr "COP 30"
+
+#: .\veroturApp\templates\Eventos\eventos.html:94
+msgid ""
+"A COP 30 será um evento que reunirá líderes, ativistas e especialistas de "
+"todo o mundo, a conferência abordará questões ambientais, sustentabilidade e "
+"ações globais para enfrentar os desafios climáticos."
+msgstr ""
+"La COP 30 será un evento que reunirá a líderes, activistas y expertos de "
+"todo el mundo, la conferencia abordará temas ambientales, sostenibilidad y "
+"acciones globales para enfrentar los desafíos climáticos."
+
+#: .\veroturApp\templates\Eventos\eventos.html:95
+msgid "A Definir"
+msgstr "Por definir"
+
+#: .\veroturApp\templates\Eventos\eventos.html:96
+msgid "Mês de Novembro"
+msgstr "Mes de noviembre"
+
+#: .\veroturApp\templates\Eventos\eventos.html:105
+msgid "Feira Pan-Amazônica do Livro"
+msgstr "La Feria del Libro Panamazónica"
+
+#: .\veroturApp\templates\Eventos\eventos.html:106
+msgid ""
+"A Feira Pan-Amazônica do Livro, realizada em Belém do Pará, é um vibrante "
+"festival literário que celebra a cultura e a diversidade da Amazônia."
+msgstr ""
+"La Feria del Libro Panamazónica, celebrada en Belém do Pará, es un vibrante "
+"festival literario que celebra la cultura y la diversidad de la Amazonía."
+
+#: .\veroturApp\templates\Eventos\eventos.html:107
+msgid "Hangar"
+msgstr "Hangar"
+
+#: .\veroturApp\templates\Eventos\eventos.html:108
+msgid "Mês de Setembro"
+msgstr "Mes de septiembre"
+
+#: .\veroturApp\templates\Eventos\eventos.html:117
+msgid "Carnaval"
+msgstr "Carnaval"
+
+#: .\veroturApp\templates\Eventos\eventos.html:118
+msgid ""
+"O Carnaval de Belém do Pará é uma festa vibrante que une tradições e ritmos "
+"da Amazônia. Com desfiles de blocos, máscaras coloridas e danças "
+"contagiantes, o evento atrai foliões de todas as idades."
+msgstr ""
+"El Carnaval de Belém do Pará es una celebración vibrante que combina "
+"tradiciones y ritmos de la Amazonia. Con desfiles de cuadra, máscaras "
+"coloridas y bailes contagiosos, el evento atrae a juerguistas de todas las "
+"edades."
+
+#: .\veroturApp\templates\Eventos\eventos.html:119
+#: .\veroturApp\templates\index.html:205
+msgid "Varanda Superior do Cojan"
+msgstr "Balcón superior de Cojan"
+
+#: .\veroturApp\templates\Eventos\eventos.html:120
+msgid "Mês de Fevereiro"
+msgstr "Mes de febrero"
+
+#: .\veroturApp\templates\Eventos\eventos.html:154
+#: .\veroturApp\templates\como_chegar\como_chegar.html:119
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:378
+#: .\veroturApp\templates\index.html:270
+msgid "Português (Brasil)"
+msgstr "Portugués (Brasil)"
+
+#: .\veroturApp\templates\Eventos\eventos.html:155
+#: .\veroturApp\templates\como_chegar\como_chegar.html:120
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:379
+#: .\veroturApp\templates\index.html:281
+msgid "Inglês (EUA)"
+msgstr "Inglés (Estados Unidos)"
+
+#: .\veroturApp\templates\Eventos\eventos.html:156
+#: .\veroturApp\templates\como_chegar\como_chegar.html:121
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:380
+#: .\veroturApp\templates\index.html:292
+msgid "Espanhol (Espanha)"
+msgstr "Español (España)"
+
+#: .\veroturApp\templates\Eventos\eventos.html:157
+msgid "Versão  0.1.24"
+msgstr "Versión 0.1.24"
+
+#: .\veroturApp\templates\Eventos\eventos.html:171
+#: .\veroturApp\templates\como_chegar\como_chegar.html:135
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:396
+msgid "© Todos os Direitos Reservados - 2025"
+msgstr "© Todos los derechos reservados - 2025"
+
+#: .\veroturApp\templates\como_chegar\como_chegar.html:20
+#, fuzzy
+#| msgid "Como Chegar"
+msgid "Verotur - Como Chegar"
+msgstr "Cómo llegar allí"
+
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:19
+#, fuzzy
+#| msgid "parques"
+msgid "Parques"
+msgstr "parques"
+
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:381
+#: .\veroturApp\templates\index.html:296
+msgid "Versão 0.1.24"
+msgstr "Versión 0.1.24"
+
+#: .\veroturApp\templates\index.html:12
+msgid "Verotur"
+msgstr "Verotur"
+
+#: .\veroturApp\templates\index.html:29
+msgid "Carregando..."
+msgstr "Cargando..."
+
+#: .\veroturApp\templates\index.html:82
+msgid "Categorias"
+msgstr "Categorías"
+
+#: .\veroturApp\templates\index.html:132
+msgid "Sugestões"
+msgstr "Sugerencias"
+
+#: .\veroturApp\templates\index.html:141
+msgid "Forte do Presépio"
+msgstr "Forte do Presépio"
+
+#: .\veroturApp\templates\index.html:144 .\veroturApp\templates\index.html:155
+msgid "Detalhes"
+msgstr "Detalles"
+
+#: .\veroturApp\templates\index.html:152
+msgid "Estação das Docas"
+msgstr "Estación de muelle"
+
+#: .\veroturApp\templates\index.html:163
+msgid "Ver-O-Peso"
+msgstr "Ver-O-Peso"
+
+#: .\veroturApp\templates\index.html:177
+msgid "Principais Eventos"
+msgstr "Eventos principales"
+
+#: .\veroturApp\templates\index.html:192
+msgid "Centro De Belém"
+msgstr "Centro de Belém"
+
+#: .\veroturApp\templates\index.html:193
+msgid "Mês de Outubro"
+msgstr "Mes de octubre"
+
+#: .\veroturApp\templates\index.html:205 .\veroturApp\templates\index.html:218
+msgid "Local"
+msgstr "Ubicación"
+
+#: .\veroturApp\templates\index.html:206 .\veroturApp\templates\index.html:219
+msgid "Periodo"
+msgstr "Período"
+
+#: .\veroturApp\templates\index.html:206
+msgid "Mês de Junho"
+msgstr "Mes de junio"
+
+#: .\veroturApp\templates\index.html:215
+msgid "Feira do Livro"
+msgstr "Feria del Libro"
+
+#: .\veroturApp\templates\index.html:217
+msgid ""
+"A programação conta com diversas ações e atividades de cultura, entre elas, "
+"rodas de conversas, saraus, encontros literários, peças teatrais infantis e "
+"contação de histórias."
+msgstr ""
+"La programación incluye diversas acciones y actividades culturales, entre "
+"las que destacan círculos de conversación, veladas, encuentros literarios, "
+"juegos infantiles y cuentacuentos."
+
+#: .\veroturApp\templates\index.html:218
+msgid "Hangar Convenções Feiras da Amazônia"
+msgstr "Hangar Convenciones Ferias Amazonas"
+
+#: .\veroturApp\templates\index.html:219
+msgid "De 17 a 25 de agosto de 2024"
+msgstr "Del 17 al 25 de agosto de 2024"
+
+#: .\veroturApp\templates\index.html:309
+msgid "Todos os Direitos Reservados - 2025 "
+msgstr "Todos los derechos reservados - 2025"
+
+#: .\veroturApp\views.py:82 .\veroturApp\views.py:86 .\veroturApp\views.py:90
 msgid "parques"
 msgstr "parques"
+
+#~ msgid "Início"
+#~ msgstr "Comenzar"

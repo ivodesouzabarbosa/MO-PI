@@ -375,11 +375,42 @@
   </footer>
 
   <ul class="dropdown-menu">
-    <li class="idiomas"><img src="{% static "Home/img/brasil.png" %}" alt="Português (Brasil)">{% trans 'Português (Brasil)' %}</li>
-    <li class="idiomas"><img src="{% static "Home/img/engles.png" %}" alt="Inglês (EUA)">{% trans 'Inglês (EUA)' %}</li>
-    <li class="idiomas"><img src="{% static "Home/img/espanha.png" %}" alt="Espanhol (Espanha)">{% trans 'Espanhol (Espanha)' %}</li>
-    <li class="version">{% trans 'Versão 0.1.24' %}</li>
-  </ul>
+    <li class="idiomas">
+        <form action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input name="language" type="hidden" value="pt-br">
+            <input name="next" type="hidden" value="{{ request.path }}">
+            <button type="submit" style="border: none; background: none;">
+                <img src="{% static 'Home/img/brasil.png' %}" alt="Português (Brasil)" />
+                {% trans "Português (Brasil)" %}
+            </button>
+        </form>
+    </li>
+    <li class="idiomas">
+        <form action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input name="language" type="hidden" value="en">
+            <input name="next" type="hidden" value="{{ request.path }}">
+            <button type="submit" style="border: none; background: none;">
+                <img src="{% static 'Home/img/engles.png' %}" alt="Inglês (EUA)" />
+                {% trans "Inglês (EUA)" %}
+            </button>
+        </form>
+    </li>
+    <li class="idiomas">
+        <form action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input name="language" type="hidden" value="es">
+            <input name="next" type="hidden" value="{{ request.path }}">
+            <button type="submit" style="border: none; background: none;">
+                <img src="{% static 'Home/img/espanha.png' %}" alt="Espanhol (Espanha)" />
+                {% trans "Espanhol (Espanha)" %}
+            </button>
+        </form>
+    </li>
+    <li class="version">{% trans "Versão 0.1.24" %}</li>
+</ul>
+
 
 
  <!-- Menu footer do deskitop -->
