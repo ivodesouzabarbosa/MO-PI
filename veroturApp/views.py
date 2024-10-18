@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from .models import PontosTuristicos, Categorias
 from django.utils.translation import gettext
 from django.http import HttpResponse
+from django.core.paginator import Paginator
 
 # def map_view(request):
 #     return render(request, 'teste.html')
@@ -30,16 +31,21 @@ def como_chegar(request):
 
 def pontos_por_categoria(request, categoria_id):
     # Obtém a categoria específica com base no ID passado na URL
-    categoria = get_object_or_404(Categorias, id=categoria_id)
+    categoria = Categorias.objects.get(id=categoria_id)
 
     # Busca os pontos turísticos que pertencem à categoria
     pontos_turisticos = PontosTuristicos.objects.filter(categorias_id_categorias=categoria)
 
-    # Renderiza os pontos turísticos para o template
-    return render(request, 'como_chegar/pontos_turisticos.html', {
+    # Paginação: 9 cards por página (3 colunas com 3 cards)
+    paginator = Paginator(pontos_turisticos, 9)  # 9 cards por página
+    page_number = request.GET.get('page')  # Obtém o número da página da URL
+    page_obj = paginator.get_page(page_number)  # Pega os objetos da página atual
+
+    context = {
         'categoria': categoria,
-        'pontos_turisticos': pontos_turisticos
-    })
+        'page_obj': page_obj  # Passa o objeto da página para o template
+    }
+    return render(request, 'como_chegar/pontos_turisticos.html', context)
 
 def pontos_turisticos_json(request):
     # Obtenha os parâmetros de limite do mapa

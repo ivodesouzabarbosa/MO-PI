@@ -345,20 +345,42 @@ body {
   color: #fff;
 }
 
-.btn-vmais {
-  padding: 4rem;
+/* Para o contêiner de paginação */
+.pagination {
+  text-align: center;
+  margin: 3rem 0;
 }
 
-.btn-vmais a {
-  font-weight: bold;
+.pagination ul {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination ul li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.pagination ul li a {
   text-decoration: none;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #007bff;
+}
+
+.pagination ul li.active a {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination ul li a:hover {
+  background-color: #0056b3;
   color: white;
-  font-size: 1.6rem;
-  background-color: var(--threeth-color);
-  text-transform: uppercase;
-  padding: 1rem;
-  border-radius: 1rem;
-  text-shadow: 0.4rem 0.4rem 1rem #005ca3;
 }
 
 
@@ -438,3 +460,5 @@ body {
   }
 
 } */
+
+

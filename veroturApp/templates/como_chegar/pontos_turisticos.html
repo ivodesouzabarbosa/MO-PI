@@ -10,6 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="shortcut icon" href="" type="image/x-icon">
   <link rel="stylesheet" href="{% static "pagina_como_chegar/css/parques.css" %}">
   <link rel="stylesheet" href="{% static "Home/css/header_footer.css" %}" />
@@ -79,7 +82,7 @@
     <section class="container">
       <!-- Primeira coluna -->
       <div class="column">
-        {% for ponto in pontos_turisticos|slice:":3" %}
+        {% for ponto in page_obj.object_list|slice:":3" %}
           <article class="card">
             <div class="image-btn">
               <div class="image-container">
@@ -161,7 +164,7 @@
   
       <!-- Segunda coluna -->
       <div class="column">
-        {% for ponto in pontos_turisticos|slice:"3:6" %}
+        {% for ponto in page_obj.object_list|slice:"3:6" %}
           <article class="card">
             <!-- Conteúdo do ponto turístico -->
             <div class="image-btn">
@@ -244,7 +247,7 @@
   
       <!-- Terceira coluna -->
       <div class="column">
-        {% for ponto in pontos_turisticos|slice:"6:9" %}
+        {% for ponto in page_obj.object_list|slice:"6:9" %}
           <article class="card">
             <!-- Conteúdo do ponto turístico -->
             <div class="image-btn">
@@ -325,6 +328,25 @@
         {% endfor %}
       </div>
     </section>
+
+    <!-- Navegação por páginas -->
+    <div class="pagination">
+      <ul>
+          {% if page_obj.has_previous %}
+          <li><a href="?page={{ page_obj.previous_page_number }}">&laquo; Anterior</a></li>
+          {% endif %}
+
+          {% for num in page_obj.paginator.page_range %}
+          <li class="{% if page_obj.number == num %} active {% endif %}">
+              <a href="?page={{ num }}">{{ num }}</a>
+          </li>
+          {% endfor %}
+
+          {% if page_obj.has_next %}
+          <li><a href="?page={{ page_obj.next_page_number }}">Próximo &raquo;</a></li>
+          {% endif %}
+      </ul>
+    </div>
   </main>
 
 
