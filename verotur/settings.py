@@ -118,8 +118,8 @@ LANGUAGE_CODE = 'pt-br'
 
 LANGUAGES = [
     ('pt-br', 'Português'),
-    ('en', u'English'),
-    ('es', u'Espanõl')
+    ('en', 'English'),
+    ('es', 'Espanõl')
 ]
 
 USE_I18N = True # Ativa a internacionalização
