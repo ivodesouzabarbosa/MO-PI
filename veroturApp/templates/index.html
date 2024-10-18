@@ -85,120 +85,45 @@
       </section>
 
       <!-- Categorias - -->
-
       <section class="container-cards">
         <div class="main-card">
-          <div class="box-card">
-            <a href="#" class="card-link">
-              <div class="card card1">
-                <div class="conteudo">
-                  <i class="material-symbols-outlined">Restaurant</i>
-                </div>
-              </div>
-              <h5>{% trans 'Restaurantes' %}</h5>
-            </a>
-          </div>
-
-          <div class="box-card">
-            <a href="#" class="card-link">
-              <div class="card card2">
-                <div class="conteudo">
-                  <i class="material-symbols-outlined">local_mall</i>
-                </div>
-              </div>
-              <h5>{% trans 'Shoppings' %}</h5>
-            </a>
-          </div>
-
-          <div class="box-card">
-            <a href="#" class="card-link">
-              <div class="card card3">
-                <div class="conteudo">
-                  <i class="material-symbols-outlined">attractions</i>
-                </div>
-              </div>
-              <h5>{% trans 'Atrações' %}</h5>
-            </a>
-          </div>
-
-          <div class="box-card">
-            <a href="{% url 'como_chegar' %}" class="card-link">
-              <div class="card card4">
-                <div class="conteudo">
-                  <i class="material-symbols-outlined">nature_people</i>
-                </div>
-              </div>
-              <h5>{% trans 'Parques' %}</h5>
-            </a>
-          </div>
-
-          <div class="box-card">
-            <a href="#" class="card-link">
-              <div class="card card5">
-                <div class="conteudo">
-                  <i class="material-symbols-outlined">location_city</i>
-                </div>
-              </div>
-              <h5>{% trans 'Prédios' %}</h5>
-            </a>
-          </div>
-
-          <div class="box-card">
-            <a href="#" class="card-link">
-              <div class="card card6">
-                <div class="conteudo">
-                  <i class="material-symbols-outlined">park</i>
-                </div>
-              </div>
-              <h5>{% trans 'Praças' %}</h5>
-            </a>
-          </div>
-
-          <div class="box-card">
-            <a href="#" class="card-link">
-              <div class="card card7">
-                <div class="conteudo">
-                  <i class="material-symbols-outlined">beach_access</i>
-                </div>
-              </div>
-              <h5>{% trans 'Ilhas' %}</h5>
-            </a>
-          </div>
-
-          <div class="box-card">
-            <a href="#" class="card-link">
-              <div class="card card8">
-                <div class="conteudo">
-                  <i class="material-symbols-outlined">museum</i>
-                </div>
-              </div>
-              <h5>{% trans 'Museus' %}</h5>
-            </a>
-          </div>
-
-          <div class="box-card">
-            <a href="#" class="card-link">
-              <div class="card card9">
-                <div class="conteudo">
-                  <i class="material-symbols-outlined">church</i>
-                </div>
-              </div>
-              <h5>{% trans 'Igrejas' %}</h5>
-            </a>
-          </div>
-
-          <div class="box-card">
-            <a href="#" class="card-link">
-              <div class="card card10">
-                <div class="conteudo">
-                  <i class="material-symbols-outlined">directions_bus</i>
-                </div>
-              </div>
-              <h5>{% trans 'Terminais' %}</h5>
-            </a>
-          </div>
+            {% for categoria in categorias %}
+            <div class="box-card">
+                <a href="{% url 'pontos_por_categoria' categoria.id %}" class="card-link">
+                    <div class="card card{{ forloop.counter }}">
+                        <div class="conteudo">
+                            {% if categoria.nome == "Restaurantes" %}
+                                <i class="material-symbols-outlined">restaurant</i>
+                            {% elif categoria.nome == "Shoppings" %}
+                                <i class="material-symbols-outlined">local_mall</i>
+                            {% elif categoria.nome == "Atrações" %}
+                                <i class="material-symbols-outlined">attractions</i>
+                            {% elif categoria.nome == "Parques" %}
+                                <i class="material-symbols-outlined">nature_people</i>
+                            {% elif categoria.nome == "Prédios" %}
+                                <i class="material-symbols-outlined">location_city</i>
+                            {% elif categoria.nome == "Praças" %}
+                                <i class="material-symbols-outlined">park</i>
+                            {% elif categoria.nome == "Ilhas" %}
+                                <i class="material-symbols-outlined">beach_access</i>
+                            {% elif categoria.nome == "Museus" %}
+                                <i class="material-symbols-outlined">museum</i>
+                            {% elif categoria.nome == "Igrejas" %}
+                                <i class="material-symbols-outlined">church</i>
+                            {% elif categoria.nome == "Terminais" %}
+                                <i class="material-symbols-outlined">directions_bus</i>
+                            {% else %}
+                                <i class="material-symbols-outlined">question_mark</i>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <h5>{{ categoria.nome }}</h5>
+                </a>
+            </div>
+            {% endfor %}
         </div>
       </section>
+    
 
       <!-- listas marajoara -->
 

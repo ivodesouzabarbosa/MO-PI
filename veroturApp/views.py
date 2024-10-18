@@ -11,7 +11,8 @@ from django.core.paginator import Paginator
 
 @cache_page(30)
 def home(request):
-    return render(request, 'index.html')
+    categorias = Categorias.objects.all()  # Busca todas as categorias
+    return render(request, 'index.html', {'categorias': categorias})
 
 def eventos(request):
     return render(request, 'Eventos/eventos.html')
