@@ -83,3 +83,6 @@ def teste(request):
     texto = gettext('parques')
     return render(request, 'Eventos/eventos.html', {{'texto': texto}})
 
+
+
+

@@ -320,9 +320,9 @@
         </nav>
       </footer>
 
-      <ul class="dropdown-menu">
+      {% comment %} <ul class="dropdown-menu">
         <li class="idiomas">
-          <img src="{% static 'Home/img/brasil.png' %}" alt="Português (Brasil)" />
+          <img src="{% static 'Home/img/brasil.png' %}" alt="Português (Brasil)" />{% trans "Português (Brasil)" %}
         </li>
         <li class="idiomas">
           <img src="{% static 'Home/img/engles.png' %}" alt="Inglês (EUA)" />{% trans "Inglês (EUA)" %}
@@ -331,7 +331,30 @@
           <img src="{% static 'Home/img/espanha.png' %}" alt="Espanhol (Espanha)" />{% trans "Espanhol (Espanha)" %}
         </li>
         <li class="version">{% trans "Versão 0.1.24" %} </li>
-      </ul>
+      </ul> {% endcomment %}
+
+      <ul class="dropdown-menu">
+        <li class="idiomas">
+            <a href="{% url 'set_language' %}?language=pt">
+                <img src="{% static 'Home/img/brasil.png' %}" alt="Português (Brasil)"/>
+                {% trans "Português (Brasil)" %}
+            </a>
+        </li>
+        <li class="idiomas">
+            <a href="{% url 'set_language' %}?language=en">
+                <img src="{% static 'Home/img/engles.png' %}" alt="Inglês (EUA)"/>
+                {% trans "Inglês (EUA)" %}
+            </a>
+        </li>
+        <li class="idiomas">
+            <a href="{% url 'set_language' %}?language=es">
+                <img src="{% static 'Home/img/espanha.png' %}" alt="Espanhol (Espanha)"/>
+                {% trans "Espanhol (Espanha)" %}
+            </a>
+        </li>
+        <li class="version">{% trans "Versão 0.1.24" %}</li>
+    </ul>
+    
 
       <!-- Menu footer do deskitop -->
 
