@@ -122,15 +122,15 @@ LANGUAGES = [
     ('es', u'Espanõl')
 ]
 
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),
-)
-
-TIME_ZONE = 'UTC'
-
 USE_I18N = True # Ativa a internacionalização
 USE_L10N = True # Ativa a formatação local (como datas e números)
 USE_TZ = True   # Ativa a utilização de timezones
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale/'),
+)
+
+TIME_ZONE = 'UTC'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
