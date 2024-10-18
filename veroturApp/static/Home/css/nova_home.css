@@ -55,35 +55,22 @@
     align-items: center;
 }
 
-.destaque {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin: 10px 0 1px 0;
-    text-align: center;
-}
-
-.linha {
-    margin-bottom: 1rem;
-    border: 1px solid #147a87;
-}
-
 .card-home {
     background-color: white;
-    /* margin-bottom: 15px; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     border: solid 1px var(--threeth-color);
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s;
+    /* transition: transform 0.3s; */
     width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
 }
 
-.card-home:hover {
+/* .card-home:hover {
     transform: scale(1.05);
-}
+} */
 
 .card-home img {
     width: 100%;
