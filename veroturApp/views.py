@@ -6,8 +6,6 @@ from django.utils.translation import gettext
 from django.http import HttpResponse
 from django.core.paginator import Paginator
 
-# def map_view(request):
-#     return render(request, 'teste.html')
 
 @cache_page(30)
 def home(request):
