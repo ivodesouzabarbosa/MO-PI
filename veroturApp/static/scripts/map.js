@@ -33,24 +33,37 @@ function initMap() {
         markers = []; // Limpa o array de marcadores
     }
 
-    // Função para obter a localização atual do usuário
+    // Função para obter a localização atual do usuário com alta precisão
     function getCurrentLocation(callback) {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position => {
-                const userLat = position.coords.latitude;
-                const userLng = position.coords.longitude;
-                callback(userLat, userLng);
+            navigator.geolocation.getCurrentPosition(
+                position => {
+                    const userLat = position.coords.latitude;
+                    const userLng = position.coords.longitude;
+                    callback(userLat, userLng);
 
-                // Adiciona um marcador para a localização atual do usuário
-                const userMarker = new google.maps.Marker({
-                    position: { lat: userLat, lng: userLng },
-                    map: map,
-                    title: 'Você está aqui',
-                    icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
-                });
+                    // Adiciona um marcador para a localização atual do usuário
+                    const userMarker = new google.maps.Marker({
+                        position: { lat: userLat, lng: userLng },
+                        map: map,
+                        title: 'Você está aqui',
+                        icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+                    });
 
-                map.setCenter({ lat: userLat, lng: userLng });
-            });
+                    map.setCenter({ lat: userLat, lng: userLng });
+                },
+                error => {
+                    console.error('Erro ao obter a localização: ', error);
+                    alert('Não foi possível obter sua localização.');
+                },
+                {
+                    enableHighAccuracy: true,  // Usa alta precisão
+                    timeout: 5000,             // Tempo limite para resposta
+                    maximumAge: 0              // Não usa cache de localização antiga
+                }
+            );
+        } else {
+            alert('Geolocalização não é suportada pelo seu navegador.');
         }
     }
 
@@ -142,5 +155,5 @@ function initMap() {
     map.addListener('bounds_changed', debouncedFetch);
 
     // Obtenha a localização atual do usuário ao iniciar o mapa
-    getCurrentLocation(() => {});
+    getCurrentLocation(() => { });
 }

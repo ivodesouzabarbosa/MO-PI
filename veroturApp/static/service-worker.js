@@ -3,6 +3,8 @@ self.addEventListener('install', (event) => {
       caches.open('django-app-cache').then((cache) => {
         return cache.addAll([
           '/',
+        // Html -----------------------------------------
+          '/templates/index.html',
         // js -------------------------------------------
           '/static/scripts/map.js',
           '/static/Home/js/config.js',
@@ -34,11 +36,27 @@ self.addEventListener('install', (event) => {
     );
   });
   
-  self.addEventListener('fetch', (event) => {
-    event.respondWith(
-      caches.match(event.request).then((response) => {
-        return response || fetch(event.request);
+ // Instalação do Service Worker
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => {
+        console.log('Cache aberto');
+        return cache.addAll(urlsToCache);
       })
-    );
-  });
+  );
+});
+
+// Intercepta as requisições para servir os arquivos cacheados
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => {
+        if (response) {
+          return response; // Retorna o arquivo do cache, se disponível
+        }
+        return fetch(event.request); // Caso contrário, busca da rede
+      })
+  );
+});
   

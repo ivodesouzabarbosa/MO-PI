@@ -10,3 +10,14 @@ document.addEventListener("DOMContentLoaded", function() {
         gsap.from(conteudo, { duration: 1, opacity: 0 });
     }});
 });
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+          console.log('ServiceWorker registrado com sucesso: ', registration.scope);
+        }, function(error) {
+          console.log('Falha ao registrar o ServiceWorker: ', error);
+        });
+    });
+  }
