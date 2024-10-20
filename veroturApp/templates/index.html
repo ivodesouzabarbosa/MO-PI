@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{% static 'Home/css/nova_home.css' %}" />
   <link rel="stylesheet" href="{% static 'Home/css/header_footer.css' %}" />
   <link rel="manifest" href="{% static 'manifest.json' %}">
-  <link rel="stylesheet" href="{% static 'style/map.css' %}" />
+  {% comment %} <link rel="stylesheet" href="{% static 'style/map.css' %}" /> {% endcomment %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
@@ -40,7 +40,6 @@
       <div class="logo-senac-home">
         <img src="{% static 'Home/img/senac_home.webp' %}" alt="#" />
       </div>
-      <p></p>
       <div class="wrappercontainer">
         <nav class="header_nav">
           <ul>
@@ -68,7 +67,7 @@
 
     <!-- Mapa -->
     {% cache 900 google_maps_script %}
-    <div id="map" style="height: 500px; width: 80%"></div>
+    <div id="map" class="map"></div>
     <!-- Carregar o JavaScript do Google Maps API -->
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfLW4X31fejTXVD1jg7P0G35m9cDWyE6g&callback=initMap"></script>
@@ -202,11 +201,9 @@
           <img src="{% static 'Eventos/img/Círio.jpeg' %}" alt="..." class="card-image-web" />
           <div class="card-body-web">
             <h1 class="card-title-web">{% trans "Círio de Nazaré" %}</h1>
-            <p class="card-text-web">
-              {% trans "O Círio de Nazaré é uma das maiores festas religiosas do Brasil, realizada em Belém do Pará, em
-              homenagem a Nossa Senhora de Nazaré." %}
-              <span>{% trans "Local:" %}</span>{% trans "Centro De Belém" %}
-              <span>{% trans "Periodo:" %}</span>{% trans "Mês de Outubro" %}
+            <p class="card-text-web">{% trans "O Círio de Nazaré é uma das maiores festas religiosas do Brasil, realizada em Belém do Pará, em homenagem a Nossa Senhora de Nazaré." %}
+              <span>{% trans "Local:" %}</span> {% trans "Centro De Belém" %}
+              <span>{% trans "Periodo:" %}</span> {% trans "Mês de Outubro" %}
             </p>
           </div>
         </div>
@@ -216,10 +213,8 @@
           <img src="{% static 'Eventos/img/Arraial_do_Pavulagem.webp' %}" alt="..." class="card-image-web" />
           <div class="card-body-web">
             <h1 class="card-title-web">{% trans "Arraial da Pavulagem" %}</h1>
-            <p class="card-text-web">
-              {% trans "O Arraial da Pavulagem é uma tradicional festa junina realizada em Belém do Pará, celebrando a
-              cultura popular com música, danças e comidas típicas." %}
-              <span>{% trans "Local" %}:</span>{% trans "Varanda Superior do Cojan" %}
+            <p class="card-text-web">{% trans "O Arraial da Pavulagem é uma tradicional festa junina realizada em Belém do Pará, celebrando a cultura popular com música, danças e comidas típicas." %}
+              <span>{% trans "Local" %}:</span> {% trans "Varanda Superior do Cojan" %}
               <span>{% trans "Periodo" %}:</span> {% trans "Mês de Junho" %}
             </p>
           </div>
@@ -230,10 +225,8 @@
           <img src="{% static 'Eventos/img/feira_livro.png' %}" alt="..." class="card-image-web" />
           <div class="card-body-web">
             <h1 class="card-title-web">{% trans "Feira do Livro" %}</h1>
-            <p class="card-text-web">
-              {% trans "A programação conta com diversas ações e atividades de cultura, entre elas, rodas de conversas,
-              saraus, encontros literários, peças teatrais infantis e contação de histórias." %}
-              <span>{% trans "Local" %}:</span>{% trans "Hangar Convenções Feiras da Amazônia" %}
+            <p class="card-text-web">{% trans "A programação conta com diversas ações e atividades de cultura, entre elas, rodas de conversas, saraus, encontros literários, peças teatrais infantis e contação de histórias." %}
+              <span>{% trans "Local" %}:</span> {% trans "Hangar Convenções Feiras da Amazônia" %}
               <span>{% trans "Periodo" %}:</span> {% trans "De 17 a 25 de agosto de 2024" %}
             </p>
           </div>

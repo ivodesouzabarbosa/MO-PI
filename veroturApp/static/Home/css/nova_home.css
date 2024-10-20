@@ -40,24 +40,23 @@
 }
 
 #map {
-    height: 400px;
-    width: 90%;
+    height: 50rem;
+    width: 95%;
     margin: auto;
     margin-top: 2rem;
 }
 
 .cards-home {
-    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    justify-content: center;
-    align-items: center;
+    width: 95%;
+    margin: 0 auto;
 }
 
 .card-home {
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     border: solid 1px var(--threeth-color);
     border-radius: 10px;
     overflow: hidden;
@@ -301,8 +300,6 @@
     align-items: center;
     width: 95%;
     gap: 15px;
-    padding: 10px;
-    
 }
 
 .card-web {
@@ -334,10 +331,10 @@
     color: black;
 }
 
-.card-text-web p {
+.card-text-web {
     font-size: 1.2rem;
     color: rgb(102, 102, 102);
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
     white-space: pre-line;
    
     /* Aplica a quebra de linha de acordo com o conteudo Html */
@@ -352,15 +349,13 @@
 
 /* Desktops mudanças para web*/
 @media (min-width: 1024px) {
-    .container-mapa{
-        margin: 0 auto;
-        width: 84%;
+    #map {
+        width: 80%;
     }
 
     .cards-home {
         flex-direction: row;
-        margin: 0 auto;
-        width: 77%;
+        width: 80%;
     }
 
     /* teste01.10 -----------------------------------------------------------------------*/
@@ -509,36 +504,6 @@
     /* joy01.10cardsfinalizado.quemmudarégayyy */
 
 
-    /* -------telão------------------------------------------ */
-    /* .wrappertela {
-        display: block;
-        width: 80%;
-        height: 695px;
-        margin: 0 auto;
-        padding-top: 1px;    
-        border-radius: 5px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
-
-    }
-
-    .containertela {
-        max-width: 20rem;
-        margin: 0 auto;
-
-
-    }
-
-
-    .wrappertela img {
-        width: 100%;
-        height: 100%;
-        object-fit: inherit;
-    } */
-
-
     /* listra marajoara ------------------------------ */
     .mapa-listra {
         display: block;
@@ -546,9 +511,6 @@
 
     .container-listra {
         margin: 3rem auto;
-        
-        
-
     }
 
     .section_title {
@@ -566,18 +528,7 @@
         flex-direction: row;
         /* justify-content: space-around; */
         align-items: center;
-        width: 77%;
-    }
-
-    .card-web {
-        border-radius: 0.8rem;
-        border: solid 1px var(--threeth-color);
-        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
-        width: 100%;
-        height: 20rem;
-        max-width: 600px;
-        display: flex;
-        overflow: hidden;
+        width: 80%;
     }
 
     .card-image-web {
@@ -609,11 +560,6 @@
     .card-text-web span {
         font-weight: bold;
     }
-
-   
-
-
-
 }
 
 
