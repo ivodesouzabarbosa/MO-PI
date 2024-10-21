@@ -1,9 +1,16 @@
 from django.db import models
+from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
 class Categorias(models.Model):
-    nome = models.CharField(max_length=45, verbose_name=_("Nome"))
-    
+    nome = models.CharField(max_length=255, verbose_name=_("Nome"))
+    slug = models.SlugField('slug', editable=False)
+
+    def save(self, *args, **kwargs):
+        nome = self.nome
+        self.slug = slugify(nome, allow_unicode=True)
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.nome
     

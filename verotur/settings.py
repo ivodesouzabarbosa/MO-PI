@@ -80,7 +80,10 @@ DATABASES = {
          'USER':'tko5uxaao1mnxsuh',
          'PASSWORD':'p855czeq3v678uar',
          'HOST':'e11wl4mksauxgu1w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-         'PORT':'3306'
+         'PORT':'3306',
+         'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_ALL_TABLES'",
+        },
      }
 }
 

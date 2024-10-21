@@ -100,38 +100,95 @@
           <a href="{% url 'pontos_por_categoria' categoria.id %}" class="card-link">
             <div class="card card{{ forloop.counter }}">
               <div class="conteudo">
-                {% if categoria.nome == "Restaurantes" %}
-                <i class="material-symbols-outlined">restaurant</i>
-                {% elif categoria.nome == "Shoppings" %}
-                <i class="material-symbols-outlined">local_mall</i>
-                {% elif categoria.nome == "Atrações" %}
-                <i class="material-symbols-outlined">attractions</i>
-                {% elif categoria.nome == "Parques" %}
-                <i class="material-symbols-outlined">nature_people</i>
-                {% elif categoria.nome == "Prédios" %}
-                <i class="material-symbols-outlined">location_city</i>
-                {% elif categoria.nome == "Praças" %}
-                <i class="material-symbols-outlined">park</i>
-                {% elif categoria.nome == "Ilhas" %}
-                <i class="material-symbols-outlined">beach_access</i>
-                {% elif categoria.nome == "Museus" %}
-                <i class="material-symbols-outlined">museum</i>
-                {% elif categoria.nome == "Igrejas" %}
-                <i class="material-symbols-outlined">church</i>
-                {% elif categoria.nome == "Terminais" %}
-                <i class="material-symbols-outlined">directions_bus</i>
+                {% if LANGUAGE_CODE == "es" %}
+                  {% if categoria.nome_es == "Restaurantes" %}
+                    <i class="material-symbols-outlined">restaurant</i>
+                  {% elif categoria.nome_es == "Centros comerciales" %}
+                    <i class="material-symbols-outlined">local_mall</i>
+                  {% elif categoria.nome_es == "Atracciones" %}
+                    <i class="material-symbols-outlined">attractions</i>
+                  {% elif categoria.nome_es == "Parques" %}
+                    <i class="material-symbols-outlined">nature_people</i>
+                  {% elif categoria.nome_es == "Prédios" %}
+                    <i class="material-symbols-outlined">location_city</i>
+                  {% elif categoria.nome_es == "Praças" %}
+                    <i class="material-symbols-outlined">park</i>
+                  {% elif categoria.nome_es == "Ilhas" %}
+                    <i class="material-symbols-outlined">beach_access</i>
+                  {% elif categoria.nome_es == "Museus" %}
+                    <i class="material-symbols-outlined">museum</i>
+                  {% elif categoria.nome_es == "Igrejas" %}
+                    <i class="material-symbols-outlined">church</i>
+                  {% elif categoria.nome_es == "Terminais" %}
+                    <i class="material-symbols-outlined">directions_bus</i>
+                  {% else %}
+                    <i class="material-symbols-outlined">question_mark</i>
+                  {% endif %}
+                {% elif LANGUAGE_CODE == "pt" %}
+                  {% if categoria.nome_pt == "Restaurantes" %}
+                    <i class="material-symbols-outlined">restaurant</i>
+                  {% elif categoria.nome_pt == "Shoppings" %}
+                    <i class="material-symbols-outlined">local_mall</i>
+                  {% elif categoria.nome_pt == "Atrações" %}
+                    <i class="material-symbols-outlined">attractions</i>
+                  {% elif categoria.nome_pt == "Parques" %}
+                    <i class="material-symbols-outlined">nature_people</i>
+                  {% elif categoria.nome_pt == "Prédios" %}
+                    <i class="material-symbols-outlined">location_city</i>
+                  {% elif categoria.nome_pt == "Praças" %}
+                    <i class="material-symbols-outlined">park</i>
+                  {% elif categoria.nome_pt == "Ilhas" %}
+                    <i class="material-symbols-outlined">beach_access</i>
+                  {% elif categoria.nome_pt == "Museus" %}
+                    <i class="material-symbols-outlined">museum</i>
+                  {% elif categoria.nome_pt == "Igrejas" %}
+                    <i class="material-symbols-outlined">church</i>
+                  {% elif categoria.nome_pt == "Terminais" %}
+                    <i class="material-symbols-outlined">directions_bus</i>
+                  {% else %}
+                    <i class="material-symbols-outlined">question_mark</i>
+                  {% endif %}
                 {% else %}
-                <i class="material-symbols-outlined">question_mark</i>
+                  {% if categoria.nome_en == "Restaurants" %}
+                    <i class="material-symbols-outlined">restaurant</i>
+                  {% elif categoria.nome_en == "Malls" %}
+                    <i class="material-symbols-outlined">local_mall</i>
+                  {% elif categoria.nome_en == "Attractions" %}
+                    <i class="material-symbols-outlined">attractions</i>
+                  {% elif categoria.nome_en == "Parks" %}
+                    <i class="material-symbols-outlined">nature_people</i>
+                  {% elif categoria.nome_en == "Buildings" %}
+                    <i class="material-symbols-outlined">location_city</i>
+                  {% elif categoria.nome_en == "Squares" %}
+                    <i class="material-symbols-outlined">park</i>
+                  {% elif categoria.nome_en == "Islands" %}
+                    <i class="material-symbols-outlined">beach_access</i>
+                  {% elif categoria.nome_en == "Museums" %}
+                    <i class="material-symbols-outlined">museum</i>
+                  {% elif categoria.nome_en == "Churches" %}
+                    <i class="material-symbols-outlined">church</i>
+                  {% elif categoria.nome_en == "Terminals" %}
+                    <i class="material-symbols-outlined">directions_bus</i>
+                  {% else %}
+                    <i class="material-symbols-outlined">question_mark</i>
+                  {% endif %}
                 {% endif %}
               </div>
             </div>
-            <h5>{% trans categoria.nome %}</h5>
+            <h5>
+              {% if LANGUAGE_CODE == "es" %}
+                {{ categoria.nome_es }}
+              {% elif LANGUAGE_CODE == "pt" %}
+                {{ categoria.nome_pt}}
+              {% else %}
+                {{ categoria.nome_en }}
+              {% endif %}
+            </h5>
           </a>
         </div>
         {% endfor %}
       </div>
-    </section>
-
+    </section>    
 
     <!-- listas marajoara -->
 
