@@ -337,19 +337,6 @@
       </ul>
     </div>
 
-    {% comment %} <ul class="dropdown-menu">
-      <li class="idiomas">
-        <img src="{% static 'Home/img/brasil.png' %}" alt="Português (Brasil)" />{% trans "Português (Brasil)" %}
-      </li>
-      <li class="idiomas">
-        <img src="{% static 'Home/img/engles.png' %}" alt="Inglês (EUA)" />{% trans "Inglês (EUA)" %}
-      </li>
-      <li class="idiomas">
-        <img src="{% static 'Home/img/espanha.png' %}" alt="Espanhol (Espanha)" />{% trans "Espanhol (Espanha)" %}
-      </li>
-      <li class="version">{% trans "Versão 0.1.24" %} </li>
-    </ul> {% endcomment %}
-
     <ul class="dropdown-menu">
       <li class="idiomas">
         <form action="{% url 'set_language' %}" method="post">
@@ -414,9 +401,9 @@
   </div>
 
   <script src="{% static "Home/js/home.js" %}"></script>
-  <script src="{% static 'Home/js/config.js' %}"></script>
+  <script src="{% static "Home/js/config.js" %}"></script>
   <Script src="{% static "service-worker.js" %}"></Script>
-  <Script src="../static/Home/js/script.js"></Script>
+  <script src="{% static 'Home/js/script.js' %}"></script>
   
 </body>
 </html>
