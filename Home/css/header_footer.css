@@ -32,7 +32,151 @@ html {
   display: none;
 }
 
-.footer-menu-home {
+/* -------------------------------------------- */
+
+.navigation {
+
+  width: 400px;
+  height: 70%;
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+
+
+}
+
+.navigation ul {
+  width: 350px;
+  display: flex;
+  position: relative;
+}
+
+.navigation ul li {
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+  list-style: none;
+}
+
+.navigation ul li a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-weight: 500;
+
+}
+
+.navigation ul li a .icon {
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: white;
+
+}
+
+.navigation ul li.active a .icon {
+  transform: translateY(-32s);
+  color: white;
+}
+
+.navigation ul li a .text {
+  position: absolute;
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  color: var(--fourth-color);
+  transform: translateY(20px);
+}
+
+.navigation ul li.active a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+.indicador {
+  width: 70px;
+  height: 70px;
+  top: -50%;
+  background: var(--fourth-color);
+  border-radius: 50%;
+  border: 6px solid var(--primary-color);
+  transition: 0.5s;
+
+}
+
+.indicador::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-right-radius:20px;
+  box-shadow: 1px -10px 0 0 var(--fourth-color);
+}
+.indicador::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-left-radius:20px;
+  box-shadow: -1px -10px 0 0 var(--fourth-color);
+}
+
+.navigation ul li:nth-child(1).active ~ .indicador {
+  transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicador {
+  transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicador {
+  transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicador {
+  transform: translateX(calc(70px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicador {
+  transform: translateX(calc(70px * 4));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------- */
+
+
+
+/* .footer-menu-home {
   position: sticky;
   bottom: 0;
   width: 100%;
@@ -59,7 +203,7 @@ html {
 .item-link-footer {
   font-size: 2rem;
   color: #ffffff;
-}
+} */
 
 .logo-senac-home {
   width: 5rem;
@@ -93,7 +237,7 @@ html {
   list-style: none;
   padding: 10px;
   border-left: 1px solid var(--threeth-color);
-  border-top : 1px solid var(--threeth-color);
+  border-top: 1px solid var(--threeth-color);
   border-radius: 10px 0 0 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -216,7 +360,7 @@ html {
 
 
   /* Footer para desktop -------------------------------------- */
-  .footer-menu-home {
+  .navigation {
     display: none;
 
   }
@@ -232,7 +376,7 @@ html {
     justify-content: space-between;
     font-size: 1.8rem;
     text-align: center;
-    padding: 2.0rem; 
+    padding: 2.0rem;
     background-color: var(--second-color);
 
   }
