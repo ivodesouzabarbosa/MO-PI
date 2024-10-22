@@ -29,6 +29,16 @@
     box-sizing: border-box;
 }
 
+#splash-screen {
+    width: 90%;
+    margin: auto;
+}
+
+#splash-video {
+    display: block;
+    width: 100%;
+    margin: auto;
+}
 
 .map-teste {
     text-align: center;

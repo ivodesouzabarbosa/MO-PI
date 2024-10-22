@@ -31,8 +31,9 @@
 
 <body>
   <div id="splash-screen">
-    <img class="splash-img" src="{% static "Home/img/veroTur_logo-pwa.jpg" %}" alt="logo carregamento">
-    <p class="splash-p">{% trans 'Carregando...' %}</p>
+    <video id="splash-video" autoplay loop muted>
+      <source src="{% static 'Home/video/Projeto_de_Video_6_inicial.mp4' %}" type="video/mp4">
+    </video>
   </div>
 
   <div id="pwa" style="display: none;">
