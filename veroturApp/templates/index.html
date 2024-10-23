@@ -27,12 +27,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
 </head>
 
 <body>
   <div id="splash-screen">
-    <img class="splash-img" src="{% static "Home/img/veroTur_logo-pwa.jpg" %}" alt="logo carregamento">
-    <p class="splash-p">{% trans 'Carregando...' %}</p>
+    <video id="splash-video" autoplay loop muted>
+      <source src="{% static 'Home/video/Projeto_de_Video_6_inicial.mp4' %}" type="video/mp4">
+    </video>
   </div>
 
   <div id="pwa" style="display: none;">
@@ -88,7 +96,7 @@
     <section class="container-listra">
       <div class="listra">
         <h2 class="section_title">{% trans 'Categorias' %}</h2>
-        <img src="{% static 'Home/img/lista.webp' %}" alt="listar" />
+        <!-- <img src="{% static 'Home/img/lista.webp' %}" alt="listar" /> -->
       </div>
     </section>
 
@@ -195,7 +203,7 @@
     <section class="container-listra">
       <div class="listra">
         <h2 class="section_title">{% trans 'Sugestões' %}</h2>
-        <img src="{% static 'Home/img/lista.webp' %}" alt="listar" />
+        <!-- <img src="{% static 'Home/img/lista.webp' %}" alt="listar" /> -->
       </div>
     </section>
 
@@ -246,7 +254,7 @@
     <section class="container-listra">
       <div class="listra">
         <h2 class="section_title">{% trans "Principais Eventos" %}</h2>
-        <img src="{% static 'Home/img/lista.webp' %}" alt="listar" />
+        <!-- <img src="{% static 'Home/img/lista.webp' %}" alt="listar" /> -->
       </div>
     </section>
 
@@ -292,41 +300,42 @@
     </main>
 
     <!-- Menu footer -->
-    <footer class="footer-menu-home">
-      <nav class="nav-footer-home">
-        <ul class="lista-item-home">
-          <li class="list-footer">
-            <a class="link-footer" href="{% url 'home' %}"><i class="item-link-footer fa-solid fa-house"></i></a>
-          </li>
-          <li class="list-footer">
-            <!-- Eventos -->
-            <a class="link-footer" href="{% url 'eventos' %}"><i
-                class="item-link-footer fa-regular fa-calendar-days"></i></a>
-          </li>
-          <li class="list-footer">
-            <!-- como chegar -->
-            <a class="link-footer" href="{% url 'como_chegar' %}"><i
-                class="item-link-footer fa-solid fa-location-dot"></i></a>
-          </li>
-          <li class="list-footer">
-            <a class="link-footer dropdown-toggle"><i class="item-link-footer fa-solid fa-gear"></i></a>
-          </li>
-        </ul>
-      </nav>
-    </footer>
-
-    {% comment %} <ul class="dropdown-menu">
-      <li class="idiomas">
-        <img src="{% static 'Home/img/brasil.png' %}" alt="Português (Brasil)" />{% trans "Português (Brasil)" %}
-      </li>
-      <li class="idiomas">
-        <img src="{% static 'Home/img/engles.png' %}" alt="Inglês (EUA)" />{% trans "Inglês (EUA)" %}
-      </li>
-      <li class="idiomas">
-        <img src="{% static 'Home/img/espanha.png' %}" alt="Espanhol (Espanha)" />{% trans "Espanhol (Espanha)" %}
-      </li>
-      <li class="version">{% trans "Versão 0.1.24" %} </li>
-    </ul> {% endcomment %}
+    <div class="navigation">
+      <ul>
+        <li class="list active">
+          <a href="{% url "home" %}">
+            <span class="icon"><i class="item-link-footer fa-solid fa-house"></i></span>
+            <span class="text">Home</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="{% url "eventos" %}">
+            <span class="icon"><i class="item-link-footer fa-regular fa-calendar-days"></i>
+            </span>
+            <span class="text">Eventos</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="#">
+            <span class="icon"><i class="fa-solid fa-map-location-dot"></i></span>
+            <span class="text">Mapa</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="{% url "como_chegar" %}">
+            <span class="icon"><i class="item-link-footer fa-solid fa-location-dot"></i></span>
+            <span class="text">Como Chegar</span>
+          </a>
+        </li>
+        <li class="list">
+          <a class="dropdown-toggle">
+            <span class="icon"><i class=" fa-solid fa-gear"></i></span>
+            <span class="text">Ajuste</span>
+          </a>
+        </li>
+        <div class="indicator"></div>
+      </ul>
+    </div>
 
     <ul class="dropdown-menu">
       <li class="idiomas">
@@ -334,7 +343,7 @@
           {% csrf_token %}
           <input name="language" type="hidden" value="pt-br">
           <input name="next" type="hidden" value="{{ request.path }}">
-          <button type="submit" style="border: none; background: none;">
+          <button type="submit" style="border: none; background: none; color: #fff; display: flex; align-items: center; justify-content: center;">
             <img src="{% static 'Home/img/brasil.png' %}" alt="Português (Brasil)" />
             {% trans "Português (Brasil)" %}
           </button>
@@ -345,7 +354,7 @@
           {% csrf_token %}
           <input name="language" type="hidden" value="en">
           <input name="next" type="hidden" value="{{ request.path }}">
-          <button type="submit" style="border: none; background: none;">
+          <button type="submit" style="border: none; background: none; color: #fff; display: flex; align-items: center; justify-content: center;">
             <img src="{% static 'Home/img/engles.png' %}" alt="Inglês (EUA)" />
             {% trans "Inglês (EUA)" %}
           </button>
@@ -356,7 +365,7 @@
           {% csrf_token %}
           <input name="language" type="hidden" value="es">
           <input name="next" type="hidden" value="{{ request.path }}">
-          <button type="submit" style="border: none; background: none;">
+          <button type="submit" style="border: none; background: none; color: #fff; display: flex; align-items: center; justify-content: center;">
             <img src="{% static 'Home/img/espanha.png' %}" alt="Espanhol (Espanha)" />
             {% trans "Espanhol (Espanha)" %}
           </button>
@@ -364,6 +373,7 @@
       </li>
       <li class="version">{% trans "Versão 0.1.24" %}</li>
     </ul>
+    
 
 
     <!-- Menu footer do deskitop -->
@@ -391,7 +401,9 @@
   </div>
 
   <script src="{% static "Home/js/home.js" %}"></script>
-  <script src="{% static 'Home/js/config.js' %}"></script>
+  <script src="{% static "Home/js/config.js" %}"></script>
   <Script src="{% static "service-worker.js" %}"></Script>
+  <script src="{% static 'Home/js/script.js' %}"></script>
+  
 </body>
 </html>
