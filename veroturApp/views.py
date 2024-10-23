@@ -76,17 +76,6 @@ def pontos_turisticos_json(request):
 
 
 # campo destinado para traduções
-def index(request):
-    texto = gettext('parques')  # Traduzindo a palavra 'parques'
-    return render(request, 'index.html', {'texto': texto})  # Corrigido: não usar chaves extras
-
-def teste(request):
-    texto = gettext('parques')
-    return render(request, 'como_chegar/pontos_turisticos.html', {{'texto': texto}})
-
-def teste(request):
-    texto = gettext('parques')
-    return render(request, 'Eventos/eventos.html', {{'texto': texto}})
 
 
 
