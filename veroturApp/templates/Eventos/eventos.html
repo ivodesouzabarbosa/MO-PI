@@ -23,32 +23,30 @@
 <body>
   <header class="header-home">
     <div class="logo-senac-home">
-      <img src="{% static "Home/img/senac_home.webp" %}" alt="#" />
+      <img src="{% static "Home/img/senac_home.webp" %}" alt="logo senac" />
     </div>
 
     <div class="wrappercontainer">
       <nav class="header_nav">
-        <div class="wrappercontainer">
-          <nav class="header_nav">
-            <ul>
-              <li>
-                <a href="{% url 'home' %}">{% trans 'Inicio' %}</a>
-              </li>
-              <li>
-                <a href="{% url 'como_chegar' %}">{% trans 'Como Chegar' %}</a>
-              </li>
-              <li>
-                <a href="{% url 'eventos' %}">{% trans 'Eventos' %}</a>
-              </li>
-              <li>
-                <a class='dropdown-toggle'>{% trans 'Configuração' %}</a> 
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <ul>
+          <li>
+            <a href="{% url 'home' %}">{% trans 'Inicio' %}</a>
+          </li>
+          <li>
+            <a href="{% url 'como_chegar' %}">{% trans 'Como Chegar' %}</a>
+          </li>
+          <li>
+            <a href="{% url 'eventos' %}">{% trans 'Eventos' %}</a>
+          </li>
+          <li>
+            <a class='dropdown-toggle'>{% trans 'Configuração' %}</a> 
+          </li>
+        </ul>
+      </nav>
+    </div>
 
     <div class="logo-app-home">
-      <img src="{% static "Home/img/veroTur_logo.webp" %}" alt="" />
+      <img src="{% static "Home/img/veroTur_logo.webp" %}" alt="logo verotur" />
     </div>
   </header>
 
