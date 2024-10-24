@@ -77,7 +77,9 @@
     {% cache 900 google_maps_script %}
     <div id="map" class="map"></div>
     <!-- Carregar o JavaScript do Google Maps API -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfLW4X31fejTXVD1jg7P0G35m9cDWyE6g&callback=initMap"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfLW4X31fejTXVD1jg7P0G35m9cDWyE6g&callback=initMap">
+    </script>
 
     <script src="{% static 'scripts/map.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
