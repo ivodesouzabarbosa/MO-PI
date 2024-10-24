@@ -1,6 +1,7 @@
 const CACHE_NAME = 'verotur-cahce-v1';
 const urlsToCache = [
   '/', // Página principal
+  '/templates/index.html',
   //CSS
   '/static/Home/css/header_footer.css',
   '/static/Home/css/nova_home.css',
