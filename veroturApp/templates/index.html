@@ -218,7 +218,7 @@
           <div class="card-home-btns">
             <a
               href="https://www.google.com/maps/place/Forte+do+Pres%C3%A9pio/@-1.4543647,-48.5052375,17z/data=!3m1!4b1!4m6!3m5!1s0x92a48ef1a132f8d5:0xff1a071f7388a0ed!8m2!3d-1.4543647!4d-48.5052375!16s%2Fg%2F122zd8n3?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"><span
-                class="material-symbols-outlined">moved_location</span>Rota</a>
+                class="material-symbols-outlined">moved_location</span>{% trans "Rota" %}</a>
             <a href="#"><span class="material-symbols-outlined">tab_new_right</span>{% trans 'Detalhes' %}</a>
           </div>
           <!-- <p>Descubra praias paradisíacas e relaxe ao som do mar.</p> -->
@@ -231,7 +231,7 @@
           <div class="card-home-btns">
             <a
               href="https://www.google.com/maps/place/Esta%C3%A7%C3%A3o+das+Docas/@-1.4501764,-48.5016305,17.25z/data=!4m14!1m7!3m6!1s0x92a48ef1a132f8d5:0xff1a071f7388a0ed!2sForte+do+Pres%C3%A9pio!8m2!3d-1.4543647!4d-48.5052375!16s%2Fg%2F122zd8n3!3m5!1s0x92a48f8e824de2d5:0xc3ab0136dae42ab4!8m2!3d-1.4490679!4d-48.5001115!16s%2Fg%2F120nqhk3?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"><span
-                class="material-symbols-outlined">moved_location</span>Rota</a>
+                class="material-symbols-outlined">moved_location</span>{% trans "Rota" %}</a>
             <a href="#"><span class="material-symbols-outlined">tab_new_right</span>{% trans 'Detalhes' %}</a>
           </div>
           <!-- <p>Desafie-se em trilhas e montanhas de tirar o fôlego.</p> -->
@@ -244,8 +244,8 @@
           <div class="card-home-btns">
             <a
               href="https://www.google.com/maps/place/Mercado+Ver-o-Peso/@-1.4501764,-48.5016305,17.25z/data=!4m14!1m7!3m6!1s0x92a48ef1a132f8d5:0xff1a071f7388a0ed!2sForte+do+Pres%C3%A9pio!8m2!3d-1.4543647!4d-48.5052375!16s%2Fg%2F122zd8n3!3m5!1s0x92a48eedffb60aaf:0xdd2ca66005639d12!8m2!3d-1.4523651!4d-48.5037509!16s%2Fm%2F03wd6nt?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"><span
-                class="material-symbols-outlined">moved_location</span>Rota</a>
-            <a href="#"><span class="material-symbols-outlined">tab_new_right</span>Detalhes</a>
+                class="material-symbols-outlined">moved_location</span>{% trans "Rota" %}</a>
+            <a href="#"><span class="material-symbols-outlined">tab_new_right</span>{% trans 'Detalhes' %}</a>
           </div>
           <!-- <p>Explore grandes cidades e sua cultura vibrante.</p> -->
         </div>
@@ -308,32 +308,32 @@
         <li class="list active">
           <a href="{% url "home" %}">
             <span class="icon"><i class="item-link-footer fa-solid fa-house"></i></span>
-            <span class="text">Home</span>
+            <span class="text">{% trans "Início" %}</span>
           </a>
         </li>
         <li class="list">
           <a href="{% url "eventos" %}">
             <span class="icon"><i class="item-link-footer fa-regular fa-calendar-days"></i>
             </span>
-            <span class="text">Eventos</span>
+            <span class="text">{% trans "Eventos" %}</span>
           </a>
         </li>
         <li class="list">
           <a href="#">
             <span class="icon"><i class="fa-solid fa-map-location-dot"></i></span>
-            <span class="text">Mapa</span>
+            <span class="text">{% trans "Mapa" %}</span>
           </a>
         </li>
         <li class="list">
           <a href="{% url "como_chegar" %}">
             <span class="icon"><i class="item-link-footer fa-solid fa-location-dot"></i></span>
-            <span class="text">Como Chegar</span>
+            <span class="text">{% trans "Como Chegar" %}</span>
           </a>
         </li>
         <li class="list">
           <a class="dropdown-toggle">
             <span class="icon"><i class=" fa-solid fa-gear"></i></span>
-            <span class="text">Ajuste</span>
+            <span class="text">{% trans "Ajuste" %}</span>
           </a>
         </li>
         <div class="indicator"></div>

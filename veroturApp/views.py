@@ -5,6 +5,7 @@ from .models import PontosTuristicos, Categorias
 from django.utils.translation import gettext
 from django.http import HttpResponse
 from django.core.paginator import Paginator
+from django.utils import translation
 
 
 @cache_page(30)
@@ -77,6 +78,8 @@ def pontos_turisticos_json(request):
 
 # campo destinado para traduções
 
-
-
+def set_language(request):
+    user_language = 'En'
+    translation.activate(user_language)
+    request.LANGUAGE_CODE = user_language
 
