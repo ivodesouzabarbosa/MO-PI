@@ -82,4 +82,9 @@ def set_language(request):
     user_language = 'En'
     translation.activate(user_language)
     request.LANGUAGE_CODE = user_language
+    
+def set_language(request):
+    user_language = 'Es'
+    translation.activate(user_language)
+    request.LANGUAGE_CODE = user_language
 
