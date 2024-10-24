@@ -1,7 +1,7 @@
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: -1.458563, lng: -48.490239 }, // Localização padrão
-        zoom: 14,
+        zoom: 18,
         disableDefaultUI: true, // Remove todos os controles padrão
         zoomControl: false,
         mapTypeControl: false,
