@@ -17,6 +17,9 @@ def eventos(request):
     return render(request, 'Eventos/eventos.html')
 
 
+def mapa(request):
+    return render(request, 'mapa/mapa.html')
+
 # def pontos_turisticos(request):
 #     return render(request, 'como_chegar/pontos_turisticos.html')
 
