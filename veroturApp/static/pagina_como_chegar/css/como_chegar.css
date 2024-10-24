@@ -131,7 +131,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    /* gap: 12px; */
     text-transform: uppercase;
 }
 
@@ -142,8 +142,9 @@ body {
 
 .conteudo h5 {
     color: #ffffff;
-    font-size: 16px;
+    font-size: 1.5rem;
     margin: 0;
+    text-align: center;
 }
 
 /* Extra small devices */
