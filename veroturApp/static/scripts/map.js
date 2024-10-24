@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', (eve))
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: -1.458563, lng: -48.490239 }, // Localização padrão
@@ -33,6 +34,32 @@ function initMap() {
         markers = []; // Limpa o array de marcadores
     }
 
+     // Função para criar o efeito de radar
+     function createRadarEffect(map, position) {
+        let radius = 0;
+        let radarCircle = new google.maps.Circle({
+            strokeColor: "#00BFFF",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#00BFFF",
+            fillOpacity: 0.35,
+            map: map,
+            center: position,
+            radius: 0
+        });
+
+        function animateRadar() {
+            radarCircle.setRadius(radius);
+            radius += 1; // Aumenta o raio do radar
+            if (radius > 100) { // Se o raio passar de 500 metros, reinicia
+                radius = 0;
+            }
+            requestAnimationFrame(animateRadar); // Anima o radar continuamente
+        }
+
+        animateRadar();
+    }
+
     // Função para obter a localização atual do usuário com alta precisão
     function getCurrentLocation(callback) {
         if (navigator.geolocation) {
@@ -46,11 +73,12 @@ function initMap() {
                     const userMarker = new google.maps.Marker({
                         position: { lat: userLat, lng: userLng },
                         map: map,
-                        title: 'Você está aqui',
-                        icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+                        title: 'Você está aqui'
                     });
 
                     map.setCenter({ lat: userLat, lng: userLng });
+                     // Cria o efeito de radar ao redor da localização do usuário
+                     createRadarEffect(map, { lat: userLat, lng: userLng });
                 },
                 error => {
                     console.error('Erro ao obter a localização: ', error);
@@ -153,6 +181,9 @@ function initMap() {
 
     // Listener para carregar pontos turísticos ao mover o mapa
     map.addListener('bounds_changed', debouncedFetch);
+
+    // Carregar os pontos turísticos apenas uma vez ao inicializar o mapa
+    google.maps.event.addListenerOnce(map, 'idle', fetchPontosTuristicos);
 
     // Obtenha a localização atual do usuário ao iniciar o mapa
     getCurrentLocation(() => { });
