@@ -29,6 +29,38 @@
     box-sizing: border-box;
 }
 
+/* barra de pesquisa */
+
+.searc-form {
+    display: flex;
+    margin: 20px auto; 
+    max-width: 400px;
+    width: 100%;
+    gap: 5px;
+}
+
+.searc-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.searc-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--fourth-color);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.searc-button:hover {
+    background-color: var(--second-color);
+}
+
+/* barra de pesquisa fim */
+
 #splash-screen {
     width: 90%;
     margin: auto;

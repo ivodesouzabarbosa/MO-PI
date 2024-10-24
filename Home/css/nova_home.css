@@ -358,7 +358,7 @@
 
 /* barra de pesquisa */
 
-.search-form {
+.searc-form {
     display: flex;
     margin: 20px auto; 
     max-width: 400px;
@@ -366,14 +366,14 @@
     gap: 5px;
 }
 
-.search-input {
+.searc-input {
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.search-button {
+.searc-button {
     padding: 10px 15px;
     border: none;
     background-color: var(--fourth-color);
@@ -382,7 +382,7 @@
     cursor: pointer;
 }
 
-.search-button:hover {
+.searc-button:hover {
     background-color: var(--second-color);
 }
 
