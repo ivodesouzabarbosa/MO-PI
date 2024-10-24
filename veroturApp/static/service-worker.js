@@ -1,7 +1,6 @@
-const CACHE_NAME = 'django-app-cache-v1';
+const CACHE_NAME = 'verotur-cahce-v1';
 const urlsToCache = [
   '/', // Página principal
-  '/offline/', // Página para exibir quando offline
   //CSS
   '/static/Home/css/header_footer.css',
   '/static/Home/css/nova_home.css',
@@ -28,7 +27,6 @@ const urlsToCache = [
   '/static/Home/img/senac_logo_r.png',
   '/static/Home/img/ver_o_peso_mobile.png',
   '/static/Home/img/veroTur_logo.webp',
-  '/static/images/logo.png',
   // Adicione mais arquivos aqui
 ];
 

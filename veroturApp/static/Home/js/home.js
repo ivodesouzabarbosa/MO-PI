@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/service-worker.js')
+      navigator.serviceWorker.register('/static/service-worker.js')
         .then(function(registration) {
           console.log('ServiceWorker registrado com sucesso: ', registration.scope);
         }, function(error) {
