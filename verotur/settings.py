@@ -18,7 +18,7 @@ DEBUG = 'True'
 ALLOWED_HOSTS = ['.herokuapp.com', 'verotur-92535ed7027b.herokuapp.com']
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/pontos_turisticos')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/pontos_turisticos/')
 
 # Application definition
 

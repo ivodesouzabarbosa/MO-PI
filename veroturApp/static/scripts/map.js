@@ -1,41 +1,62 @@
-document.addEventListener('DOMContentLoaded', (eve))
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: -1.458563, lng: -48.490239 }, // Localização padrão
-        zoom: 18,
+        zoom: 2,
         disableDefaultUI: true, // Remove todos os controles padrão
         zoomControl: false,
         mapTypeControl: false,
         streetViewControl: false,
         fullscreenControl: false,
         gestureHandling: "greedy",
-        styles: [
-            { elementType: 'geometry', stylers: [{ color: '#f5f5f5' }] },
-            { elementType: 'labels.icon', stylers: [{ visibility: 'off' }] },
-            { elementType: 'labels.text.fill', stylers: [{ color: '#333' }] },
-            { elementType: 'labels.text.stroke', stylers: [{ color: '#ffffff' }] },
-            { featureType: 'administrative', elementType: 'geometry', stylers: [{ color: '#e0e0e0' }] },
-            { featureType: 'poi', elementType: 'geometry', stylers: [{ color: '#07da63' }] },
-            { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#949192' }] },
-            { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#279ca9' }] }
+        styles: [ // Estilo do mapa usando uma paleta minimalista
+            {
+                elementType: 'geometry',
+                stylers: [{ color: '#f5f5f5' }] // Cor clara de fundo
+            },
+            {
+                elementType: 'labels.icon',
+                stylers: [{ visibility: 'off' }]
+            },
+            {
+                elementType: 'labels.text.fill',
+                stylers: [{ color: '#333' }]
+            },
+            {
+                elementType: 'labels.text.stroke',
+                stylers: [{ color: '#ffffff' }]
+            },
+            {
+                featureType: 'administrative',
+                elementType: 'geometry',
+                stylers: [{ color: '#e0e0e0' }]
+            },
+            {
+                featureType: 'poi',
+                elementType: 'geometry',
+                stylers: [{ color: '#07da63' }]
+            },
+            {
+                featureType: 'road',
+                elementType: 'geometry',
+                stylers: [{ color: '#949192' }]
+            },
+            {
+                featureType: 'water',
+                elementType: 'geometry',
+                stylers: [{ color: '#279ca9' }]
+            }
         ]
     });
 
     const infoWindow = new google.maps.InfoWindow();
     const directionsService = new google.maps.DirectionsService();
-    const directionsRenderer = new google.maps.DirectionsRenderer({ suppressMarkers: true });
+    const directionsRenderer = new google.maps.DirectionsRenderer({
+        suppressMarkers: true // Remove os marcadores de ponto A e B
+    });
     directionsRenderer.setMap(map);
 
-    let markers = []; // Array para armazenar os marcadores
-
-    // Função para remover marcadores antigos
-    function clearMarkers() {
-        markers.forEach(marker => marker.setMap(null));
-        markers = []; // Limpa o array de marcadores
-    }
-
-     // Função para criar o efeito de radar
-     function createRadarEffect(map, position) {
+    // Função para criar o efeito de radar
+    function createRadarEffect(map, position) {
         let radius = 0;
         let radarCircle = new google.maps.Circle({
             strokeColor: "#00BFFF",
@@ -47,7 +68,6 @@ function initMap() {
             center: position,
             radius: 0
         });
-
         function animateRadar() {
             radarCircle.setRadius(radius);
             radius += 1; // Aumenta o raio do radar
@@ -56,11 +76,10 @@ function initMap() {
             }
             requestAnimationFrame(animateRadar); // Anima o radar continuamente
         }
-
         animateRadar();
     }
 
-    // Função para obter a localização atual do usuário com alta precisão
+    // Função para obter a localização atual do usuário e adicionar um marcador
     function getCurrentLocation(callback) {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
@@ -73,118 +92,89 @@ function initMap() {
                     const userMarker = new google.maps.Marker({
                         position: { lat: userLat, lng: userLng },
                         map: map,
-                        title: 'Você está aqui'
+                        title: 'Você está aqui',
+                        icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
                     });
 
+                    // Cria o efeito de radar ao redor da localização do usuário
+                    createRadarEffect(map, { lat: userLat, lng: userLng });
+
+                    // Centraliza o mapa na localização atual
                     map.setCenter({ lat: userLat, lng: userLng });
-                     // Cria o efeito de radar ao redor da localização do usuário
-                     createRadarEffect(map, { lat: userLat, lng: userLng });
+                    map.setZoom(15); // Defina um nível de zoom adequado para o detalhe da localização
+
                 },
                 error => {
-                    console.error('Erro ao obter a localização: ', error);
-                    alert('Não foi possível obter sua localização.');
+                    console.error('Erro ao obter localização:', error);
                 },
                 {
-                    enableHighAccuracy: true,  // Usa alta precisão
-                    timeout: 5000,             // Tempo limite para resposta
-                    maximumAge: 0              // Não usa cache de localização antiga
+                    enableHighAccuracy: true,  // Solicita alta precisão
+                    timeout: 10000,            // Tempo limite de 10 segundos
+                    maximumAge: 0              // Impede uso de localização em cache
                 }
             );
         } else {
-            alert('Geolocalização não é suportada pelo seu navegador.');
+            console.log("Geolocalização não é suportada pelo navegador.");
         }
     }
 
-    // Função debounce para limitar a frequência de chamadas à API
-    function debounce(func, wait) {
-        let timeout;
-        return function () {
-            const context = this, args = arguments;
-            clearTimeout(timeout);
-            timeout = setTimeout(() => func.apply(context, args), wait);
-        };
-    }
 
-    // Função para buscar pontos turísticos baseados nos limites do mapa
-    function fetchPontosTuristicos() {
-        const bounds = map.getBounds();
-        const ne = bounds.getNorthEast();
-        const sw = bounds.getSouthWest();
+    // Busque os pontos turísticos do backend
+    fetch('/pontos-turisticos/')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(ponto => {
+            const latitude = parseFloat(ponto.latitude);
+            const longitude = parseFloat(ponto.longitude);
 
-        const northeastLat = ne.lat();
-        const northeastLng = ne.lng();
-        const southwestLat = sw.lat();
-        const southwestLng = sw.lng();
+            const marker = new google.maps.Marker({
+                position: { lat: latitude, lng: longitude },
+                map: map,
+                title: ponto.nome,
+                animation: google.maps.Animation.DROP
+            });
 
-        fetch(`/pontos-turisticos?ne_lat=${northeastLat}&ne_lng=${northeastLng}&sw_lat=${southwestLat}&sw_lng=${southwestLng}`)
-            .then(response => response.json())
-            .then(data => {
-                clearMarkers(); // Remove os marcadores antigos
+            marker.addListener('click', () => {
+                const contentString = `
+                    <div class="info-window p-3">
+                        <h3 class="info-title text-center">${ponto.nome}</h3>
+                        <img src="${ponto.imagem}" alt="${ponto.nome}" class="info-image img-fluid mb-2" />
+                        <p>${ponto.descricao || 'Sem descrição'}</p>
+                        <p><strong>Endereço:</strong> ${ponto.endereco || 'Não disponível'}</p>
+                        <p><strong>Horários de Funcionamento:</strong> ${ponto.horarios_funcionamento || 'Não disponível'}</p>
+                        <p><strong>Locais Pagos:</strong> ${ponto.lugares_pagos || 'Não disponível'}</p>
+                        <p><strong>Monitoria:</strong> ${ponto.monitoria ? 'Sim' : 'Não'}</p>
+                        <p><strong>Monitoria:</strong> ${ponto.monitoria || 'Não disponível'}</p>
+                        <button id="start-route" class="btn btn-primary btn-block">Iniciar Rota</button>
+                    </div>
+                `;
 
-                data.forEach(ponto => {
-                    const latitude = parseFloat(ponto.latitude);
-                    const longitude = parseFloat(ponto.longitude);
+                infoWindow.setContent(contentString);
+                infoWindow.open(map, marker);
 
-                    const marker = new google.maps.Marker({
-                        position: { lat: latitude, lng: longitude },
-                        map: map,
-                        title: ponto.nome,
-                        icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-                        animation: google.maps.Animation.DROP
-                    });
-
-                    marker.addListener('click', () => {
-                        const contentString = `
-                        <div class="info-window">
-                            <h3 class="info-title">${ponto.nome}</h3>
-                            <img src="${ponto.imagem}" alt="${ponto.nome}" class="info-image" />
-                            <p>${ponto.descricao || 'Sem descrição'}</p>
-                            <p><strong>Endereço:</strong> ${ponto.endereco || 'Não disponível'}</p>
-                            <p><strong>Horários de Funcionamento:</strong> ${ponto.horarios_funcionamento || 'Não disponível'}</p>
-                            <p><strong>Locais Pagos:</strong> ${ponto.lugares_pagos || 'Não disponível'}</p>
-                            <p><strong>Monitoria:</strong> ${ponto.monitoria ? 'Sim' : 'Não'}</p>
-                             <button id="start-route" class="btn-route">Iniciar Rota</button>
-                        </div>`;
-
-                        infoWindow.setContent(contentString);
-                        infoWindow.open(map, marker);
-
-                        // Adicione o evento de clique ao botão "Iniciar Rota"
-                        google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
-                            document.getElementById('start-route').addEventListener('click', () => {
-                                getCurrentLocation((userLat, userLng) => {
-                                    const request = {
-                                        origin: { lat: userLat, lng: userLng },
-                                        destination: { lat: latitude, lng: longitude },
-                                        travelMode: 'DRIVING'
-                                    };
-                                    directionsService.route(request, (result, status) => {
-                                        if (status === 'OK') {
-                                            directionsRenderer.setDirections(result);
-                                        } else {
-                                            console.error('Erro ao calcular a rota:', status);
-                                        }
-                                    });
-                                });
+                // Adicione o evento de clique ao botão
+                google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
+                    document.getElementById('start-route').addEventListener('click', () => {
+                        getCurrentLocation((userLat, userLng) => {
+                            const request = {
+                                origin: { lat: userLat, lng: userLng },
+                                destination: { lat: latitude, lng: longitude },
+                                travelMode: 'DRIVING'
+                            };
+                            directionsService.route(request, (result, status) => {
+                                if (status === 'OK') {
+                                    directionsRenderer.setDirections(result);
+                                    map.setCenter(result.routes[0].legs[0].end_location);
+                                }
                             });
                         });
                     });
-
-                    markers.push(marker); // Adiciona o marcador no array
                 });
-            })
-            .catch(error => console.error('Erro ao carregar os pontos turísticos:', error));
-    }
+            });
+        });
+    })
+    .catch(error => console.error('Erro ao carregar os pontos turísticos:', error));
 
-    // Usa debounce para evitar requisições frequentes
-    const debouncedFetch = debounce(fetchPontosTuristicos, 300);
-
-    // Listener para carregar pontos turísticos ao mover o mapa
-    map.addListener('bounds_changed', debouncedFetch);
-
-    // Carregar os pontos turísticos apenas uma vez ao inicializar o mapa
-    google.maps.event.addListenerOnce(map, 'idle', fetchPontosTuristicos);
-
-    // Obtenha a localização atual do usuário ao iniciar o mapa
+    // Obtenha e mostre a localização atual do usuário ao iniciar o mapa
     getCurrentLocation(() => { });
 }
