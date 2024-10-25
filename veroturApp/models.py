@@ -16,7 +16,7 @@ class Categorias(models.Model):
     
 class PontosTuristicos(models.Model):
     nome = models.CharField(max_length=45, verbose_name=_("Nome"))
-    imagem = models.ImageField(upload_to='pontos_turisticos/')
+    imagem = models.ImageField(upload_to ='media/pontos_turisticos/pontos_turisticos/')
     descricao = models.TextField(max_length=2500, verbose_name=_("Descrição"))
     endereco = models.CharField(max_length=75, verbose_name=_("Endereço"))
     horarios_funcionamento = models.CharField(max_length=45, verbose_name=_("Horários de Funcionamento"))
