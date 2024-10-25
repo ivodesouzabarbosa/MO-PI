@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Animação do splash screen
-    gsap.to("#splash-screen", { duration: 2, opacity: 0, onComplete: function() {
+    gsap.to("#splash-screen", { duration: 3, opacity: 1, onComplete: function() {
         // Esconde o splash screen
         document.getElementById("splash-screen").style.display = "none";
         // Exibe o conteúdo
