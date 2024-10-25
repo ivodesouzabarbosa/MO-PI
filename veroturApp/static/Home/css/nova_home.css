@@ -42,8 +42,8 @@
 .searc-input {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 2px solid var(--second-color);
+    border-radius: 1rem;
 }
 
 .searc-button {
@@ -51,7 +51,7 @@
     border: none;
     background-color: var(--fourth-color);
     color: white;
-    border-radius: 4px;
+    border-radius: 1rem;
     cursor: pointer;
 }
 
