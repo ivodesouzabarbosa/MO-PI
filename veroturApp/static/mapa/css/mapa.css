@@ -1,3 +1,17 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-home, .navigation {
+    flex-shrink: 0; /* Fixa a altura do header e do footer */
+}
+
 #map {
-    height: 77rem;
+    flex-grow: 1; /* Faz o mapa ocupar o restante da altura */
+    width: 100%; /* Preenche toda a largura */
+    min-height: 300px; /* Caso queira definir uma altura mínima */
 }
