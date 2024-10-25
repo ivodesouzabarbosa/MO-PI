@@ -10,7 +10,11 @@ class Categorias(models.Model):
         nome = self.nome
         self.slug = slugify(nome, allow_unicode=True)
         super().save(*args, **kwargs)
-
+        
+    class Meta:
+        verbose_name = 'Categoria'
+        verbose_name_plural = 'Categorias'
+              
     def __str__(self):
         return self.nome
     
@@ -26,5 +30,9 @@ class PontosTuristicos(models.Model):
     longitude = models.FloatField(verbose_name=_("Longitude"))
     categorias_id_categorias = models.ForeignKey(Categorias, models.DO_NOTHING, db_column='categorias_ID_categorias', verbose_name=_("Categoria"))
 
+    class Meta:
+        verbose_name = 'Ponto Turístico'
+        verbose_name_plural = 'Pontos Turísticos'
+        
     def __str__(self):
         return self.nome

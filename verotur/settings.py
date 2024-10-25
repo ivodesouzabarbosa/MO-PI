@@ -126,6 +126,10 @@ LANGUAGES = [
     ('en', u'English'),
     ('es', u'Espanõl')
 ]
+# internacionalização das models
+MODELTRANSLATIONS_DEFAULT_LANGUAGE = 'pt-br'
+
+MODELTRANSLATION_LANGUAGES = ('pt-br', 'en', 'es')
 
 USE_I18N = True # Ativa a internacionalização
 USE_L10N = True # Ativa a formatação local (como datas e números)

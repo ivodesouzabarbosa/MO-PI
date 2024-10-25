@@ -60,30 +60,81 @@
         <a href="{% url 'pontos_por_categoria' categoria.id %}" class="card-link">
           <div class="conteudo">
             <!-- Mapeia os ícones com base no nome da categoria -->
-            {% if categoria.nome == "Restaurantes" %}
-              <i class="material-symbols-outlined">restaurant</i>
-            {% elif categoria.nome == "Shoppings" %}
-              <i class="material-symbols-outlined">local_mall</i>
-            {% elif categoria.nome == "Atrações" %}
-              <i class="material-symbols-outlined">attractions</i>
-            {% elif categoria.nome == "Parques" %}
-              <i class="material-symbols-outlined">nature_people</i>
-            {% elif categoria.nome == "Prédios Históricos" %}
-              <i class="material-symbols-outlined">castle</i>
-            {% elif categoria.nome == "Praças" %}
-              <i class="material-symbols-outlined">park</i>
-            {% elif categoria.nome == "Ilha" %}
-              <i class="material-symbols-outlined">beach_access</i>
-            {% elif categoria.nome == "Museus" %}
-              <i class="material-symbols-outlined">museum</i>
-            {% elif categoria.nome == "Igrejas" %}
-              <i class="material-symbols-outlined">church</i>
-            {% elif categoria.nome == "Terminais" %}
-              <i class="material-symbols-outlined">directions_bus</i>
-            {% else %}
+            {% if LANGUAGE_CODE == "es" %}
+                  {% if categoria.nome_es == "Restaurantes" %}
+                    <i class="material-symbols-outlined">restaurant</i>
+                  {% elif categoria.nome_es == "Centros comerciales" %}
+                    <i class="material-symbols-outlined">local_mall</i>
+                  {% elif categoria.nome_es == "Atracciones" %}
+                    <i class="material-symbols-outlined">attractions</i>
+                  {% elif categoria.nome_es == "Parques" %}
+                    <i class="material-symbols-outlined">nature_people</i>
+                  {% elif categoria.nome_es == "Edificios Historicos" %}
+                    <i class="material-symbols-outlined">castle</i>
+                  {% elif categoria.nome_es == "Praças" %}
+                    <i class="material-symbols-outlined">park</i>
+                  {% elif categoria.nome_es == "Ilhas" %}
+                    <i class="material-symbols-outlined">beach_access</i>
+                  {% elif categoria.nome_es == "Museus" %}
+                    <i class="material-symbols-outlined">museum</i>
+                  {% elif categoria.nome_es == "Igrejas" %}
+                    <i class="material-symbols-outlined">church</i>
+                  {% elif categoria.nome_es == "Terminais" %}
+                    <i class="material-symbols-outlined">directions_bus</i>
+                  {% else %}
+                    <i class="material-symbols-outlined">question_mark</i>
+                  {% endif %}
+
+                {% elif LANGUAGE_CODE == "en" %}
+                  {% if categoria.nome_en == "Restaurants" %}
+                      <i class="material-symbols-outlined">restaurant</i>
+                    {% elif categoria.nome_en == "Malls" %}
+                      <i class="material-symbols-outlined">local_mall</i>
+                    {% elif categoria.nome_en == "Attractions" %}
+                      <i class="material-symbols-outlined">attractions</i>
+                    {% elif categoria.nome_en == "Parks" %}
+                      <i class="material-symbols-outlined">nature_people</i>
+                    {% elif categoria.nome_en == "Historic Buildings" %}
+                      <i class="material-symbols-outlined">castle</i>
+                    {% elif categoria.nome_en == "Squares" %}
+                      <i class="material-symbols-outlined">park</i>
+                    {% elif categoria.nome_en == "Islands" %}
+                      <i class="material-symbols-outlined">beach_access</i>
+                    {% elif categoria.nome_en == "Museums" %}
+                      <i class="material-symbols-outlined">museum</i>
+                    {% elif categoria.nome_en == "Churches" %}
+                      <i class="material-symbols-outlined">church</i>
+                    {% elif categoria.nome_en == "Terminals" %}
+                      <i class="material-symbols-outlined">directions_bus</i>
+                    {% else %}
+                      <i class="material-symbols-outlined">question_mark</i>
+                    {% endif %}
+                  {% else %}
+                    {% if categoria.nome == "Restaurantes" %}
+                      <i class="material-symbols-outlined">restaurant</i>
+                    {% elif categoria.nome == "Shoppings" %}
+                      <i class="material-symbols-outlined">local_mall</i>
+                    {% elif categoria.nome == "Atrações" %}
+                      <i class="material-symbols-outlined">attractions</i>
+                    {% elif categoria.nome == "Parques" %}
+                      <i class="material-symbols-outlined">nature_people</i>
+                    {% elif categoria.nome == "Prédios Históricos" %}
+                      <i class="material-symbols-outlined">castle</i>
+                    {% elif categoria.nome == "Praças" %}
+                      <i class="material-symbols-outlined">park</i>
+                    {% elif categoria.nome == "Ilha" %}
+                      <i class="material-symbols-outlined">beach_access</i>
+                    {% elif categoria.nome == "Museus" %}
+                      <i class="material-symbols-outlined">museum</i>
+                    {% elif categoria.nome == "Igrejas" %}
+                      <i class="material-symbols-outlined">church</i>
+                    {% elif categoria.nome == "Terminais" %}
+                      <i class="material-symbols-outlined">directions_bus</i>
+                    {% else %}
+                      <i class="material-symbols-outlined">question_mark</i>
+                    {% endif %}
+                {% endif %}
             <!-- Ícone padrão caso a categoria não tenha um ícone específico -->
-              <i class="material-symbols-outlined">question_mark</i>
-            {% endif %}
             <h5>{{ categoria.nome }}</h5>
           </div>
         </a>
@@ -98,32 +149,32 @@
     <li class="list">
       <a href="{% url "home" %}">
         <span class="icon"><i class="item-link-footer fa-solid fa-house"></i></span>
-        <span class="text">Home</span>
+        <span class="text">{% trans "Início" %}</span>
       </a>
     </li>
     <li class="list">
       <a href="{% url "eventos" %}">
         <span class="icon"><i class="item-link-footer fa-regular fa-calendar-days"></i>
         </span>
-        <span class="text">Eventos</span>
+        <span class="text">{% trans "Eventos" %}</span>
       </a>
     </li>
     <li class="list">
       <a href="#">
         <span class="icon"><i class="fa-solid fa-map-location-dot"></i></span>
-        <span class="text">Mapa</span>
+        <span class="text">{% trans "Mapa" %}</span>
       </a>
     </li>
     <li class="list active">
       <a href="{% url "como_chegar" %}">
         <span class="icon"><i class="item-link-footer fa-solid fa-location-dot"></i></span>
-        <span class="text">Como Chegar</span>
+        <span class="text">{% trans "Como Chegar" %}</span>
       </a>
     </li>
     <li class="list">
       <a class="dropdown-toggle">
         <span class="icon"><i class=" fa-solid fa-gear"></i></span>
-        <span class="text">Ajuste</span>
+        <span class="text">{% trans "Ajuste" %}</span>
       </a>
     </li>
     <div class="indicator"></div>
