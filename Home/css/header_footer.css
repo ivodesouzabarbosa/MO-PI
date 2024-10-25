@@ -172,35 +172,6 @@ a {
 
 
 
-/* .footer-menu-home {
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  background-color: var(--threeth-color);
-  z-index: 10;
-}
-
-.nav-footer-home {
-  padding: 1rem;
-}
-
-.lista-item-home {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-}
-
-
-.link-footer {
-  padding: 10px;
-  display: inline-block;
-}
-
-.item-link-footer {
-  font-size: 2rem;
-  color: #ffffff;
-} */
-
 .logo-senac-home {
   width: 5rem;
   height: 3rem;
@@ -311,7 +282,7 @@ a {
 
   .logo-senac-home {
     width: 8rem;
-    height: 5rem;
+    height: 6rem;
   }
 
   .logo-app-home {
@@ -387,14 +358,20 @@ a {
   .logo-senac-footer {
     width: 7.0rem;
     height: 5.0rem;
-
   }
 
   .logo-senac-footer img {
     width: 100%;
     height: 100%;
-    /* object-fit: cover; */
+    
   }
+
+  .footer-container {
+    display: flex;
+    justify-content: center; /* Centraliza as imagens no contêiner */
+    gap: 20px; /* Espaçamento entre as imagens */
+  }
+  
 
   .rede_logo {
     display: flex;
@@ -409,5 +386,6 @@ a {
     text-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
 
   }
+  
 
 }
