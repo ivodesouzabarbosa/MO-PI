@@ -364,6 +364,11 @@ a {
     height: 100%;
     /* object-fit: cover; */
   }
+  .footer-container {
+    display: flex;
+    justify-content: center; /* Centraliza as imagens no contêiner */
+    gap: 20px; /* Espaçamento entre as imagens */
+  }
 
   .rede_logo {
     display: flex;
