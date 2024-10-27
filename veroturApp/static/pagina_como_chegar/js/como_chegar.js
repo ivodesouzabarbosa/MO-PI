@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Redireciona após um curto atraso para permitir a animação
       setTimeout(() => {
         window.location.href = card.querySelector("a").href;
-      }, 300);
+      }, 200);
     });
   });
 });

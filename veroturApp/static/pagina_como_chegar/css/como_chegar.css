@@ -133,6 +133,7 @@ body {
     align-items: center;
     /* gap: 12px; */
     text-transform: uppercase;
+    text-align: center;
 }
 
 .conteudo i {

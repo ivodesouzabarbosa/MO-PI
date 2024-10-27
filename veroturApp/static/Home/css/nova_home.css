@@ -31,16 +31,19 @@
 
 /* barra de pesquisa versao varao  */
 
-.pesquisa{
-    margin-top: 1rem;
+.barra-pesquisa {
+    width: 95%;
+    margin: 0 auto;
 }
 
-.container {
-    width:100%;
+.container-barra {
+    margin-top: 1rem;
+    width: 100%;
     position: relative;
     height: 50px;
-  }
-  input {
+}
+
+.container-barra input {
     height: 50px;
     border: none;
     outline: none;
@@ -53,46 +56,50 @@
     z-index: 3;
     transition: width 1s ease-out;
     cursor: pointer;
-  }
-  input:focus { 
+}
+
+.container-barra input:focus {
     border: 1px solid var(--second-color);
     border-radius: 25px;
     width: 100%;
     z-index: 1;
     transition: width 1s ease-in;
-  }
+}
 
-  .fa-solid{
+.container-barra i {
     font-size: 3.0rem;
     color: var(--second-color);
-  }
+}
 
-  button { 
+.container-barra button {
     height: 50px;
     width: 50px;
-    background:  url()  center no-repeat;
+    background: url() center no-repeat;
     border: none;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 2;
     cursor: pointer;
-  }
-  button:focus {
+}
+
+.container-barra button:focus {
     outline: none;
-  }
-  /* esconde o LABEL "Buscar" */
-  label {
+}
+
+/* esconde o LABEL "Buscar" */
+/* label {
     position: absolute;
     width: 1px;
     height: 1px;
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0,0,0,0);
+    clip: rect(0, 0, 0, 0);
     border: 0;
-  }
-  /* fim do varao */
+} */
+
+/* fim do varao */
 
 #splash-screen {
     width: 90%;
@@ -359,13 +366,13 @@
 
 /* eventos de cards */
 
-.main-event{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* height: 100vh; */
-  /* padding: 0.2rem; */
-  margin-bottom: 10rem;
+.main-event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 100vh; */
+    /* padding: 0.2rem; */
+    margin-bottom: 10rem;
 }
 
 
@@ -412,7 +419,7 @@
     color: rgb(102, 102, 102);
     margin-top: 0.5rem;
     white-space: pre-line;
-   
+
     /* Aplica a quebra de linha de acordo com o conteudo Html */
 }
 
@@ -425,68 +432,75 @@
 
 /* Desktops mudanças para web*/
 @media (min-width: 1024px) {
+
     /* barra de pesquisa varao */
-    .pesquisa{
+    .pesquisa {
         margin-top: 1rem;
         display: flex;
         justify-content: center;
     }
+
     .container {
-    width:60%;
-    height: 50px;
-  }
-  input {
-    height: 50px;
-    border: none;
-    outline: none;
-    padding-left: 50px;
-    width: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: none;
-    z-index: 3;
-    transition: width 1s ease-out;
-    cursor: pointer;
-  }
-  input:focus { 
-    border: 1px solid var(--second-color);
-    border-radius: 25px;
-    width: 100%;
-    z-index: 1;
-    transition: width 1s ease-in;
-  }
+        width: 60%;
+        height: 50px;
+    }
 
-  .fa-solid{
-    font-size: 3.0rem;
-    color: var(--second-color);
-  }
+    input {
+        height: 50px;
+        border: none;
+        outline: none;
+        padding-left: 50px;
+        width: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: none;
+        z-index: 3;
+        transition: width 1s ease-out;
+        cursor: pointer;
+    }
 
-  button { 
-    height: 50px;
-    width: 50px;
-    background:  url()  center no-repeat;
-    border: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    cursor: pointer;
-  }
-  button:focus {
-    outline: none;
-  }
-  /* esconde o LABEL "Buscar" */
-  label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
-  }
+    input:focus {
+        border: 1px solid var(--second-color);
+        border-radius: 25px;
+        width: 100%;
+        z-index: 1;
+        transition: width 1s ease-in;
+    }
+
+    .fa-solid {
+        font-size: 3.0rem;
+        color: var(--second-color);
+    }
+
+    button {
+        height: 50px;
+        width: 50px;
+        background: url() center no-repeat;
+        border: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    /* esconde o LABEL "Buscar" */
+    label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
     /* fim do varao */
     #map {
         width: 80%;
@@ -688,7 +702,7 @@
         color: black;
     }
 
-    .card-text-web  {
+    .card-text-web {
         font-size: 1.2rem;
         color: rgb(102, 102, 102);
         margin-top: 0.8rem;
