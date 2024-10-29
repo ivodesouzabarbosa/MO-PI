@@ -154,10 +154,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* .card.expanded .expand-icon {
-  transform: rotate(180deg);
-} */
-
 .card.expanded .btn-smais {
   opacity: 0;
   visibility: hidden;
@@ -186,20 +182,6 @@ body {
   transition: opacity 0.5s ease, visibility 0s 0.1s ease, max-height 0.5s ease;
 }
 
-/* .card-content p {
-  margin: 0;
-  line-height: 1.6;
-} */
-
-/* #container {
-  background-color: var(--threeth-color);
-  
-  margin: auto;
-  padding: 0.5rem;
-  margin-bottom: 3rem;
-  border-radius: 8px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-} */
 
 .tab-buttons {
   display: flex;
@@ -221,21 +203,12 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* .tab-btn:hover {
-  color: var(--second-color);
-} */
 
 .tab-btn.active {
   background-color: var(--second-color);
   color: #fff;
 }
 
-
-.icon {
-  width: 24px;
-  height: 24px;
-  fill: white; /* Cor do ícone */
-}
 
 .content {
   display: none;
@@ -295,7 +268,6 @@ body {
   overflow: hidden;
   transition: opacity 0.4s ease, visibility 0s 0.2s ease, max-height 0.4s ease;
 }
-
 
 .card.expanded .btn-rota {
   opacity: 1;
