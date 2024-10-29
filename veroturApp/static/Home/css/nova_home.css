@@ -718,3 +718,27 @@
 
 
 /* fim desktop */
+
+/* Animação inicio app */
+#splash-screen {
+    display: none;
+}
+
+/* Exiba o vídeo em telas pequenas */
+@media (max-width: 768px) { /* Ajuste o valor conforme necessário */
+    #splash-screen {
+        display: block; /* Mostre a tela splash em telas móveis */
+        position: fixed; /* Mantenha a tela splash fixa */
+        top: 0;
+        left: 0;
+        width: 100%; /* Preencha a largura da tela */
+        height: 100%; /* Preencha a altura da tela */
+        z-index: 9999; /* Coloque a tela splash no topo */
+    }
+
+    #splash-video {
+        width: 100%; /* Ajuste a largura do vídeo para 100% */
+        height: 100%; /* Ajuste a altura do vídeo para 100% */
+        object-fit: cover; /* Cobre toda a área sem distorcer a proporção */
+    }
+}

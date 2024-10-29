@@ -1,8 +1,7 @@
 const CACHE_NAME = 'verotur-cache-v1';
 const urlsToCache = [
-  '/', // Página principal
-  '/templates/index.html',
-  //CSS
+  '/',
+  // CSS
   '/static/Home/css/header_footer.css',
   '/static/Home/css/nova_home.css',
   '/static/style/map.css',
@@ -29,6 +28,7 @@ const urlsToCache = [
   '/static/Home/img/senac_logo_r.png',
   '/static/Home/img/ver_o_peso_mobile.png',
   '/static/Home/img/veroTur_logo.webp',
+  '/offline',  // Adicione aqui o fallback offline, caso exista
   // Adicione mais arquivos aqui
 ];
 
@@ -36,9 +36,8 @@ const urlsToCache = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => {
-        return cache.addAll(urlsToCache);
-      })
+      .then((cache) => cache.addAll(urlsToCache))
+      .catch((error) => console.error('Falha ao cachear arquivos:', error))
   );
 });
 
@@ -47,16 +46,14 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
       .then((response) => {
-        // Retorna o arquivo do cache se estiver lá
         if (response) {
           return response;
         }
         // Caso contrário, busca na rede
-        return fetch(event.request);
-      })
-      .catch(() => {
-        // Se der erro, pode retornar uma página offline
-        return caches.match('/offline/');
+        return fetch(event.request).catch(() => {
+          // Fallback para offline
+          return caches.match('/offline');
+        });
       })
   );
 });
