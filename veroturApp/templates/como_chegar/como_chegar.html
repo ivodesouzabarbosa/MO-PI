@@ -85,7 +85,7 @@
                     <i class="material-symbols-outlined">question_mark</i>
                   {% endif %}
 
-                {% elif LANGUAGE_CODE == "en" %}
+                  {% elif LANGUAGE_CODE == "en" %}
                   {% if categoria.nome_en == "Restaurants" %}
                       <i class="material-symbols-outlined">restaurant</i>
                     {% elif categoria.nome_en == "Malls" %}
@@ -109,7 +109,7 @@
                     {% else %}
                       <i class="material-symbols-outlined">question_mark</i>
                     {% endif %}
-                  {% else %}
+                    {% else %}
                     {% if categoria.nome == "Restaurantes" %}
                       <i class="material-symbols-outlined">restaurant</i>
                     {% elif categoria.nome == "Shoppings" %}
@@ -135,7 +135,15 @@
                     {% endif %}
                 {% endif %}
             <!-- Ícone padrão caso a categoria não tenha um ícone específico -->
-            <h5>{{ categoria.nome }}</h5>
+            <h5> 
+              {% if LANGUAGE_CODE == "es" %}
+                {{ categoria.nome_es }}
+              {% elif LANGUAGE_CODE == "en" %}
+                {{ categoria.nome_en}}
+              {% else %}
+                {{ categoria.nome }}
+              {% endif %}
+            </h5>
           </div>
         </a>
       </div>
