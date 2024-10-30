@@ -568,6 +568,7 @@
     .box-card {
         position: relative;
         width: max-content;
+        height: max-content;
     }
 
     .box-card:hover h5 {
