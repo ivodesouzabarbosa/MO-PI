@@ -1,3 +1,10 @@
+:root {
+    --primary-color: #20448C;
+    --second-color: #086CB4;
+    --threeth-color: #008CDB;
+    --fourth-color: #0286EA;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -10,6 +17,17 @@ body, html {
     flex-shrink: 0; /* Fixa a altura do header e do footer */
 }
 
+.gm-style .gm-style-iw-c {
+    background-color: var(--primary-color) !important;
+    max-width: 350px !important;
+    max-height: 600px !important;
+    
+}
+
+.gm-style-iw-d {
+    overflow: visible !important;
+}
+
 #map {
     flex-grow: 1; /* Faz o mapa ocupar o restante da altura */
     width: 100%; /* Preenche toda a largura */
@@ -18,11 +36,17 @@ body, html {
 
 
 .info-image {
-    height: auto;
+    height: 20rem;
     width: 100%;
     /* display: block; */
     margin: 0 auto;
     border-radius: 0.4rem;
+}
+
+.info-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
