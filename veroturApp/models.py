@@ -24,7 +24,7 @@ class PontosTuristicos(models.Model):
     descricao = models.TextField(max_length=2500, verbose_name=_("Descrição"))
     endereco = models.CharField(max_length=75, verbose_name=_("Endereço"))
     horarios_funcionamento = models.CharField(max_length=45, verbose_name=_("Horários de Funcionamento"))
-    lugares_pagos = models.CharField(max_length=45, verbose_name=_("Lugares Pagos"))
+    lugares_pagos = models.CharField(max_length=100, verbose_name=_("Lugares Pagos"))
     monitoria = models.CharField(max_length=45, verbose_name=_("Monitoria"))
     latitude = models.FloatField(verbose_name=_("Latitude"))
     longitude = models.FloatField(verbose_name=_("Longitude"))
