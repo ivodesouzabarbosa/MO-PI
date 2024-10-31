@@ -73,15 +73,18 @@
     </header>
 
     <!--barra de pesquisa -->
-    <form class="barra-pesquisa" action=" " method="post">
-      {% comment %} <label for="busca">Buscar</label> {% endcomment %}
-    
+    <form class="barra-pesquisa" action="{% url 'busca' %}" method="POST">
+      {% csrf_token %}
       <div class="container-barra">
-        <input type="search" id="busca" name="q">
-        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input type="search" id="busca" name="pesquisa" placeholder="Buscar..." autocomplete="off" onkeyup="buscarSugestoes()">
+          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
-    
-    </form>
+      <div id="dropdown-sugestoes" class="dropdown-sugestoes" style="display: none;">
+          <!-- Resultados de sugestões aparecem aqui -->
+      </div>
+  </form>
+  
+  
 
     <!-- Marketing -->
     <section class="marketing"></section>
@@ -410,5 +413,6 @@
   <script src="{% static "service-worker.js" %}"></script>
   <script src="{% static "Home/js/script.js" %}"></script>
   <script src="{% static "Home/js/animação_app.js" %}"></script>
+  <script src="{% static 'Home/js/busca.js' %}"></script>
 </body>
 </html>

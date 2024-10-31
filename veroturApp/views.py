@@ -91,3 +91,14 @@ def set_language(request):
     translation.activate(user_language)
     request.LANGUAGE_CODE = user_language
 
+# Barra de pesquisa
+
+
+def busca(request):
+    pesquisa = request.GET.get('pesquisa', '')
+    resultados_pontos = []
+
+    if pesquisa:
+        resultados_pontos = list(PontosTuristicos.objects.filter(nome__icontains=pesquisa).values('nome'))
+
+    return JsonResponse({'resultados_pontos': resultados_pontos})
