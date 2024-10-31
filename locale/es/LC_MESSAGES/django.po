@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-25 17:10-0300\n"
+"POT-Creation-Date: 2024-10-30 15:31-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1248,39 +1248,39 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: .\veroturApp\models.py:6 .\veroturApp\models.py:18
+#: .\veroturApp\models.py:6 .\veroturApp\models.py:22
 msgid "Nome"
 msgstr "Nombre"
 
-#: .\veroturApp\models.py:20
+#: .\veroturApp\models.py:24
 msgid "Descrição"
 msgstr "Descripción"
 
-#: .\veroturApp\models.py:21
+#: .\veroturApp\models.py:25
 msgid "Endereço"
 msgstr "Dirección"
 
-#: .\veroturApp\models.py:22
+#: .\veroturApp\models.py:26
 msgid "Horários de Funcionamento"
 msgstr "Horario de apertura"
 
-#: .\veroturApp\models.py:23
+#: .\veroturApp\models.py:27
 msgid "Lugares Pagos"
 msgstr "Asientos pagados"
 
-#: .\veroturApp\models.py:24
+#: .\veroturApp\models.py:28
 msgid "Monitoria"
 msgstr "Escucha"
 
-#: .\veroturApp\models.py:25
+#: .\veroturApp\models.py:29
 msgid "Latitude"
 msgstr ""
 
-#: .\veroturApp\models.py:26
+#: .\veroturApp\models.py:30
 msgid "Longitude"
 msgstr ""
 
-#: .\veroturApp\models.py:27
+#: .\veroturApp\models.py:31
 msgid "Categoria"
 msgstr "Categoría"
 
@@ -1292,19 +1292,19 @@ msgstr "Verotur - Eventos"
 #: .\veroturApp\templates\como_chegar\como_chegar.html:35
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:33
 #: .\veroturApp\templates\index.html:52
-#: .\veroturApp\templates\mapa\mapa.html:48
+#: .\veroturApp\templates\mapa\mapa.html:46
 msgid "Inicio"
 msgstr "Comenzar"
 
 #: .\veroturApp\templates\Eventos\eventos.html:38
 #: .\veroturApp\templates\Eventos\eventos.html:154
 #: .\veroturApp\templates\como_chegar\como_chegar.html:38
-#: .\veroturApp\templates\como_chegar\como_chegar.html:171
+#: .\veroturApp\templates\como_chegar\como_chegar.html:178
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:36
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:378
-#: .\veroturApp\templates\index.html:55 .\veroturApp\templates\index.html:308
-#: .\veroturApp\templates\mapa\mapa.html:51
-#: .\veroturApp\templates\mapa\mapa.html:106
+#: .\veroturApp\templates\index.html:55 .\veroturApp\templates\index.html:320
+#: .\veroturApp\templates\mapa\mapa.html:49
+#: .\veroturApp\templates\mapa\mapa.html:104
 msgid "Como Chegar"
 msgstr "Cómo llegar allí"
 
@@ -1312,12 +1312,12 @@ msgstr "Cómo llegar allí"
 #: .\veroturApp\templates\Eventos\eventos.html:58
 #: .\veroturApp\templates\Eventos\eventos.html:142
 #: .\veroturApp\templates\como_chegar\como_chegar.html:41
-#: .\veroturApp\templates\como_chegar\como_chegar.html:159
+#: .\veroturApp\templates\como_chegar\como_chegar.html:166
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:39
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:366
-#: .\veroturApp\templates\index.html:58 .\veroturApp\templates\index.html:296
-#: .\veroturApp\templates\mapa\mapa.html:54
-#: .\veroturApp\templates\mapa\mapa.html:94
+#: .\veroturApp\templates\index.html:58 .\veroturApp\templates\index.html:308
+#: .\veroturApp\templates\mapa\mapa.html:52
+#: .\veroturApp\templates\mapa\mapa.html:92
 msgid "Eventos"
 msgstr "Eventos"
 
@@ -1325,17 +1325,17 @@ msgstr "Eventos"
 #: .\veroturApp\templates\como_chegar\como_chegar.html:44
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:42
 #: .\veroturApp\templates\index.html:61
-#: .\veroturApp\templates\mapa\mapa.html:57
+#: .\veroturApp\templates\mapa\mapa.html:55
 msgid "Configuração"
 msgstr "Ajustes"
 
 #: .\veroturApp\templates\Eventos\eventos.html:69
-#: .\veroturApp\templates\index.html:249
+#: .\veroturApp\templates\index.html:261
 msgid "Círio de Nazaré"
 msgstr "Círio de Nazaré"
 
 #: .\veroturApp\templates\Eventos\eventos.html:70
-#: .\veroturApp\templates\index.html:250
+#: .\veroturApp\templates\index.html:262
 msgid ""
 "O Círio de Nazaré é uma das maiores festas religiosas do Brasil, realizada "
 "em Belém do Pará, em homenagem a Nossa Senhora de Nazaré."
@@ -1348,7 +1348,7 @@ msgstr ""
 #: .\veroturApp\templates\Eventos\eventos.html:95
 #: .\veroturApp\templates\Eventos\eventos.html:107
 #: .\veroturApp\templates\Eventos\eventos.html:119
-#: .\veroturApp\templates\index.html:251
+#: .\veroturApp\templates\index.html:263
 msgid "Local:"
 msgstr "Ubicación:"
 
@@ -1362,7 +1362,7 @@ msgstr "Centro De Belém."
 #: .\veroturApp\templates\Eventos\eventos.html:96
 #: .\veroturApp\templates\Eventos\eventos.html:108
 #: .\veroturApp\templates\Eventos\eventos.html:120
-#: .\veroturApp\templates\index.html:252
+#: .\veroturApp\templates\index.html:264
 msgid "Periodo:"
 msgstr "Período:"
 
@@ -1371,12 +1371,12 @@ msgid "Mês de Outubro."
 msgstr "Mes de octubre."
 
 #: .\veroturApp\templates\Eventos\eventos.html:81
-#: .\veroturApp\templates\index.html:261
+#: .\veroturApp\templates\index.html:273
 msgid "Arraial da Pavulagem"
 msgstr "Arraial da Pavulagem"
 
 #: .\veroturApp\templates\Eventos\eventos.html:82
-#: .\veroturApp\templates\index.html:262
+#: .\veroturApp\templates\index.html:274
 msgid ""
 "O Arraial da Pavulagem é uma tradicional festa junina realizada em Belém do "
 "Pará, celebrando a cultura popular com música, danças e comidas típicas."
@@ -1447,7 +1447,7 @@ msgstr ""
 "edades."
 
 #: .\veroturApp\templates\Eventos\eventos.html:119
-#: .\veroturApp\templates\index.html:263
+#: .\veroturApp\templates\index.html:275
 msgid "Varanda Superior do Cojan"
 msgstr "Balcón superior de Cojan"
 
@@ -1456,63 +1456,63 @@ msgid "Mês de Fevereiro"
 msgstr "Mes de febrero"
 
 #: .\veroturApp\templates\Eventos\eventos.html:135
-#: .\veroturApp\templates\como_chegar\como_chegar.html:152
+#: .\veroturApp\templates\como_chegar\como_chegar.html:159
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:359
-#: .\veroturApp\templates\index.html:289
-#: .\veroturApp\templates\mapa\mapa.html:87
+#: .\veroturApp\templates\index.html:301
+#: .\veroturApp\templates\mapa\mapa.html:85
 msgid "Início"
 msgstr "Comenzar"
 
 #: .\veroturApp\templates\Eventos\eventos.html:148
-#: .\veroturApp\templates\como_chegar\como_chegar.html:165
+#: .\veroturApp\templates\como_chegar\como_chegar.html:172
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:372
-#: .\veroturApp\templates\index.html:302
-#: .\veroturApp\templates\mapa\mapa.html:100
+#: .\veroturApp\templates\index.html:314
+#: .\veroturApp\templates\mapa\mapa.html:98
 msgid "Mapa"
 msgstr ""
 
 #: .\veroturApp\templates\Eventos\eventos.html:160
-#: .\veroturApp\templates\como_chegar\como_chegar.html:177
+#: .\veroturApp\templates\como_chegar\como_chegar.html:184
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:384
-#: .\veroturApp\templates\index.html:314
-#: .\veroturApp\templates\mapa\mapa.html:112
+#: .\veroturApp\templates\index.html:326
+#: .\veroturApp\templates\mapa\mapa.html:110
 msgid "Ajuste"
 msgstr ""
 
 #: .\veroturApp\templates\Eventos\eventos.html:175
-#: .\veroturApp\templates\como_chegar\como_chegar.html:192
+#: .\veroturApp\templates\como_chegar\como_chegar.html:200
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:399
-#: .\veroturApp\templates\index.html:329
-#: .\veroturApp\templates\mapa\mapa.html:128
+#: .\veroturApp\templates\index.html:341
+#: .\veroturApp\templates\mapa\mapa.html:126
 msgid "Português (Brasil)"
 msgstr "Portugués (Brasil)"
 
 #: .\veroturApp\templates\Eventos\eventos.html:186
-#: .\veroturApp\templates\como_chegar\como_chegar.html:203
+#: .\veroturApp\templates\como_chegar\como_chegar.html:212
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:410
-#: .\veroturApp\templates\index.html:340
-#: .\veroturApp\templates\mapa\mapa.html:140
+#: .\veroturApp\templates\index.html:352
+#: .\veroturApp\templates\mapa\mapa.html:138
 msgid "Inglês (EUA)"
 msgstr "Inglés (Estados Unidos)"
 
 #: .\veroturApp\templates\Eventos\eventos.html:197
-#: .\veroturApp\templates\como_chegar\como_chegar.html:214
+#: .\veroturApp\templates\como_chegar\como_chegar.html:224
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:421
-#: .\veroturApp\templates\index.html:351
-#: .\veroturApp\templates\mapa\mapa.html:152
+#: .\veroturApp\templates\index.html:363
+#: .\veroturApp\templates\mapa\mapa.html:150
 msgid "Espanhol (Espanha)"
 msgstr "Español (España)"
 
 #: .\veroturApp\templates\Eventos\eventos.html:201
-#: .\veroturApp\templates\como_chegar\como_chegar.html:218
+#: .\veroturApp\templates\como_chegar\como_chegar.html:228
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:425
-#: .\veroturApp\templates\index.html:355
-#: .\veroturApp\templates\mapa\mapa.html:156
+#: .\veroturApp\templates\index.html:367
+#: .\veroturApp\templates\mapa\mapa.html:154
 msgid "Versão 0.1.24"
 msgstr "Versión 0.1.24"
 
 #: .\veroturApp\templates\Eventos\eventos.html:214
-#: .\veroturApp\templates\como_chegar\como_chegar.html:231
+#: .\veroturApp\templates\como_chegar\como_chegar.html:241
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:441
 msgid "© Todos os Direitos Reservados - 2025"
 msgstr "© Todos los derechos reservados - 2025"
@@ -1534,65 +1534,69 @@ msgstr "parques"
 msgid "Verotur"
 msgstr "Verotur"
 
-#: .\veroturApp\templates\index.html:79
+#: .\veroturApp\templates\index.html:78
+msgid "Pesquisar"
+msgstr "Buscar"
+
+#: .\veroturApp\templates\index.html:91
 msgid "Categorias"
 msgstr "Categorías"
 
-#: .\veroturApp\templates\index.html:186
+#: .\veroturApp\templates\index.html:198
 msgid "Sugestões"
 msgstr "Sugerencias"
 
-#: .\veroturApp\templates\index.html:195
+#: .\veroturApp\templates\index.html:207
 msgid "Forte do Presépio"
 msgstr "Forte do Presépio"
 
-#: .\veroturApp\templates\index.html:199 .\veroturApp\templates\index.html:212
-#: .\veroturApp\templates\index.html:225
+#: .\veroturApp\templates\index.html:211 .\veroturApp\templates\index.html:224
+#: .\veroturApp\templates\index.html:237
 msgid "Rota"
 msgstr ""
 
-#: .\veroturApp\templates\index.html:200 .\veroturApp\templates\index.html:213
-#: .\veroturApp\templates\index.html:226
+#: .\veroturApp\templates\index.html:212 .\veroturApp\templates\index.html:225
+#: .\veroturApp\templates\index.html:238
 msgid "Detalhes"
 msgstr "Detalles"
 
-#: .\veroturApp\templates\index.html:208
+#: .\veroturApp\templates\index.html:220
 msgid "Estação das Docas"
 msgstr "Estación de muelle"
 
-#: .\veroturApp\templates\index.html:221
+#: .\veroturApp\templates\index.html:233
 msgid "Ver-O-Peso"
 msgstr "Ver-O-Peso"
 
-#: .\veroturApp\templates\index.html:237
+#: .\veroturApp\templates\index.html:249
 msgid "Principais Eventos"
 msgstr "Eventos principales"
 
-#: .\veroturApp\templates\index.html:251
+#: .\veroturApp\templates\index.html:263
 msgid "Centro De Belém"
 msgstr "Centro de Belém"
 
-#: .\veroturApp\templates\index.html:252
+#: .\veroturApp\templates\index.html:264
 msgid "Mês de Outubro"
 msgstr "Mes de octubre"
 
-#: .\veroturApp\templates\index.html:263 .\veroturApp\templates\index.html:275
+#: .\veroturApp\templates\index.html:275 .\veroturApp\templates\index.html:287
 msgid "Local"
 msgstr "Ubicación"
 
-#: .\veroturApp\templates\index.html:264 .\veroturApp\templates\index.html:276
+#: .\veroturApp\templates\index.html:276 .\veroturApp\templates\index.html:288
 msgid "Periodo"
 msgstr "Período"
 
-#: .\veroturApp\templates\index.html:264
+#: .\veroturApp\templates\index.html:276
 msgid "Mês de Junho"
 msgstr "Mes de junio"
 
-#: .\veroturApp\templates\index.html:273
+#: .\veroturApp\templates\index.html:285
 msgid "Feira do Livro"
 msgstr "Feria del Libro"
 
-#: .\veroturApp\templates\index.html:274
+#: .\veroturApp\templates\index.html:286
 msgid ""
 "A programação conta com diversas ações e atividades de cultura, entre elas, "
 "rodas de conversas, saraus, encontros literários, peças teatrais infantis e "
@@ -1602,16 +1606,16 @@ msgstr ""
 "las que destacan círculos de conversación, veladas, encuentros literarios, "
 "juegos infantiles y cuentacuentos."
 
-#: .\veroturApp\templates\index.html:275
+#: .\veroturApp\templates\index.html:287
 msgid "Hangar Convenções Feiras da Amazônia"
 msgstr "Hangar Convenciones Ferias Amazonas"
 
-#: .\veroturApp\templates\index.html:276
+#: .\veroturApp\templates\index.html:288
 msgid "De 17 a 25 de agosto de 2024"
 msgstr "Del 17 al 25 de agosto de 2024"
 
-#: .\veroturApp\templates\index.html:369
-#: .\veroturApp\templates\mapa\mapa.html:170
+#: .\veroturApp\templates\index.html:391
+#: .\veroturApp\templates\mapa\mapa.html:168
 msgid "Todos os Direitos Reservados - 2025 "
 msgstr "Todos los derechos reservados - 2025"
 
