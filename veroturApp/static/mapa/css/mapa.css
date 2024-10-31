@@ -13,6 +13,82 @@ body, html {
     flex-direction: column;
 }
 
+/* barra de pesquisa versao varao  */
+
+.barra-pesquisa {
+    width: 95%;
+    position: absolute;
+    top: 8rem;
+    left: 2.5%;
+}
+
+.container-barra {
+    margin-top: 1rem;
+    width: 100%;
+    position: relative;
+    height: 50px;
+}
+
+.container-barra input {
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 50px;
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: none;
+    z-index: 3;
+    transition: width 1s ease-out;
+    cursor: pointer;
+}
+
+.container-barra input:focus {
+    border: 1px solid var(--second-color);
+    border-radius: 25px;
+    width: 100%;
+    z-index: 1;
+    transition: width 1s ease-in;
+    backdrop-filter: blur(3px);
+}
+
+.container-barra i {
+    font-size: 3.0rem;
+    color: var(--second-color);
+}
+
+.container-barra button {
+    height: 50px;
+    width: 50px;
+    background: url() center no-repeat;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.container-barra button:focus {
+    outline: none;
+}
+
+/* esconde o LABEL "Buscar" */
+/* label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+} */
+
+/* fim do varao */
+
+
 .header-home, .navigation {
     flex-shrink: 0; /* Fixa a altura do header e do footer */
 }

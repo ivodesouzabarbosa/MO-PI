@@ -63,6 +63,16 @@
         </div>
     </header>
 
+    <form class="barra-pesquisa" action=" " method="post">
+        {% comment %} <label for="busca">Buscar</label> {% endcomment %}
+      
+        <div class="container-barra">
+          <input type="search" id="busca" name="q">
+          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      
+    </form>
+
     {% cache 900 google_maps_script %}
     <div id="map"></div>
     <!-- Carregar o JavaScript do Google Maps API -->
