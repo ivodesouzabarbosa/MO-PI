@@ -18,10 +18,7 @@
 .main_home {
     display: flex;
     flex-direction: column;
-
-
 }
-
 
 * {
     margin: 0;
@@ -433,19 +430,24 @@
 /* Desktops mudanças para web*/
 @media (min-width: 1024px) {
 
+    .barra-pesquisa{
+        display: none;
+    }
+
     /* barra de pesquisa varao */
-    .pesquisa {
+    .barra-pesquisa {
         margin-top: 1rem;
+        margin-left: 30px;
         display: flex;
         justify-content: center;
     }
 
-    .container {
-        width: 60%;
+    .container-barra {
+        width: 20%;
         height: 50px;
     }
 
-    input {
+    .container-barra input {
         height: 50px;
         border: none;
         outline: none;
@@ -460,20 +462,20 @@
         cursor: pointer;
     }
 
-    input:focus {
+    .container-barra input:focus {
         border: 1px solid var(--second-color);
         border-radius: 25px;
-        width: 100%;
+        width: 115%;
         z-index: 1;
         transition: width 1s ease-in;
     }
 
-    .fa-solid {
+    .container-barra i {
         font-size: 3.0rem;
         color: var(--second-color);
-    }
+    } 
 
-    button {
+    .container-barra button {
         height: 50px;
         width: 50px;
         background: url() center no-repeat;
@@ -485,7 +487,7 @@
         cursor: pointer;
     }
 
-    button:focus {
+    .container-barra button:focus {
         outline: none;
     }
 
@@ -511,8 +513,8 @@
         width: 80%;
     }
 
-    /* teste01.10 -----------------------------------------------------------------------*/
-    /* joy efeitos do titulos */
+    /* ------------------------------------------*/
+    
     .container-cards {
         display: flex;
         margin: 0 auto;
@@ -655,9 +657,7 @@
         display: none;
     }
 
-    /* joy01.10cardsfinalizado.quemmudarégayyy */
-
-
+    
     /* listra marajoara ------------------------------ */
     .mapa-listra {
         display: block;

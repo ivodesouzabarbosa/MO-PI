@@ -46,6 +46,8 @@
       </div>
       <div class="wrappercontainer">
         <nav class="header_nav">
+          
+
           <ul>
             <li>
               <a href="{% url 'home' %}">{% trans 'Inicio' %}</a>
@@ -73,16 +75,18 @@
     </header>
 
     <!--barra de pesquisa -->
-    <form class="barra-pesquisa" action="{% url 'busca' %}" method="POST">
-      {% csrf_token %}
-      <div class="container-barra">
-          <input type="search" id="busca" name="pesquisa" placeholder="Buscar..." autocomplete="off" onkeyup="buscarSugestoes()">
-          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </div>
-      <div id="dropdown-sugestoes" class="dropdown-sugestoes" style="display: none;">
-          <!-- Resultados de sugestões aparecem aqui -->
-      </div>
-  </form>
+    <div>
+      <form class="barra-pesquisa" action="{% url 'busca' %}" method="POST">
+        {% csrf_token %}
+        <div class="container-barra">
+            <input type="search" id="busca" name="pesquisa" placeholder="Buscar..." autocomplete="off" onkeyup="buscarSugestoes()">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div id="dropdown-sugestoes" class="dropdown-sugestoes" style="display: none;">
+            <!-- Resultados de sugestões aparecem aqui -->
+        </div>
+      </form>
+    </div>
   
   
 
