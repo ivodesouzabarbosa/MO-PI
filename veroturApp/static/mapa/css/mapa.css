@@ -117,6 +117,22 @@ body, html {
     background-color: var(--primary-color);
 }
 
+/* btn fechar do pop-up*/
+.gm-ui-hover-effect {
+    opacity: 1;
+}
+
+.gm-ui-hover-effect span {
+    mask-image: none !important;
+    background: none;
+    display: contents !important;
+}
+
+.gm-ui-hover-effect span::before {
+    content: "Fechar";
+    color: #ffffff;
+}
+
 .info-window {
     width: 100%;
     /* font-family: Arial, sans-serif; */
@@ -130,6 +146,7 @@ body, html {
 .info-title {
     margin: 0;
     font-size: 1.6rem;
+    text-align: center;
     text-transform: uppercase;
     color: var(--primary-color);
 }
