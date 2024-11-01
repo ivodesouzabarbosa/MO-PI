@@ -77,19 +77,19 @@ body {
 }
 
 .card3 {
-    background-color: var(--seventh-color);
+    background-color: var(--tenth-color);
 }
 
 .card4 {
-    background-color: var(--eighth-color);
-}
-
-.card5 {
     background-color: var(--ninth-color);
 }
 
+.card5 {
+    background-color: var(--eighth-color);
+}
+
 .card6 {
-    background-color: var(--tenth-color);
+    background-color: var(--seventh-color);
 }
 
 .card7 {
