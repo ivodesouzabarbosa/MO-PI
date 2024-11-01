@@ -104,9 +104,10 @@ body, html {
 
 /* Pop-up do mapa */
 .gm-style .gm-style-iw-c {
-    background-color: var(--primary-color) !important;
+    background-color: var(--threeth-color) !important;
     max-width: 350px !important;
     max-height: 600px !important;
+    min-height: 455px !important;
 }
 
 .gm-style-iw-d {
@@ -114,7 +115,7 @@ body, html {
 }
 
 .gm-style .gm-style-iw-tc::after {
-    background-color: var(--primary-color);
+    background-color: var(--threeth-color);
 }
 
 /* btn fechar do pop-up*/
@@ -123,15 +124,13 @@ body, html {
 }
 
 .gm-ui-hover-effect span {
-    mask-image: none !important;
-    background: none;
-    display: contents !important;
+    background-color: #ffffff !important;
 }
 
-.gm-ui-hover-effect span::before {
+/* .gm-ui-hover-effect span::before {
     content: "Fechar";
     color: #ffffff;
-}
+} */
 
 .info-window {
     width: 100%;
@@ -168,16 +167,19 @@ body, html {
 .content-descricao {
     text-align: justify;
     margin-bottom: 0.5rem;
+    max-height: 6rem;
+    overflow: scroll;
+    border: 1px solid gray;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
 }
-
-
 
 .info-window button {
     display: block;
     align-items: center;
     margin: 0.5rem auto auto;
     padding: 5px 10px;
-    background-color: var(--primary-color);
+    background-color: var(--threeth-color);
     color: #ffffff;
     border: none;
     border-radius: 4px;
