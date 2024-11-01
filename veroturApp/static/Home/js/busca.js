@@ -12,7 +12,7 @@ function buscarSugestoes() {
                     conteudo += '<ul>';
                     data.resultados_pontos.forEach(ponto => {
                         // Criar um link para cada ponto
-                        conteudo += `<li><a href="/ponto/${ponto.id}" class="sugestao-link">${ponto.nome}</a></li>`;
+                        conteudo += `<li><a href="/pontos_turisticos/${ponto.id}" class="sugestao-link">${ponto.nome}</a></li>`;
                     });
                     conteudo += '</ul>';
                 } else {
@@ -35,4 +35,7 @@ document.addEventListener('click', function(event) {
     if (!dropdown.contains(event.target)) {
         dropdown.style.display = 'none';
     }
+document.querySelector('.barra-pesquisa').addEventListener('submit', function(event) {
+    event.preventDefault();
+    });    
 });

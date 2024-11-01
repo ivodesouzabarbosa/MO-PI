@@ -99,6 +99,11 @@ def busca(request):
     resultados_pontos = []
 
     if pesquisa:
-        resultados_pontos = list(PontosTuristicos.objects.filter(nome__icontains=pesquisa).values('nome'))
+       # resultados_pontos = list(PontosTuristicos.objects.filter(nome__icontains=pesquisa).values('nome'))
+        resultados_pontos = list(PontosTuristicos.objects.filter(nome__icontains=pesquisa).values('id', 'nome'))
 
     return JsonResponse({'resultados_pontos': resultados_pontos})
+
+def ponto_view(request, id):
+    ponto = get_object_or_404(PontosTuristicos, id=id)
+    return render(request, 'como_chegar/pontos_turisticos.html', {'ponto': ponto})  # Renderize um template adequado
