@@ -222,8 +222,8 @@
 
 .section_title {
     text-align: center;
-    margin: 1rem 0;
-    font-size: 3rem;
+    margin: 3rem 0;
+    font-size: 2rem;
     font-weight: 550;
     font-style: normal;
 
@@ -295,19 +295,19 @@
 }
 
 .card3 {
-    background-color: var(--seventh-color);
+    background-color: var(--tenth-color);
 }
 
 .card4 {
-    background-color: var(--eighth-color);
-}
-
-.card5 {
     background-color: var(--ninth-color);
 }
 
+.card5 {
+    background-color: var(--eighth-color);
+}
+
 .card6 {
-    background-color: var(--tenth-color);
+    background-color: var( --seventh-color);
 }
 
 .card7 {
