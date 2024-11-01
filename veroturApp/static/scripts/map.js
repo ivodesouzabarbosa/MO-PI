@@ -117,6 +117,30 @@ function initMap() {
         }
     }
 
+    // Captura a latitude e longitude da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const destinationLat = parseFloat(urlParams.get('lat'));
+    const destinationLng = parseFloat(urlParams.get('lng'));
+
+    // Verifica se as coordenadas de destino foram passadas
+    if (destinationLat && destinationLng) {
+        getCurrentLocation((userLat, userLng) => {
+            const request = {
+                origin: { lat: userLat, lng: userLng },
+                destination: { lat: destinationLat, lng: destinationLng },
+                travelMode: 'DRIVING'
+            };
+            directionsService.route(request, (result, status) => {
+                if (status === 'OK') {
+                    directionsRenderer.setDirections(result);
+                    map.setCenter(result.routes[0].legs[0].end_location);
+                } else {
+                    console.error('Erro ao traçar rota:', status);
+                }
+            });
+        });
+    }
+
     document.querySelectorAll('.route-btn').forEach(button => {
         button.addEventListener('click', function(event) {
             event.preventDefault();
