@@ -211,16 +211,16 @@
       <div class="card-home">
         <img src="{% static 'Home/img/forte_do_presepio_mobile.png' %}" alt="Praia" />
         <div class="card-home-content">
-          <h3>{% trans 'Forte do Presépio' %}</h3>
-          <div class="card-home-btns">
-            <a
-              href="https://www.google.com/maps/place/Forte+do+Pres%C3%A9pio/@-1.4543647,-48.5052375,17z/data=!3m1!4b1!4m6!3m5!1s0x92a48ef1a132f8d5:0xff1a071f7388a0ed!8m2!3d-1.4543647!4d-48.5052375!16s%2Fg%2F122zd8n3?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"><span
-                class="material-symbols-outlined">moved_location</span>{% trans "Rota" %}</a>
-            <a href="#"><span class="material-symbols-outlined">tab_new_right</span>{% trans 'Detalhes' %}</a>
-          </div>
-          <!-- <p>Descubra praias paradisíacas e relaxe ao som do mar.</p> -->
+            <h3>{% trans 'Forte do Presépio' %}</h3>
+            <div class="card-home-btns">
+                <a href="{% url 'mapa' %}?lat=-1.4543647&lng=-48.5052375" class="route-btn">
+                    <span class="material-symbols-outlined">moved_location</span>{% trans "Rota" %}
+                </a>
+                <a href="#"><span class="material-symbols-outlined">tab_new_right</span>{% trans 'Detalhes' %}</a>
+            </div>
         </div>
-      </div>
+    </div>
+
       <div class="card-home">
         <img src="{% static 'Home/img/estacao_doca_desktop_trem_mobile.png' %}" alt="Montanha" />
         <div class="card-home-content">
@@ -416,5 +416,6 @@
   <script src="{% static "Home/js/script.js" %}"></script>
   <script src="{% static "Home/js/animação_app.js" %}"></script>
   <script src="{% static 'Home/js/busca.js' %}"></script>
+  <script src="{% static 'scripts/map.js' %}"></script>
 </body>
 </html>

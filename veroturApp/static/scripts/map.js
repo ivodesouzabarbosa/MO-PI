@@ -71,7 +71,7 @@ function initMap() {
         function animateRadar() {
             radarCircle.setRadius(radius);
             radius += 1; // Aumenta o raio do radar
-            if (radius > 100) { // Se o raio passar de 500 metros, reinicia
+            if (radius > 100) { // Se o raio passar de 100 metros, reinicia
                 radius = 0;
             }
             requestAnimationFrame(animateRadar); // Anima o radar continuamente
@@ -102,7 +102,6 @@ function initMap() {
                     // Centraliza o mapa na localização atual
                     map.setCenter({ lat: userLat, lng: userLng });
                     map.setZoom(15); // Defina um nível de zoom adequado para o detalhe da localização
-
                 },
                 error => {
                     console.error('Erro ao obter localização:', error);
@@ -118,20 +117,70 @@ function initMap() {
         }
     }
 
+    document.querySelectorAll('.route-btn').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const destinationLat = parseFloat(this.getAttribute('data-lat'));
+            const destinationLng = parseFloat(this.getAttribute('data-lng'));
+
+            getCurrentLocation((userLat, userLng) => {
+                const request = {
+                    origin: { lat: userLat, lng: userLng },
+                    destination: { lat: destinationLat, lng: destinationLng },
+                    travelMode: 'DRIVING'
+                };
+                directionsService.route(request, (result, status) => {
+                    if (status === 'OK') {
+                        directionsRenderer.setDirections(result);
+                        map.setCenter(result.routes[0].legs[0].start_location);
+                    } else {
+                        console.error('Erro ao traçar rota:', status);
+                    }
+                });
+            });
+        });
+    });
 
     // Busque os pontos turísticos do backend
     fetch('/pontos-turisticos/')
     .then(response => response.json())
     .then(data => {
+        const addedMarkers = new Set(); // Set para rastrear coordenadas já usadas
+
         data.forEach(ponto => {
             const latitude = parseFloat(ponto.latitude);
             const longitude = parseFloat(ponto.longitude);
+
+            // Validação para coordenadas corretas
+            if (!latitude || !longitude) {
+                console.warn(`Coordenadas inválidas para o ponto: ${ponto.nome}`);
+                return; // Pula esse ponto
+            }
+
+            const latLngKey = `${latitude},${longitude}`;
+
+            // Verifica se já há marcador para essa posição
+            if (addedMarkers.has(latLngKey)) {
+                console.warn(`Marcador já adicionado para as coordenadas: ${latLngKey}`);
+                return;
+            }
+
+            addedMarkers.add(latLngKey);
+
+            const markerIcon = {
+                url: `/media/${ponto.imagem}`, // URL da imagem do pino (que você criou)
+                scaledSize: new google.maps.Size(30, 40), // Ajuste o tamanho do ícone conforme necessário
+                anchor: new google.maps.Point(15, 40) // Ajuste o ponto de ancoragem para centralizar a imagem no pino
+            };
+
 
             const marker = new google.maps.Marker({
                 position: { lat: latitude, lng: longitude },
                 map: map,
                 title: ponto.nome,
-                animation: google.maps.Animation.DROP
+                animation: google.maps.Animation.DROP,
+                icon: markerIcon // Definindo o ícone personalizado
             });
 
             marker.addListener('click', () => {
@@ -149,12 +198,10 @@ function initMap() {
                         <button id="start-route">Iniciar Rota</button>
                     </div>
                 `;
-                // <p><strong>Monitoria:</strong> ${ponto.monitoria ? 'Sim' : 'Não'}</p>
 
                 infoWindow.setContent(contentString);
                 infoWindow.open(map, marker);
 
-                // Adicione o evento de clique ao botão
                 google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
                     document.getElementById('start-route').addEventListener('click', () => {
                         getCurrentLocation((userLat, userLng) => {
@@ -180,3 +227,4 @@ function initMap() {
     // Obtenha e mostre a localização atual do usuário ao iniciar o mapa
     getCurrentLocation(() => { });
 }
+ 
