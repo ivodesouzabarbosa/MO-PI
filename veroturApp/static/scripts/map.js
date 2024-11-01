@@ -174,7 +174,6 @@ function initMap() {
                 anchor: new google.maps.Point(15, 40) // Ajuste o ponto de ancoragem para centralizar a imagem no pino
             };
 
-
             const marker = new google.maps.Marker({
                 position: { lat: latitude, lng: longitude },
                 map: map,
@@ -203,21 +202,26 @@ function initMap() {
                 infoWindow.open(map, marker);
 
                 google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
-                    document.getElementById('start-route').addEventListener('click', () => {
-                        getCurrentLocation((userLat, userLng) => {
-                            const request = {
-                                origin: { lat: userLat, lng: userLng },
-                                destination: { lat: latitude, lng: longitude },
-                                travelMode: 'DRIVING'
-                            };
-                            directionsService.route(request, (result, status) => {
-                                if (status === 'OK') {
-                                    directionsRenderer.setDirections(result);
-                                    map.setCenter(result.routes[0].legs[0].end_location);
-                                }
+                    const startRouteButton = document.getElementById('start-route');
+                    if (startRouteButton) {
+                        startRouteButton.addEventListener('click', () => {
+                            getCurrentLocation((userLat, userLng) => {
+                                const request = {
+                                    origin: { lat: userLat, lng: userLng },
+                                    destination: { lat: latitude, lng: longitude },
+                                    travelMode: 'DRIVING'
+                                };
+                                directionsService.route(request, (result, status) => {
+                                    if (status === 'OK') {
+                                        directionsRenderer.setDirections(result);
+                                        map.setCenter(result.routes[0].legs[0].end_location);
+                                    } else {
+                                        console.error('Erro ao traçar rota:', status);
+                                    }
+                                });
                             });
                         });
-                    });
+                    }
                 });
             });
         });
@@ -227,4 +231,8 @@ function initMap() {
     // Obtenha e mostre a localização atual do usuário ao iniciar o mapa
     getCurrentLocation(() => { });
 }
- 
+
+// Este evento aguarda o carregamento completo do DOM antes de executar o código
+document.addEventListener("DOMContentLoaded", function() {
+    initMap(); // Chama a função para inicializar o mapa quando o DOM estiver pronto
+});
