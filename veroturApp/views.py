@@ -32,22 +32,56 @@ def como_chegar(request):
     categorias = Categorias.objects.all()
     return render(request, 'como_chegar/como_chegar.html', {'categorias': categorias})
 
+# def pontos_por_categoria(request, categoria_id):
+#     # Obtém a categoria específica com base no ID passado na URL
+#     categoria = Categorias.objects.get(id=categoria_id)
+
+#     # Busca os pontos turísticos que pertencem à categoria
+#     pontos_turisticos = PontosTuristicos.objects.filter(categorias_id_categorias=categoria)
+
+#     # Paginação: 9 cards por página (3 colunas com 3 cards)
+#     paginator = Paginator(pontos_turisticos, 9)  # 9 cards por página
+#     page_number = request.GET.get('page')  # Obtém o número da página da URL
+#     page_obj = paginator.get_page(page_number)  # Pega os objetos da página atual
+
+#     context = {
+#         'categoria': categoria,
+#         'page_obj': page_obj  # Passa o objeto da página para o template
+#     }
+#     return render(request, 'como_chegar/pontos_turisticos.html', context)
+
+# def pontos_por_categoria(request, categoria_id):
+#     # Obtém a categoria específica com base no ID passado na URL
+#     categoria = Categorias.objects.get(id=categoria_id)
+
+#     # Busca todos os pontos turísticos que pertencem à categoria
+#     pontos_turisticos = PontosTuristicos.objects.filter(categorias_id_categorias=categoria)
+
+#     context = {
+#         'categoria': categoria,
+#         'pontos_turisticos': pontos_turisticos  # Passa todos os pontos turísticos para o template
+#     }
+#     return render(request, 'como_chegar/pontos_turisticos.html', context)
+
 def pontos_por_categoria(request, categoria_id):
     # Obtém a categoria específica com base no ID passado na URL
-    categoria = Categorias.objects.get(id=categoria_id)
+    categoria = get_object_or_404(Categorias, id=categoria_id)
 
-    # Busca os pontos turísticos que pertencem à categoria
+    # Busca todos os pontos turísticos que pertencem à categoria
     pontos_turisticos = PontosTuristicos.objects.filter(categorias_id_categorias=categoria)
 
-    # Paginação: 9 cards por página (3 colunas com 3 cards)
-    paginator = Paginator(pontos_turisticos, 9)  # 9 cards por página
-    page_number = request.GET.get('page')  # Obtém o número da página da URL
-    page_obj = paginator.get_page(page_number)  # Pega os objetos da página atual
+    # Distribui os pontos turísticos entre três colunas
+    colunas = [[], [], []]
+    for index, ponto in enumerate(pontos_turisticos):
+        colunas[index % 3].append(ponto)
 
     context = {
         'categoria': categoria,
-        'page_obj': page_obj  # Passa o objeto da página para o template
+        'coluna_1': colunas[0],
+        'coluna_2': colunas[1],
+        'coluna_3': colunas[2],
     }
+
     return render(request, 'como_chegar/pontos_turisticos.html', context)
 
 def pontos_turisticos_json(request):

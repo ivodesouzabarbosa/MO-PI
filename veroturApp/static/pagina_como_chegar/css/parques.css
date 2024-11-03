@@ -35,6 +35,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 4rem;
 }
 
 .title-details {
@@ -49,8 +50,9 @@ body {
 }
 
 .title-details i {
-  font-size: 1.9rem;
+  font-size: 2.9rem;
   color: var(--threeth-color);
+  font-weight: bold;
 }
 
 .title-details h1 {
@@ -74,6 +76,7 @@ body {
 .button_voltar i{
   font-size: 2.9rem;
   color: var(--threeth-color);
+  font-weight: bold;
  
 }
 

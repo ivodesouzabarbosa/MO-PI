@@ -2,16 +2,16 @@
 {% load i18n %}
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="{% get_current_language as LANGUAGE_CODE %}">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=undo" />
-
-
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=undo" /> -->
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,200" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -68,37 +68,96 @@
       
     </div>
     <div class="title-details">
-      {% if categoria.nome == "Restaurantes" %}
-          <i class="material-icons-outlined">restaurant</i>
-      {% elif categoria.nome == "Shoppings" %}
-          <i class="material-icons-outlined">local_mall</i>
-      {% elif categoria.nome == "Atrações" %}
-          <i class="material-icons-outlined">attractions</i>
-      {% elif categoria.nome == "Parques" %}
-          <i class="material-icons-outlined">nature_people</i>
-      {% elif categoria.nome == "Prédios" %}
-          <i class="material-icons-outlined">location_city</i>
-      {% elif categoria.nome == "Praças" %}
-          <i class="material-icons-outlined">park</i>
-      {% elif categoria.nome == "Ilhas" %}
-          <i class="material-icons-outlined">beach_access</i>
-      {% elif categoria.nome == "Museus" %}
-          <i class="material-icons-outlined">museum</i>
-      {% elif categoria.nome == "Igrejas" %}
-          <i class="material-icons-outlined">church</i>
-      {% elif categoria.nome == "Terminais" %}
-          <i class="material-icons-outlined">directions_bus</i>
-      {% else %}
-          <i class="material-icons-outlined">question_mark</i>
-      {% endif %}
-      <h1>{{ categoria.nome }}</h1>
+      {% if LANGUAGE_CODE == "es" %}
+            {% if categoria.nome_es == "Restaurantes" %}
+              <i class="material-symbols-outlined">restaurant</i>
+            {% elif categoria.nome_es == "Shoppings" %}
+              <i class="material-symbols-outlined">local_mall</i>
+            {% elif categoria.nome_es == "Atracciones" %}
+              <i class="material-symbols-outlined">attractions</i>
+            {% elif categoria.nome_es == "Parques" %}
+              <i class="material-symbols-outlined">nature_people</i>
+            {% elif categoria.nome_es == "Edificios Historicos" %}
+              <i class="material-symbols-outlined">castle</i>
+            {% elif categoria.nome_es == "Cuadrícula" %}
+              <i class="material-symbols-outlined">park</i>
+            {% elif categoria.nome_es == "islas" %}
+              <i class="material-symbols-outlined">beach_access</i>
+            {% elif categoria.nome_es == "Museos" %}
+              <i class="material-symbols-outlined">museum</i>
+            {% elif categoria.nome_es == "Iglesias" %}
+              <i class="material-symbols-outlined">church</i>
+            {% elif categoria.nome_es == "Terminales" %}
+              <i class="material-symbols-outlined">directions_bus</i>
+            {% else %}
+              <i class="material-symbols-outlined">question_mark</i>
+            {% endif %}
+
+            {% elif LANGUAGE_CODE == "en" %}
+            {% if categoria.nome_en == "Restaurants" %}
+              <i class="material-symbols-outlined">restaurant</i>
+            {% elif categoria.nome_en == "Malls" %}
+              <i class="material-symbols-outlined">local_mall</i>
+            {% elif categoria.nome_en == "Attractions" %}
+              <i class="material-symbols-outlined">attractions</i>
+            {% elif categoria.nome_en == "Parks" %}
+              <i class="material-symbols-outlined">nature_people</i>
+            {% elif categoria.nome_en == "Historic Buildings" %}
+              <i class="material-symbols-outlined">castle</i>
+            {% elif categoria.nome_en == "Squares" %}
+              <i class="material-symbols-outlined">park</i>
+            {% elif categoria.nome_en == "Islands" %}
+              <i class="material-symbols-outlined">beach_access</i>
+            {% elif categoria.nome_en == "Museums" %}
+              <i class="material-symbols-outlined">museum</i>
+            {% elif categoria.nome_en == "Churches" %}
+              <i class="material-symbols-outlined">church</i>
+            {% elif categoria.nome_en == "Terminals" %}
+              <i class="material-symbols-outlined">directions_bus</i>
+            {% else %}
+              <i class="material-symbols-outlined">question_mark</i>
+            {% endif %}
+            {% else %}
+            {% if categoria.nome == "Restaurantes" %}
+              <i class="material-symbols-outlined">restaurant</i>
+            {% elif categoria.nome == "Shoppings" %}
+              <i class="material-symbols-outlined">local_mall</i>
+            {% elif categoria.nome == "Atrações" %}
+              <i class="material-symbols-outlined">attractions</i>
+            {% elif categoria.nome == "Parques" %}
+              <i class="material-symbols-outlined">nature_people</i>
+            {% elif categoria.nome == "Prédios Históricos" %}
+              <i class="material-symbols-outlined">castle</i>
+            {% elif categoria.nome == "Praças" %}
+              <i class="material-symbols-outlined">park</i>
+            {% elif categoria.nome == "Ilha" %}
+              <i class="material-symbols-outlined">beach_access</i>
+            {% elif categoria.nome == "Museus" %}
+              <i class="material-symbols-outlined">museum</i>
+            {% elif categoria.nome == "Igrejas" %}
+              <i class="material-symbols-outlined">church</i>
+            {% elif categoria.nome == "Terminais" %}
+              <i class="material-symbols-outlined">directions_bus</i>
+            {% else %}
+              <i class="material-symbols-outlined">question_mark</i>
+            {% endif %}
+            {% endif %}
+      <h1>
+        {% if LANGUAGE_CODE == "es" %}
+          {{ categoria.nome_es }}
+        {% elif LANGUAGE_CODE == "en" %}
+          {{ categoria.nome_en}}
+        {% else %}
+          {{ categoria.nome }}
+        {% endif %}
+      </h1>
     </div>
     
   
     <section class="container">
       <!-- Primeira coluna -->
       <div class="column">
-        {% for ponto in page_obj.object_list|slice:":3" %}
+        {% for ponto in coluna_1 %}
           <article class="card">
             <div class="image-btn">
               <div class="image-container">
@@ -180,7 +239,7 @@
   
       <!-- Segunda coluna -->
       <div class="column">
-        {% for ponto in page_obj.object_list|slice:"3:6" %}
+        {% for ponto in coluna_2 %}
           <article class="card">
             <!-- Conteúdo do ponto turístico -->
             <div class="image-btn">
@@ -258,12 +317,13 @@
               </a>
             </div>
           </article>
+          
         {% endfor %}
       </div>
   
       <!-- Terceira coluna -->
       <div class="column">
-        {% for ponto in page_obj.object_list|slice:"6:9" %}
+        {% for ponto in coluna_3 %}
           <article class="card">
             <!-- Conteúdo do ponto turístico -->
             <div class="image-btn">
@@ -341,12 +401,13 @@
               </a>
             </div>
           </article>
+          
         {% endfor %}
       </div>
     </section>
 
     <!-- Navegação por páginas -->
-    <div class="pagination">
+    {% comment %} <div class="pagination">
       <ul>
           {% if page_obj.has_previous %}
           <li><a href="?page={{ page_obj.previous_page_number }}">&laquo; Anterior</a></li>
@@ -362,7 +423,7 @@
           <li><a href="?page={{ page_obj.next_page_number }}">Próximo &raquo;</a></li>
           {% endif %}
       </ul>
-    </div>
+    </div> {% endcomment %}
   </main>
 
 
