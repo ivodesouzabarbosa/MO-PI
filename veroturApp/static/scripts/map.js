@@ -224,11 +224,16 @@ function initMap() {
                     <div class="info-window p-3">
                         <h3 class="info-title text-center">${ponto.nome}</h3>
                         <img src="/media/${ponto.imagem}" alt="${ponto.nome}" class="info-image img-fluid mb-2" />
-                        <div class="content-descricao">
-                            <p>${ponto.descricao || 'Sem descrição'}</p>
+                        <div class="content-ponto">
+                        <p><span>Endereço:</span> 
+                        ${ponto.endereco || 'Não disponível'}</p>
+                        <p><span>Horários de Funcionamento:</span> 
+                        ${ponto.horarios_funcionamento || 'Não disponível'}</p>
+                        <p><span>Locais Pagos:</span> 
+                        ${ponto.lugares_pagos || 'Não disponível'}</p>
+                        <p><span>Monitoria:</span> 
+                        ${ponto.monitoria || 'Não disponível'}</p>
                         </div>
-                        <p><strong>Endereço:</strong> ${ponto.endereco || 'Não disponível'}</p>
-                        <p><strong>Horários de Funcionamento:</strong> ${ponto.horarios_funcionamento || 'Não disponível'}</p>
                         <button id="start-route">Iniciar Rota</button>
                     </div>`;
                 infoWindow.setContent(contentString);
