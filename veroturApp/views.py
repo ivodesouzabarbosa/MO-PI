@@ -133,11 +133,24 @@ def busca(request):
     resultados_pontos = []
 
     if pesquisa:
-       # resultados_pontos = list(PontosTuristicos.objects.filter(nome__icontains=pesquisa).values('nome'))
-        resultados_pontos = list(PontosTuristicos.objects.filter(nome__icontains=pesquisa).values('id', 'nome'))
-
+        pontos = PontosTuristicos.objects.filter(nome__icontains=pesquisa).select_related('categorias_id_categorias')
+        resultados_pontos = [
+            {
+                'id': ponto.id,
+                'nome': ponto.nome,
+                'categoria': ponto.categorias_id_categorias.nome,  # Inclui o nome da categoria
+                'categoria_id': ponto.categorias_id_categorias.id  # Inclui o id da categoria
+            }
+            for ponto in pontos
+        ]
     return JsonResponse({'resultados_pontos': resultados_pontos})
+    
 
 def ponto_view(request, id):
     ponto = get_object_or_404(PontosTuristicos, id=id)
     return render(request, 'como_chegar/pontos_turisticos.html', {'ponto': ponto})  # Renderize um template adequado
+
+
+def ponto_turistico_detalhe(request, id):
+    result = get_object_or_404(PontosTuristicos, id=id)
+    return render(request, 'resultado_busca.html', {'result': result})
