@@ -22,14 +22,23 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,200" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/static/service-worker.js').then(function (registration) {
+              console.log('Service Worker registered with scope:', registration.scope);
+          }).catch(function (error) {
+              console.error('Service Worker registration failed:', error);
+          });
+      }
+  </script>
   </head>
 
   <body>
     <div id="splash-screen">
       <video id="splash-video" autoplay loop muted>
-        <source src="{% static 'Home/video/tela_inicial_2410.mp4' %}" type="video/mp4" />
+          <source src="{% static 'Home/video/tela_inicial_2410.mp4' %}" type="video/mp4" />
       </video>
-    </div>
+  </div>
 
     <div id="pwa" style="display: none;">
       <header class="header-home">

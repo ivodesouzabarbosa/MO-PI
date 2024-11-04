@@ -8,7 +8,7 @@ from django.core.paginator import Paginator
 from django.utils import translation
 
 
-@cache_page(30)
+@cache_page(60 * 15)
 def home(request):
     categorias = Categorias.objects.all()  # Busca todas as categorias
     return render(request, 'index.html', {'categorias': categorias})
