@@ -1,61 +1,35 @@
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: -1.458563, lng: -48.490239 }, // Localização padrão
+        center: { lat: -1.458563, lng: -48.490239 },
         zoom: 2,
-        disableDefaultUI: true, // Remove todos os controles padrão
+        disableDefaultUI: true,
         zoomControl: false,
         mapTypeControl: false,
         streetViewControl: false,
         fullscreenControl: false,
         gestureHandling: "greedy",
-        styles: [ // Estilo do mapa usando uma paleta minimalista
-            {
-                elementType: 'geometry',
-                stylers: [{ color: '#f5f5f5' }] // Cor clara de fundo
-            },
-            {
-                elementType: 'labels.icon',
-                stylers: [{ visibility: 'off' }]
-            },
-            {
-                elementType: 'labels.text.fill',
-                stylers: [{ color: '#333' }]
-            },
-            {
-                elementType: 'labels.text.stroke',
-                stylers: [{ color: '#ffffff' }]
-            },
-            {
-                featureType: 'administrative',
-                elementType: 'geometry',
-                stylers: [{ color: '#e0e0e0' }]
-            },
-            {
-                featureType: 'poi',
-                elementType: 'geometry',
-                stylers: [{ color: '#07da63' }]
-            },
-            {
-                featureType: 'road',
-                elementType: 'geometry',
-                stylers: [{ color: '#949192' }]
-            },
-            {
-                featureType: 'water',
-                elementType: 'geometry',
-                stylers: [{ color: '#279ca9' }]
-            }
+        styles: [
+            { elementType: 'geometry', stylers: [{ color: '#f5f5f5' }] },
+            { elementType: 'labels.icon', stylers: [{ visibility: 'off' }] },
+            { elementType: 'labels.text.fill', stylers: [{ color: '#333' }] },
+            { elementType: 'labels.text.stroke', stylers: [{ color: '#ffffff' }] },
+            { featureType: 'administrative', elementType: 'geometry', stylers: [{ color: '#e0e0e0' }] },
+            { featureType: 'poi', elementType: 'geometry', stylers: [{ color: '#07da63' }] },
+            { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#949192' }] },
+            { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#279ca9' }] }
         ]
     });
 
     const infoWindow = new google.maps.InfoWindow();
     const directionsService = new google.maps.DirectionsService();
     const directionsRenderer = new google.maps.DirectionsRenderer({
-        suppressMarkers: true // Remove os marcadores de ponto A e B
+        suppressMarkers: true
     });
     directionsRenderer.setMap(map);
 
-    // Função para criar o efeito de radar
+    let userMarker;
+    let watchID;
+
     function createRadarEffect(map, position) {
         let radius = 0;
         let radarCircle = new google.maps.Circle({
@@ -68,18 +42,18 @@ function initMap() {
             center: position,
             radius: 0
         });
+
         function animateRadar() {
             radarCircle.setRadius(radius);
-            radius += 1; // Aumenta o raio do radar
-            if (radius > 100) { // Se o raio passar de 100 metros, reinicia
+            radius += 1;
+            if (radius > 100) {
                 radius = 0;
             }
-            requestAnimationFrame(animateRadar); // Anima o radar continuamente
+            requestAnimationFrame(animateRadar);
         }
         animateRadar();
     }
 
-    // Função para obter a localização atual do usuário e adicionar um marcador
     function getCurrentLocation(callback) {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
@@ -88,28 +62,27 @@ function initMap() {
                     const userLng = position.coords.longitude;
                     callback(userLat, userLng);
 
-                    // Adiciona um marcador para a localização atual do usuário
-                    const userMarker = new google.maps.Marker({
-                        position: { lat: userLat, lng: userLng },
-                        map: map,
-                        title: 'Você está aqui',
-                        icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
-                    });
-
-                    // Cria o efeito de radar ao redor da localização do usuário
-                    createRadarEffect(map, { lat: userLat, lng: userLng });
-
-                    // Centraliza o mapa na localização atual
+                    if (!userMarker) {
+                        userMarker = new google.maps.Marker({
+                            position: { lat: userLat, lng: userLng },
+                            map: map,
+                            title: 'Você está aqui',
+                            icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+                        });
+                        createRadarEffect(map, { lat: userLat, lng: userLng });
+                    } else {
+                        userMarker.setPosition({ lat: userLat, lng: userLng });
+                    }
                     map.setCenter({ lat: userLat, lng: userLng });
-                    map.setZoom(15); // Defina um nível de zoom adequado para o detalhe da localização
+                    map.setZoom(15);
                 },
                 error => {
                     console.error('Erro ao obter localização:', error);
                 },
                 {
-                    enableHighAccuracy: true,  // Solicita alta precisão
-                    timeout: 10000,            // Tempo limite de 10 segundos
-                    maximumAge: 0              // Impede uso de localização em cache
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 0
                 }
             );
         } else {
@@ -117,12 +90,15 @@ function initMap() {
         }
     }
 
-    // Captura a latitude e longitude da URL
+    getCurrentLocation((userLat, userLng) => {
+        map.setCenter({ lat: userLat, lng: userLng });
+        map.setZoom(15);
+    });
+
     const urlParams = new URLSearchParams(window.location.search);
     const destinationLat = parseFloat(urlParams.get('lat'));
     const destinationLng = parseFloat(urlParams.get('lng'));
 
-    // Verifica se as coordenadas de destino foram passadas
     if (destinationLat && destinationLng) {
         getCurrentLocation((userLat, userLng) => {
             const request = {
@@ -130,6 +106,7 @@ function initMap() {
                 destination: { lat: destinationLat, lng: destinationLng },
                 travelMode: 'DRIVING'
             };
+    
             directionsService.route(request, (result, status) => {
                 if (status === 'OK') {
                     directionsRenderer.setDirections(result);
@@ -138,8 +115,47 @@ function initMap() {
                     console.error('Erro ao traçar rota:', status);
                 }
             });
+    
+            // Inicia o rastreamento contínuo da posição do usuário
+            watchID = navigator.geolocation.watchPosition(
+                position => {
+                    const updatedLat = position.coords.latitude;
+                    const updatedLng = position.coords.longitude;
+    
+                    // Atualiza a posição do marcador do usuário
+                    if (!userMarker) {
+                        // Cria o marcador se não existir ainda
+                        userMarker = new google.maps.Marker({
+                            position: { lat: updatedLat, lng: updatedLng },
+                            map: map,
+                            title: 'Você está aqui',
+                            icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+                        });
+    
+                        // Opcional: centra o mapa na nova posição do usuário
+                        map.setCenter({ lat: updatedLat, lng: updatedLng });
+    
+                        // Cria o efeito de radar ao redor do marcador do usuário
+                        createRadarEffect(map, { lat: updatedLat, lng: updatedLng });
+                    } else {
+                        // Atualiza a posição do marcador e do radar
+                        userMarker.setPosition({ lat: updatedLat, lng: updatedLng });
+                        radarCircle.setCenter({ lat: updatedLat, lng: updatedLng });
+                    }
+    
+                    // Centraliza o mapa na nova posição do usuário (opcional)
+                    map.setCenter({ lat: updatedLat, lng: updatedLng });
+                },
+                error => {
+                    console.error('Erro ao obter localização:', error);
+                },
+                {
+                    enableHighAccuracy: true,
+                    maximumAge: 0
+                }
+            );
         });
-    }
+    }    
 
     document.querySelectorAll('.route-btn').forEach(button => {
         button.addEventListener('click', function(event) {
@@ -157,7 +173,7 @@ function initMap() {
                 directionsService.route(request, (result, status) => {
                     if (status === 'OK') {
                         directionsRenderer.setDirections(result);
-                        map.setCenter(result.routes[0].legs[0].start_location);
+                        map.setCenter(result.routes[0].legs[0].end_location);
                     } else {
                         console.error('Erro ao traçar rota:', status);
                     }
@@ -166,25 +182,22 @@ function initMap() {
         });
     });
 
-    // Busque os pontos turísticos do backend
     fetch('/pontos-turisticos/')
     .then(response => response.json())
     .then(data => {
-        const addedMarkers = new Set(); // Set para rastrear coordenadas já usadas
+        const addedMarkers = new Set();
 
         data.forEach(ponto => {
             const latitude = parseFloat(ponto.latitude);
             const longitude = parseFloat(ponto.longitude);
 
-            // Validação para coordenadas corretas
             if (!latitude || !longitude) {
                 console.warn(`Coordenadas inválidas para o ponto: ${ponto.nome}`);
-                return; // Pula esse ponto
+                return;
             }
 
             const latLngKey = `${latitude},${longitude}`;
 
-            // Verifica se já há marcador para essa posição
             if (addedMarkers.has(latLngKey)) {
                 console.warn(`Marcador já adicionado para as coordenadas: ${latLngKey}`);
                 return;
@@ -193,9 +206,9 @@ function initMap() {
             addedMarkers.add(latLngKey);
 
             const markerIcon = {
-                url: `/media/${ponto.imagem}`, // URL da imagem do pino (que você criou)
-                scaledSize: new google.maps.Size(30, 40), // Ajuste o tamanho do ícone conforme necessário
-                anchor: new google.maps.Point(15, 40) // Ajuste o ponto de ancoragem para centralizar a imagem no pino
+                url: `/media/${ponto.imagem}`,
+                scaledSize: new google.maps.Size(30, 40),
+                anchor: new google.maps.Point(15, 40)
             };
 
             const marker = new google.maps.Marker({
@@ -203,7 +216,7 @@ function initMap() {
                 map: map,
                 title: ponto.nome,
                 animation: google.maps.Animation.DROP,
-                icon: markerIcon // Definindo o ícone personalizado
+                icon: markerIcon
             });
 
             marker.addListener('click', () => {
@@ -211,17 +224,18 @@ function initMap() {
                     <div class="info-window p-3">
                         <h3 class="info-title text-center">${ponto.nome}</h3>
                         <img src="/media/${ponto.imagem}" alt="${ponto.nome}" class="info-image img-fluid mb-2" />
-                        <div class="content-descricao">
-                        <p>${ponto.descricao || 'Sem descrição'}</p>
+                        <div class="content-ponto">
+                        <p><span>Endereço:</span> 
+                        ${ponto.endereco || 'Não disponível'}</p>
+                        <p><span>Horários de Funcionamento:</span> 
+                        ${ponto.horarios_funcionamento || 'Não disponível'}</p>
+                        <p><span>Locais Pagos:</span> 
+                        ${ponto.lugares_pagos || 'Não disponível'}</p>
+                        <p><span>Monitoria:</span> 
+                        ${ponto.monitoria || 'Não disponível'}</p>
                         </div>
-                        <p><strong>Endereço:</strong> ${ponto.endereco || 'Não disponível'}</p>
-                        <p><strong>Horários de Funcionamento:</strong> ${ponto.horarios_funcionamento || 'Não disponível'}</p>
-                        <p><strong>Locais Pagos:</strong> ${ponto.lugares_pagos || 'Não disponível'}</p>
-                        <p><strong>Monitoria:</strong> ${ponto.monitoria || 'Não disponível'}</p>
                         <button id="start-route">Iniciar Rota</button>
-                    </div>
-                `;
-
+                    </div>`;
                 infoWindow.setContent(contentString);
                 infoWindow.open(map, marker);
 
@@ -246,17 +260,13 @@ function initMap() {
                             });
                         });
                     }
-                });
+                }); // script para rota
             });
         });
     })
-    .catch(error => console.error('Erro ao carregar os pontos turísticos:', error));
-
-    // Obtenha e mostre a localização atual do usuário ao iniciar o mapa
-    getCurrentLocation(() => { });
+    .catch(error => console.error('Erro ao buscar pontos turísticos:', error));
 }
 
-// Este evento aguarda o carregamento completo do DOM antes de executar o código
-document.addEventListener("DOMContentLoaded", function() {
-    initMap(); // Chama a função para inicializar o mapa quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', function() {
+    initMap();
 });
