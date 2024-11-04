@@ -106,6 +106,7 @@ function initMap() {
                 destination: { lat: destinationLat, lng: destinationLng },
                 travelMode: 'DRIVING'
             };
+    
             directionsService.route(request, (result, status) => {
                 if (status === 'OK') {
                     directionsRenderer.setDirections(result);
@@ -114,12 +115,35 @@ function initMap() {
                     console.error('Erro ao traçar rota:', status);
                 }
             });
-
+    
+            // Inicia o rastreamento contínuo da posição do usuário
             watchID = navigator.geolocation.watchPosition(
                 position => {
                     const updatedLat = position.coords.latitude;
                     const updatedLng = position.coords.longitude;
-                    userMarker.setPosition({ lat: updatedLat, lng: updatedLng });
+    
+                    // Atualiza a posição do marcador do usuário
+                    if (!userMarker) {
+                        // Cria o marcador se não existir ainda
+                        userMarker = new google.maps.Marker({
+                            position: { lat: updatedLat, lng: updatedLng },
+                            map: map,
+                            title: 'Você está aqui',
+                            icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+                        });
+    
+                        // Opcional: centra o mapa na nova posição do usuário
+                        map.setCenter({ lat: updatedLat, lng: updatedLng });
+    
+                        // Cria o efeito de radar ao redor do marcador do usuário
+                        createRadarEffect(map, { lat: updatedLat, lng: updatedLng });
+                    } else {
+                        // Atualiza a posição do marcador e do radar
+                        userMarker.setPosition({ lat: updatedLat, lng: updatedLng });
+                        radarCircle.setCenter({ lat: updatedLat, lng: updatedLng });
+                    }
+    
+                    // Centraliza o mapa na nova posição do usuário (opcional)
                     map.setCenter({ lat: updatedLat, lng: updatedLng });
                 },
                 error => {
@@ -131,7 +155,7 @@ function initMap() {
                 }
             );
         });
-    }
+    }    
 
     document.querySelectorAll('.route-btn').forEach(button => {
         button.addEventListener('click', function(event) {
