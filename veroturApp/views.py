@@ -124,3 +124,19 @@ def ponto_turistico_detalhe(request, id):
     result = get_object_or_404(PontosTuristicos, id=id)
     return render(request, 'resultado_busca.html', {'result': result})
 
+def busca_mapa(request):
+    pesquisa = request.GET.get('pesquisa')
+    resultados_pontos = []
+
+    if pesquisa:
+        pontos = PontosTuristicos.objects.filter(nome__icontains=pesquisa).select_related('categorias_id_categorias') # pega o id da categoria pela chave estrangeira do ponto turistico
+        resultados_pontos = [
+            {
+                'id': ponto.id,
+                'nome': ponto.nome,
+                'categoria': ponto.categorias_id_categorias.nome,  # Inclui o nome da categoria
+                'categoria_id': ponto.categorias_id_categorias.id  # Inclui o id da categoria
+            }
+            for ponto in pontos
+        ]
+    return JsonResponse({'resultados_pontos': resultados_pontos}) # Converte o resultado para json

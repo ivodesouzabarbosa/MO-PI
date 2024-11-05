@@ -66,7 +66,7 @@
         </div>
     </header>
 
-    <form class="barra-pesquisa" action="{% url 'busca' %}" method="POST">
+    <form class="barra-pesquisa" action="{% url 'buscamapa' %}" method="POST">
         {% csrf_token %}
         <div class="container-barra">
           <input type="search" id="busca" name="pesquisa" placeholder="Pesquisar" autocomplete="off" onkeyup="buscarSugestoes()" />
@@ -198,7 +198,7 @@
     <script src="{% static "Home/js/config.js" %}"></script>
     <script src="{% static "service-worker.js" %}"></script>
     <script src="{% static "Home/js/script.js" %}"></script>
-    <script src="{% static 'Home/js/busca.js' %}"></script>
+    <script src="{% static 'Home/js/mapa_busca.js' %}"></script>
 </body>
 
 </html>
