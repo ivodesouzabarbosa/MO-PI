@@ -95,14 +95,14 @@ def set_language(request):
     request.LANGUAGE_CODE = user_language
 
 # Barra de pesquisa
-
+# Campo de busca no index redirecionando para a página da categoria do ponto turístico
 
 def busca(request):
-    pesquisa = request.GET.get('pesquisa', '')
+    pesquisa = request.GET.get('pesquisa')
     resultados_pontos = []
 
     if pesquisa:
-        pontos = PontosTuristicos.objects.filter(nome__icontains=pesquisa).select_related('categorias_id_categorias')
+        pontos = PontosTuristicos.objects.filter(nome__icontains=pesquisa).select_related('categorias_id_categorias') # pega o id da categoria pela chave estrangeira do ponto turistico
         resultados_pontos = [
             {
                 'id': ponto.id,
@@ -112,7 +112,7 @@ def busca(request):
             }
             for ponto in pontos
         ]
-    return JsonResponse({'resultados_pontos': resultados_pontos})
+    return JsonResponse({'resultados_pontos': resultados_pontos}) # Converte o resultado para json
     
 
 def ponto_view(request, id):
@@ -123,3 +123,4 @@ def ponto_view(request, id):
 def ponto_turistico_detalhe(request, id):
     result = get_object_or_404(PontosTuristicos, id=id)
     return render(request, 'resultado_busca.html', {'result': result})
+

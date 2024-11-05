@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from .views import busca,eventos, lista_pontos_turisticos, pontos_turisticos_json, home, como_chegar, pontos_por_categoria, mapa, ponto_view
+from .views import busca, eventos, lista_pontos_turisticos, pontos_turisticos_json, home, como_chegar, pontos_por_categoria, mapa, ponto_view
 urlpatterns = [
     path('', home, name='home'),
     path('como-chegar/', como_chegar, name='como_chegar'),

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{% static 'Home/css/header_footer.css' %}" />
     <link rel="stylesheet" href="{% static 'mapa/css/mapa.css' %}" />
     <link rel="manifest" href="{% static 'manifest.json' %}">
-    <!-- <link rel="stylesheet" href="{% static 'style/map.css' %}" /> -->
+    {% comment %} <link rel="stylesheet" href="{% static 'style/map.css' %}" /> {% endcomment %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
@@ -66,15 +66,16 @@
         </div>
     </header>
 
-    <form class="barra-pesquisa" action=" " method="post">
-        {% comment %} <label for="busca">Buscar</label> {% endcomment %}
-      
+    <form class="barra-pesquisa" action="{% url 'busca' %}" method="POST">
+        {% csrf_token %}
         <div class="container-barra">
-          <input type="search" id="busca" name="q">
+          <input type="search" id="busca" name="pesquisa" placeholder="Pesquisar" autocomplete="off" onkeyup="buscarSugestoes()" />
           <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
-      
-    </form>
+        <div id="dropdown-sugestoes" class="dropdown-sugestoes" style="display: none;">
+          <!-- Resultados de sugestões aparecem aqui -->
+        </div>
+      </form>
 
     {% cache 900 google_maps_script %}
     <div id="map"></div>
@@ -197,6 +198,7 @@
     <script src="{% static "Home/js/config.js" %}"></script>
     <script src="{% static "service-worker.js" %}"></script>
     <script src="{% static "Home/js/script.js" %}"></script>
+    <script src="{% static 'Home/js/busca.js' %}"></script>
 </body>
 
 </html>
