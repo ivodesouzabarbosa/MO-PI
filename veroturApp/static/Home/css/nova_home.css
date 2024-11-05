@@ -42,7 +42,8 @@
 
 .container-barra input {
     height: 50px;
-    border: none;
+    border-radius: 2.5rem;
+    border: 1px solid var(--fourth-color);
     outline: none;
     padding-left: 50px;
     width: 0;
@@ -95,6 +96,14 @@
     clip: rect(0, 0, 0, 0);
     border: 0;
 } */
+.dropdown-sugestoes{
+    border: 1px solid #ffffff;
+    font-size: 1.3rem;
+    margin-left: 1rem;
+}
+.sugestao-link{
+    color: black;
+}
 
 /* fim do varao */
 
