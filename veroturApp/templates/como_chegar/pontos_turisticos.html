@@ -130,7 +130,7 @@
             <i class="material-symbols-outlined">things_to_do </i>
             {% elif categoria.nome == "Praças" %}
               <i class="material-symbols-outlined">park</i>
-            {% elif categoria.nome == "Ilha" %}
+            {% elif categoria.nome == "Ilhas" %}
               <i class="material-symbols-outlined">beach_access</i>
             {% elif categoria.nome == "Museus" %}
               <i class="material-symbols-outlined">museum</i>
@@ -170,7 +170,7 @@
                 </div>
               </div>
               <div class="btn-smais">
-                <span>Saiba mais</span>
+                <span>{% trans "Saiba mais" %}</span>
               </div>
             </div>
             <div class="card-content">
@@ -192,7 +192,7 @@
               <div class="tab-contents">
                 <div class="content" id="descricao-{{ ponto.id }}">
                   <div class="infos">
-                    <h1 class="content-title">Descrição</h1>
+                    <h1 class="content-title">{% trans "Descrição" %}</h1>
                     <p class="content-description">
                       {{ ponto.descricao }}
                     </p>
@@ -201,7 +201,7 @@
   
                 <div class="content" id="endereco-{{ ponto.id }}">
                   <div class="infos">
-                    <h1 class="content-title">Endereço</h1>
+                    <h1 class="content-title">{% trans "Endereço" %}</h1>
                     <p class="content-description">
                       {{ ponto.endereco }}
                     </p>
@@ -210,7 +210,7 @@
   
                 <div class="content" id="horarios-{{ ponto.id }}">
                   <div class="infos">
-                    <h1 class="content-title">Horários</h1>
+                    <h1 class="content-title">{% trans "Horários" %}</h1>
                     <p class="content-description">
                       {{ ponto.horarios_funcionamento }}
                     </p>
@@ -219,7 +219,7 @@
   
                 <div class="content" id="valores-{{ ponto.id }}">
                   <div class="infos">
-                    <h1 class="content-title">Valores</h1>
+                    <h1 class="content-title">{% trans "Valores" %}</h1>
                     <p class="content-description">
                       {{ ponto.lugares_pagos }}
                     </p>
@@ -230,7 +230,7 @@
             <div class="btn-rota">
               <a href="https://maps.google.com/?q={{ ponto.latitude }},{{ ponto.longitude }}" target="_blank">
                 <i class="material-icons-outlined">mode_of_travel</i>
-                Rota
+                {% trans "Rota" %}
               </a>
             </div>
           </article>
@@ -253,7 +253,7 @@
                 </div>
               </div>
               <div class="btn-smais">
-                <span>Saiba mais</span>
+                <span>{% trans "Saiba mais" %}</span>
               </div>
             </div>
             <div class="card-content">
@@ -275,7 +275,7 @@
               <div class="tab-contents">
                 <div class="content" id="descricao-{{ ponto.id }}">
                   <div class="infos">
-                    <h1 class="content-title">Descrição</h1>
+                    <h1 class="content-title">{% trans "Descrição" %}</h1>
                     <p class="content-description">
                       {{ ponto.descricao }}
                     </p>
@@ -284,7 +284,7 @@
   
                 <div class="content" id="endereco-{{ ponto.id }}">
                   <div class="infos">
-                    <h1 class="content-title">Endereço</h1>
+                    <h1 class="content-title">{% trans "Endereço" %}</h1>
                     <p class="content-description">
                       {{ ponto.endereco }}
                     </p>
@@ -293,7 +293,7 @@
   
                 <div class="content" id="horarios-{{ ponto.id }}">
                   <div class="infos">
-                    <h1 class="content-title">Horários</h1>
+                    <h1 class="content-title">{% trans "Horários" %}</h1>
                     <p class="content-description">
                       {{ ponto.horarios_funcionamento }}
                     </p>
@@ -302,7 +302,7 @@
   
                 <div class="content" id="valores-{{ ponto.id }}">
                   <div class="infos">
-                    <h1 class="content-title">Valores</h1>
+                    <h1 class="content-title">{% trans "Valores" %}</h1>
                     <p class="content-description">
                       {{ ponto.lugares_pagos }}
                     </p>
@@ -313,7 +313,7 @@
             <div class="btn-rota">
               <a href="https://maps.google.com/?q={{ ponto.latitude }},{{ ponto.longitude }}" target="_blank">
                 <i class="material-icons-outlined">mode_of_travel</i>
-                Rota
+                {% trans "Rota" %}
               </a>
             </div>
           </article>
@@ -337,7 +337,7 @@
                 </div>
               </div>
               <div class="btn-smais">
-                <span>Saiba mais</span>
+                <span>{% trans "Saiba mais" %}</span>
               </div>
             </div>
             <div class="card-content">
@@ -359,7 +359,7 @@
               <div class="tab-contents">
                 <div class="content" id="descricao-{{ ponto.id }}">
                   <div class="infos">
-                    <h1 class="content-title">Descrição</h1>
+                    <h1 class="content-title">{% trans "Descrição" %}</h1>
                     <p class="content-description">
                       {{ ponto.descricao }}
                     </p>
@@ -368,7 +368,7 @@
   
                 <div class="content" id="endereco-{{ ponto.id }}">
                   <div class="infos">
-                    <h1 class="content-title">Endereço</h1>
+                    <h1 class="content-title">{% trans "Endereço" %}</h1>
                     <p class="content-description">
                       {{ ponto.endereco }}
                     </p>
@@ -377,7 +377,7 @@
   
                 <div class="content" id="horarios-{{ ponto.id }}">
                   <div class="infos">
-                    <h1 class="content-title">Horários</h1>
+                    <h1 class="content-title">{% trans "Horários" %}</h1>
                     <p class="content-description">
                       {{ ponto.horarios_funcionamento }}
                     </p>
@@ -386,7 +386,7 @@
   
                 <div class="content" id="valores-{{ ponto.id }}">
                   <div class="infos">
-                    <h1 class="content-title">Valores</h1>
+                    <h1 class="content-title">{% trans "Valores" %}</h1>
                     <p class="content-description">
                       {{ ponto.lugares_pagos }}
                     </p>
