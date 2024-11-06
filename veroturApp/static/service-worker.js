@@ -1,6 +1,13 @@
 const CACHE_NAME = 'verotur-cache-v1';
 const urlsToCache = [
   '/',
+  // HTML
+  '/templates/index.html',
+  '/templates/como_chegar/como_chegar.html',
+  '/templates/como_chegar/detalhes.html',
+  '/templates/como_chegar/pontos_turisticos.html',
+  '/templates/Eventos/eventos.html',
+  '/templates/mapa/mapa.html',
   // CSS
   '/static/Home/css/header_footer.css',
   '/static/Home/css/nova_home.css',
