@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="shortcut icon" href="{% static 'Home/img/veroTur_logo.webp' %}" type="image/x-icon" />
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=undo" /> -->
   <link rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,200" />
@@ -228,11 +228,11 @@
               </div>
             </div>
             <div class="btn-rota">
-              <a href="https://maps.google.com/?q={{ ponto.latitude }},{{ ponto.longitude }}" target="_blank">
-                <i class="material-icons-outlined">mode_of_travel</i>
-                {% trans "Rota" %}
+              <a href="#" class="route-btn" data-lat="{{ ponto.latitude }}" data-lng="{{ ponto.longitude }}">
+                 <i class="material-icons-outlined">mode_of_travel</i>
+                 {% trans "Rota" %}
               </a>
-            </div>
+           </div>
           </article>
         {% endfor %}
       </div>

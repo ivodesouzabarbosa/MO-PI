@@ -159,17 +159,20 @@ function initMap() {
 
     document.querySelectorAll('.route-btn').forEach(button => {
         button.addEventListener('click', function(event) {
-            event.preventDefault();
-
+            event.preventDefault(); // Previne o redirecionamento do link
+    
+            // Obtém as coordenadas do destino
             const destinationLat = parseFloat(this.getAttribute('data-lat'));
             const destinationLng = parseFloat(this.getAttribute('data-lng'));
-
+    
+            // Obtém a localização atual do usuário e traça a rota
             getCurrentLocation((userLat, userLng) => {
                 const request = {
                     origin: { lat: userLat, lng: userLng },
                     destination: { lat: destinationLat, lng: destinationLng },
                     travelMode: 'DRIVING'
                 };
+    
                 directionsService.route(request, (result, status) => {
                     if (status === 'OK') {
                         directionsRenderer.setDirections(result);
