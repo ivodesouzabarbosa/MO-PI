@@ -98,21 +98,28 @@ def set_language(request):
 # Campo de busca no index redirecionando para a página da categoria do ponto turístico
 
 def busca(request):
-    pesquisa = request.GET.get('pesquisa')
+    pesquisa = request.GET.get('pesquisa', '')
     resultados_pontos = []
 
     if pesquisa:
-        pontos = PontosTuristicos.objects.filter(nome__icontains=pesquisa).select_related('categorias_id_categorias') # pega o id da categoria pela chave estrangeira do ponto turistico
+        # Filtra pontos turísticos que começam com a inicial digitada, ignorando maiúsculas/minúsculas
+        pontos = PontosTuristicos.objects.filter(
+            nome__istartswith=pesquisa
+        ).select_related('categorias_id_categorias')  # Verifique se 'categorias_id_categorias' está correto
+
+        # Formata os resultados para incluir o nome e o id da categoria
         resultados_pontos = [
             {
                 'id': ponto.id,
                 'nome': ponto.nome,
-                'categoria': ponto.categorias_id_categorias.nome,  # Inclui o nome da categoria
-                'categoria_id': ponto.categorias_id_categorias.id  # Inclui o id da categoria
+                'categoria': ponto.categorias_id_categorias.nome,  # Nome da categoria
+                'categoria_id': ponto.categorias_id_categorias.id  # ID da categoria
             }
             for ponto in pontos
         ]
-    return JsonResponse({'resultados_pontos': resultados_pontos}) # Converte o resultado para json
+
+    # Retorna os resultados em formato JSON
+    return JsonResponse({'resultados_pontos': resultados_pontos})
     
 
 def ponto_view(request, id):
@@ -129,7 +136,7 @@ def busca_mapa(request):
     resultados_pontos = []
 
     if pesquisa:
-        pontos = PontosTuristicos.objects.filter(nome__icontains=pesquisa).select_related('categorias_id_categorias') # pega o id da categoria pela chave estrangeira do ponto turistico
+        pontos = PontosTuristicos.objects.filter(nome__istartswith=pesquisa).select_related('categorias_id_categorias') # pega o id da categoria pela chave estrangeira do ponto turistico
         resultados_pontos = [
             {
                 'id': ponto.id,

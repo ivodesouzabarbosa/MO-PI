@@ -35,7 +35,8 @@ document.addEventListener('click', function(event) {
     if (!dropdown.contains(event.target)) {
         dropdown.style.display = 'none';
     }
+});
+
 document.querySelector('.barra-pesquisa').addEventListener('submit', function(event) {
     event.preventDefault();
-    });    
 });
