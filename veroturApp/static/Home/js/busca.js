@@ -12,7 +12,9 @@ function buscarSugestoes() {
                     conteudo += '<ul>';
                     data.resultados_pontos.forEach(ponto => {
                         // Criar um link para cada ponto
-                        conteudo += `<li><a href="categoria/${ponto.categoria_id}/" class="sugestao-link">${ponto.nome}</a></li>`;
+                        conteudo += `<li><a href="categoria/${ponto.categoria_id}/" class="sugestao-link">
+                        <img src="${ponto.imagem_url}" style="width: 30px; height: 30px; margin-right: 10px; object-fit: cover; alt="imagem local" >
+                        ${ponto.nome} </a></li>`;
                     });
                     conteudo += '</ul>';
                 } else {

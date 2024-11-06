@@ -107,10 +107,11 @@ def busca(request):
             nome__istartswith=pesquisa
         ).select_related('categorias_id_categorias')  # Verifique se 'categorias_id_categorias' está correto
 
-        # Formata os resultados para incluir o nome e o id da categoria
+        # Formata os resultados para incluir o nome e o id da categoria, além do URL da imagem
         resultados_pontos = [
             {
                 'id': ponto.id,
+                'imagem_url': ponto.imagem.url if ponto.imagem else None,  # Extrai o URL da imagem
                 'nome': ponto.nome,
                 'categoria': ponto.categorias_id_categorias.nome,  # Nome da categoria
                 'categoria_id': ponto.categorias_id_categorias.id  # ID da categoria
