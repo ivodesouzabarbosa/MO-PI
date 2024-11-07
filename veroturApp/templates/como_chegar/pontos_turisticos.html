@@ -228,7 +228,7 @@
               </div>
             </div>
             <div class="btn-rota">
-              <a href="#" class="route-btn" data-lat="{{ ponto.latitude }}" data-lng="{{ ponto.longitude }}">
+              <a href="{% url 'mapa' %}?{{ ponto.latitude }}&{{ ponto.longitude }}" class="route-btn">
                  <i class="material-icons-outlined">mode_of_travel</i>
                  {% trans "Rota" %}
               </a>
