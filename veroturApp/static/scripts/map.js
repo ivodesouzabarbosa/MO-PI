@@ -256,6 +256,8 @@ function initMap() {
                                     if (status === 'OK') {
                                         directionsRenderer.setDirections(result);
                                         map.setCenter(result.routes[0].legs[0].end_location);
+
+                                        infoWindow.close();
                                     } else {
                                         console.error('Erro ao traçar rota:', status);
                                     }
