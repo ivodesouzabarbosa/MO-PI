@@ -204,4 +204,95 @@ function initMap() {
             });
         });
     });
+
+    fetch('/pontos-turisticos/')
+    .then(response => response.json())
+    .then(data => {
+        const addedMarkers = new Set();
+
+        data.forEach(ponto => {
+            const latitude = parseFloat(ponto.latitude);
+            const longitude = parseFloat(ponto.longitude);
+
+            if (!latitude || !longitude) {
+                console.warn(`Coordenadas inválidas para o ponto: ${ponto.nome}`);
+                return;
+            }
+
+            const latLngKey = `${latitude},${longitude}`;
+
+            if (addedMarkers.has(latLngKey)) {
+                console.warn(`Marcador já adicionado para as coordenadas: ${latLngKey}`);
+                return;
+            }
+
+            addedMarkers.add(latLngKey);
+
+            const markerIcon = {
+                url: `/media/${ponto.imagem}`,
+                scaledSize: new google.maps.Size(30, 40),
+                anchor: new google.maps.Point(15, 40)
+            };
+
+            const marker = new google.maps.Marker({
+                position: { lat: latitude, lng: longitude },
+                map: map,
+                title: ponto.nome,
+                animation: google.maps.Animation.DROP,
+                icon: markerIcon
+            });
+
+            marker.addListener('click', () => {
+                const contentString = `
+                    <div class="info-window p-3">
+                        <h3 class="info-title text-center">${ponto.nome}</h3>
+                        <img src="/media/${ponto.imagem}" alt="${ponto.nome}" class="info-image img-fluid mb-2" />
+                        <div class="content-ponto">
+                        <p><span>Endereço:</span> 
+                        ${ponto.endereco || 'Não disponível'}</p>
+                        <p><span>Horários de Funcionamento:</span> 
+                        ${ponto.horarios_funcionamento || 'Não disponível'}</p>
+                        <p><span>Locais Pagos:</span> 
+                        ${ponto.lugares_pagos || 'Não disponível'}</p>
+                        <p><span>Monitoria:</span> 
+                        ${ponto.monitoria || 'Não disponível'}</p>
+                        </div>
+                        <button id="start-route">Iniciar Rota</button>
+                    </div>`;
+                infoWindow.setContent(contentString);
+                infoWindow.open(map, marker);
+
+                google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
+                    const startRouteButton = document.getElementById('start-route');
+                    if (startRouteButton) {
+                        startRouteButton.addEventListener('click', () => {
+                            getCurrentLocation((userLat, userLng) => {
+                                const request = {
+                                    origin: { lat: userLat, lng: userLng },
+                                    destination: { lat: latitude, lng: longitude },
+                                    travelMode: 'DRIVING'
+                                };
+                                directionsService.route(request, (result, status) => {
+                                    if (status === 'OK') {
+                                        directionsRenderer.setDirections(result);
+                                        map.setCenter(result.routes[0].legs[0].end_location);
+
+                                        infoWindow.close();
+                                    } else {
+                                        console.error('Erro ao traçar rota:', status);
+                                    }
+                                });
+                            });
+                        });
+                    }
+                }); // script para rota
+            });
+        });
+    })
+    .catch(error => console.error('Erro ao buscar pontos turísticos:', error));
 }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    initMap()
+})
