@@ -63,7 +63,7 @@
     border-radius: 25px;
     width: 100%;
     z-index: 1;
-    transition: width 1s ease-in;
+    transition: width 1s cubic-bezier(0.47, -0.28, 0.35, 1.16);
 }
 
 .container-barra i {
