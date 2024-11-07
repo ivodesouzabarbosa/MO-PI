@@ -66,17 +66,6 @@
         </div>
     </header>
 
-    <form class="barra-pesquisa" action="{% url 'buscamapa' %}" method="POST">
-        {% csrf_token %}
-        <div class="container-barra">
-          <input type="search" id="busca" name="pesquisa" placeholder="Pesquisar" autocomplete="off" onkeyup="buscarSugestoes()" />
-          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-        <div id="dropdown-sugestoes" class="dropdown-sugestoes" style="display: none;">
-          <!-- Resultados de sugestões aparecem aqui -->
-        </div>
-      </form>
-
     {% cache 900 google_maps_script %}
     <div id="map"></div>
     <!-- Carregar o JavaScript do Google Maps API -->

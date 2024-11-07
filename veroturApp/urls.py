@@ -11,6 +11,6 @@ urlpatterns = [
     path('detalhes/', lista_pontos_turisticos, name='detalhes'),
     path('pontos-turisticos/', pontos_turisticos_json, name='pontos_turisticos'),  # API para dados JSON
     path('busca/', busca, name='busca'),
-    path('mapa/', busca_mapa, name='buscamapa'),
+    path('buscamapa/', busca_mapa, name='buscamapa'),
     path('ponto/<int:id>/', ponto_view, name='ponto')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
