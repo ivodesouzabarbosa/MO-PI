@@ -100,13 +100,14 @@ function initMap() {
     const destinationLng = parseFloat(urlParams.get('lng'));
 
     if (destinationLat && destinationLng) {
+        // Cria a rota inicial
         getCurrentLocation((userLat, userLng) => {
             const request = {
                 origin: { lat: userLat, lng: userLng },
                 destination: { lat: destinationLat, lng: destinationLng },
                 travelMode: 'DRIVING'
             };
-    
+
             directionsService.route(request, (result, status) => {
                 if (status === 'OK') {
                     directionsRenderer.setDirections(result);
@@ -115,13 +116,13 @@ function initMap() {
                     console.error('Erro ao traçar rota:', status);
                 }
             });
-    
+
             // Inicia o rastreamento contínuo da posição do usuário
             watchID = navigator.geolocation.watchPosition(
                 position => {
                     const updatedLat = position.coords.latitude;
                     const updatedLng = position.coords.longitude;
-    
+
                     // Atualiza a posição do marcador do usuário
                     if (!userMarker) {
                         // Cria o marcador se não existir ainda
@@ -131,19 +132,21 @@ function initMap() {
                             title: 'Você está aqui',
                             icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
                         });
-    
+
                         // Opcional: centra o mapa na nova posição do usuário
                         map.setCenter({ lat: updatedLat, lng: updatedLng });
-    
+
                         // Cria o efeito de radar ao redor do marcador do usuário
                         createRadarEffect(map, { lat: updatedLat, lng: updatedLng });
                     } else {
                         // Atualiza a posição do marcador e do radar
                         userMarker.setPosition({ lat: updatedLat, lng: updatedLng });
-                        radarCircle.setCenter({ lat: updatedLat, lng: updatedLng });
                     }
-    
-                    // Centraliza o mapa na nova posição do usuário (opcional)
+
+                    // Atualiza a rota em tempo real
+                    updateRoute(userLat, userLng, destinationLat, destinationLng);
+
+                    // Centraliza o mapa na nova posição do usuário
                     map.setCenter({ lat: updatedLat, lng: updatedLng });
                 },
                 error => {
@@ -155,16 +158,33 @@ function initMap() {
                 }
             );
         });
-    }    
+    }
+
+    function updateRoute(userLat, userLng, destinationLat, destinationLng) {
+        const request = {
+            origin: { lat: userLat, lng: userLng },
+            destination: { lat: destinationLat, lng: destinationLng },
+            travelMode: 'DRIVING'
+        };
+
+        directionsService.route(request, (result, status) => {
+            if (status === 'OK') {
+                directionsRenderer.setDirections(result);
+                map.setCenter(result.routes[0].legs[0].end_location);
+            } else {
+                console.error('Erro ao traçar rota:', status);
+            }
+        });
+    }
 
     document.querySelectorAll('.route-btn').forEach(button => {
         button.addEventListener('click', function(event) {
             event.preventDefault(); // Previne o redirecionamento do link
-    
+
             // Obtém as coordenadas do destino
             const destinationLat = parseFloat(this.getAttribute('data-lat'));
             const destinationLng = parseFloat(this.getAttribute('data-lng'));
-    
+
             // Obtém a localização atual do usuário e traça a rota
             getCurrentLocation((userLat, userLng) => {
                 const request = {
@@ -172,7 +192,7 @@ function initMap() {
                     destination: { lat: destinationLat, lng: destinationLng },
                     travelMode: 'DRIVING'
                 };
-    
+
                 directionsService.route(request, (result, status) => {
                     if (status === 'OK') {
                         directionsRenderer.setDirections(result);
@@ -184,94 +204,4 @@ function initMap() {
             });
         });
     });
-
-    fetch('/pontos-turisticos/')
-    .then(response => response.json())
-    .then(data => {
-        const addedMarkers = new Set();
-
-        data.forEach(ponto => {
-            const latitude = parseFloat(ponto.latitude);
-            const longitude = parseFloat(ponto.longitude);
-
-            if (!latitude || !longitude) {
-                console.warn(`Coordenadas inválidas para o ponto: ${ponto.nome}`);
-                return;
-            }
-
-            const latLngKey = `${latitude},${longitude}`;
-
-            if (addedMarkers.has(latLngKey)) {
-                console.warn(`Marcador já adicionado para as coordenadas: ${latLngKey}`);
-                return;
-            }
-
-            addedMarkers.add(latLngKey);
-
-            const markerIcon = {
-                url: `/media/${ponto.imagem}`,
-                scaledSize: new google.maps.Size(30, 40),
-                anchor: new google.maps.Point(15, 40)
-            };
-
-            const marker = new google.maps.Marker({
-                position: { lat: latitude, lng: longitude },
-                map: map,
-                title: ponto.nome,
-                animation: google.maps.Animation.DROP,
-                icon: markerIcon
-            });
-
-            marker.addListener('click', () => {
-                const contentString = `
-                    <div class="info-window p-3">
-                        <h3 class="info-title text-center">${ponto.nome}</h3>
-                        <img src="/media/${ponto.imagem}" alt="${ponto.nome}" class="info-image img-fluid mb-2" />
-                        <div class="content-ponto">
-                        <p><span>Endereço:</span> 
-                        ${ponto.endereco || 'Não disponível'}</p>
-                        <p><span>Horários de Funcionamento:</span> 
-                        ${ponto.horarios_funcionamento || 'Não disponível'}</p>
-                        <p><span>Locais Pagos:</span> 
-                        ${ponto.lugares_pagos || 'Não disponível'}</p>
-                        <p><span>Monitoria:</span> 
-                        ${ponto.monitoria || 'Não disponível'}</p>
-                        </div>
-                        <button id="start-route">Iniciar Rota</button>
-                    </div>`;
-                infoWindow.setContent(contentString);
-                infoWindow.open(map, marker);
-
-                google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
-                    const startRouteButton = document.getElementById('start-route');
-                    if (startRouteButton) {
-                        startRouteButton.addEventListener('click', () => {
-                            getCurrentLocation((userLat, userLng) => {
-                                const request = {
-                                    origin: { lat: userLat, lng: userLng },
-                                    destination: { lat: latitude, lng: longitude },
-                                    travelMode: 'DRIVING'
-                                };
-                                directionsService.route(request, (result, status) => {
-                                    if (status === 'OK') {
-                                        directionsRenderer.setDirections(result);
-                                        map.setCenter(result.routes[0].legs[0].end_location);
-
-                                        infoWindow.close();
-                                    } else {
-                                        console.error('Erro ao traçar rota:', status);
-                                    }
-                                });
-                            });
-                        });
-                    }
-                }); // script para rota
-            });
-        });
-    })
-    .catch(error => console.error('Erro ao buscar pontos turísticos:', error));
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    initMap();
-});
