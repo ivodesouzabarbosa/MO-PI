@@ -74,47 +74,46 @@ function exibirResultados(data, historico) {
     });
 }
 
-// Função para exibir apenas o histórico de pesquisa
-function exibirHistorico(historico, dropdown) {
+// Função para exibir o histórico de pesquisa
+function exibirHistorico(historico) {
     let conteudo = '<h4>Histórico de Pesquisa</h4><ul>';
     historico.forEach(item => {
         conteudo += `<li><a href="#" class="sugestao-link historico-link">${item}</a></li>`;
     });
     conteudo += '</ul>';
-
     dropdown.innerHTML = conteudo;
-    dropdown.style.display = 'block';
+    dropdown.style.display = 'block'; // Exibir dropdown
 
-    // Adicionar evento de clique nos links do histórico
+    // Adicionar evento de clique nos links de histórico
     document.querySelectorAll('.historico-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            document.getElementById('busca').value = e.target.textContent;
-            buscarSugestoes(); // Executa busca com o termo clicado
+            buscaInput.value = e.target.textContent;
+            buscarSugestoes(); // Executa a busca com o termo do histórico
         });
     });
 }
 
-// Evento para fechar o dropdown ao clicar fora dele
-document.addEventListener('click', function(event) {
-    const dropdown = document.getElementById('dropdown-sugestoes');
-    if (!dropdown.contains(event.target)) {
-        dropdown.style.display = 'none';
-    }
-});
-
-// Salvar a pesquisa no histórico ao submeter o formulário de pesquisa
-document.querySelector('.barra-pesquisa').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const pesquisa = document.getElementById('busca').value;
+// Função para salvar pesquisa no histórico
+function salvarNoHistorico(pesquisa) {
     let historico = JSON.parse(localStorage.getItem('historico_pesquisa')) || [];
-
-    // Salvar no histórico se o termo for único
     if (pesquisa && !historico.includes(pesquisa)) {
         historico.unshift(pesquisa); // Adicionar no início do histórico
         if (historico.length > 5) historico.pop(); // Limitar o histórico a 5 itens
         localStorage.setItem('historico_pesquisa', JSON.stringify(historico));
     }
+}
 
-    buscarSugestoes(); // Atualizar sugestões com o termo atual
+// Fechar o dropdown ao clicar fora da área
+document.addEventListener('click', (event) => {
+    if (!dropdown.contains(event.target) && event.target !== buscaInput) {
+        dropdown.style.display = 'none';
+    }
+});
+
+// Evento de submit para salvar pesquisa no histórico
+document.querySelector('.barra-pesquisa').addEventListener('submit', (event) => {
+    event.preventDefault();
+    salvarNoHistorico(buscaInput.value);
+    buscarSugestoes(); // Atualiza sugestões com o termo atual
 });
