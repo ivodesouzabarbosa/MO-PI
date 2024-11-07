@@ -203,52 +203,52 @@ body {
     .card1 {
         background-size: 100% 100%;
         /* background-repeat: no-repeat no-repeat; */
-        background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjk8v_ILYDbCdCt4PPrMbuWLzKRiTilr41xDd5WemxV74f3pqwG28jKS1VDGpsqfPA9NIPtkaHNms4j1S1EiIbjyJa26nYEJ652DCIDNs5_VC62QDP3v2HSuziSE0Qj_VpjRNFVTeEhCk2B/s16000/20210715_171443.jpg);
+        background-image: url(../../Home/img/restaurante.jpg);
     }
 
     .card2 {
         background-size: 100% 100%;
-        background-image: url(https://parawebnews.com/wp-content/uploads/2022/02/261024748_4824267277634566_6869855652376808985_n.jpg);
+        background-image: url(../../Home/img/shopping.jpg);
     }
 
     .card3 {
         background-size: 100% 100%;
-        background-image: url(../img/HeroImage.webp);
+        background-image: url(../../Home/img/parques.jpg);
     }
 
     .card4 {
         background-size: 100% 100%;
-        background-image: url(https://s1.wklcdn.com/image_149/4475835/49199493/32836738Master.jpg);
+        background-image: url(../../Home/img/predios.jpg);
     }
 
     .card5 {
         background-size: 100% 100%;
-        background-image: url(https://belem.com.br/images/noticias/11096/01063218_complexo-f.jpg);
+        background-image: url(../../Home/img/praça.jpg);
     }
 
     .card6 {
         background-size: 100% 100%;
-        background-image: url(https://revistadesign.com/wp-content/uploads/2024/02/Praca-Batista-Campos-em-Belem.webp);
+        background-image: url(../../Home/img/ilha.jpg);
     }
 
     .card7 {
         background-size: 100% 100%;
-        background-image: url(https://img.jornalcruzeiro.com.br/img/2013/07/12/media/122190_CST140513T007F07.jpg);
+        background-image: url(../../Home/img/museus.jpg);
     }
 
     .card8 {
         background-size: 100% 100%;
-        background-image: url(https://educacaoeterritorio.org.br/wp-content/uploads/portal_aprendiz/2016/07/museu4.jpg);
+        background-image: url(../../Home/img/igrejas.jpg);
     }
 
     .card9 {
         background-size: 100% 100%;
-        background-image: url(https://comshalom.org/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-21-at-11.27.24-840x815.jpeg);
+        background-image: url(../../Home/img/terminais.jpg);
     }
 
     .card10 {
         background-size: 100% 100%;
-        background-image: url();
+        background-image: url(../../Home/img/ver_o_peso.jpg);
     }
 
     .conteudo i {
