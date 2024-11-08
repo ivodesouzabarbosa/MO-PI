@@ -109,8 +109,7 @@
     background-color: #bce1ffc9;
     border-radius: 10px;
     padding: 7px;
-    display: flex;
-    align-items: center;
+    display: none;
 }
 .sugestao-link{
     color: black;
