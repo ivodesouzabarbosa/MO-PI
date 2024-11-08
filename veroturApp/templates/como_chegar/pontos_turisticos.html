@@ -228,10 +228,10 @@
               </div>
             </div>
             <div class="btn-rota">
-              <a href="{% url 'mapa' %}?{{ ponto.latitude }}&{{ ponto.longitude }}" class="route-btn">
-                 <i class="material-icons-outlined">mode_of_travel</i>
-                 {% trans "Rota" %}
-              </a>
+              <a href="{% url 'mapa' %}?lat={{ ponto.latitude }}&lng={{ ponto.longitude }}" class="route-btn">
+                <i class="material-icons-outlined">mode_of_travel</i>
+                {% trans "Rota" %}
+             </a>
            </div>
           </article>
         {% endfor %}
@@ -311,10 +311,11 @@
               </div>
             </div>
             <div class="btn-rota">
-              <a href="https://maps.google.com/?q={{ ponto.latitude }},{{ ponto.longitude }}" target="_blank">
-                <i class="material-icons-outlined">mode_of_travel</i>
-                {% trans "Rota" %}
-              </a>
+              <div class="btn-rota">
+                <a href="{% url 'mapa' %}?lat={{ ponto.latitude }}&lng={{ ponto.longitude }}" class="route-btn">
+                  <i class="material-icons-outlined">mode_of_travel</i>
+                  {% trans "Rota" %}
+               </a>
             </div>
           </article>
           
@@ -395,10 +396,11 @@
               </div>
             </div>
             <div class="btn-rota">
-              <a href="https://maps.google.com/?q={{ ponto.latitude }},{{ ponto.longitude }}" target="_blank">
-                <i class="material-icons-outlined">mode_of_travel</i>
-                Rota
-              </a>
+              <div class="btn-rota">
+                <a href="{% url 'mapa' %}?lat={{ ponto.latitude }}&lng={{ ponto.longitude }}" class="route-btn">
+                  <i class="material-icons-outlined">mode_of_travel</i>
+                  {% trans "Rota" %}
+               </a>
             </div>
           </article>
           
