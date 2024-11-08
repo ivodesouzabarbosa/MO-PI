@@ -205,6 +205,37 @@ function initMap() {
         });
     });
 
+
+    // // Define um ícone padrão para todos os marcadores
+    // const markerIcon = {
+    //     url: "https://fonts.gstatic.com/s/i/materialicons/place/v6/24px.svg", // Ícone de localização padrão
+    //     scaledSize: new google.maps.Size(30, 40),
+    //     anchor: new google.maps.Point(15, 40)
+    // };
+
+    const categoriaCores = {
+        "Museus": "#ff6347",         // vermelho-tomate
+        "Parques": "#32cd32",        // verde-lima
+        "Praças": "#4169e1",         // azul-royal
+        "Ilhas": "#ff8c00",          // laranja
+        "Atrações": "#ff1493",       // rosa profundo
+        "Shoppings": "#4682b4",      // azul-acinzentado
+        "Restaurantes": "#6a5acd",   // azul ardósia
+        "Igrejas": "#8b4513",        // marrom
+        "Prédios Históricos": "#daa520" // dourado
+    };
+
+    function gerarIconeCor(categoria) {
+        const cor = categoriaCores[categoria] || "#333"; // Cor padrão se a categoria não for encontrada
+        const svgIcon = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24" fill="${cor}">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>`;
+        return "data:image/svg+xml;base64," + btoa(svgIcon);
+    }
+    
+    
+
     fetch('/pontos-turisticos/')
     .then(response => response.json())
     .then(data => {
@@ -213,6 +244,9 @@ function initMap() {
         data.forEach(ponto => {
             const latitude = parseFloat(ponto.latitude);
             const longitude = parseFloat(ponto.longitude);
+
+            // Obtenha a categoria do ponto turístico
+            const categoria = ponto["categorias_id_categorias__nome"];
 
             if (!latitude || !longitude) {
                 console.warn(`Coordenadas inválidas para o ponto: ${ponto.nome}`);
@@ -228,9 +262,10 @@ function initMap() {
 
             addedMarkers.add(latLngKey);
 
+            // Gere o ícone colorido para a categoria
             const markerIcon = {
-                url: `/media/${ponto.imagem}`,
-                scaledSize: new google.maps.Size(30, 40),
+                url: gerarIconeCor(categoria),
+                scaledSize: new google.maps.Size(35, 55),
                 anchor: new google.maps.Point(15, 40)
             };
 

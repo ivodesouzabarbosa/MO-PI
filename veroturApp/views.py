@@ -76,7 +76,7 @@ def pontos_turisticos_json(request):
     # Extrai os valores em um formato de dicionário
     pontos_list = list(pontos.values(
         'latitude', 'longitude', 'nome', 'imagem', 'descricao',
-        'endereco', 'horarios_funcionamento', 'lugares_pagos', 'monitoria'
+        'endereco', 'horarios_funcionamento', 'lugares_pagos', 'monitoria', 'categorias_id_categorias__nome'
     ))
 
     return JsonResponse(pontos_list, safe=False)
