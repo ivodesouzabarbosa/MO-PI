@@ -95,8 +95,14 @@ function initMap() {
     });
 
     const urlParams = new URLSearchParams(window.location.search);
-    const destinationLat = parseFloat(urlParams.get('lat'));
-    const destinationLng = parseFloat(urlParams.get('lng'));
+    let destinationLat = urlParams.get('lat');
+    let destinationLng = urlParams.get('lng');
+
+    // Substitui vírgulas por pontos, se houver, antes da conversão para ponto flutuante
+    if (destinationLat && destinationLng) {
+        destinationLat = parseFloat(destinationLat.replace(',', '.'));
+        destinationLng = parseFloat(destinationLng.replace(',', '.'));
+    }
 
     if (destinationLat && destinationLng) {
         // Cria a rota inicial
@@ -141,8 +147,8 @@ function initMap() {
                         userMarker.setPosition({ lat: updatedLat, lng: updatedLng });
                     }
 
-                    // Atualiza a rota em tempo real
-                    updateRoute(userLat, userLng, destinationLat, destinationLng);
+                    // Atualiza a rota em tempo real com as coordenadas do usuário e do destino
+                    updateRoute(updatedLat, updatedLng, destinationLat, destinationLng);
 
                     // Centraliza o mapa na nova posição do usuário
                     map.setCenter({ lat: updatedLat, lng: updatedLng });
@@ -158,6 +164,7 @@ function initMap() {
         });
     }
 
+    // Função para atualizar a rota em tempo real
     function updateRoute(userLat, userLng, destinationLat, destinationLng) {
         const request = {
             origin: { lat: userLat, lng: userLng },
@@ -170,39 +177,10 @@ function initMap() {
                 directionsRenderer.setDirections(result);
                 map.setCenter(result.routes[0].legs[0].end_location);
             } else {
-                console.error('Erro ao traçar rota:', status);
+                console.error('Erro ao atualizar rota:', status);
             }
         });
     }
-
-    document.querySelectorAll('.route-btn').forEach(button => {
-        button.addEventListener('click', function(event) {
-            event.preventDefault(); // Previne o redirecionamento do link
-
-            // Obtém as coordenadas do destino
-            const destinationLat = parseFloat(this.getAttribute('data-lat'));
-            const destinationLng = parseFloat(this.getAttribute('data-lng'));
-
-            // Obtém a localização atual do usuário e traça a rota
-            getCurrentLocation((userLat, userLng) => {
-                const request = {
-                    origin: { lat: userLat, lng: userLng },
-                    destination: { lat: destinationLat, lng: destinationLng },
-                    travelMode: 'DRIVING'
-                };
-
-                directionsService.route(request, (result, status) => {
-                    if (status === 'OK') {
-                        directionsRenderer.setDirections(result);
-                        map.setCenter(result.routes[0].legs[0].end_location);
-                    } else {
-                        console.error('Erro ao traçar rota:', status);
-                    }
-                });
-            });
-        });
-    });
-
 
     // // Define um ícone padrão para todos os marcadores
     // const markerIcon = {
@@ -232,52 +210,52 @@ function initMap() {
             </svg>`;
         return "data:image/svg+xml;base64," + btoa(svgIcon);
     }
-    
-    
+
+
 
     fetch('/pontos-turisticos/')
-    .then(response => response.json())
-    .then(data => {
-        const addedMarkers = new Set();
+        .then(response => response.json())
+        .then(data => {
+            const addedMarkers = new Set();
 
-        data.forEach(ponto => {
-            const latitude = parseFloat(ponto.latitude);
-            const longitude = parseFloat(ponto.longitude);
+            data.forEach(ponto => {
+                const latitude = parseFloat(ponto.latitude);
+                const longitude = parseFloat(ponto.longitude);
 
-            // Obtenha a categoria do ponto turístico
-            const categoria = ponto["categorias_id_categorias__nome"];
+                // Obtenha a categoria do ponto turístico
+                const categoria = ponto["categorias_id_categorias__nome"];
 
-            if (!latitude || !longitude) {
-                console.warn(`Coordenadas inválidas para o ponto: ${ponto.nome}`);
-                return;
-            }
+                if (!latitude || !longitude) {
+                    console.warn(`Coordenadas inválidas para o ponto: ${ponto.nome}`);
+                    return;
+                }
 
-            const latLngKey = `${latitude},${longitude}`;
+                const latLngKey = `${latitude},${longitude}`;
 
-            if (addedMarkers.has(latLngKey)) {
-                console.warn(`Marcador já adicionado para as coordenadas: ${latLngKey}`);
-                return;
-            }
+                if (addedMarkers.has(latLngKey)) {
+                    console.warn(`Marcador já adicionado para as coordenadas: ${latLngKey}`);
+                    return;
+                }
 
-            addedMarkers.add(latLngKey);
+                addedMarkers.add(latLngKey);
 
-            // Gere o ícone colorido para a categoria
-            const markerIcon = {
-                url: gerarIconeCor(categoria),
-                scaledSize: new google.maps.Size(35, 55),
-                anchor: new google.maps.Point(15, 40)
-            };
+                // Gere o ícone colorido para a categoria
+                const markerIcon = {
+                    url: gerarIconeCor(categoria),
+                    scaledSize: new google.maps.Size(35, 55),
+                    anchor: new google.maps.Point(15, 40)
+                };
 
-            const marker = new google.maps.Marker({
-                position: { lat: latitude, lng: longitude },
-                map: map,
-                title: ponto.nome,
-                animation: google.maps.Animation.DROP,
-                icon: markerIcon
-            });
+                const marker = new google.maps.Marker({
+                    position: { lat: latitude, lng: longitude },
+                    map: map,
+                    title: ponto.nome,
+                    animation: google.maps.Animation.DROP,
+                    icon: markerIcon
+                });
 
-            marker.addListener('click', () => {
-                const contentString = `
+                marker.addListener('click', () => {
+                    const contentString = `
                     <div class="info-window p-3">
                         <h3 class="info-title text-center">${ponto.nome}</h3>
                         <img src="/media/${ponto.imagem}" alt="${ponto.nome}" class="info-image img-fluid mb-2" />
@@ -293,40 +271,40 @@ function initMap() {
                         </div>
                         <button id="start-route">Iniciar Rota</button>
                     </div>`;
-                infoWindow.setContent(contentString);
-                infoWindow.open(map, marker);
+                    infoWindow.setContent(contentString);
+                    infoWindow.open(map, marker);
 
-                google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
-                    const startRouteButton = document.getElementById('start-route');
-                    if (startRouteButton) {
-                        startRouteButton.addEventListener('click', () => {
-                            getCurrentLocation((userLat, userLng) => {
-                                const request = {
-                                    origin: { lat: userLat, lng: userLng },
-                                    destination: { lat: latitude, lng: longitude },
-                                    travelMode: 'DRIVING'
-                                };
-                                directionsService.route(request, (result, status) => {
-                                    if (status === 'OK') {
-                                        directionsRenderer.setDirections(result);
-                                        map.setCenter(result.routes[0].legs[0].end_location);
+                    google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
+                        const startRouteButton = document.getElementById('start-route');
+                        if (startRouteButton) {
+                            startRouteButton.addEventListener('click', () => {
+                                getCurrentLocation((userLat, userLng) => {
+                                    const request = {
+                                        origin: { lat: userLat, lng: userLng },
+                                        destination: { lat: latitude, lng: longitude },
+                                        travelMode: 'DRIVING'
+                                    };
+                                    directionsService.route(request, (result, status) => {
+                                        if (status === 'OK') {
+                                            directionsRenderer.setDirections(result);
+                                            map.setCenter(result.routes[0].legs[0].end_location);
 
-                                        infoWindow.close();
-                                    } else {
-                                        console.error('Erro ao traçar rota:', status);
-                                    }
+                                            infoWindow.close();
+                                        } else {
+                                            console.error('Erro ao traçar rota:', status);
+                                        }
+                                    });
                                 });
                             });
-                        });
-                    }
-                }); // script para rota
+                        }
+                    }); // script para rota
+                });
             });
-        });
-    })
-    .catch(error => console.error('Erro ao buscar pontos turísticos:', error));
+        })
+        .catch(error => console.error('Erro ao buscar pontos turísticos:', error));
 }
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     initMap()
 })
