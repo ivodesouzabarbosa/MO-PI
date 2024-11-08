@@ -100,6 +100,7 @@ body, html {
     flex-grow: 1; /* Faz o mapa ocupar o restante da altura */
     width: 100%; /* Preenche toda a largura */
     min-height: 300px; /* Caso queira definir uma altura mínima */
+    position: relative;
 }
 
 /* Pop-up do mapa */
@@ -209,6 +210,180 @@ body, html {
 .btn-route:hover {
     background-color: #00414f;
 }
+
+
+/* Pop-up do filtro */
+/* .btnOpenModal {
+    position: absolute;
+    font-size: x-large;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: violet;
+    color: white;
+    cursor: pointer;
+} */
+
+.btnOpenModal {
+    position: absolute;
+    bottom: 90px;
+    right: 10px;
+    z-index: 100; /* Para garantir que fique sobre o mapa */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+hr {
+    border: 0px;
+    border-top: 1px solid blue;
+}
+
+.modal-container {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    bottom: 71px;
+    left: 0;
+    width: 100%;
+    /* height: 100%; */
+    /* background: rgba(0, 0, 0, 0.5); */
+    z-index: 2; /* Para ficar acima do mapa e do botão */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* h2 {
+    margin-top: 5px;
+} */
+
+.active {
+    display: flex;
+}
+
+.active .modal {
+    animation: modal .4s;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* div {
+    margin: 10px auto;
+} */
+
+.categorias-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    /* espaço entre os ícones */
+    align-items: center;
+    /* flex-direction: column-reverse; */
+    justify-content: center;
+    text-align: center;
+    max-width: 30rem;
+}
+
+/* .categorias-container i {
+    margin-right: 5px;
+} */
+
+.icon-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f3f4f6;
+    color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    transition: background-color 0.3s ease;
+    /* width: 40%; */
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btnOK,
+.btnClose {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.btnOK {
+    background-color: var(--fourth-color);
+    /* Verde */
+    color: white;
+}
+
+.btnClose {
+    background-color: var(--fourth-color);
+    /* Vermelho */
+    color: white;
+}
+
+/* Efeito de hover */
+.btnOK:hover {
+    background-color:rgb(33, 80, 235);
+    transform: scale(1.05);
+}
+
+.btnClose:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+}
+
+
+.icon-text i {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    color: #1854a3;
+    padding: 0.4rem;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+/* Efeito de hover */
+.text:hover {
+    background-color: #e0e7ff;
+    /* Fundo mais claro ao passar o mouse */
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
 
 /* Estilos para dispositivos móveis */
 @media (max-width: 600px) {
