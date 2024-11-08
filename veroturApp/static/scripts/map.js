@@ -67,7 +67,6 @@ function initMap() {
                             position: { lat: userLat, lng: userLng },
                             map: map,
                             title: 'Você está aqui',
-                            icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
                         });
                         createRadarEffect(map, { lat: userLat, lng: userLng });
                     } else {
@@ -130,7 +129,6 @@ function initMap() {
                             position: { lat: updatedLat, lng: updatedLng },
                             map: map,
                             title: 'Você está aqui',
-                            icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
                         });
 
                         // Opcional: centra o mapa na nova posição do usuário
