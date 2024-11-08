@@ -212,23 +212,25 @@ function initMap() {
     // };
 
     const categoriaCores = {
-        "Museus": "#d9b36c",         // vermelho-tomate
-        "Parques": "#5dc088",        // verde-lima
-        "Praças": "#b6d871",         // azul-royal
-        "Ilhas": "#7eb6d9",          // laranja
-        "Atrações": "#dd7b83",       // rosa profundo
-        "Shoppings": "#c9665c",      // azul-acinzentado
-        "Restaurantes": "#cf8b64",   // azul ardósia
-        "Igrejas": "#bb8e85",        // marrom
-        "Prédios Históricos": "#6c8091", // cinza
+        "Museus": "#d9b36c",
+        "Parques": "#5dc088",
+        "Praças": "#b6d871",
+        "Ilhas": "#7eb6d9",
+        "Atrações": "#dd7b83",
+        "Shoppings": "#c9665c",
+        "Restaurantes": "#cf8b64",
+        "Igrejas": "#bb8e85",
+        "Prédios Históricos": "#6c8091",
         "Terminais": "#b9804a"
     };
 
     function gerarIconeCor(categoria) {
         const cor = categoriaCores[categoria] || "#333"; // Cor padrão se a categoria não for encontrada
+        const corBorda = "#000"; // Cor da borda
+        const larguraBorda = 0.5; // Largura da borda
         const svgIcon = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24" fill="${cor}">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24">
+                <path fill="${cor}" stroke="${corBorda}" stroke-width="${larguraBorda}" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
             </svg>`;
         return "data:image/svg+xml;base64," + btoa(svgIcon);
     }
@@ -244,7 +246,7 @@ function initMap() {
             const latitude = parseFloat(ponto.latitude);
             const longitude = parseFloat(ponto.longitude);
 
-            // Obtenha a categoria do ponto turístico
+            // Obtem a categoria do ponto turístico
             const categoria = ponto["categorias_id_categorias__nome"];
 
             if (!latitude || !longitude) {
