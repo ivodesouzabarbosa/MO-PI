@@ -212,15 +212,16 @@ function initMap() {
     // };
 
     const categoriaCores = {
-        "Museus": "#ff6347",         // vermelho-tomate
-        "Parques": "#32cd32",        // verde-lima
-        "Praças": "#4169e1",         // azul-royal
-        "Ilhas": "#ff8c00",          // laranja
-        "Atrações": "#ff1493",       // rosa profundo
-        "Shoppings": "#4682b4",      // azul-acinzentado
-        "Restaurantes": "#6a5acd",   // azul ardósia
-        "Igrejas": "#8b4513",        // marrom
-        "Prédios Históricos": "#daa520" // dourado
+        "Museus": "#d9b36c",         // vermelho-tomate
+        "Parques": "#5dc088",        // verde-lima
+        "Praças": "#b6d871",         // azul-royal
+        "Ilhas": "#7eb6d9",          // laranja
+        "Atrações": "#dd7b83",       // rosa profundo
+        "Shoppings": "#c9665c",      // azul-acinzentado
+        "Restaurantes": "#cf8b64",   // azul ardósia
+        "Igrejas": "#bb8e85",        // marrom
+        "Prédios Históricos": "#6c8091", // cinza
+        "Terminais": "#b9804a"
     };
 
     function gerarIconeCor(categoria) {
