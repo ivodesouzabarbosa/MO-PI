@@ -142,7 +142,7 @@ function initMap() {
                     }
 
                     // Atualiza a rota em tempo real
-                    updateRoute(userLat, userLng, destinationLat, destinationLng);
+                    updateRoute(updatedLat, updatedLng, destinationLat, destinationLng);
 
                     // Centraliza o mapa na nova posição do usuário
                     map.setCenter({ lat: updatedLat, lng: updatedLng });
