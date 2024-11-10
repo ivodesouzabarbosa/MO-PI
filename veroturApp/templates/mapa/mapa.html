@@ -79,33 +79,33 @@
         crossorigin="anonymous"></script>
     {% endcache %}
 
-    <button class="btnOpenModal" onclick="openModal()">KM</button>
+    <button class="btnOpenModal" onclick="openModal()"><i class="material-symbols-outlined">filter_alt</i></button>
 
     <div class="modal-container">
         <div class="modal">
             <h2>Categorias</h2>
-            <hr>
             <div class="categorias-container">
-                <div class="icon-text"><i class="material-symbols-outlined">restaurant</i></div>
-                <div class="icon-text"><i class="material-symbols-outlined">local_mall</i></div>
-                <div class="icon-text"><i class="material-symbols-outlined">attractions</i></div>
-                <div class="icon-text"><i class="material-symbols-outlined">things_to_do</i></div>
-                <div class="icon-text"><i class="material-symbols-outlined">nature_people</i></div>
-                <div class="icon-text"><i class="material-symbols-outlined">park</i></div>
-                <div class="icon-text"><i class="material-symbols-outlined">beach_access</i></div>
-                <div class="icon-text"><i class="material-symbols-outlined">museum</i></div>
-                <div class="icon-text"><i class="material-symbols-outlined">church</i></div>
-                <div class="icon-text"><i class="material-symbols-outlined">directions_bus</i></div>
+                <div class="icon-categoria icon-1"><i class="material-symbols-outlined">restaurant</i></div>
+                <div class="icon-categoria icon-2"><i class="material-symbols-outlined">local_mall</i></div>
+                <div class="icon-categoria icon-3"><i class="material-symbols-outlined">attractions</i></div>
+                <div class="icon-categoria icon-4"><i class="material-symbols-outlined">things_to_do</i></div>
+                <div class="icon-categoria icon-5"><i class="material-symbols-outlined">nature_people</i></div>
+                <div class="icon-categoria icon-6"><i class="material-symbols-outlined">park</i></div>
+                <div class="icon-categoria icon-7"><i class="material-symbols-outlined">beach_access</i></div>
+                <div class="icon-categoria icon-8"><i class="material-symbols-outlined">museum</i></div>
+                <div class="icon-categoria icon-9"><i class="material-symbols-outlined">church</i></div>
+                <div class="icon-categoria icon-10"><i class="material-symbols-outlined">directions_bus</i></div>
             </div>
-            
-            <hr>
             <h2>Distância</h2>
-            <div class="flex items-center justify-center mb-2">
-                <input id="distanceRange" type="range" class="w-full" min="0" max="7" value="0" oninput="updateDistanceValue(this.value)" />
-            </div>
-            <div class="text-center text-black mb-6">
-                <span id="distanceValue">0</span> Km
-            </div>
+            <div class="range-container">
+                <input id="distanceRange" type="range" min="0" max="3" value="0" oninput="updateDistanceValue(this.value)" />
+                <div class="range-labels">
+                    <span>0 Km</span>
+                    <span>5 Km</span>
+                    <span>10 Km</span>
+                    <span>15 Km</span>
+                </div>
+            </div>            
             <div class="buttons">
                 <button class="btnOK " onclick="closeModal()">OK</button>
                 <button class="btnClose" onclick="closeModal()">Close</button>
@@ -221,7 +221,7 @@
     <script src="{% static "Home/js/config.js" %}"></script>
     <script src="{% static "service-worker.js" %}"></script>
     <script src="{% static "Home/js/script.js" %}"></script>
-    <script src="{% static "Home/js/pop-up.js" %}"></script>
+    <script src="{% static "mapa/js/pop-up.js" %}"></script>
 </body>
 
 </html>
