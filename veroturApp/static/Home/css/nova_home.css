@@ -106,6 +106,10 @@
 
 /* fim do varao */
 
+.marketing{
+    
+}
+
 #splash-screen {
     width: 90%;
     margin: auto;
@@ -230,6 +234,7 @@
 
 .section_title {
     text-align: center;
+    width: 25rem;
     margin: 3rem 0;
     font-size: 2rem;
     font-weight: 550;
@@ -614,6 +619,7 @@
     .section_title {
         text-align: center;
         margin-top: 5rem;
+        width: 45rem;
         font-size: 4rem;
         font-weight: 550;
         font-style: normal;
