@@ -261,6 +261,7 @@ function initMap() {
                             }, (result, status) => {
                                 if (status === google.maps.DirectionsStatus.OK) {
                                     directionsRenderer.setDirections(result);
+                                    infoWindow.close()
                                 } else {
                                     console.error('Falha na rota:', status);
                                 }
