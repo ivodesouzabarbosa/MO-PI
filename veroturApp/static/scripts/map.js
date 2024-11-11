@@ -94,6 +94,7 @@ function initMap() {
         map.setZoom(15);
     });
 
+    // Obtém os parâmetros da URL
     const urlParams = new URLSearchParams(window.location.search);
     let destinationLat = urlParams.get('lat');
     let destinationLng = urlParams.get('lng');
@@ -104,7 +105,7 @@ function initMap() {
         destinationLng = parseFloat(destinationLng.replace(',', '.'));
     }
 
-    if (destinationLat && destinationLng) {
+    if (!isNaN(destinationLat) && !isNaN(destinationLng)) {
         // Cria a rota inicial
         getCurrentLocation((userLat, userLng) => {
             const request = {
@@ -130,27 +131,19 @@ function initMap() {
 
                     // Atualiza a posição do marcador do usuário
                     if (!userMarker) {
-                        // Cria o marcador se não existir ainda
                         userMarker = new google.maps.Marker({
                             position: { lat: updatedLat, lng: updatedLng },
                             map: map,
                             title: 'Você está aqui',
                         });
-
-                        // Opcional: centra o mapa na nova posição do usuário
                         map.setCenter({ lat: updatedLat, lng: updatedLng });
-
-                        // Cria o efeito de radar ao redor do marcador do usuário
                         createRadarEffect(map, { lat: updatedLat, lng: updatedLng });
                     } else {
-                        // Atualiza a posição do marcador e do radar
                         userMarker.setPosition({ lat: updatedLat, lng: updatedLng });
                     }
 
-                    // Atualiza a rota em tempo real com as coordenadas do usuário e do destino
+                    // Atualiza a rota em tempo real
                     updateRoute(updatedLat, updatedLng, destinationLat, destinationLng);
-
-                    // Centraliza o mapa na nova posição do usuário
                     map.setCenter({ lat: updatedLat, lng: updatedLng });
                 },
                 error => {
@@ -158,7 +151,8 @@ function initMap() {
                 },
                 {
                     enableHighAccuracy: true,
-                    maximumAge: 0
+                    maximumAge: 0,
+                    timeout: 10000
                 }
             );
         });
@@ -181,6 +175,7 @@ function initMap() {
             }
         });
     }
+
 
     // // Define um ícone padrão para todos os marcadores
     // const markerIcon = {
