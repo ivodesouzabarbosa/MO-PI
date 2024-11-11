@@ -277,6 +277,11 @@ function initMap() {
 
     document.querySelectorAll('.icon-categoria').forEach((icon, index) => {
         icon.addEventListener('click', () => {
+            // Remove a classe 'active' de todos os ícones
+            document.querySelectorAll('.icon-categoria').forEach(icon => icon.classList.remove('active'));
+        
+            // Adiciona a classe 'active' ao ícone clicado
+            icon.classList.add('active');
             const categories = ["Restaurantes", "Shoppings", "Atrações", "Prédios Históricos", "Praças", "Parques", "Ilhas", "Museus", "Igrejas", "Terminais"];
             currentCategory = categories[index];
             filterMarkers();
