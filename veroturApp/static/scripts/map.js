@@ -93,6 +93,70 @@ function initMap() {
         }
     }
 
+    // Obtém os parâmetros da URL e assegura que a latitude e longitude sejam números válidos
+    const urlParams = new URLSearchParams(window.location.search);
+    let destinationLat = urlParams.get('lat');
+    let destinationLng = urlParams.get('lng');
+
+    // Substitui vírgulas por pontos, se houver, antes da conversão para ponto flutuante
+    if (destinationLat && destinationLng) {
+        destinationLat = parseFloat(destinationLat.replace(',', '.'));
+        destinationLng = parseFloat(destinationLng.replace(',', '.'));
+    }
+
+    if (!isNaN(destinationLat) && !isNaN(destinationLng)) {
+        // Cria a rota inicial
+        getCurrentLocation((userLat, userLng) => {
+            const request = {
+                origin: { lat: userLat, lng: userLng },
+                destination: { lat: destinationLat, lng: destinationLng },
+                travelMode: 'DRIVING'
+            };
+
+            directionsService.route(request, (result, status) => {
+                if (status === 'OK') {
+                    directionsRenderer.setDirections(result);
+                    map.setCenter(result.routes[0].legs[0].end_location);
+                } else {
+                    console.error('Erro ao traçar rota:', status);
+                }
+            });
+
+            // Inicia o rastreamento contínuo da posição do usuário
+            watchID = navigator.geolocation.watchPosition(
+                position => {
+                    const updatedLat = position.coords.latitude;
+                    const updatedLng = position.coords.longitude;
+
+                    // Atualiza a posição do marcador do usuário
+                    if (!userMarker) {
+                        userMarker = new google.maps.Marker({
+                            position: { lat: updatedLat, lng: updatedLng },
+                            map: map,
+                            title: 'Você está aqui',
+                        });
+                        map.setCenter({ lat: updatedLat, lng: updatedLng });
+                        createRadarEffect(map, { lat: updatedLat, lng: updatedLng });
+                    } else {
+                        userMarker.setPosition({ lat: updatedLat, lng: updatedLng });
+                    }
+
+                    // Atualiza a rota em tempo real
+                    updateRoute(updatedLat, updatedLng, destinationLat, destinationLng);
+                    map.setCenter({ lat: updatedLat, lng: updatedLng });
+                },
+                error => {
+                    console.error('Erro ao obter localização:', error);
+                },
+                {
+                    enableHighAccuracy: true,
+                    maximumAge: 0,
+                    timeout: 10000
+                }
+            );
+        });
+    }
+
     // Use watchPosition to keep track of the user's location continuously
     function startWatchingLocation() {
         if (navigator.geolocation) {
