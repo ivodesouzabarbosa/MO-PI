@@ -48,10 +48,10 @@
     border: 1px solid var(--fourth-color);
     outline: none;
     padding-left: 50px;
-    width: 100%;
+    width: 85%;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -6;
     background: none;
     z-index: 3;
     transition: none;
@@ -106,9 +106,56 @@
 
 /* fim do varao */
 
-.marketing{
-    
+/* ======================================================== */
+
+/* Estilos para a seção marketing */
+.marketing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f4;
 }
+
+/* Estilo para o botão */
+#installButton {
+  display: flex; /* Mostra o botão (remova se quiser que ele comece invisível) */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Efeito ao passar o mouse */
+#installButton:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para tornar o botão invisível inicialmente */
+#installButton[style*="display:none;"] {
+  display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================================== */
 
 #splash-screen {
     width: 90%;
