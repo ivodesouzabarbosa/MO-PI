@@ -36,7 +36,7 @@
 }
 
 .container-barra {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     width: 100%;
     position: relative;
     height: 50px;
@@ -48,10 +48,10 @@
     border: 1px solid var(--fourth-color);
     outline: none;
     padding-left: 50px;
-    width: 85%;
+    width: 100%;
     position: absolute;
     top: 0;
-    left: -6;
+    left: 0;
     background: none;
     z-index: 3;
     transition: none;
@@ -87,6 +87,11 @@
     outline: none;
 }
 
+.container-pesquisa {
+    display: flex;
+    margin: 1rem 1rem 0 1rem;
+}
+
 .dropdown-sugestoes{
     position: fixed;
     left: 0;
@@ -109,13 +114,13 @@
 /* ======================================================== */
 
 /* Estilos para a seção marketing */
-.marketing {
+/* .marketing {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   background-color: #f4f4f4;
-}
+  margin-left: 0.5rem;
+} */
 
 /* Estilo para o botão */
 #installButton {
@@ -129,6 +134,7 @@
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-left: 0.5rem;
 }
 
 
