@@ -77,7 +77,6 @@ function initMap() {
                             map: map,
                             title: 'Você está aqui',
                             icon: customIconSVG,  // Aqui você aplica o ícone personalizado
-                            center:position 
                         });
                         createRadarEffect(map, { lat: userLat, lng: userLng });
                     } else {
@@ -155,11 +154,9 @@ function initMap() {
                             map: map,
                             title: 'Você está aqui',
                         });
-                        updateRadarPosition(updateLat, updateLng);
-                        createRadarEffect(map, { lat: userLat, lng: userLng });
+                        updateRadarPosition(updateLat, updateLng)
                     } else {
-                        updateRadarPosition(updateLat, updateLng);
-                        createRadarEffect(map, { lat: userLat, lng: userLng });
+                        updateRadarPosition(updateLat, updateLng)
                     }
 
                     // Chama a função de atualização da rota
@@ -260,8 +257,7 @@ function initMap() {
                     map: map,
                     title: ponto.nome,
                     category: categoria,
-                    icon: markerIcon,
-                    center: position
+                    icon: markerIcon
                 });
 
                 marker.addListener('click', () => {
