@@ -146,7 +146,7 @@ function initMap() {
                 position => {
                     const updatedLat = position.coords.latitude;
                     const updatedLng = position.coords.longitude;
-            
+
                     // Atualiza a posição do marcador do usuário
                     if (!userMarker) {
                         userMarker = new google.maps.Marker({
@@ -154,18 +154,16 @@ function initMap() {
                             map: map,
                             title: 'Você está aqui',
                         });
-                        map.setCenter({ lat: updatedLat, lng: updatedLng });
                         updateRadarPosition(updateLat, updateLng)
                     } else {
-                        userMarker.setPosition({ lat: updatedLat, lng: updatedLng });
                         updateRadarPosition(updateLat, updateLng)
                     }
-                    
+
                     // Chama a função de atualização da rota
                     updateRoute(updatedLat, updatedLng, destinationLat, destinationLng);
                     map.setCenter({ lat: updatedLat, lng: updatedLng });
 
-                     // Centraliza o mapa a cada 30 segundos
+                    // Centraliza o mapa a cada 30 segundos
                     const currentTime = Date.now();
                     if (currentTime - lastCenterTime >= 30000) { // 30 segundos = 30000 ms
                         map.setCenter({ lat: updatedLat, lng: updatedLng });
@@ -181,7 +179,7 @@ function initMap() {
                     timeout: 10000
                 }
             );
-            
+
         });
     }
 
@@ -305,30 +303,33 @@ function initMap() {
 
     document.querySelectorAll('.icon-categoria').forEach((icon, index) => {
         icon.addEventListener('click', () => {
-            // Remove a classe 'active' de todos os ícones
-            document.querySelectorAll('.icon-categoria').forEach(icon => icon.classList.remove('active'));
-        
-            // Adiciona a classe 'active' ao ícone clicado
-            icon.classList.add('active');
-            const categories = ["Restaurantes", "Shoppings", "Atrações", "Prédios Históricos", "Praças", "Parques", "Ilhas", "Museus", "Igrejas", "Terminais"];
-            currentCategory = categories[index];
-            filterMarkers();
+            // Verifica se o ícone já está ativo
+            if (icon.classList.contains('active')) {
+                // Se estiver ativo, desmarque a seleção e exiba todos os pontos
+                icon.classList.remove('active');
+                currentCategory = null; // Define categoria como null para mostrar todos os pontos
+            } else {
+                // Remove a classe 'active' de todos os ícones
+                document.querySelectorAll('.icon-categoria').forEach(icon => icon.classList.remove('active'));
+                // Adiciona a classe 'active' ao ícone clicado
+                icon.classList.add('active');
+                const categories = ["Restaurantes", "Shoppings", "Atrações", "Prédios Históricos", "Praças", "Parques", "Ilhas", "Museus", "Igrejas", "Terminais"];
+                currentCategory = categories[index];
+            }
+
+            filterMarkers(); // Aplica o filtro com a categoria atual ou sem categoria
         });
     });
-
-    // Ajuste de categoria de filtro
-    const categoriaSelect = document.getElementById("categoria-select");
-    categoriaSelect.addEventListener("change", (event) => {
-        currentCategory = event.target.value;
-        filterMarkers();
-    });
-
-    // Ajuste de filtro de distância
-    const distanceSelect = document.getElementById("distance-select");
-    distanceSelect.addEventListener("change", (event) => {
-        updateDistanceValue(event.target.value);
-    });
 }
+
+// function centerMapOnUser() {
+//     if (userMarker) {
+//         const userPosition = userMarker.getPosition();
+//         map.setCenter(userPosition);
+//     } else {
+//         console.error('Localização do usuário não está disponível');
+//     }
+// }
 
 document.addEventListener("DOMContentLoaded", function () {
     initMap();

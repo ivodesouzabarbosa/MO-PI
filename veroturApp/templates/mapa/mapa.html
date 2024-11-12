@@ -79,8 +79,9 @@
         crossorigin="anonymous"></script>
     {% endcache %}
 
+    
     <button class="btnOpenModal" onclick="openModal()"><i class="material-symbols-outlined">filter_alt</i></button>
-
+    
     <div class="modal-container">
         <div class="modal">
             <h2>Categorias</h2>
@@ -112,7 +113,11 @@
             </div>
         </div>
     </div>
-
+    
+    {% comment %} <div id="centerMapBtn" style="position: absolute; top: 10px; right: 10px; z-index: 5;">
+        <button onclick="centerMapOnUser()">Centralizar</button>
+    </div> {% endcomment %}
+    
     <!-- Menu footer -->
     <div class="navigation">
         <ul>
