@@ -192,7 +192,7 @@ function initMap() {
                     const userLng = position.coords.longitude;
                     if (userMarker) {
                         userMarker.setPosition({ lat: userLat, lng: userLng });
-                        map.setCenter({ lat: userLat, lng: userLng });
+                        // map.setCenter({ lat: userLat, lng: userLng });
                     }
                 },
                 error => console.error('Erro ao obter localização:', error),
@@ -202,7 +202,7 @@ function initMap() {
     }
 
     getCurrentLocation((userLat, userLng) => {
-        map.setCenter({ lat: userLat, lng: userLng });
+        // map.setCenter({ lat: userLat, lng: userLng });
         map.setZoom(15);
         startWatchingLocation();  // Start tracking the user's location
     });
