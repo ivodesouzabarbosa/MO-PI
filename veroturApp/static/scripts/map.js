@@ -202,7 +202,7 @@ function initMap() {
     }
 
     getCurrentLocation((userLat, userLng) => {
-        // map.setCenter({ lat: userLat, lng: userLng });
+        map.setCenter({ lat: userLat, lng: userLng });
         map.setZoom(15);
         startWatchingLocation();  // Start tracking the user's location
     });
