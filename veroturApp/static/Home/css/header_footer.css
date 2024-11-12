@@ -385,3 +385,10 @@ a {
   }
 
 }
+
+/* / Mobiles - altura / */
+@media (max-height: 740px) {
+  .dropdown-menu {
+    height: 45vh;
+  }
+}
