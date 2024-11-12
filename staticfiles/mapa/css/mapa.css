@@ -1,0 +1,545 @@
+:root {
+    --primary-color: #20448C;
+    --second-color: #086CB4;
+    --threeth-color: #008CDB;
+    --fourth-color: #0286EA;
+
+    --museus: #d9b36c;
+    --pracas: #b6d871;
+    --parques: #5dc088;
+    --ilhas: #7eb6d9;
+    --atracoes: #dd7b83;
+    --shoppings: #c9665c;
+    --restaurantes: #cf8b64;
+    --igrejas: #bb8e85;
+    --predios-historicos: #6c8091;
+    --terminais: #b9804a;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-home, .navigation {
+    flex-shrink: 0; /* Fixa a altura do header e do footer */
+}
+
+
+/* barra de pesquisa versao varao  */
+
+.barra-pesquisa {
+    width: 95%;
+    position: absolute;
+    top: 8rem;
+    left: 2.5%;
+}
+
+.container-barra {
+    margin-top: 1rem;
+    width: 100%;
+    position: relative;
+    height: 50px;
+}
+
+.container-barra input {
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 50px;
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: none;
+    z-index: 3;
+    transition: width 1s ease-out;
+    cursor: pointer;
+}
+
+.container-barra input:focus {
+    border: 1px solid var(--second-color);
+    border-radius: 25px;
+    width: 100%;
+    z-index: 1;
+    transition: width 1s ease-in;
+    backdrop-filter: blur(3px);
+}
+
+.container-barra i {
+    font-size: 3.0rem;
+    color: var(--second-color);
+}
+
+.container-barra button {
+    height: 50px;
+    width: 50px;
+    background: url() center no-repeat;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.container-barra button:focus {
+    outline: none;
+}
+
+/* esconde o LABEL "Buscar" */
+/* label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+} */
+
+/* fim do varao */
+
+
+
+/* Mapa */
+#map {
+    flex-grow: 1; /* Faz o mapa ocupar o restante da altura */
+    width: 100%; /* Preenche toda a largura */
+    min-height: 300px; /* Caso queira definir uma altura mínima */
+    position: relative;
+}
+
+/* Pop-up do mapa */
+.gm-style .gm-style-iw-c {
+    background-color: var(--threeth-color) !important;
+    max-width: 280px !important;
+    max-height: 600px !important;
+    padding: 0 !important;
+    /* min-height: 400px !important; */
+}
+
+.gm-style .gm-style-iw-d {
+    max-height: 500px !important;
+}
+
+.gm-style-iw-d {
+    overflow: visible !important;
+}
+
+.gm-style .gm-style-iw-tc::after {
+    background-color: var(--threeth-color);
+}
+
+/* btn fechar do pop-up*/
+.gm-ui-hover-effect {
+    opacity: 1;
+}
+
+.gm-ui-hover-effect span {
+    background-color: #ffffff !important;
+}
+
+/* .gm-ui-hover-effect span::before {
+    content: "Fechar";
+    color: #ffffff;
+} */
+
+.info-window {
+    width: 100%;
+    /* font-family: Arial, sans-serif; */
+    background-color: #ffffff;
+    padding: 0.3rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.info-title {
+    margin: 0;
+    font-size: 1.6rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.info-image {
+    height: 15rem;
+    width: 100%;
+    /* display: block; */
+    margin: 0 auto;
+    border-radius: 0.4rem;
+}
+
+.info-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content-ponto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-ponto p {
+    text-align: center;
+    white-space: pre-line;
+}
+
+.content-ponto span {
+    font-weight: bold;
+}
+
+.content-descricao {
+    text-align: justify;
+    margin-bottom: 0.5rem;
+    max-height: 6rem;
+    overflow: scroll;
+    border: 1px solid gray;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+}
+
+.info-window button {
+    display: block;
+    align-items: center;
+    margin: 0.5rem auto auto;
+    padding: 5px 10px;
+    background-color: var(--threeth-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-route:hover {
+    background-color: #00414f;
+}
+
+
+/* Pop-up do filtro */
+.btnOpenModal {
+    position: absolute;
+    bottom: 90px;
+    right: 10px;
+    z-index: 100; /* Para garantir que fique sobre o mapa */
+    background-color: var(--fourth-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-container {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    bottom: 71px;
+    left: 0;
+    width: 100%;
+    z-index: 2; /* Para ficar acima do mapa e do botão */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background: white;
+    border-radius: 1rem 1rem 0 0;
+    width: 100%;
+    text-align: center;
+}
+
+.modal h2 {
+    margin: 1rem 0;
+    color: var(--fourth-color);
+}
+
+.active {
+    display: flex;
+}
+
+.active .modal {
+    animation: modal .4s;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.categorias-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+.icon-categoria {
+    background-color: #f3f4f6;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    transition: background-color 0.3s ease;
+}
+
+.icon-categoria i {
+    font-size: 3rem;
+    padding: 0.4rem;
+    border-radius: 50%;
+}
+
+/* Estilo do icone - cor */
+.icon-1 i {
+    color: var(--restaurantes);
+    border: 2px solid var(--restaurantes);
+}
+
+.icon-2 i {
+    color: var(--shoppings);
+    border: 2px solid var(--shoppings);
+}
+
+.icon-3 i {
+    color: var(--atracoes);
+    border: 2px solid var(--atracoes);
+}
+
+.icon-4 i {
+    color: var(--predios-historicos); 
+    border: 2px solid var(--predios-historicos);
+}
+
+.icon-5 i {
+    color: var(--pracas);
+    border: 2px solid var(--pracas);
+}
+
+.icon-6 i {
+    color: var(--parques);
+    border: 2px solid var(--parques);    
+}
+
+.icon-7 i {
+    color: var(--ilhas);
+    border: 2px solid var(--ilhas);
+}
+
+.icon-8 i {
+    color: var(--museus);
+    border: 2px solid var(--museus);
+}
+
+.icon-9 i {
+    color: var(--igrejas);
+    border: 2px solid var(--igrejas);
+}
+
+.icon-10 i {
+    color: var(--terminais);
+    border: 2px solid var(--terminais);
+}
+
+/* Background do icone ativado */
+.icon-categoria.icon-1.active {
+    background-color: var(--restaurantes);
+}
+
+.icon-categoria.icon-2.active {
+    background-color: var(--shoppings);
+}
+
+.icon-categoria.icon-3.active {
+    background-color: var(--atracoes);
+}
+
+.icon-categoria.icon-4.active {
+    background-color: var(--predios-historicos);
+}
+
+.icon-categoria.icon-5.active {
+    background-color: var(--pracas);
+}    
+
+.icon-categoria.icon-6.active {
+    background-color: var(--parques);
+}
+
+.icon-categoria.icon-7.active {
+    background-color: var(--ilhas);
+}
+
+.icon-categoria.icon-8.active {
+    background-color: var(--museus);
+}
+
+.icon-categoria.icon-9.active {
+    background-color: var(--igrejas);
+}
+
+.icon-categoria.icon-10.active {
+    background-color: var(--terminais);
+}
+
+/* Estilo do icone ativado - cor */
+.icon-categoria.icon-1.active i {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.icon-categoria.icon-2.active i {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.icon-categoria.icon-3.active i {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.icon-categoria.icon-4.active i {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.icon-categoria.icon-5.active i {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.icon-categoria.icon-6.active i {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.icon-categoria.icon-7.active i {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.icon-categoria.icon-8.active i {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.icon-categoria.icon-9.active i {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.icon-categoria.icon-10.active i {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.range-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px; /* Ajuste o tamanho conforme necessário */
+    margin: 0 auto;
+}
+
+#distanceRange {
+    width: 100%;
+    margin-bottom: 10px; /* Espaço entre o range e as labels */
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+    color: var(--fourth-color);
+}
+
+.range-labels span {
+    position: relative;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 7rem;
+    margin: 1rem 0;
+}
+
+.btnOK,
+.btnClose {
+    width: 8rem;
+    height: 4rem;
+    border: none;
+    background-color: var(--fourth-color);
+    color:#ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+/* Efeito de hover */
+.btnOK:hover {
+    background-color:rgb(33, 80, 235);
+    transform: scale(1.05);
+}
+
+.btnClose:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+}
+
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+        margin: 15px 0;
+    }
+
+    #map {
+        height: 100vh; /* Reduz a altura do mapa em dispositivos móveis */
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    h1 {
+        font-size: 1.75rem;
+        margin: 20px 0;
+    }
+
+    #map {
+        height: 400px; /* Ajusta a altura do mapa para tablets */
+    }
+}
+
+/* Estilos para desktop */
+@media (min-width: 1025px) {
+    h1 {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+
+    #map {
+        height: 100vh; /* Altura padrão do mapa para desktops */
+    }
+}

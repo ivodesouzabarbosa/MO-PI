@@ -93,6 +93,25 @@ function initMap() {
         }
     }
 
+    function updateRadarPosition(lat, lng) {
+        // Se o radar ainda não foi criado, cria um novo
+        if (!radarCircle) {
+            radarCircle = new google.maps.Circle({
+                strokeColor: "#00BFFF",
+                strokeOpacity: 0.5,
+                strokeWeight: 1,
+                fillColor: "#00BFFF",
+                fillOpacity: 0.15,
+                map: map,
+                center: { lat: lat, lng: lng },
+                radius: 150  // Define o raio do radar em metros
+            });
+        } else {
+            // Atualiza a posição do radar para seguir o usuário
+            radarCircle.setCenter({ lat: lat, lng: lng });
+        }
+    }
+
     // Obtém os parâmetros da URL e assegura que a latitude e longitude sejam números válidos
     const urlParams = new URLSearchParams(window.location.search);
     let destinationLat = urlParams.get('lat');
@@ -127,7 +146,7 @@ function initMap() {
                 position => {
                     const updatedLat = position.coords.latitude;
                     const updatedLng = position.coords.longitude;
-
+            
                     // Atualiza a posição do marcador do usuário
                     if (!userMarker) {
                         userMarker = new google.maps.Marker({
@@ -136,14 +155,22 @@ function initMap() {
                             title: 'Você está aqui',
                         });
                         map.setCenter({ lat: updatedLat, lng: updatedLng });
-                        createRadarEffect(map, { lat: updatedLat, lng: updatedLng });
+                        updateRadarPosition(updateLat, updateLng)
                     } else {
                         userMarker.setPosition({ lat: updatedLat, lng: updatedLng });
+                        updateRadarPosition(updateLat, updateLng)
                     }
-
-                    // Atualiza a rota em tempo real
+                    
+                    // Chama a função de atualização da rota
                     updateRoute(updatedLat, updatedLng, destinationLat, destinationLng);
                     map.setCenter({ lat: updatedLat, lng: updatedLng });
+
+                     // Centraliza o mapa a cada 30 segundos
+                    const currentTime = Date.now();
+                    if (currentTime - lastCenterTime >= 30000) { // 30 segundos = 30000 ms
+                        map.setCenter({ lat: updatedLat, lng: updatedLng });
+                        lastCenterTime = currentTime;
+                    }
                 },
                 error => {
                     console.error('Erro ao obter localização:', error);
@@ -154,6 +181,7 @@ function initMap() {
                     timeout: 10000
                 }
             );
+            
         });
     }
 

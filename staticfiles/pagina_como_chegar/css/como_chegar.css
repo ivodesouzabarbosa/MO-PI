@@ -1,0 +1,279 @@
+:root {
+    --primary-color: #20448C;
+    --second-color: #086CB4;
+    --threeth-color: #008CDB;
+    --fourth-color: #0286EA;
+    --fifth-color: #cf8b64;
+    --sixth-color: #c9655c;
+    --seventh-color: #7EB6D9;
+    --eighth-color: #b6d871;
+    --ninth-color: #6c8091;
+    --tenth-color: #5dc088;
+    --eleventh-color: #D9B36C;
+    --twelfth-color: #bb8e85;
+    --thirteenth-color: #b9804a;
+    --fourteenth-color: #dd7b83;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+
+body {
+    /* background-color: var(--fifth-color); */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.container-cards {
+    /* border: solid 1px black; */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    /* background-image: url(../../azul.webp); */
+    background-size: cover;
+  
+}
+
+.main-card {
+    /* width: 95%; */
+    /* border: solid 1px blue; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* gap: 10px; */
+    align-items: center;
+}
+
+.card {
+    /* background-color: #ffffff; */
+    width: 140px;
+    height: 130px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    border: solid 1px var(--threeth-color);
+}
+
+.card1 {
+    background-color: var(--fifth-color);
+}
+
+.card2 {
+    background-color: var(--sixth-color);
+}
+
+.card3 {
+    background-color: var(--tenth-color);
+}
+
+.card4 {
+    background-color: var(--ninth-color);
+}
+
+.card5 {
+    background-color: var(--eighth-color);
+}
+
+.card6 {
+    background-color: var(--seventh-color);
+}
+
+.card7 {
+    background-color: var(--eleventh-color);
+}
+
+.card8 {
+    background-color: var(--twelfth-color);
+}
+
+.card9 {
+    background-color: var(--thirteenth-color);
+}
+
+.card10 {
+    background-color: var(--fourteenth-color);
+}
+
+/* Faz a âncora cobrir todo o card */
+.card-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Quando o card é clicado */
+.card.active-card {
+    transform: scale(1.06);
+    background-color: var(--primary-color);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 12px; */
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.conteudo i {
+    font-size: 60px;
+    color: #ffffff;
+}
+
+.conteudo h5 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: center;
+}
+
+/* Extra small devices */
+@media (min-width: 481px) and (max-width: 767px) {}
+
+/* Desktops mudanças para web*/
+@media (min-width: 1024px) {
+    /* joy efeitos do titulos */
+    .card:hover {
+        transform: scale(1.07);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .conteudo h5 {
+        background-color: rgb(0, 0, 0, 0.8);
+        color: white;
+        text-transform: uppercase;
+        padding: 1em;
+        letter-spacing: 2px;
+        font-size: 1.4rem;
+        position: relative;
+        border-radius: 1rem;
+        bottom: 0;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .card:hover h5 {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* joy 26.09*/
+    .container-cards{
+        background-image: none;
+    }
+
+    .main-card {
+        max-width: 85%;
+        /* display: flex; */
+        /* flex-wrap: wrap; */
+        /* gap: 20px; */
+        opacity: 90%;
+        /* padding: 20px; */
+    }
+
+    .card {
+        width: 30rem;
+        height: 30rem;
+        border-radius: 30px;
+    }
+
+    .card1 {
+        background-size: 100% 100%;
+        /* background-repeat: no-repeat no-repeat; */
+        background-image: url(../../Home/img/restaurante.jpg);
+    }
+
+    .card2 {
+        background-size: 100% 100%;
+        background-image: url(../../Home/img/shopping.jpg);
+    }
+
+    .card3 {
+        background-size: 100% 100%;
+        background-image: url(../../Home/img/parques.jpg);
+    }
+
+    .card4 {
+        background-size: 100% 100%;
+        background-image: url(../../Home/img/predios.jpg);
+    }
+
+    .card5 {
+        background-size: 100% 100%;
+        background-image: url(../../Home/img/praça.jpg);
+    }
+
+    .card6 {
+        background-size: 100% 100%;
+        background-image: url(../../Home/img/ilha.jpg);
+    }
+
+    .card7 {
+        background-size: 100% 100%;
+        background-image: url(../../Home/img/museus.jpg);
+    }
+
+    .card8 {
+        background-size: 100% 100%;
+        background-image: url(../../Home/img/igrejas.jpg);
+    }
+
+    .card9 {
+        background-size: 100% 100%;
+        background-image: url(../../Home/img/terminais.jpg);
+    }
+
+    .card10 {
+        background-size: 100% 100%;
+        background-image: url(../../Home/img/ver_o_peso.jpg);
+    }
+
+    .conteudo i {
+        display: none;
+    }
+
+}
+
+/* fim desktop */
+
+
+
+/* Mobile Altura */
+
+@media (max-height: 740px) {
+    .card {
+        height: 10rem;
+        width: 11.2rem;
+    }
+
+    .conteudo {
+        gap: 0;
+    }
+
+    .conteudo h5 {
+        font-size: 1.2rem;
+    }
+}
