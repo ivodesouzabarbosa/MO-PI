@@ -29,20 +29,22 @@ function initMap() {
     let watchID;
     let currentCategory = null;
     let maxDistance = Infinity;
+    let destination;
     const markers = [];
 
-    function createRadarEffect(map, position) {
-        let radius = 0;
-        let radarCircle = new google.maps.Circle({
-            strokeColor: "#00BFFF",
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: "#00BFFF",
-            fillOpacity: 0.35,
-            map: map,
-            center: position,
-            radius: 0
-        });
+    function createRadarEffect(position) {
+        if (!radarCircle) {
+            radarCircle = new google.maps.Circle({
+                strokeColor: "#00BFFF",
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: "#00BFFF",
+                fillOpacity: 0.35,
+                map: map,
+                center: position,
+                radius: 0
+            });
+        }
 
         function animateRadar() {
             radarCircle.setRadius(radius);
@@ -109,6 +111,7 @@ function initMap() {
         } else {
             // Atualiza a posição do radar para seguir o usuário
             radarCircle.setCenter({ lat: lat, lng: lng });
+            map.setCenter(result.routes[0].legs[0].end_location)
         }
     }
 
@@ -201,6 +204,7 @@ function initMap() {
         }
     }
 
+    // localização do usuario
     getCurrentLocation((userLat, userLng) => {
         map.setCenter({ lat: userLat, lng: userLng });
         map.setZoom(15);
@@ -237,6 +241,61 @@ function initMap() {
             </svg>`;
         return "data:image/svg+xml;base64," + btoa(svgIcon);
     }
+
+    function startTrackingRoute(destinationLat, destinationLng) {
+        destination = new google.maps.LatLng(destinationLat, destinationLng);
+
+        // Rastreamento contínuo da posição do usuário
+        watchID = navigator.geolocation.watchPosition(
+            position => {
+                const userLat = position.coords.latitude;
+                const userLng = position.coords.longitude;
+
+                // Atualiza ou cria o marcador do usuário
+                if (!userMarker) {
+                    userMarker = new google.maps.Marker({
+                        position: { lat: userLat, lng: userLng },
+                        map: map,
+                        title: 'Você está aqui',
+                        icon: customIconSVG
+                    });
+                } else {
+                    userMarker.setPosition({ lat: userLat, lng: userLng });
+                }
+
+                // Atualiza a rota em tempo real
+                updateRoute(userLat, userLng, destination);
+                map.setCenter({ lat: userLat, lng: userLng });
+            },
+            error => console.error('Erro ao obter localização:', error),
+            { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+        );
+    }
+
+    function updateRoute(userLat, userLng, destination) {
+        const origin = new google.maps.LatLng(userLat, userLng);
+
+        directionsService.route({
+            origin: origin,
+            destination: destination,
+            travelMode: google.maps.TravelMode.DRIVING
+        }, (result, status) => {
+            if (status === google.maps.DirectionsStatus.OK) {
+                directionsRenderer.setDirections(result);
+                map.setCenter({ lat: updatedLat, lng: updatedLng });
+            } else {
+                console.error('Falha na atualização da rota:', status);
+            }
+        });
+    }
+
+    function hideAllMarkersExcept(visibleMarkers) {
+        markers.forEach(marker => {
+            if (!visibleMarkers.includes(marker)) {
+                marker.setMap(null);
+            }
+        });
+    }   
 
     fetch('/pontos-turisticos/')
         .then(response => response.json())
@@ -278,20 +337,8 @@ function initMap() {
 
                     google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
                         document.getElementById("start-route").addEventListener("click", () => {
-                            const destination = new google.maps.LatLng(latitude, longitude);
-                            const origin = userMarker.getPosition();
-                            directionsService.route({
-                                origin: origin,
-                                destination: destination,
-                                travelMode: google.maps.TravelMode.DRIVING
-                            }, (result, status) => {
-                                if (status === google.maps.DirectionsStatus.OK) {
-                                    directionsRenderer.setDirections(result);
-                                    infoWindow.close()
-                                } else {
-                                    console.error('Falha na rota:', status);
-                                }
-                            });
+                            startTrackingRoute(latitude, longitude);
+                            infoWindow.close();
                         });
                     });
                 });
