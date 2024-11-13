@@ -89,19 +89,6 @@ body, html {
 .container-barra button:focus {
     outline: none;
 }
-
-/* esconde o LABEL "Buscar" */
-/* label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-} */
-
 /* fim do varao */
 
 
@@ -508,38 +495,14 @@ body, html {
 }
 
 
-/* Estilos para dispositivos móveis */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 1.5rem;
-        margin: 15px 0;
+@media (min-width: 1024px) {
+    .btnOpenModal {
+        bottom: 14.5rem;
     }
 
-    #map {
-        height: 100vh; /* Reduz a altura do mapa em dispositivos móveis */
+    .modal-container {
+        bottom: 12rem;
     }
 }
 
-/* Estilos para tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
-    h1 {
-        font-size: 1.75rem;
-        margin: 20px 0;
-    }
 
-    #map {
-        height: 400px; /* Ajusta a altura do mapa para tablets */
-    }
-}
-
-/* Estilos para desktop */
-@media (min-width: 1025px) {
-    h1 {
-        font-size: 2rem;
-        margin: 20px 0;
-    }
-
-    #map {
-        height: 100vh; /* Altura padrão do mapa para desktops */
-    }
-}
