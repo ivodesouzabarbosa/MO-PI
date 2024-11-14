@@ -51,3 +51,33 @@ class PontosTuristicos(models.Model):
         
         # Salva o novo objeto com a nova imagem
         super().save(*args, **kwargs)
+
+
+class Senac(models.Model):
+    nome = models.CharField(max_length=100, verbose_name=_("Nome"))
+    imagem = models.ImageField(upload_to='')
+    descricao = models.TextField(max_length=2000, verbose_name=_("Descrição"))
+    latitude = models.FloatField(verbose_name=_("Latitude"))
+    longitude = models.FloatField(verbose_name=_("Longitude"))
+    link = models.URLField(max_length=500, verbose_name=_("Link"), blank=True, null=True)  # Novo campo de link
+    # latitude = models.DecimalField(max_digits=9, decimal_places=6)
+    # longitude = models.DecimalField(max_digits=9, decimal_places=6)
+    
+    class Meta:
+        verbose_name = 'Senac'
+
+    def __str__(self):
+        return self.nome
+    
+    def save(self, *args, **kwargs):
+        # Verifica se o objeto já existe e se tem uma imagem salva
+        if self.pk:
+            old_image = Senac.objects.get(pk=self.pk).imagem
+            if old_image and old_image != self.imagem:
+                # Deleta a imagem antiga do sistema de arquivos
+                old_image_path = os.path.join(settings.MEDIA_ROOT, old_image.name)
+                if os.path.isfile(old_image_path):
+                    os.remove(old_image_path)
+        
+        # Salva o novo objeto com a nova imagem
+        super().save(*args, **kwargs)

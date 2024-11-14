@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.cache import cache_page
 from django.http import JsonResponse
-from .models import PontosTuristicos, Categorias
+from .models import PontosTuristicos, Categorias, Senac
 from django.utils.translation import gettext
 from django.http import HttpResponse
 from django.core.paginator import Paginator
@@ -77,6 +77,34 @@ def pontos_turisticos_json(request):
     pontos_list = list(pontos.values(
         'latitude', 'longitude', 'nome', 'imagem', 'descricao',
         'endereco', 'horarios_funcionamento', 'lugares_pagos', 'monitoria', 'categorias_id_categorias__nome'
+    ))
+
+    return JsonResponse(pontos_list, safe=False)
+
+
+def senac_json(request):
+    # Obtenha os parâmetros de limite do mapa
+    ne_lat = request.GET.get('ne_lat')
+    ne_lng = request.GET.get('ne_lng')
+    sw_lat = request.GET.get('sw_lat')
+    sw_lng = request.GET.get('sw_lng')
+
+    # Verifique se os parâmetros estão presentes
+    if ne_lat and ne_lng and sw_lat and sw_lng:
+        # Filtra os pontos dentro dos limites de latitude e longitude
+        pontosSenac = Senac.objects.filter(
+            latitude__lte=ne_lat,  # Latitude menor ou igual ao limite norte
+            latitude__gte=sw_lat,  # Latitude maior ou igual ao limite sul
+            longitude__lte=ne_lng, # Longitude menor ou igual ao limite leste
+            longitude__gte=sw_lng  # Longitude maior ou igual ao limite oeste
+        )
+    else:
+        # Caso os limites não sejam fornecidos, retorna todos os pontos
+        pontosSenac = Senac.objects.all()
+
+    # Extrai os valores em um formato de dicionário
+    pontos_list = list(pontosSenac.values(
+        'nome', 'imagem', 'descricao', 'latitude', 'longitude', 'link'
     ))
 
     return JsonResponse(pontos_list, safe=False)
