@@ -242,30 +242,35 @@ function initMap() {
         return "data:image/svg+xml;base64," + btoa(svgIcon);
     }
 
-    function startTrackingRoute(destinationLat, destinationLng) {
+    function startTrackingRoute(destinationLat, destinationLng) { 
         destination = new google.maps.LatLng(destinationLat, destinationLng);
-
-        // Rastreamento contínuo da posição do usuário
+    
+        // Inicializa o rastreamento contínuo da posição do usuário
         watchID = navigator.geolocation.watchPosition(
             position => {
                 const userLat = position.coords.latitude;
                 const userLng = position.coords.longitude;
-
+    
+                const userPosition = new google.maps.LatLng(userLat, userLng);
+    
                 // Atualiza ou cria o marcador do usuário
                 if (!userMarker) {
                     userMarker = new google.maps.Marker({
-                        position: { lat: userLat, lng: userLng },
+                        position: userPosition,
                         map: map,
                         title: 'Você está aqui',
-                        icon: customIconSVG
+                        icon: customIconSVG,
+                        optimized: false // Necessário para animações suaves
                     });
+                    map.panTo(userPosition); // Centraliza no usuário ao criar o marcador
                 } else {
-                    userMarker.setPosition({ lat: userLat, lng: userLng });
+                    // Animação suave para a nova posição
+                    userMarker.setPosition(userPosition);
+                    map.panTo(userPosition); // Centraliza no usuário a cada atualização
                 }
-
+    
                 // Atualiza a rota em tempo real
                 updateRoute(userLat, userLng, destination);
-                map.setCenter({ lat: userLat, lng: userLng });
             },
             error => console.error('Erro ao obter localização:', error),
             { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
@@ -368,15 +373,6 @@ function initMap() {
         });
     });
 }
-
-// function centerMapOnUser() {
-//     if (userMarker) {
-//         const userPosition = userMarker.getPosition();
-//         map.setCenter(userPosition);
-//     } else {
-//         console.error('Localização do usuário não está disponível');
-//     }
-// }
 
 document.addEventListener("DOMContentLoaded", function () {
     initMap();
