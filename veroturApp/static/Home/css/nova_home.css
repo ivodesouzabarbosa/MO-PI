@@ -31,13 +31,14 @@
 /* barra de pesquisa versao varao  */
 
 .barra-pesquisa {
-    width: 95%;
+    display: flex;
+    width: 100%;
     margin: 0 auto;
 }
 
 .container-barra {
     /* margin-top: 1rem; */
-    width: 100%;
+    width: 88%;
     position: relative;
     height: 50px;
 }
@@ -89,7 +90,7 @@
 
 .container-pesquisa {
     display: flex;
-    margin: 1rem 1rem 0 1rem;
+    margin: 1rem 6px;
 }
 
 .dropdown-sugestoes{
@@ -126,11 +127,11 @@
 #installButton {
   display: flex; /* Mostra o botão (remova se quiser que ele comece invisível) */
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 16px;
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 3rem;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -495,9 +496,13 @@
 
 /* Desktops mudanças para web*/
 @media (min-width: 1024px) {
+    .container-pesquisa{
+        height: 20%;
+    }
 
     .barra-pesquisa {
-        width: 40%;
+        display: flex;
+        width: 50%;
         margin: 0 auto;
     }
     
