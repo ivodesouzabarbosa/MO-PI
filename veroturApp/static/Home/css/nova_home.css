@@ -591,9 +591,7 @@
         letter-spacing: 2px;
         font-size: 1.5em;
         bottom: 40%;
-        opacity: 0;
-        transform: translateY(100%);
-        transition: all 0.3s ease-in-out;
+     
     }
 
     .card1 {
