@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-07 15:20-0300\n"
+"POT-Creation-Date: 2024-11-18 16:56-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1248,21 +1248,21 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: .\veroturApp\models.py:8 .\veroturApp\models.py:24
+#: .\veroturApp\models.py:8 .\veroturApp\models.py:24 .\veroturApp\models.py:57
 msgid "Nome"
 msgstr "Nombre"
 
-#: .\veroturApp\models.py:26
+#: .\veroturApp\models.py:26 .\veroturApp\models.py:59
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:195
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:278
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:362
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:363
 msgid "Descrição"
 msgstr "Descripción"
 
 #: .\veroturApp\models.py:27
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:204
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:287
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:371
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:372
 msgid "Endereço"
 msgstr "Dirección"
 
@@ -1278,17 +1278,21 @@ msgstr "Asientos pagados"
 msgid "Monitoria"
 msgstr "Escucha"
 
-#: .\veroturApp\models.py:31
+#: .\veroturApp\models.py:31 .\veroturApp\models.py:60
 msgid "Latitude"
 msgstr ""
 
-#: .\veroturApp\models.py:32
+#: .\veroturApp\models.py:32 .\veroturApp\models.py:61
 msgid "Longitude"
 msgstr ""
 
 #: .\veroturApp\models.py:33
 msgid "Categoria"
 msgstr "Categoría"
+
+#: .\veroturApp\models.py:62
+msgid "Link"
+msgstr ""
 
 #: .\veroturApp\templates\Eventos\eventos.html:20
 msgid "Verotur - Eventos"
@@ -1307,10 +1311,10 @@ msgstr "Comenzar"
 #: .\veroturApp\templates\como_chegar\como_chegar.html:38
 #: .\veroturApp\templates\como_chegar\como_chegar.html:183
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:42
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:456
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:458
 #: .\veroturApp\templates\index.html:56 .\veroturApp\templates\index.html:316
 #: .\veroturApp\templates\mapa\mapa.html:49
-#: .\veroturApp\templates\mapa\mapa.html:119
+#: .\veroturApp\templates\mapa\mapa.html:148
 msgid "Como Chegar"
 msgstr "Cómo llegar allí"
 
@@ -1319,10 +1323,10 @@ msgstr "Cómo llegar allí"
 #: .\veroturApp\templates\como_chegar\como_chegar.html:41
 #: .\veroturApp\templates\como_chegar\como_chegar.html:177
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:45
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:450
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:452
 #: .\veroturApp\templates\index.html:59 .\veroturApp\templates\index.html:310
 #: .\veroturApp\templates\mapa\mapa.html:52
-#: .\veroturApp\templates\mapa\mapa.html:113
+#: .\veroturApp\templates\mapa\mapa.html:142
 msgid "Mapa"
 msgstr ""
 
@@ -1332,10 +1336,10 @@ msgstr ""
 #: .\veroturApp\templates\como_chegar\como_chegar.html:44
 #: .\veroturApp\templates\como_chegar\como_chegar.html:171
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:48
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:444
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:446
 #: .\veroturApp\templates\index.html:62 .\veroturApp\templates\index.html:304
 #: .\veroturApp\templates\mapa\mapa.html:55
-#: .\veroturApp\templates\mapa\mapa.html:107
+#: .\veroturApp\templates\mapa\mapa.html:136
 msgid "Eventos"
 msgstr "Eventos"
 
@@ -1344,10 +1348,10 @@ msgstr "Eventos"
 #: .\veroturApp\templates\como_chegar\como_chegar.html:47
 #: .\veroturApp\templates\como_chegar\como_chegar.html:189
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:51
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:462
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:464
 #: .\veroturApp\templates\index.html:65 .\veroturApp\templates\index.html:322
 #: .\veroturApp\templates\mapa\mapa.html:58
-#: .\veroturApp\templates\mapa\mapa.html:125
+#: .\veroturApp\templates\mapa\mapa.html:154
 msgid "Ajuste"
 msgstr ""
 
@@ -1479,47 +1483,47 @@ msgstr "Mes de febrero"
 
 #: .\veroturApp\templates\Eventos\eventos.html:139
 #: .\veroturApp\templates\como_chegar\como_chegar.html:164
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:437
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:439
 #: .\veroturApp\templates\index.html:298
-#: .\veroturApp\templates\mapa\mapa.html:100
+#: .\veroturApp\templates\mapa\mapa.html:129
 msgid "Início"
 msgstr "Comenzar"
 
 #: .\veroturApp\templates\Eventos\eventos.html:179
 #: .\veroturApp\templates\como_chegar\como_chegar.html:205
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:477
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:479
 #: .\veroturApp\templates\index.html:337
-#: .\veroturApp\templates\mapa\mapa.html:141
+#: .\veroturApp\templates\mapa\mapa.html:170
 msgid "Português (Brasil)"
 msgstr "Portugués (Brasil)"
 
 #: .\veroturApp\templates\Eventos\eventos.html:190
 #: .\veroturApp\templates\como_chegar\como_chegar.html:217
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:488
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:490
 #: .\veroturApp\templates\index.html:348
-#: .\veroturApp\templates\mapa\mapa.html:153
+#: .\veroturApp\templates\mapa\mapa.html:182
 msgid "Inglês (EUA)"
 msgstr "Inglés (Estados Unidos)"
 
 #: .\veroturApp\templates\Eventos\eventos.html:201
 #: .\veroturApp\templates\como_chegar\como_chegar.html:229
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:499
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:501
 #: .\veroturApp\templates\index.html:359
-#: .\veroturApp\templates\mapa\mapa.html:165
+#: .\veroturApp\templates\mapa\mapa.html:194
 msgid "Espanhol (Espanha)"
 msgstr "Español (España)"
 
 #: .\veroturApp\templates\Eventos\eventos.html:205
 #: .\veroturApp\templates\como_chegar\como_chegar.html:233
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:503
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:505
 #: .\veroturApp\templates\index.html:364
-#: .\veroturApp\templates\mapa\mapa.html:169
+#: .\veroturApp\templates\mapa\mapa.html:198
 msgid "Versão 0.1.24"
 msgstr "Versión 0.1.24"
 
 #: .\veroturApp\templates\Eventos\eventos.html:218
 #: .\veroturApp\templates\como_chegar\como_chegar.html:246
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:519
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:521
 msgid "© Todos os Direitos Reservados - 2025"
 msgstr "© Todos los derechos reservados - 2025"
 
@@ -1537,26 +1541,27 @@ msgstr "parques"
 
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:173
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:256
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:340
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:341
 msgid "Saiba mais"
 msgstr "Saber más"
 
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:213
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:296
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:380
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:381
 msgid "Horários"
 msgstr "Horarios"
 
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:222
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:305
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:389
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:390
 msgid "Valores"
 msgstr ""
 
 #: .\veroturApp\templates\como_chegar\pontos_turisticos.html:233
-#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:316
-#: .\veroturApp\templates\index.html:213 .\veroturApp\templates\index.html:224
-#: .\veroturApp\templates\index.html:235
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:317
+#: .\veroturApp\templates\como_chegar\pontos_turisticos.html:402
+#: .\veroturApp\templates\index.html:216 .\veroturApp\templates\index.html:226
+#: .\veroturApp\templates\index.html:236
 msgid "Rota"
 msgstr "Ruta"
 
@@ -1565,32 +1570,27 @@ msgstr "Ruta"
 msgid "Verotur"
 msgstr "Verotur"
 
-#: .\veroturApp\templates\index.html:80
+#: .\veroturApp\templates\index.html:81
 msgid "Pesquisar"
 msgstr "Buscar"
 
-#: .\veroturApp\templates\index.html:95
-msgid "Categorias"
-msgstr "Categorías"
+#: .\veroturApp\templates\index.html:98
+msgid "Duvidas do que fazer? Veja as opções abaixo."
+msgstr "¿Dudas qué hacer? Ver opciones a continuación."
 
-#: .\veroturApp\templates\index.html:202
+#: .\veroturApp\templates\index.html:205
 msgid "Sugestões"
 msgstr "Sugerencias"
 
-#: .\veroturApp\templates\index.html:211
+#: .\veroturApp\templates\index.html:214
 msgid "Forte do Presépio"
 msgstr "Forte do Presépio"
 
-#: .\veroturApp\templates\index.html:214 .\veroturApp\templates\index.html:225
-#: .\veroturApp\templates\index.html:236
-msgid "Detalhes"
-msgstr "Detalles"
-
-#: .\veroturApp\templates\index.html:222
+#: .\veroturApp\templates\index.html:224
 msgid "Estação das Docas"
 msgstr "Estación de muelle"
 
-#: .\veroturApp\templates\index.html:233
+#: .\veroturApp\templates\index.html:234
 msgid "Ver-O-Peso"
 msgstr "Ver-O-Peso"
 
@@ -1641,9 +1641,15 @@ msgid "De 17 a 25 de agosto de 2024"
 msgstr "Del 17 al 25 de agosto de 2024"
 
 #: .\veroturApp\templates\index.html:383
-#: .\veroturApp\templates\mapa\mapa.html:183
+#: .\veroturApp\templates\mapa\mapa.html:212
 msgid "Todos os Direitos Reservados - 2025 "
 msgstr "Todos los derechos reservados - 2025"
+
+#~ msgid "Categorias"
+#~ msgstr "Categorías"
+
+#~ msgid "Detalhes"
+#~ msgstr "Detalles"
 
 #~ msgid "Configuração"
 #~ msgstr "Ajustes"
