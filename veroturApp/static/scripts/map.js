@@ -302,17 +302,18 @@ function initMap() {
         });
     }
 
-    function gerarIconeSenac() {
-        const cor = "#007bff"; // Cor personalizada para o Senac (exemplo: azul)
-        const corBorda = "#000"; // Cor da borda
-        const larguraBorda = 0.5; // Largura da borda
-        const svgIcon = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24">
-                <path fill="${cor}" stroke="${corBorda}" stroke-width="${larguraBorda}" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>`;
-        return "data:image/svg+xml;base64," + btoa(svgIcon);
-    }
+    // function gerarIconeSenac() {
+    //     const cor = "#007bff"; // Cor personalizada para o Senac (exemplo: azul)
+    //     const corBorda = "#000"; // Cor da borda
+    //     const larguraBorda = 0.5; // Largura da borda
+    //     const svgIcon = `
+    //         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24">
+    //             <path fill="${cor}" stroke="${corBorda}" stroke-width="${larguraBorda}" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+    //         </svg>`;
+    //     return "data:image/svg+xml;base64," + btoa(svgIcon);
+    // }
     
+
     
     fetch('/pontos-senac/')
     .then(response => response.json())
@@ -323,9 +324,9 @@ function initMap() {
             // const categoria = senac.categoria; // Ou outro campo relacionado, se necessário
             const latLngKey = `${latitude},${longitude}`;
             const markerIcon = {
-                url: gerarIconeSenac(), // Usa a função para o Senac
-                scaledSize: new google.maps.Size(35, 55),
-                anchor: new google.maps.Point(15, 40)
+                url: "/static/Home/img/senac-logo.png", // Usa a função para o Senac "/static/Home/img/logo-white.png"
+                scaledSize: new google.maps.Size(55, 75),
+                anchor: new google.maps.Point(15, 70)
             };
             
 
@@ -342,7 +343,7 @@ function initMap() {
                         <h3 class="info-title text-center">${senac.nome}</h3>
                         <img src="/media/${senac.imagem}" alt="${senac.nome}" class="info-image img-fluid mb-2" />
                         <div class="content-senac">
-                            <p><span>Descrição:</span> ${senac.descricao || 'Não disponível'}</p>
+                            <p>${senac.descricao || 'Não disponível'}</p>
                         </div>
                         <button id="go-to-link">Ir para o Link</button>
                     </div>`;
