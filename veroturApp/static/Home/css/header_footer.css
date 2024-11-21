@@ -49,6 +49,9 @@ html {
 
 ul {
   list-style: none;
+  font-size: 17px;
+  color: var(--fiventh-color);
+  
 }
 
 a {
@@ -302,7 +305,7 @@ a {
 
   .header_nav a {
     font-size: 2rem;
-    padding: 1rem 1rem;
+    padding: 1rem 0rem;
     text-decoration: none;
     color: white;
     border: solid 1px transparent;
