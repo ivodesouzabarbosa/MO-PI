@@ -325,7 +325,7 @@ function initMap() {
             const latLngKey = `${latitude},${longitude}`;
             const markerIcon = {
                 url: "/static/Home/img/logo-senac.png", // Usa a função para o Senac "/static/Home/img/logo-white.png"
-                scaledSize: new google.maps.Size(45, 55),
+                scaledSize: new google.maps.Size(50, 50),
                 anchor: new google.maps.Point(15, 40)
             };
             
