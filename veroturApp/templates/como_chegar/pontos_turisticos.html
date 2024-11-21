@@ -36,18 +36,23 @@
         <nav class="header_nav">
           <ul>
             <li>
+              <i class="item-link-footer fa-solid fa-house"></i>
               <a href="{% url 'home' %}">{% trans 'Inicio' %}</a>
             </li>
             <li>
+              <i class="item-link-footer fa-solid fa-location-dot"></i>
               <a href="{% url 'como_chegar' %}">{% trans 'Como Chegar' %}</a>
             </li>
             <li>
-              <a href="{% url "mapa" %}"> {% trans "Mapa" %} </a>
+              <i class="fa-solid fa-map-location-dot"></i>
+              <a href="{% url 'mapa' %}">{% trans 'Mapa' %}</a>
             </li>
             <li>
+              <i class="item-link-footer fa-regular fa-calendar-days"></i>
               <a href="{% url 'eventos' %}">{% trans 'Eventos' %}</a>
             </li>
             <li>
+              <i class="fa-solid fa-gear"></i>
               <a href="#">{% trans 'Ajuste' %}</a>
             </li>
           </ul>
