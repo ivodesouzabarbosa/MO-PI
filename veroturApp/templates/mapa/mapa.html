@@ -89,7 +89,12 @@
     
     <div class="modal-container">
         <div class="modal">
-            <h2>Categorias</h2>
+            <div class="buttons">
+                <h2>Categorias</h2> 
+                <button class="btnClose" onclick="closeModal()"><i class="material-symbols-outlined">
+                    disabled_by_default
+                </i></button>
+            </div>
             <div class="categorias-container">
                 <div class="icon-categoria icon-1"><i class="material-symbols-outlined">restaurant</i></div>
                 <div class="icon-categoria icon-2"><i class="material-symbols-outlined">local_mall</i></div>
@@ -102,7 +107,7 @@
                 <div class="icon-categoria icon-9"><i class="material-symbols-outlined">church</i></div>
                 <div class="icon-categoria icon-10"><i class="material-symbols-outlined">directions_bus</i></div>
             </div>
-            <h2>Distância</h2>
+            {% comment %} <h2>Distância</h2>
             <div class="range-container">
                 <input id="distanceRange" type="range" min="0" max="3" value="0" oninput="updateDistanceValue(this.value)" />
                 <div class="range-labels">
@@ -111,11 +116,8 @@
                     <span>10 Km</span>
                     <span>15 Km</span>
                 </div>
-            </div>            
-            <div class="buttons">
-                <button class="btnOK " onclick="closeModal()">OK</button>
-                <button class="btnClose" onclick="closeModal()">Fechar</button>
-            </div>
+            </div>             {% endcomment %}
+           
         </div>
     </div>
     

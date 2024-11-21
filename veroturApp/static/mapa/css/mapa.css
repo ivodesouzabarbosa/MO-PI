@@ -16,7 +16,8 @@
     --terminais: #b9804a;
 }
 
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -24,8 +25,10 @@ body, html {
     flex-direction: column;
 }
 
-.header-home, .navigation {
-    flex-shrink: 0; /* Fixa a altura do header e do footer */
+.header-home,
+.navigation {
+    flex-shrink: 0;
+    /* Fixa a altura do header e do footer */
 }
 
 
@@ -89,15 +92,19 @@ body, html {
 .container-barra button:focus {
     outline: none;
 }
+
 /* fim do varao */
 
 
 
 /* Mapa */
 #map {
-    flex-grow: 1; /* Faz o mapa ocupar o restante da altura */
-    width: 100%; /* Preenche toda a largura */
-    min-height: 300px; /* Caso queira definir uma altura mínima */
+    flex-grow: 1;
+    /* Faz o mapa ocupar o restante da altura */
+    width: 100%;
+    /* Preenche toda a largura */
+    min-height: 300px;
+    /* Caso queira definir uma altura mínima */
     position: relative;
 }
 
@@ -215,7 +222,8 @@ body, html {
     position: absolute;
     bottom: 90px;
     right: 10px;
-    z-index: 100; /* Para garantir que fique sobre o mapa */
+    z-index: 100;
+    /* Para garantir que fique sobre o mapa */
     background-color: var(--fourth-color);
     color: white;
     border: none;
@@ -225,12 +233,14 @@ body, html {
 }
 
 .modal-container {
-    display: none; /* Oculto por padrão */
+    display: none;
+    /* Oculto por padrão */
     position: fixed;
     bottom: 71px;
     left: 0;
     width: 100%;
-    z-index: 2; /* Para ficar acima do mapa e do botão */
+    z-index: 2;
+    /* Para ficar acima do mapa e do botão */
     align-items: center;
     justify-content: center;
 }
@@ -243,8 +253,9 @@ body, html {
 }
 
 .modal h2 {
-    margin: 1rem 0;
+    margin: 1rem 24px;
     color: var(--fourth-color);
+    font-size: 20px;
 }
 
 .active {
@@ -275,7 +286,7 @@ body, html {
     justify-content: center;
     text-align: center;
     max-width: 32rem;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
 }
 
 .icon-categoria {
@@ -309,7 +320,7 @@ body, html {
 }
 
 .icon-4 i {
-    color: var(--predios-historicos); 
+    color: var(--predios-historicos);
     border: 2px solid var(--predios-historicos);
 }
 
@@ -320,7 +331,7 @@ body, html {
 
 .icon-6 i {
     color: var(--parques);
-    border: 2px solid var(--parques);    
+    border: 2px solid var(--parques);
 }
 
 .icon-7 i {
@@ -362,7 +373,7 @@ body, html {
 
 .icon-categoria.icon-5.active {
     background-color: var(--pracas);
-}    
+}
 
 .icon-categoria.icon-6.active {
     background-color: var(--parques);
@@ -440,13 +451,14 @@ body, html {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 300px; /* Ajuste o tamanho conforme necessário */
+    max-width: 300px;
     margin: 0 auto;
 }
 
 #distanceRange {
     width: 100%;
-    margin-bottom: 10px; /* Espaço entre o range e as labels */
+    margin-bottom: 10px;
+    
 }
 
 .range-labels {
@@ -463,36 +475,45 @@ body, html {
 
 
 .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 7rem;
-    margin: 1rem 0;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px; 
+    background-color: #f8f9fa; 
+    border-bottom: 1px solid #ddd; 
 }
 
-.btnOK,
+/* Título */
+.buttons h2 {
+    margin: 0; 
+    font-size: 1.5rem;
+    color: #333; 
+}
+
+/* Botão */
 .btnClose {
-    width: 8rem;
-    height: 4rem;
-    border: none;
-    background-color: var(--fourth-color);
-    color:#ffffff;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.3s;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px; 
+    background-color: transparent; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    transition: background-color 0.3s ease; 
 }
 
-/* Efeito de hover */
-.btnOK:hover {
-    background-color:rgb(33, 80, 235);
-    transform: scale(1.05);
+/* Estilo do ícone */
+.btnClose i {
+    font-size: 2.5rem;
+    color: #d32f2f;
 }
+
 
 .btnClose:hover {
-    background-color: #e53935;
-    transform: scale(1.05);
+    background-color: #f5f5f5; 
 }
+
 
 
 @media (min-width: 1024px) {
@@ -502,5 +523,64 @@ body, html {
 
     .modal-container {
         bottom: 12rem;
+        position: fixed;
+        left: 65rem;
     }
+
+
+    /* Container principal */
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Título */
+    .buttons h2 {
+        margin: 0;
+        font-size: 1;
+        color: black;
+    }
+
+    /* Botão */
+    .btnClose {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        
+    }
+    .btnClose i {
+        font-size: 3.5rem;
+        color: #d32f2f;
+        
+    }
+    
+    .btnClose:hover {
+        background-color: #f5f5f5;
+        
+    }
+
+    .modal {
+        background: white;
+        border-radius: 1rem 1rem 0 0;
+        width: 18%;
+        float: right;
+        
+    }
+
+
+
+
+
+
+
 }
