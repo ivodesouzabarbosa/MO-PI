@@ -1,21 +1,9 @@
 from pathlib import Path
 import os
 import django_heroku
-import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Inicialize o django-environ
-env = environ.Env(
-    DEBUG=(bool, False)  # Define valores padrão e tipos
-)
-
-# Leia o arquivo .env
-env.read_env(os.path.join(BASE_DIR, '.env'))
-
-# O que é esse BY_MATEUS? É uma homenagem ao aluno que ajudou no desenvolvimento
-BY_MATEUS = env("BY_MATEUS")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
