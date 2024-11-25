@@ -1,4 +1,6 @@
-document.querySelector('.dropdown-toggle').addEventListener('click', function() {
-    const dropdown = document.querySelector('.dropdown-menu'); // Certifique-se que o seletor está correto
-    dropdown.classList.toggle('active');
+document.querySelectorAll('.dropdown-toggle, .dropdown-toggle-desktop').forEach(toggle => {
+    toggle.addEventListener('click', function() {
+        const dropdown = document.querySelector('.dropdown-menu');
+        dropdown.classList.toggle('active');
+    });
 });

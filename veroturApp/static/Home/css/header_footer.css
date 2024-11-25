@@ -197,8 +197,6 @@ a {
   position: fixed;
   bottom: 50px;
   right: 0;
-  /* width: 80%; */
-  /* max-height: calc(100vh - 50px); */
   height: 35vh;
   background-color: #ffffff;
   color: white;
@@ -326,6 +324,48 @@ a {
     list-style-type: none;
   }
 
+  /* Ajuste para o item do menu desktop */
+  .header_nav li {
+    position: relative; /* Permite o dropdown se posicionar relativo a este item */
+  }
+
+  /* Estilização do dropdown para desktop */
+  .dropdown-menu {
+    display: none;
+    position: absolute; /* Posicionamento relativo ao pai */
+    top: 100px;
+    left: 65%;
+    right: auto;
+    height: 18vh;
+    transform: translateX(-50%);
+    min-width: 200px;
+    background-color: #ffffff;
+    color: var(--primary-color);
+    list-style: none;
+    padding: 10px;
+    border: 1px solid var(--threeth-color);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+  }
+
+  /* Exibir o dropdown quando estiver ativo */
+  .dropdown-menu.active {
+    display: block;
+    animation: slide-down 0.3s ease-out forwards;
+  }
+
+  /* Animação para o dropdown */
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   /* Footer para desktop -------------------------------------- */
   .navigation {
