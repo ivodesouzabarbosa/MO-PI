@@ -14,7 +14,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'default-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'False'
 
-ALLOWED_HOSTS = ['.herokuapp.com', 'verotur-92535ed7027b.herokuapp.com']
+ALLOWED_HOSTS = ['.herokuapp.com', 'verotur-92535ed7027b.herokuapp.com', 'localhost']
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -82,14 +82,14 @@ WSGI_APPLICATION = 'verotur.wsgi.application'
 DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.mysql',
-         'NAME': 's99vbbf6gyy9zlba',
-         'USER':'tko5uxaao1mnxsuh',
-         'PASSWORD':'p855czeq3v678uar',
-         'HOST':'e11wl4mksauxgu1w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+         'NAME': 'db_verotur',
+         'USER':'root',
+         'PASSWORD':'Freitas@057858',
+         'HOST':'localhost',
          'PORT':'3306',
-         'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_ALL_TABLES'",
-        },
+        #  'OPTIONS': {
+        #     'init_command': "SET sql_mode='STRICT_ALL_TABLES'",
+        # },
      }
 }
 
